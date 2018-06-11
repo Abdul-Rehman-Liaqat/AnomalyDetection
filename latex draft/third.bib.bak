@@ -1,0 +1,28 @@
+@inproceedings{yao2016highlight,
+  title={Highlight detection with pairwise deep ranking for first-person video summarization},
+  author={Yao, Ting and Mei, Tao and Rui, Yong},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={982--990},
+  year={2016}
+}
+@online{url9,
+  author = {youtube},
+  title = {{Youtube by the numbers}},
+  year = 2017,
+  url = {https://www.youtube.com/yt/about/press/},
+  urldate = {2017-08-09}
+}
+@inproceedings{tran2015learning,
+  title={Learning spatiotemporal features with 3d convolutional networks},
+  author={Tran, Du and Bourdev, Lubomir and Fergus, Rob and Torresani, Lorenzo and Paluri, Manohar},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={4489--4497},
+  year={2015}
+}
+@inproceedings{krizhevsky2012imagenet,
+  title={Imagenet classification with deep convolutional neural networks},
+  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  booktitle={Advances in neural information processing systems},
+  pages={1097--1105},
+  year={2012}
+}

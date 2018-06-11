@@ -1,0 +1,22 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Motivation}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Problem statement and goal}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Key Frame or Shot Based}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Structure Based}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Highlight Based}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Proposed Approach}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Architecture : Prediction}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Architecture : Training}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Video Summarization}{}% 11
+\BOOKMARK [1][-]{section.5}{Experiments}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Data}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Results}{}% 14
+\BOOKMARK [2][-]{subsection.6.1}{Results for Highlight detection}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.2}{Results for Video summarization}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 17
+\BOOKMARK [2][-]{subsection.7.1}{Apparent good points of algorithm}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.2}{Possible negative points of algorithm}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.3}{Possible usage}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.4}{Possible future work}{section.7}% 21
+\BOOKMARK [1][-]{section.8}{References}{}% 22

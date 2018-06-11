@@ -1,0 +1,389 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage[utf8x]{inputenc}
+\makeatletter
+\usepackage{cite}
+\usepackage{hyperref}
+\@namedef{opt@inputenc.sty}{utf8}
+\makeatother
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{array}
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+\begin{document}
+\title{
+\begin{flushright}
+\includegraphics[width=2.5cm]{logoUHi.jpg}\\
+{\small
+Data Analytics\\
+Stiftung Universit{\"a}t Hildesheim\\
+Marienburger Platz 22\\
+31141 Hildesheim\\
+Prof. Dr. Dr. Lars Schmidt-Thieme\\
+}
+\end{flushright}
+\bigskip
+\begin{center}
+Seminar Data Analytics \uppercase\expandafter{\romannumeral 3\relax}\\
+One Model To Learn Them All\\
+Semester $3$
+\end{center}
+}
+\author{Abdul Rehman Liaqat}
+\date{271336, Liaqat@uni-hidesheim.de}
+\maketitle
+
+\newpage
+
+\begin{abstract}
+With the help of deep learning, it is possible to outperform humans in certain task i.e. image recognition. This incredible feat comes with a price of spending a lot of time selecting and fine tuning an architecture for specific problem hence for each task a specialized deep learning architecture is needed. Authors purpose a solution to this problem by designing a single architecture which is trained for each task with their respective type of input and output. Also this multi-model architecture, as authors call it, is composed of important modules,such as convolutional layers, attention-mechanism layers and sparsely-gated layers, which are necessary for good performance in each task . As a result, multi-model performs quite well for problems with less data, when trained with the data from other tasks. Also the performance for other tasks only degrades slightly.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+Human brain have a common area which is triggered whenever a banana is seen, heard, written or spoken. Of course there are very separate specialized areas too which are lit up differently according to the action described earlier. This commonness leads to a question: Just like a human brain
+\begin{quote}
+ Can we create a unified deep learning model to solve tasks across multiple domains?
+\end{quote}
+\textbf{One Model to Learn Them All} presents this question and try to answer it with a deep learning based modular architecture. This multi-model architecture ,as authors called it, is tested against intrinsically different type of problems such as image captioning, language translation and image recognition. The model perform well in general and outperforms competitors for problems with less dataset. 
+An example from the paper is:
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \includegraphics[width=\textwidth]{eins.PNG}
+    \caption{Examples decoded from a single MultiModel trained jointly on 8 tasks. Red depicts a
+language modality while blue depicts a categorical modality. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Continuing from the original question posed in the beginning of this section, further questions can be raised about:\\
+\begin{enumerate}
+\item What is the benefit of having one model for all tasks?
+\item Intrinsically, which qualities are in place when we train one model for multiple tasks? 
+\item What is the most intuitive way of going about using one model for all tasks?
+\end{enumerate}
+Starting from the first question, one obvious benefit is the saving of time and resources. When only one model is used, training for one task helps in training for another task through intrinsic transfer learning.
+Common parts within different tasks takes help from the training of same part.
+Lastly, the most intuitive way would be to convert all kind of inputs to a same format before further treating through all stages. That is exactly the method proposed by the authors. All type of input or output is first convert from or to required format respectively, through Modality nets.
+\section{Multi-Model Architecture}
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \includegraphics[width=\textwidth]{zwei.PNG}
+    \caption{The MultiModel, with modality-nets, an encoder, and an autoregressive decoder \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Multimodel architecture is compose of different modules.
+\subsection{Components}
+There are four basic modules of the whole multimodel architecture:
+\begin{enumerate}
+\item{Modality Nets}
+\item{Encoder}
+\item{I/O Mixer}
+\item{Decoder}
+\end{enumerate}
+
+Each of these modules are composed of Convolutional blocks, Attention blocks and Mixture-of-Experts blocks.  
+\subsection{Component Models Architecture}
+Now looking into the architecture of main modules.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{sechs.PNG}
+      \centering
+    \caption{Encoder Architecture. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Input encoder takes the output of Modalities as input and process them. Each input to Encoder is time stamped with a vector of time. Afterwards it pass through three layers of ConvBlock (figure 8). ConvBlocks output is fed into Mixture of experts and then comes three blocks of ConvBlock and Attention modules with skip connection. Lastly, output of last ConvBlock is summed with last Attention module and thus input coming from modalities is encoded.\\
+Output of input encoder is fed to I/O mixer and decoder.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{sieben.PNG}
+      \centering
+    \caption{I/O mixer architecture. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Output of encoder and modalities with auto-regressive connection of decoder as input is fed to I/O mixer. This helps in providing auto-regressive capability to our architecture which means that multi-model architecture also learns about the patterns hidden in temporal sequence. In other words, multi-model architecture knows how much weight should be given to the past values. How much near past is important to distant one.\\
+I/O mixer takes all input to attention module which is then padded by zeros on the left. This helps in prohibiting I/O mixer in accessing future values. Next is a ConvStep following by two block of ConvBlock plus Attention module. Output of last ConvBlock and Attention module is summed. The final ouput is fed to decoder.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{acht.PNG}
+      \centering
+    \caption{Decoder architecture\cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Decoder takes in the output coming from input encoder and I/O mixer. Both are concatenated and fed to two ConvStep blocks followed by four ConvBlock plus Attention module combination. Other input of of Attention module is Encoded inputs as shown in figure 5. The output of final ConvBlock and Attention module is summed and fed to modalities which will transform the decoded output to required output format.
+\subsection{Base Component Architecture}
+As noticed above, each of the module of multi-model architecture is composed of small components. Each component has it's importance to solve one specific kind of task for example attention block is good for tasks related to natural language processing. Similarly ConvBlock is good for Image related tasks. Also since all of these components are used in each task it is tested that if unrelated components to one task has any positive or negative impact on the performance. Results are shared in the experiments sections. Base components are following:
+\begin{enumerate}
+\item{Attention Block}
+\begin{enumerate}
+\item{Dot-Product Attention}
+\item{ConvStep}
+\begin{enumerate}
+\item{SepConv}
+\end{enumerate}
+\item{Pointwise Convolution}
+\end{enumerate}
+\item{ConvBlock}
+\item{Mixture of Experts (MoE)}
+\end{enumerate}
+Here one noticeable thing is that ConvStep is also used in other components such as \\ConvBlock.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{vier.PNG}
+      \centering
+    \caption{Attention Architecture. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+\underline{Attention Block:} As described earlier, this block has proved to be efficient for natural language processing tasks. Attention block helps identify the part of language which are to be considered more hence named attention. In each attention block, the input is time stamped and then fed to two ConvStep components with $5 \times 1$ filter size and having dilation value of $1$ and $4$ respectively. Output of last ConvStep is fed to Dot-Product attention block. In parallel, input to the attention block is fed to two Pointwise convolutions which are followed by a Dot-Product attention block. Final Dot-Product attention block takes input from the two Pointwise convolution blocks and Dot-Product attention block.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{drei.PNG}
+      \centering
+    \caption{Dot-Product Attention Architecture. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+\underline{Dot-Product Attention Architecture:} Dot-Product attention architecture, consist of three inputs called Query(q), Attention Keys(k) and Value keys(v) respectively. Each input is represented as a matrix of numbers. First query and attention keys product is multiplied and passed through a softmax operation. Thus only useful information passes to the next step. Finally value keys and the softmax output is multiplied which results in Dot-Product attention output.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{funf.PNG}
+      \centering
+    \caption{ConvBlock Architecture. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+\underline{ConvStep:} A ConvStep can be defined as :
+\begin{equation}
+ConvStep_{d,s,f}(W,x) = LN(SepConv_{d,s,f}(W,ReLU(x)))
+\end{equation}
+where:
+\begin{conditions}
+d & dilation factor \\
+s & stride \\
+f & input feature depth \\
+W & weights of size $h x w$\\
+x & Input tensor x\\
+LN & Layer Normalization\\
+ReLU & Rectifier Linear Unit defined as $Relu(x) = max(x,0)$\\
+SepConv & SepConv block as defined below.
+\end{conditions}
+\underline{SepConv:} This is depth-wise separable convolution network \cite{Chollet16a} defined as :
+\begin{equation}
+SepConv_{d,s,f}(W^{h\times w},x) 
+\end{equation}
+with weights W, f kernels of size $h \times w$, applied to a tensor $x$ with dimension \\$[batchsize,sequence length, feature channels]$, dialed by factor d and have stride f. \\
+\underline{ConvBlock:} A ConvBlock component consist of combination of different ConvSteps components. It is actually a combination of multiple operation back to back. These operations are defined as following:
+\begin{equation}
+hidden1(x) = ConvStep({W^(3 \times 1)}_{h1},x) 
+\end{equation}
+\begin{equation}
+hidden2(x) = x + ConvStep({W^(3 \times 1)}_{h2},hidden1(x))
+\end{equation}
+\begin{equation}
+hidden3(x) = ConvStep({W^(15 \times 1)}_{h3},hidden2(x))
+\end{equation}
+\begin{equation}
+hidden4(x) = x + ConvStep({W^(3 \times 1)}_{h4},hidden3(x))
+\end{equation}
+\begin{equation}
+ConvBlock(x) = Dropout(hidden4(X),0.4)   During Training
+\end{equation}
+\begin{equation}
+ConvBlock(x) = hidden4(X)  Else
+\end{equation}
+\underline{Mixture of Experts (MoE):} A mixture of experts \cite{ShazeerMMDLHD17} can be defined as a number of feed-forward neural networks and a trainable gating network which selects a sparse combination of the experts to process each input. For multi-model architecture 240 models were used. A graphical representation of Mixture of Experts is shown below:
+\begin{center}
+\begin{figure}[bp]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{neun.PNG}
+      \centering
+    \caption{Mixture of Experts (MoE) Architecture. \cite{KaiserGSVPJU17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+\subsection{Modality Nets}
+Modlity nets are the modules which conditions any specific type of input into numbers and at the output side it converts numbers back to the required format. There are four different type of input which can be handled by the multi-model architecture and these types are Language, Image, Categorical and Audio. Each modality net is named against its type.  
+\subsubsection{Language Modality Net}
+When input is a kind of natural language, input sentence is first tokenized with the vocabulary of eight thousand words. These tokenized vectors are then transformed using learned embeddings.\\
+When output of natural language type is needed, output vector is mapped with linear mapping and passed through softmax function to extract required words.
+\subsubsection{Image Modality Net}
+Image modality is composed of multiple Residual Convolution Blocks(ConvRes). Each ConvRes is composed of multiple ConvStep blocks. Mathematically a ConvRes block can be defined as ;
+\begin{equation}
+c1(x,F) = ConvStep_{t=F}(W^{3 \time 3},x)
+\end{equation}
+\begin{equation}
+c2(x,F) = ConvStep_{t=F}(W^{3 \time 3},c1(x,F))
+\end{equation}
+\begin{equation}
+p1(x,F) = MaxPool_{2}([3 \times 3],c2(x,F))
+\end{equation}
+\begin{equation}
+ConvRes(x,F) = p1(x,F) + ConvStep_{s=2}(W^{1 \times 1},x)
+\end{equation}
+Now that ConvRes is defined, Image Modality Net can be defined as:
+\begin{equation}
+h1(x) = ConvStep_{s = 2, f = 32}(W^{3 \times 3},x)
+\end{equation}
+\begin{equation}
+h2(x) = ConvStep_{f = 64}(W^{3 \times 3},h1(x))
+\end{equation}
+\begin{equation}
+r1(x) = ConvRes(h2(x),128)
+\end{equation}
+\begin{equation}
+r2(x) = ConvRes(r1(x),256)
+\end{equation}
+\begin{equation}
+ImageModality_{in}(x) = ConvRes(r2(x),d)
+\end{equation}
+\subsubsection{Categorical Modality Net}
+Categorical modality net takes in categorical values type input and converts it to a number representation. Categorical modality net can be defined as:
+\begin{equation}
+skip(x) = ConvStep_{s=2}({W^{3 \times 3}}_{skip},x)
+\end{equation}
+\begin{equation}
+h1(x) = ConvStep({W^{3 \times 3}}_{h1},x)
+\end{equation}
+\begin{equation}
+h2(x) = ConvStep({W^{3 \times 3}}_{h2},x)
+\end{equation}
+\begin{equation}
+h3(x) = skip(x)+MaxPool_{2}([3 \times 3],h2(x))
+\end{equation}
+\begin{equation}
+h4(x) = ConvStep_{f=1536}({W^{3 \times 3}}_h4, h3(x))
+\end{equation}
+\begin{equation}
+h5(x) = ConvStep_{f=2048}(W^{3 \times 3},h4(x))
+\end{equation}
+\begin{equation}
+h6(x) = GlobalAvgPool(ReLU(h5(x)))
+\end{equation}
+\begin{equation}
+CategoricalModelity_{out}(x) = PointwiseConv(w^{classes},h6(x))
+\end{equation}
+\subsubsection{Audio Modality Net}
+Audio modality net is also composed of Residual Convolution Blocks(ConvRes). There are eight ConvRes blocks in the audio modality net concatenated back to back. A $L_{ith}$ ConvRes block can be defined as $ConvRes(Li,2i)$
+\section{Experiments}
+All experiments were using tensorflow in a large distributed network. Also for all experiments Adam Optimizer optimization function along with same hyperparameter setting were used.
+\subsection{Datasets}
+Since there were eight tasks to be solved with multi-model architecture, eight different datasets were used which are following:
+\begin{itemize}
+\item WSJ speech corpus (Audio)
+\item ImageNet dataset (Image Classification)
+\item COCO image captioning dataset (Image Captioning)
+\item WSJ parsing dataset (NLP parsing)
+\item WMT English-German translation corpus (NLP tralation)
+\item WMT German-English translation corpus (NLP translation)
+\item WMT English-French translation corpus (NLP translation)
+\item WMT French-English translation corpus (NLP translation)
+\end{itemize}
+\subsection{Basic Questions}
+Experiments are oriented to find answers of some critical questions. These questions are :
+\begin{enumerate}
+\item How far is the multi-model trained on $8$ tasks simultaneously from state-of-the-art results?
+\item How does training on $8$ tasks simultaneously compare to training on each task separately?
+\item how do the different computational blocks discussed above influence different tasks?
+\end{enumerate}
+Each experiment use relevant datasets to answer relevant question. The answer of these questions or hypothesis are found in form of
+results.
+\subsection{Results}
+When multi-model is trained to categorize images using ImageNet, to translate English sentences to German and to translate English sentences to French, performance is not far from the state-of-the-art. As shown in figure 10, for each task, performance is close to state-of-the-art. 
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{table1.PNG}
+      \centering
+    \caption{Comparing MultiModel to state-of-the-art from \cite{SzegedyIV16} and \cite{ShazeerMMDLHD17}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Similarly, to measure the difference of performance of multi-model architecture when trained together with other tasks and trained independently, few tasks are first trained together and later independently. The tasks are: Image categorization using ImageNet dataset, English to German sentence translation, Speech recognition using WSJ speech corpus and sentence parsing. Results, as shown in figure 11, show that in general simultaneous training help in performance especially when the dataset of a task is of small size. One possible explanation is internal transfer learning from other tasks.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{table2.PNG}
+      \centering
+    \caption{Comparison of the MultiModel trained jointly on 8 tasks and separately on each task}
+  \end{minipage}
+\end{figure}
+\end{center}
+Another experiment is training sentence parsing task with ImageNet image categorization task and the performance is compared with the models trained alone and with all eight tasks. It can be see that by training with ImageNet, even though it is unrelated with the parsing task, the performance is improved. The basic assumption is the same as above that latent transfer learning helps perform the model better.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{table3.PNG}
+      \centering
+    \caption{Results on training parsing alone, with ImageNet, and with 8 other tasks. We report
+log-perplexity, per-token accuracy, and the percentage of fully correct parse trees.}
+  \end{minipage}
+\end{figure}
+\end{center}
+Last experiment is set to answer the question of how do different computational blocks influence different tasks. In the experimental setup, ImageNet image categorization task and English to French translation task is trained using three different configurations separately. In first configuration, all computation blocks as described above are used. In the second, Mixture of Experts is not used and in the third one Attention component is not used. As seen from the result in the figure 13, it is obvious that removing components effect the performance, specially when the component is considered important for one specific task. For example, Attention component is considered important for natural language related tasks and it can be seen that removing attention component reduce the performance from $76$ percent to $72$ percent. Conversely, it can be seen that removing unrelated modules also negatively effects the performance but with not high value.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{table4.PNG}
+      \centering
+    \caption{Ablating mixture-of-experts and attention from MultiModel training.}
+  \end{minipage}
+\end{figure}
+\end{center}
+\section{Conclusion}
+As proposed in the beginning, a model was designed to solve multiple tasks with different input and output modalities. These tasks were language translation, image categorization, image captioning and language tree parsing. Although performance for each task was not state-of-the-art but still comparable. Tasks with less dataset benefit the most. Also since experiments were performed with only single-hyperparameter set there are high chances of increase in performance after hyperparamter tuning. The multi-model architecture training took one week with large distributed network.
+\section{Discussions and Remarks}
+\subsection{General Review}
+As general review, the multi-model architecture is a kind of black-box deep learning model which is limited by specialist knowledge. Thus it will be difficult to make sense weights assigned. Positively, it was a good try to imitate human brain. Resource wise it is a good way to compress multiple models and decrease training time and storage resources.\\
+\subsection{Technical Review}
+As technical review, the general approach of multi-model architecture is modular which can be used as a motivation to build other similar architectures and improve on it. Overall multi-model architecture tires to have a module for each input type and a specialized network for each special task which are connected through a control. This control is learned in form of weights and gating system. Experiments were performed well to answer the questions although the quantity is way less to generalize the results.
+\newpage
+\section{References}
+\begingroup
+\nocite{*}
+\renewcommand{\section}[2]{}
+\bibliographystyle{IEEEtrans}`
+\bibliography{third}
+\endgroup
+\end{document}

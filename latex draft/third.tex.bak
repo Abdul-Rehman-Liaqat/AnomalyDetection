@@ -1,0 +1,286 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage[utf8x]{inputenc}
+\makeatletter
+\usepackage{cite}
+\usepackage{hyperref}
+\@namedef{opt@inputenc.sty}{utf8}
+\makeatother
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\begin{document}
+\title{
+\begin{flushright}
+\includegraphics[width=2.5cm]{logoUHi.jpg}\\
+{\small
+Data Analytics\\
+Stiftung Universit{\"a}t Hildesheim\\
+Marienburger Platz 22\\
+31141 Hildesheim\\
+Dr. Josif Grabocka\\
+}
+\end{flushright}
+\begin{center}
+Seminar Data Analytics : Advances in Deep Learning\\
+Highlight Detection with Pairwise Deep Ranking for First-Person Video Summarization\\
+Semester $2$
+\end{center}
+}
+\author{Abdul Rehman Liaqat}
+\date{271336, Liaqat@uni-hidesheim.de}
+\maketitle
+
+\newpage
+
+\begin{abstract}
+To extract the useful knowledge data from a video, it is necessary to detect the important segments and summarize the videos. In this report, first detailed working of the one proposed method of  detecting important video segments, called highlight detection and summarizing videos with these highlights, is shared. Afterwards, the method is tested against different prevalent methods using one common dataset. Lastly, results, possible merits, demerits, usage and points of improvements of the highlight detection and video summarization method are shared.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+\subsection{Motivation}
+As they say:
+\begin{quote}
+A picture is worth thousand words
+\end{quote}
+Videos are the biggest source of unstructured Big Data. On youtube only, 300 hours of video per minute is uploaded \cite{url9} and these videos are from more than 88 countries and 76 languages. Each video is recorded in different frame rates ranging from 24 to 120 FPS. Only these many facts are enough to prove the variety, velocity and volume of data.\\
+To tap this source of data, it is first necessary to filter out the important data. This filtered out video data, which can be called "Summary of Video" can be later used by both humans and machines.
+\subsection{Problem statement and goal}
+So, the problem of video summarization can be thought as :\begin{quote}
+Converting a video V1 with total playback time T, to a video V2 with playback time t such that V2 relays \textbf{Important information} of V1 completely while keeping:\begin{quote}
+$T>>>t$
+\end{quote}
+\end{quote} 
+There is not one specific definition of \textbf{Important Information} . It is dependent upon the type of the video, quality of the video and audience of the video.There are following three main procedures which can be used to define important information.
+\begin{enumerate}
+\item Key Frame / Shot Based
+\item Structure Based
+\item Highlight
+\end{enumerate}
+\section{Related Work}
+\subsection{Key Frame or Shot Based}
+According to this type of procedure, the basic unit of important information is a key frame. Thus each frame (or group of frames) is searched for the specific characteristics. If any frame contains required characteristics, it is extracted and considered as part of video summary. These characteristics can be any of the following:
+\begin{enumerate}
+\item \underline{Visual Importance:} which means to maximize the diversity of things inside a frame. Each frame is searched for maximum number of objects or change in scenes, the ones containing the most diversity are selected.
+\item \underline{Important Objects:} This one is pretty simple. Each frame is searched for a specific object (or group of object) such as human face. 
+\item \underline{Movement detection:} In this case, movement of objects is detected among some consecutive frames. Later on the frames containing the movement are selected as characteristic key frames for video summarization.
+\end{enumerate}
+\subsection{Structure Based}
+In structure based important information extraction, prior domain knowledge of object under observance is used. For example in a sport video such as football, it is known that a goal is accompanied by crowd cheering and player gathering at one place. So such frames are extracted out and included in the final video summary. 
+\subsection{Highlight Based}
+In the third kind, which is also the one proposed by the author, a small video segment is assigned a numeric value and the video segments containing the highest values are selected. This numeric value represent the score of highlights in each segment.\textbf{Highlight} is nothing but a video segment considered important enough to be part of final video summary. A video segment is nothing but a small clip of actual video.
+\section{Proposed Approach}
+\textbf{Important Information} is extracted using Highlight based video segment selection which is later used to create a summary of video. The main part to be solved through deep learning architecture is detecting the highlight segments of a video. Supervised data consists of video segments duly scored by human observers. An architecture is then trained on these segments to score highlighted video segments higher than the non-highlighted ones. Later on this architecture is used predict the highlight score of unknown segments.\\
+As described earlier, learning to \textbf{highlight score} of each video segment is the main problem to be solved by deep learning architecture. If considered independently, we can say that highlight score of each video segment will be dependent upon:
+\begin{enumerate}
+\item Spatial Information of Segment: Spatial information means the knowledge embedded in independent frames. In other words, a segment is further distributed into frames and each frame is considered as a picture whose content is understood by one part of the architecture.  
+\item Temporal Information of Segment: Temporal information represents the knowledge hidden in the interaction of different frames. Thus one part of architecture extracts this information of interactions.
+\end{enumerate}
+This way the architecture consists of two different streams of sub-architecture which will encode both spatial and temporal information independently and later on output scores for both streams (spatial and temporal). Both scores will be combined and ranked against other segments of the video. Top $N$ ranks will be selected and considered as important information for video summarization.
+\subsection{Architecture : Prediction}
+A video is passed through following steps to extract highlights:
+\begin{enumerate}
+\item Division of a video into smaller segments. This division can be uniform such that each video segment is of the same length or non-uniform such that each segment consists of some kind of movement of object under consideration. For example a video is $10$ minutes long. It is divided into $10$ smaller segments each $1$ minute long named $S1,S2,....,S10$.
+\item Each video segments is fed to both streams in parallel. 
+\item Spatial stream consists of "AlexNet" architecture\cite{krizhevsky2012imagenet}, Average pooling and fully connected layers orderly. "AlexNet" is pre-trained and fully connected layers are trained. There are total of $6$ fully connected layers each named as $F1000, F512, F256,F128$,\\$F64, F1$ and contains $1000,512,256,128,64,1$ number of neurons respectively. The final $F1$ layer will output one value. Intuitively, it can be said that AlexNet and average pooling is used to encode any segment containing $M$ frames into $M$ vectors where each vector has the dimension of $\mathbb{R}^{1000}$. Each vector, after entering fully connected layers, will be transformed into one value at the output based upon the values of the input vector.
+\item Temporal stream, similar to spatial stream, has three parts: $C3D$ architecture\cite{tran2015learning}, Average Pooling and fully connected layers.Temporal stream exactly same width and length of fully connected layers as spatial stream. Temporal stream will also output one value for each segment.
+\item Output of both streams are simply averaged with some constant ratio which acts as a hyper-parameter. Intuitively, it means that we assign specific weight value to each stream such that the one having more say in the selection of highlight has higher value. For example for one person videos, highlights are more dependent upon the interaction among consecutive frames hence temporal stream is given more weightage. More specifically the final highlight score for a segment $s_{i}$ will be:
+\begin{center}
+$Score(s_{i}) = (1-\omega)\times SDCNN(s_{i}) + (\omega)\times TDCNN(s_{i})$
+\end{center}  
+Where $Score(s_{i})$ is scoring function, $\omega$ is weighting variable, $SDCNN(s_{i})$ is spatial stream output function (or spatial deep convolutional neural network) and $TDCNN(s_{i})$ is temporal stream.
+\item Now that each segment has one highlight score assigned to it, segments with high score are considered as highlights of the video and used to create summary of video. 
+\item Lastly, two different types of video summaries are created from the detected highlight segments. These two types are: Video Timelapse and Video skimming. As names suggest, video skimming summary only contains highlighted segments while in video timelapse highlighted segments has way slower playback time than non-highlighted ones.
+\end{enumerate}
+Same steps can be shown in figure form as following:
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{1.0\textwidth}
+    \includegraphics[width=\textwidth]{one.PNG}
+    \caption{Prediction and video summary creation steps \cite{yao2016highlight}}
+  \end{minipage}
+\end{figure}
+\end{center}
+
+\subsection{Architecture : Training}
+As described in the section above, only fully connected layers are trained to output numerical value of each video segment such that value of highlight segment is higher than non-highlight segment. This means our objective function will be a pairwise ranking loss. Similarly, each stream acts independently to score the highlight value of each segment till the very second last step, thus both streams can be trained independently with same training data and objective function. More specifically objective function is margin ranking loss for each pair which can be formally written as:\\
+\begin{equation}
+min \ \sum_{(h_{i},n_{i})\in Training Data} \ max(0,1-f(h_{i})+f(n_{i}))
+\end{equation}
+Training of the architecture goes through following steps:
+\begin{enumerate}
+\item Since each stream is trained independently, both have their own differences while training. For both streams one video segment is taken into consideration at a time. In spatial stream, each video segment is further divided into frames and each frame is fed as input one by one while in temporal stream, the whole segment is fed as input. 
+\item Each frame and video segment will pass through AlexNet architecture and C3D architecture for spatial and temporal stream respectively. 
+\item After both AlexNet and C3D a layer of average pooling is used. This average pooling layer will fuse all kind of frames into one vector of length $1000$. Thus for each segment fully connected layers has only one vector. For both AlexNet and C3D pre-trained values are used.
+\item Now we are at the stage where actual training is required. Let's take spatial stream first. Our training data is in the form of pairs of highlight and non-highlight segments. Each highlight and non-hilghlight member of pair is fed to two parallel spatial streams. In the forward pass, both parallel spatial streams will create one value each. This value is fed to margin ranking loss function described above, which is minimized by back-propagating error of wrong ranking. 
+\item Dropout with a probability of $0.5$ is used to avoid over-fitting.
+\item Since only last $6$ fully connected layers are trained, it is a rather fast process.
+\item Temporal stream also goes through exactly same kind of training.
+\item After training, each stream can predict highlight score for any highlighted segment $h_{i}$ and non-highlighted segment $n_{i}$ in the training data such as:\\
+\begin{center}
+$Score(h_{i})\textgreater Score(n_{i})   , \forall (h_{i},n_{i})\in Training Data$\\
+\end{center}
+\end{enumerate}
+\section{Video Summarization}
+Now that highlight score for each segment is achieved. The step of creating video summary is rather easy. As shared before there are two following methods of video summarization used:
+\begin{itemize}
+\item Video Skimming: In this case, those video segments are selected which maximize the following function.
+\begin{equation}
+max_{b} \ \sum_{i=1}^{c}b_{i}f(s_{i}) \ \ s.t. \sum_{i=1}^{c}b_{i}\lvert s_{i} \rvert \leq L
+\end{equation}
+\item Video Timelapse: In second option, all video segments are included but highlighted segments have slower playback rate. To create a summary of playback time $L$, playback rate $r$ for non-highlight segments or $\frac{1}{r}$ for highlight segments can be calculated as following:\\
+$r=[\frac{L}{2L_{h}}]+\sqrt{Y}$   \\where
+$Y=\frac{L^{2}-4L_{v}L_{h}+L^{2}_{h}}{L^{2}_{4h}}$\\ and
+$L=Playback time of video summary$\\
+$L_{v}=Playback time of original video$\\
+$L_{h}=Original total playback time of highlighted video segments$\\
+\end{itemize}
+\section{Experiments}
+\subsection{Data}
+To train, test and compare the proposed methods with other methods, data was collected from youtube. More specifically, Youtube videos which belong to any of the categories, filmed by the player himself, filmed using GoPro and there were no editing traces were selected. Each category had 40 videos and each video was 2 minutes to 15 minutes long.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.8\textwidth}
+    \includegraphics[width=\textwidth]{two.PNG}
+    \caption{All 15 video categories with representative frames \cite{yao2016highlight}}
+  \end{minipage}
+\end{figure}
+\end{center}
+Further following steps were taken to create highlight and non-highlight pairs:
+\begin{enumerate}
+\item Split each video into five seconds segments which will be marked by human evaluators as 
+\begin{itemize}
+\item Highlight (Score 3)
+\item Normal    (Score 2)
+\item Boring    (Score 1)
+\end{itemize}
+\item Total of 12 evaluators were invited. Each evaluator had different educational background and was outdoor sports enthusiast.
+\item Any video was marked by three different evaluators.
+\item Only segments with total score equal or greater than 8 was selected as highlights.
+\item Lastly, test and training datasets were created from the evaluated segments. The dataset for highlight detection is in the form of pairs of highlight and non-highlight segment. Total 105k pairs were formed.
+\end{enumerate}
+\section{Results}
+Each comparative model was tested on the same test data which was collected using the procedure given above.
+\subsection{Results for Highlight detection}
+To measure the quality of highlight detection following different approaches were tested against the proposed method:
+\begin{itemize}
+\item \underline{Rule-Based:}First color change based division into segments, then further segmentation on motion. Sub-segments with the most length are highlights. This method is called \textbf{Rule} in short form.
+\item \underline{Importance-Based:} Two different sub-methods based upon the pre-processing of the video segments. First which is called \textbf{Imp+IDT}, it is a linear SVM with the input as the vector obtained through improved dense trajectories motion features and PCA on top of it. Second is named \textbf{Imp+DCNN}: In this method input is the  average of output vector of AlexNet of each video frame in every video segment. Linear SVM classifier is used to detect highlighted segments afterwards.
+\item \underline{Latent Ranking Based:} Same as before but instead of linear SVM, latent ranking based SVM is used. Method with input from improved dense trajectories motion features is named as \textbf{LR+IDT} while the input from DCNN is named as \textbf{LR+DCNN}
+\item \underline{Deep Convolution Neural Network:} Proposed method but further tested for each component architecture. In other words, testing results on a single spatial stream is named as \textbf{S-DCNN}, on a single temporal stream is named as \textbf{T-DCNN} and the whole proposed method as it is named as (Temporal Spatial DCNN) \textbf{TS-DCNN}.
+\end{itemize}
+To further reduce the size of data for processing, only three frames per second are chosen, thus a five second video segment has only $15$ frames. In total there are $105K$ pairs in the training set.
+Three following different evaluation metrices are used:
+\begin{itemize}
+\item \underline{mAP:} Mean average precision of detecting highlights on the test data.
+\item \underline{NDCG@1:} Due to the ranking problem, Normalized Discounted Cumulative Gain (NDCG@d) for the ranking depth d, is also taken as evaluation metric to consider the multi-level highlight score. NDCG@1 is the average NDCG of all video segments  in test data with $d=1$
+\item \underline{NDCG@5:} Similarly, NDCG@5 is the average NDCG of all video segments in the test data with $d=5$
+\end{itemize}
+After using test data with all described approaches, following comparison graph is obtained:
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.8\textwidth}
+    \includegraphics[width=\textwidth]{third.PNG}
+    \caption{Performance comparison of different approaches on different evaluation metrices \cite{yao2016highlight}}
+  \end{minipage}
+\end{figure}
+\end{center}
+If we look at the performance of each method on different evaluation metrices, most of the time following trend is seen:
+\begin{equation}
+TS-DCNN>T-DCNN>S-DCNN \geq LR+IDT>Imp+IDT>LR+DCNN>Imp+DCNN
+\end{equation}
+which implies that:
+\begin{enumerate}
+\item Proposed TS-DCNN, T-DCNN and S-DCNN are outperforming other methods across all evalution methods.
+\item T-DCNN is performing better than S-DCNN showing that in the given dataset capturing interaction among different consecutive frames is more important than static spatial features.
+\item LR(latent ranking SVM) methods are always performing better than Imp(Importance based Linear SVM) meaning that the problem is inherently a ranking problem.
+\end{enumerate}
+Another way to prove that T-DCNN is more useful than S-DCNN is the following graph which shows TS-DCNN with different $\omega$ values across different evaluation metrices and showing best results at $\omega=0.3$ proving that to get the best results $70$\% of T-DCNN and $30$\% of S-DCNN is needed.
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.8\textwidth}
+    \includegraphics[width=\textwidth]{fifth.PNG}
+    \caption{Change in performance of TS-DCNN with different values of $\omega$ \cite{yao2016highlight}}
+  \end{minipage}
+\end{figure}
+\end{center}
+One more thing is the prediction timing. Even after such a performance increase prediction is done in reasonable timing. The prediction timing for 5 minutes original video with Rule,LR+IDT,LR+DCNN,S-DCNN and TS-DCNN is 25s,5h,65s,72s and 360s respectively.
+\subsection{Results for Video summarization}
+Just like Highlight detection, video summarization was also compared against different following methods:
+\begin{itemize}
+\item \underline{Uniform Sampling:} shortened as UNI, As name suggests in this process every Kth frame is taken to create a video. 
+\item \underline{Importance-driven Summary:} shortened as IMP, in this method highlights are detected using Imp+DCNN and later used in creating video summary.
+\item \underline{Interestingness-driven Summary:}shortened as INT, this summary is created by measuring the highlight score of each segment by summing quality, motion and person detection features of each frame.
+\item \underline{Highlight-driven Summary:} This is the proposed method of detecting highlights. After scoring highlights, two different summaries are created by video skimming and video timelapse; also both are shortened as HD-VS and HD-VT respectively.
+\end{itemize}
+Since video summarization is highly subjective as described in the introduction section, video summarization is marked by human evaluators. During the process, each evaluator will watch the original video then watches all the summaries. Later on each evaluator will mark summaries against following two criteria:
+\begin{enumerate}
+\item Coverage: meaning the progress of video along time.
+\item Presentation: meaning the gist idea of video.
+\end{enumerate}
+The result as the percentage of users who prefer HD-VT and HD-VS over all other methods can be seen in \ref{table:table1} and \ref{table:table2} respectively.
+
+\begin{table}
+\centering
+  \begin{tabular}{ | l | l | l | l | l | }
+    \hline
+    --- & UNI & IMP & INT & HD-VS \\ \hline
+    Coverage & 91.4\% & 80.1\% & 74.3\% & 68.6\% \\ \hline
+    Presentation & 85.7\% & 60.2\% & 64.8\% & 34.3\% \\ \hline   
+  \end{tabular}
+  \caption{\% of users preferring HD-VT over other methods \cite{yao2016highlight}}
+  \label{table:table1}
+\end{table}
+\begin{table}
+\centering
+  \begin{tabular}{ | l | l | l | l | l | }
+    \hline
+    --- & UNI & IMP & INT & HD-VT \\ \hline
+    Coverage & 87.2\% & 77.1\% & 71.4\% & 31.4\% \\ \hline
+    Presentation & 88.6\% & 74.3\% & 82.9\% & 65.7\% \\ \hline        
+  \end{tabular}
+  \caption{\% of users preferring HD-VS over other methods \cite{yao2016highlight}}
+  \label{table:table2}
+\end{table}
+Obviously, proposed highlight detection based methods are always preferred over others. In comparison of HD-VS (video skimming) and HD-VT (video timelapse), HD-VS is preferred when it comes to coverage but HD-VT is selected for presentation. Reason for such results is also pretty obvious as video skimming contains only the most important segments thus easier to convey the gist of whole video. On the other hand video timelapse summary has the whole video hence easier to understand the progress of events and so preferred for presentation.
+\section{Discussion}
+With the evaluation experiments and their results, it has been proved that the proposed method of highlight detection is outperforming other prevalent methods. Also human observers prefer video summaries created from the highlights detected using proposed methods and created using video timelaps and video skimming methods. 
+\subsection{Apparent good points of algorithm}
+Upon examination, proposed methods has following good points:
+\begin{itemize}
+\item Modifiability: The proposed method of highlight detection is very easy to modify. First possible modification is the pre-trained models (AlexNet and C3D). If any new better architecture like both is available, both can be easily replaced. Secondly, if any new type of data stream is to be considered, a new stream can be added to the existing ones. For example, if audio of the given videos are also to be considered while detecting highlights, a new stream with the similar architecture to other streams can be added.
+\item Adaptability to subject of video: Even for videos in the same categories, such as the first person of sports categories, can have different performance optimization value of $\omega$. This means that with the change in subject of videos it is highly likely that different value of $\omega$ (which actually describes the percentage important of spatial and temporal stream on highlight detection) is required. With the proposed method, a suitable weighted score of both streams can be selected by changing the value of $\omega$ thus making this method highly adaptable according to subject of videos. This way generality of video summarization across all types of videos can be achieved.
+\end{itemize}
+\subsection{Possible negative points of algorithm}
+Just like good points there are possible negative points and points of confusion in the research paper and proposed method which are:
+\begin{itemize}
+\item In the temporal stream, video segments are provided in the input of C3D as it is but according to the provided architecture image multiple video segments are provided. Since only one video segment is considered at a time, thus the reason of confusion which is not yet clear.
+\item Secondly the reason of selecting marginal ranking loss as objective function is not clearly defined. Clearly, given function is not continuous while a better continuous objective function  such as pairwise ranking loss can be used which is also better approximation to NDCG@d.
+\item Lastly, the evaluation is highly subjective  and provided with a few numbers of human evaluators. Both the number and type of evaluators should be increased.
+\end{itemize}
+\subsection{Possible usage}
+From a usage point of view, there are a few fields where video summarization can be of huge value. Few are as following:
+\begin{itemize}
+\item Video Captions: Video skimming summary as video captions can  help convey the message of the video without actually watching it completely. Thus saving time of the user and highly useful features of websites containing videos.
+\item Security: In case of theft, it is very easy to detect the possible important video segment instead of watching the footage of whole recording.
+\item Running highlight detection: It is possible to use the highlight detection method to detect only the important part of any live video recording and making decisions on the basis of selected segments while system is in run-time. For example in autonomous driving, it is time consuming to extract each piece of information from vast amount of incoming data. Instead if each incoming video frame is detected for highlights, only useful video frames will be passed through for further processing. 
+\end{itemize}
+\subsection{Possible future work}
+Video highlight detection and summarization is a highly active and vast area of research. The proposed method also has a few areas of further research. One area is to test the method across different types of videos based upon categories. Other is to include more input resources such as audio to check any improvement in the highlight detection. Also the proposed method should be tested with different objective functions especially with pairwise ranking loss. 
+\newpage
+\section{References}
+\begingroup
+\nocite{*}
+\renewcommand{\section}[2]{}
+\bibliographystyle{IEEEtrans}`
+\bibliography{third}
+\endgroup
+\end{document}

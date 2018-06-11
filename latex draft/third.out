@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Multi-Model Architecture}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Components}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Component Models Architecture}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Base Component Architecture}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Modality Nets}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Language Modality Net}{subsection.2.4}% 7
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Image Modality Net}{subsection.2.4}% 8
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Categorical Modality Net}{subsection.2.4}% 9
+\BOOKMARK [3][-]{subsubsection.2.4.4}{Audio Modality Net}{subsection.2.4}% 10
+\BOOKMARK [1][-]{section.3}{Experiments}{}% 11
+\BOOKMARK [2][-]{subsection.3.1}{Datasets}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.2}{Basic Questions}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Results}{section.3}% 14
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 15
+\BOOKMARK [1][-]{section.5}{Discussions and Remarks}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{General Review}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Technical Review}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{References}{}% 19
