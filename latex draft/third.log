@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.19)  7 MAY 2018 09:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.19)  12 JUN 2018 00:39
 entering extended mode
 **./third.tex
 (third.tex
@@ -417,13 +417,13 @@ LaTeX Info: Redefining \nameref on input line 18.
 <logoUHi.jpg, id=79, 406.38257pt x 406.20097pt>
 File: logoUHi.jpg Graphic file (type jpg)
 <use logoUHi.jpg>
-Package pdftex.def Info: logoUHi.jpg  used on input line 40.
+Package pdftex.def Info: logoUHi.jpg  used on input line 39.
 (pdftex.def)             Requested size: 71.13188pt x 71.09862pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -434,166 +434,98 @@ goUHi.jpg>]
 \tf@toc=\write4
 \openout4 = `third.toc'.
 
- [3]
-<eins.PNG, id=118, 545.03625pt x 239.39438pt>
-File: eins.PNG Graphic file (type png)
-<use eins.PNG>
-Package pdftex.def Info: eins.PNG  used on input line 60.
-(pdftex.def)             Requested size: 469.75502pt x 206.3281pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-
- []
-
-[4 <./eins.PNG>]
-<zwei.PNG, id=132, 405.76593pt x 227.34938pt>
-File: zwei.PNG Graphic file (type png)
-<use zwei.PNG>
-Package pdftex.def Info: zwei.PNG  used on input line 80.
-(pdftex.def)             Requested size: 469.75502pt x 263.20856pt.
- [5 <./zwei.PNG>]
-<sechs.PNG, id=143, 173.14688pt x 274.02374pt>
-File: sechs.PNG Graphic file (type png)
-<use sechs.PNG>
-Package pdftex.def Info: sechs.PNG  used on input line 103.
-(pdftex.def)             Requested size: 140.92793pt x 223.04095pt.
-<sieben.PNG, id=145, 162.6075pt x 273.27094pt>
-File: sieben.PNG Graphic file (type png)
-<use sieben.PNG>
-Package pdftex.def Info: sieben.PNG  used on input line 116.
-(pdftex.def)             Requested size: 140.92793pt x 236.8556pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6 <./sechs.PNG>]
-<acht.PNG, id=155, 159.59625pt x 278.54062pt>
-File: acht.PNG Graphic file (type png)
-<use acht.PNG>
-Package pdftex.def Info: acht.PNG  used on input line 129.
-(pdftex.def)             Requested size: 140.92793pt x 245.96228pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./sieben.PNG>]
-<vier.PNG, id=164, 197.98969pt x 273.27094pt>
-File: vier.PNG Graphic file (type png)
-<use vier.PNG>
-Package pdftex.def Info: vier.PNG  used on input line 157.
-(pdftex.def)             Requested size: 140.92793pt x 194.51573pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<drei.PNG, id=166, 123.46124pt x 167.87718pt>
-File: drei.PNG Graphic file (type png)
-<use drei.PNG>
-Package pdftex.def Info: drei.PNG  used on input line 169.
-(pdftex.def)             Requested size: 140.92793pt x 191.63812pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./acht.PNG>]
-<funf.PNG, id=182, 107.65219pt x 264.99pt>
-File: funf.PNG Graphic file (type png)
-<use funf.PNG>
-Package pdftex.def Info: funf.PNG  used on input line 181.
-(pdftex.def)             Requested size: 140.92793pt x 346.93323pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9 <./vier.PNG>]
-<neun.PNG, id=198, 1027.84pt x 829.0975pt>
-File: neun.PNG Graphic file (type png)
-<use neun.PNG>
-Package pdftex.def Info: neun.PNG  used on input line 232.
-(pdftex.def)             Requested size: 140.92793pt x 113.66916pt.
- [10 <./drei.PNG>] [11 <./funf.PNG>] [12 <./neun.PNG (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 306.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 306.
-<table1.PNG, id=242, 1017.8025pt x 196.735pt>
-File: table1.PNG Graphic file (type png)
-<use table1.PNG>
-Package pdftex.def Info: table1.PNG  used on input line 331.
-(pdftex.def)             Requested size: 469.75502pt x 90.80238pt.
-
-
-LaTeX Warning: Citation `SzegedyIV16' on page 13 undefined on input line 333.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13]
-<table2.PNG, id=252, 1017.8025pt x 281.05pt>
-File: table2.PNG Graphic file (type png)
-<use table2.PNG>
-Package pdftex.def Info: table2.PNG  used on input line 343.
-(pdftex.def)             Requested size: 469.75502pt x 129.7177pt.
- [14 <./table1.PNG (PNG copy)> <./table2.PNG (PNG copy)>]
-<table3.PNG, id=259, 1233.60875pt x 154.5775pt>
-File: table3.PNG Graphic file (type png)
-<use table3.PNG>
-Package pdftex.def Info: table3.PNG  used on input line 355.
-(pdftex.def)             Requested size: 469.75502pt x 58.8627pt.
-<table4.PNG, id=260, 1228.59pt x 180.675pt>
-File: table4.PNG Graphic file (type png)
-<use table4.PNG>
-Package pdftex.def Info: table4.PNG  used on input line 368.
-(pdftex.def)             Requested size: 469.75502pt x 69.08176pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
-
- []
-
-[15 <./table3.PNG (PNG copy)> <./table4.PNG (PNG copy)>] [16] (third.bbl
+ [3] [4] (third.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 39--42
 \OT1/cmr/m/n/12 com / tensorow / tensor2tensor / blob / f9c859a7639831c6da864e
 360793a285613dcc5c /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
- [17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
  (third.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
-Package rerunfilecheck Info: File `third.out' has not changed.
-(rerunfilecheck)             Checksum: CA2B572380A81016F0F58143DC785A4E;1226.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `third.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 389.
+Package rerunfilecheck Info: Checksums for `third.out':
+(rerunfilecheck)             Before: CA2B572380A81016F0F58143DC785A4E;1226
+(rerunfilecheck)             After:  07CEBEA31F6EA6D6A60898736148667D;94.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
  ) 
 Here is how much of TeX's memory you used:
- 7443 strings out of 493305
- 103676 string characters out of 3138851
- 205284 words of memory out of 3000000
- 10783 multiletter control sequences out of 15000+200000
- 14605 words of font info for 56 fonts, out of 3000000 for 9000
+ 7283 strings out of 493305
+ 101840 string characters out of 3138851
+ 204284 words of memory out of 3000000
+ 10707 multiletter control sequences out of 15000+200000
+ 13051 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,28p,973b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on third.pdf (17 pages, 1583139 bytes).
+ 28i,6n,28p,723b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{section.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.3} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.2.4.4} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.2.4.3} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.2.4.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.2.4.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.4} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.3} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb>
+Output written on third.pdf (5 pages, 1083481 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
