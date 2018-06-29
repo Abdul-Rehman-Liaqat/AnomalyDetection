@@ -21,24 +21,10 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{Chollet16a}
-\BIBentryALTinterwordspacing
-F.~Chollet, ``Xception: Deep learning with depthwise separable convolutions,''
-  \emph{CoRR}, vol. abs/1610.02357, 2016. [Online]. Available:
-  \url{http://arxiv.org/abs/1610.02357}
-\BIBentrySTDinterwordspacing
-
-\bibitem{url2}
-\BIBentryALTinterwordspacing
-L.~et. al. (2017) Author discussion. [Online]. Available:
-  \url{https://github.com/tensorflow/tensor2tensor/issues/9}
-\BIBentrySTDinterwordspacing
-
-\bibitem{url1}
-\BIBentryALTinterwordspacing
-------. (2017) {Github Code} github code. [Online]. Available:
-  \url{https://github.com/tensorflow/tensor2tensor/blob/f9c859a7639831c6da864e360793a285613dcc5c/tensor2tensor/models/multimodel.py}
-\BIBentrySTDinterwordspacing
+\bibitem{ahmad2017unsupervised}
+S.~Ahmad, A.~Lavin, S.~Purdy, and Z.~Agha, ``Unsupervised real-time anomaly
+  detection for streaming data,'' \emph{Neurocomputing}, vol. 262, pp.
+  134--147, 2017.
 
 \bibitem{KaiserGSVPJU17}
 \BIBentryALTinterwordspacing
@@ -46,14 +32,6 @@ L.~Kaiser, A.~N. Gomez, N.~Shazeer, A.~Vaswani, N.~Parmar, L.~Jones, and
   J.~Uszkoreit, ``One model to learn them all,'' \emph{CoRR}, vol.
   abs/1706.05137, 2017. [Online]. Available:
   \url{http://arxiv.org/abs/1706.05137}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ShazeerMMDLHD17}
-\BIBentryALTinterwordspacing
-N.~Shazeer, A.~Mirhoseini, K.~Maziarz, A.~Davis, Q.~V. Le, G.~E. Hinton, and
-  J.~Dean, ``Outrageously large neural networks: The sparsely-gated
-  mixture-of-experts layer,'' \emph{CoRR}, vol. abs/1701.06538, 2017. [Online].
-  Available: \url{http://arxiv.org/abs/1701.06538}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
