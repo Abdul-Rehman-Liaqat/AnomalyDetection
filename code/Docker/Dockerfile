@@ -1,10 +1,30 @@
-FROM jupyter/scipy-notebook
+## Set the base image to Ubuntu
+FROM numenta/nupic
 
-LABEL maintainer="Abdul Rehman Liaqat <liaqat@uni-hildesheim.de>"
+# File Author / Maintainer
+MAINTAINER Abdul Rehman Liaqat (liaqat@uni-hildesheim.de)
 
-RUN conda install --quiet --yes \
-    'tensorflow=1.5*' \
-    'keras=2.1*' && \
-    conda clean -tipsy && \
-    fix-permissions $CONDA_DIR && \
-    fix-permissions /home/$NB_USER
+# Set enviroment variables needed by NuPIC
+ENV NUPIC /usr/local/src/NAB
+
+# OPF needs this
+ENV USER docker
+
+# Change work directory
+WORKDIR /usr/local/src
+
+# Clone NAB repo
+RUN git clone https://github.com/numenta/NAB
+
+# Change directory to NAB
+WORKDIR /usr/local/src/NAB/
+
+# Install NAB python requirments
+RUN pip install pandas
+RUN pip install simplejson
+RUN pip install mlflow
+
+# Install NAB
+RUN python setup.py install --user
+
+WORKDIR /home/docker
