@@ -1,0 +1,13 @@
+artifact_uri: /home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/rough/mlruns/0/90fb4d1f31f84276820a80bf056c6f0d/artifacts
+end_time: null
+entry_point_name: null
+experiment_id: 0
+name: Run 0
+run_uuid: 90fb4d1f31f84276820a80bf056c6f0d
+source_name: /home/abdulliaqat/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py
+source_type: 4
+source_version: null
+start_time: 1530797200704
+status: 1
+tags: []
+user_id: abdulliaqat
