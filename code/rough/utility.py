@@ -37,8 +37,15 @@ def read_data(data_folder_path):
         
     return(data_files)
 
-
+#def iterate_data(data_files):
+#    '''
+#    Function to iterate through each dataset and receive result from the algorithm
+#    '''
+    
 def write_result(algorithm_name,data_files,results_path):
+    '''
+    Function to receive results from algorithms and write them into result directory
+    '''
     algo_folder = results_path+'/'+algorithm_name
     os.mkdir(algo_folder)
     for key in list(data_files.keys()):
