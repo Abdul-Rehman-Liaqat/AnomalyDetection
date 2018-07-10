@@ -32,7 +32,8 @@ def read_data(data_folder_path):
     for dataset_name,path_folder,name_folder in zip(list_dir,data_files_path,data_files_name):
         temp_dir = {}
         for path,name in zip(path_folder,name_folder):
-            temp_dir[name] = pd.read_csv(path) 
+            temp_dir[name] = pd.read_csv(path)
+            
         data_files[dataset_name] = temp_dir
         
     return(data_files)
@@ -41,6 +42,9 @@ def read_data(data_folder_path):
 #    '''
 #    Function to iterate through each dataset and receive result from the algorithm
 #    '''
+    
+    
+#def preprocess_data(df):
     
 def write_result(algorithm_name,data_files,results_path):
     '''
