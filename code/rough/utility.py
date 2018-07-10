@@ -16,7 +16,7 @@ def read_data(data_folder_path):
     keys are csv file names and values are csv files read using pandas.
     '''
     list_dir = os.listdir(data_folder_path)
-    list_dir = list_dir.remove('README.md')
+    list_dir.remove('README.md')
     data_files_path = []
     data_files_name = []
     for folder in list_dir:
@@ -62,9 +62,9 @@ def write_result(algorithm_name,data_files,results_path):
 
 
 
-#cwd = os.getcwd()
-#path = '/Desktop/thesis/NAB original/data'
-#data_folder_path = cwd+path
+cwd = os.getcwd()
+path = '/Desktop/thesis/NAB original/data'
+data_folder_path = cwd+path
 
-#data_files = read_data(data_folder_path)
+data_files = read_data(data_folder_path)
 #write_result('TestThisShit',data_files,'/home/abdulliaqat/Desktop/thesis/NAB/results')
