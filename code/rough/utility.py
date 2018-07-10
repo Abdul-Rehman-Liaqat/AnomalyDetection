@@ -16,6 +16,7 @@ def read_data(data_folder_path):
     keys are csv file names and values are csv files read using pandas.
     '''
     list_dir = os.listdir(data_folder_path)
+    list_dir = list_dir.remove('README.md')
     data_files_path = []
     data_files_name = []
     for folder in list_dir:
