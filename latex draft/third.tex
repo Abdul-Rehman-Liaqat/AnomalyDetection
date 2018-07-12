@@ -75,9 +75,18 @@ Anomaly detection is a crucial task for machine learning due to wide-spread usag
 Following steps were taken to maximize the efficiency and speed of research:
 \begin{enumerate}
 	\item Use version control to track the code and share between different devices.
-	\item
-	\item
-	\item
+	\item Separate code from data. This will keep the code base small and easy to debug.
+	\item Separate input data,working data and output data.
+	\begin{itemize}
+		\item \textbf{Input Data:} Input data-set that never change. For my case it is NAB and other external datasets.
+		\item \textbf{Working Data:} nothing for now.
+		\item \textbf{Output Data:} Results and threshold profiles in my case. 
+	\end{itemize}
+	\item Separate options from parameter. This is important:
+ 	\begin{itemize}
+ 		\item Options specify how your algorithm should run. For example data path, working directory and result directory path, epochs, learning rate and so on.
+ 		\item parameters are the result of training data. it includes the score and hyper-parameters. 
+ 	\end{itemize}
 	
 \end{enumerate}
 \newpage
