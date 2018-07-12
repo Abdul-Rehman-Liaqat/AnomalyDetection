@@ -11,4 +11,6 @@
 \contentsline {section}{\numberline {7}Experiment Infrastructure}{13}{section.7}
 \contentsline {subsection}{\numberline {7.1}Experiment Management using MLflow}{14}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Parallel execution using Docker}{15}{subsection.7.2}
-\contentsline {section}{\numberline {8}References}{16}{section.8}
+\contentsline {section}{\numberline {8}Best practices}{16}{section.8}
+\contentsline {section}{\numberline {9}Reference Usage}{17}{section.9}
+\contentsline {section}{\numberline {10}References}{18}{section.10}

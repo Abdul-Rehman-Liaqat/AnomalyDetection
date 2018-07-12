@@ -11,4 +11,6 @@
 \BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 11
 \BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 12
 \BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 13
-\BOOKMARK [1][-]{section.8}{References}{}% 14
+\BOOKMARK [1][-]{section.8}{Best practices}{}% 14
+\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 15
+\BOOKMARK [1][-]{section.10}{References}{}% 16
