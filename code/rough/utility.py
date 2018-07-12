@@ -8,10 +8,12 @@ Created on Fri Jul  6 07:41:07 2018
 
 import pandas as pd
 import os
+import plotly.plotly as py
+
 
 def read_data(data_folder_path):
     '''
-    Function to read whole dataset using input data_folder_path and return a dictionary with key names
+    Function to read whole dataset using input data_folder_path and return a             dictionary with key names
     as data-set folder name. The values of each key is another dictionary whose
     keys are csv file names and values are csv files read using pandas.
     '''
@@ -60,11 +62,46 @@ def write_result(algorithm_name,data_files,results_path):
             df.to_csv(algo_folder+'/'+key+'/'+algorithm_name+'_'+file_key,index = False)
 
 
+#def display_algo_prediction_label(results_path):
+def _get_result_folder_structure(path,parent_folder_name):
+    list_all = os.listdir(path)
+    attach_path = lambda x,path:[path+'/'+folder for folder in list_all]
+    get_dir = lambda x:[name for name in x if(os.path.isdir(path+'/'+name))]
+    get_file = lambda x:[name for name in x if(os.path.isfile(path+'/'+name))]
+    list_dir = get_dir(list_all)
+    list_file = get_file(list_all)
+    structure = {}
+    structure[parent_folder_name+'files'] = list_file
+    for folder in list_dir:
+        sub_path = path+'/'+folder+'/'
+        sub_list_all = os.listdir(sub_path)
+        sub_list_dir = get_dir(sub_list_all)
+        sub_list_file = get_file(sub_list_all)
+        sub_files_path = [sub_path+sub_folder for sub_folder in sub_list_dir]
+        for i,file_path in enumerate(sub_list_dir):
+            temp_files_path[i] = temp_path + temp_files_path[i]
+        files_path.append(temp_files_path)
+        files_name.append(temp_files_name)            
+            
+    files = {}
+    for name,path_folder,name_folder in zip(list_dir,files_path,files_name):
+        temp_dir = {}
+        for path_file,name in zip(path_folder,name_folder):
+            temp_dir[name] = pd.read_csv(path_file)
+            
+        files[name] = temp_dir
+    files['main_folder_files'] = list_file
+    return(files)
+
+#def display_algo_prediction_score(results_paht):
+
+#def display_algo_confusion_matrix(results_path):
 
 
 cwd = os.getcwd()
-path = '/Desktop/thesis/NAB original/data'
-data_folder_path = cwd+path
+root_path = os.path.abspath(os.path.join(cwd ,"../../.."))
+data_folder_path = root_path+'/NAB/data'
+results_folder_path = root_path+'/NAB/results'
 
-data_files = read_data(data_folder_path)
-#write_result('TestThisShit',data_files,'/home/abdulliaqat/Desktop/thesis/NAB/results')
+#data_files = read_data(data_folder_path)
+#write_result('TestThisShit',data_files,}}'/home/abdulliaqat/Desktop/thesis/NAB/results')
