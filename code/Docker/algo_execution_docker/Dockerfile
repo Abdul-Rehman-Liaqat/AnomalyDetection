@@ -10,6 +10,7 @@ ADD requirements.txt /executor
 
 RUN pip install -r requirements.txt
 
-CMD ["jupyter", "lab", "--ip='0.0.0.0'", "--port=8888","--no-browser","--allow-root"]
-    
+VOLUME /executor/execution_code
+
+CMD ["jupyter", "lab", "--ip='0.0.0.0'", "--port=8888","--no-browser","--allow-root"]    
 
