@@ -1,3 +1,5 @@
+## docker run --user=root -p 8888:8888 -v /home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/rough:/executor/execution_code execution_docker
+
 ## Set the base image to Ubuntu
 FROM jupyter/tensorflow-notebook
 
