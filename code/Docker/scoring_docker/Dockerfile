@@ -23,6 +23,6 @@ WORKDIR /usr/local/src/NAB/
 
 VOLUME /usr/local/src/NAB/
 
-RUN pip install simplejson
+RUN pip install -r requirements.txt
 
 
