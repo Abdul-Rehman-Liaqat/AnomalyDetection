@@ -1,4 +1,4 @@
-### docker run comman is : docker run  -v /home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/rough/results:/usr/local/src/NAB/results -it scoring_docker bash
+### docker run comman is : docker run  -v /home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/rough/results:/usr/local/src/NAB/results n  -v /home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/rough/data:/usr/local/src/NAB/data -it abdulrehmanliaqat/scoring_docker bash
 
 ## Set the base image to Ubuntu
 FROM numenta/nupic
@@ -16,12 +16,14 @@ ENV USER docker
 WORKDIR /usr/local/src
 
 # Clone NAB repo
-ADD /NAB ./
+ADD /NAB ./NAB
 
 # Change directory to NAB
 WORKDIR /usr/local/src/NAB/
 
 VOLUME /usr/local/src/NAB/
+
+ADD requirements.txt ./
 
 RUN pip install -r requirements.txt
 
