@@ -1,4 +1,4 @@
-## docker run --user=root -p 8888:8888 -v /home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/rough:/executor/execution_code execution_docker
+## docker run --user=root -p 8888:8888 -v $(pwd)/code/code:/executor/code abdulrehmanliaqat/execution_docker
 
 ## Set the base image to Ubuntu
 FROM jupyter/tensorflow-notebook
@@ -12,7 +12,7 @@ ADD requirements.txt /executor
 
 RUN pip install -r requirements.txt
 
-VOLUME /executor/execution_code
+VOLUME /executor/code
 
 CMD ["jupyter", "lab", "--ip='0.0.0.0'", "--port=8888","--no-browser","--allow-root"]    
 
