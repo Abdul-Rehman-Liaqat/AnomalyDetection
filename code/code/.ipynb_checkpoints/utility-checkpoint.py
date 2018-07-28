@@ -93,15 +93,21 @@ def _get_result_folder_structure(path,parent_folder_name):
     files['main_folder_files'] = list_file
     return(files)
 
+def get_sample_df():
+    cwd = os.getcwd()
+    path = cwd + "/data/realKnownCause/"
+    df = pd.read_csv(path+"nyc_taxi.csv")
+    return df
+
 #def display_algo_prediction_score(results_paht):
 
 #def display_algo_confusion_matrix(results_path):
 
 
-cwd = os.getcwd()
-root_path = os.path.abspath(os.path.join(cwd ,"../../.."))
-data_folder_path = root_path+'/NAB/data'
-results_folder_path = root_path+'/NAB/results'
+#cwd = os.getcwd()
+#root_path = os.path.abspath(os.path.join(cwd ,"../../.."))
+#data_folder_path = root_path+'/NAB/data'
+#results_folder_path = root_path+'/NAB/results'
 
 #data_files = read_data(data_folder_path)
 #write_result('TestThisShit',data_files,}}'/home/abdulliaqat/Desktop/thesis/NAB/results')
