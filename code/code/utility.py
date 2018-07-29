@@ -99,7 +99,31 @@ def get_sample_df():
     df = pd.read_csv(path+"nyc_taxi.csv")
     return df
 
-#def display_algo_prediction_score(results_paht):
+
+def train_prediction_based_models(df,window_size,nb_epoch):
+    error_prediction = []
+    for i in np.arange(11,len(df)):
+        X_input = df["value"].values[i-(1+window_size):i-1].reshape((1,window_size))
+        Y_input = df["value"].values[i].reshape((1,1))
+        history = model.fit(X_input,Y_input , nb_epoch=20, verbose=0)
+        error_prediction.append((model.predict(X_input)-Y_input)[0][0])
+        print(i)
+    temp_no_error = [0]*11
+    error_prediction = temp_no_error + error_prediction
+    df['anomaly_score'] = error_prediction
+    return df
+
+def train_autoencoder_based_models(df,window_size,nb_epoch):
+    error_prediction = []
+    for i in np.arange(11,len(df)):
+        X_input = df["value"].values[i-(1+window_size):i-1].reshape((1,10,1))
+        history = model.fit(X_input,X_input , nb_epoch=20, verbose=0)
+        error_prediction.append((model.predict(X_input)-X_input)[0][0])
+        print(i)
+    temp_no_error = [0]*11
+    error_prediction = temp_no_error + error_prediction
+    df['anomaly_score'] = error_prediction
+    return df
 
 #def display_algo_confusion_matrix(results_path):
 
