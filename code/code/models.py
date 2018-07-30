@@ -33,12 +33,12 @@ def autoencoder_lstm(window_size,nb_features,loss='mse',optimizer='adam'):
     return model
 
 
-def autoencoder_fully_connected(window_size,nb_features,loss='mse',optimizer='adam'):
+def prediction_cnn(window_size,nb_features,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(Dense(5,input_dim = window_size, activation='relu'))
-    model.add(Dense(2, activation='relu'))
-    model.add(Dense(5, activation='relu'))
-    model.add(Dense(10, activation='relu'))
+    model.add(Conv1D(nb_filter=5, kernel_size=10, input_shape=(window_size, nb_features), activation='relu'))
+    model.add(Flatten())
+    model.add(Dense(20, activation='relu'))
+    model.add(Dense(1, activation='relu'))
     model.summary()
     model.compile(loss='mse', optimizer='adam')
     return model
