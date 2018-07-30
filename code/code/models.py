@@ -25,12 +25,11 @@ def autoencoder_fully_convolution(window_size,nb_features,loss='mse',optimizer='
 
 def autoencoder_lstm(window_size,nb_features,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(Dense(5,input_dim = window_size, activation='relu'))
-    model.add(Dense(2, activation='relu'))
-    model.add(Dense(5, activation='relu'))
-    model.add(Dense(10, activation='relu'))
-    model.summary()
-    model.compile(loss='mse', optimizer='adam')
+    model.add(LSTM(2, input_shape=(window_size, 1)))
+    model.add(RepeatVector(window_size))
+    model.add(LSTM(1, return_sequences=True))
+    print(model.summary())
+    model.compile(loss='mse', optimizer='adam')    
     return model
 
 
