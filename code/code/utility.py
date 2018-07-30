@@ -7,8 +7,10 @@ Created on Fri Jul  6 07:41:07 2018
 """
 
 import pandas as pd
+import numpy as np
 import os
 import plotly.plotly as py
+
 
 
 def read_data(data_folder_path):
