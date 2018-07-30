@@ -113,7 +113,7 @@ def train_prediction_based_models(df,window_size,nb_epoch):
     df['anomaly_score'] = error_prediction
     return df
 
-def train_autoencoder_based_models(df,window_size,nb_epoch):
+def train_autoencoder_based_models(df,model,window_size,nb_epoch):
     error_prediction = []
     for i in np.arange(11,len(df)):
         X_input = df["value"].values[i-(1+window_size):i-1].reshape((1,10,1))
