@@ -51,3 +51,11 @@ def prediction_lstm(window_size,nb_features,loss='mse',optimizer='adam'):
     print(model.summary())
     model.compile(loss='mse', optimizer='adam')
     return model
+
+def prediction_nn(window_size,nb_features,loss='mse',optimizer='adam'):
+    model = Sequential()
+    model.add(Dense(5,input_dim = window_size, activation='relu'))
+    model.add(Dense(1, activation='relu'))
+    model.summary()
+    model.compile(loss='mse', optimizer='adam')
+    return model
