@@ -42,3 +42,12 @@ def prediction_cnn(window_size,nb_features,loss='mse',optimizer='adam'):
     model.summary()
     model.compile(loss='mse', optimizer='adam')
     return model
+
+def prediction_lstm(window_size,nb_features,loss='mse',optimizer='adam'):
+    model = Sequential()
+    model.add(LSTM(5, input_shape=(window_size, 1)))
+    model.add(Dropout(0.5))
+    model.add(Dense(1, activation = 'relu'))
+    print(model.summary())
+    model.compile(loss='mse', optimizer='adam')
+    return model
