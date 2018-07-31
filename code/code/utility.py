@@ -102,10 +102,10 @@ def get_sample_df():
     return df
 
 
-def train_prediction_based_models(df,model,window_size,nb_epoch):
+def train_prediction_based_models(df,model,input_shape,nb_epoch):
     error_prediction = []
     for i in np.arange(11,len(df)):
-        X_input = df["value"].values[i-(1+window_size):i-1].reshape((1,window_size))
+        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         Y_input = df["value"].values[i].reshape((1,1))
         history = model.fit(X_input,Y_input , nb_epoch=20, verbose=0)
         error_prediction.append((model.predict(X_input)-Y_input)[0][0])
@@ -115,10 +115,11 @@ def train_prediction_based_models(df,model,window_size,nb_epoch):
     df['anomaly_score'] = error_prediction
     return df
 
-def train_autoencoder_based_models(df,model,window_size,nb_epoch):
+
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch):
     error_prediction = []
     for i in np.arange(11,len(df)):
-        X_input = df["value"].values[i-(1+window_size):i-1].reshape((1,10,1))
+        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         history = model.fit(X_input,X_input , nb_epoch=20, verbose=0)
         error_prediction.append((model.predict(X_input)-X_input)[0][0])
         print(i)
@@ -129,11 +130,11 @@ def train_autoencoder_based_models(df,model,window_size,nb_epoch):
 
 
 
-def use_whole_data(data_files,window_size,nb_features,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20):
+def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20):
     result_files = data_files
     for key,value in data_files.items():
         for folder_key,df in value.items():
-            df = training_function(df,model,window_size,nb_epoch)
+            df = training_function(df,model,input_shape,nb_epoch)
             result_files[key][folder_key] = df
     return result_files
 
