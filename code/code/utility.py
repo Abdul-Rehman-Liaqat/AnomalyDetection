@@ -102,7 +102,7 @@ def get_sample_df():
     return df
 
 
-def train_prediction_based_models(df,window_size,nb_epoch):
+def train_prediction_based_models(df,model,window_size,nb_epoch):
     error_prediction = []
     for i in np.arange(11,len(df)):
         X_input = df["value"].values[i-(1+window_size):i-1].reshape((1,window_size))
@@ -126,6 +126,17 @@ def train_autoencoder_based_models(df,model,window_size,nb_epoch):
     error_prediction = temp_no_error + error_prediction
     df['anomaly_score'] = error_prediction
     return df
+
+
+
+def use_whole_data(data_files,window_size,nb_features,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20):
+    result_files = data_files
+    for key,value in data_files.items():
+        for folder_key,df in value.items():
+            df = training_function(df,model,window_size,nb_epoch)
+            result_files[key][folder_key] = df
+    return result_files
+
 
 #def display_algo_confusion_matrix(results_path):
 
