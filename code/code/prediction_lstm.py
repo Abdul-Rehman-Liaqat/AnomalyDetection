@@ -11,7 +11,7 @@ data_files = read_data(path)
 window_size = 10
 nb_epoch = 20
 nb_features = 1
-input_function = (window_size,nb_features)
+input_shape = (window_size,nb_features)
 model = prediction_lstm(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model)
 with open('prediction_lstm_results.obj','wb') as f:
