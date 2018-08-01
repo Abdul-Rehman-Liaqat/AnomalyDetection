@@ -11,8 +11,9 @@ data_files = read_data(path)
 window_size = 10
 nb_epoch = 20
 nb_features = 1
-model = prediction_nn(window_size,nb_features)
-result_files = use_whole_data(data_files,window_size,nb_features,train_prediction_based_models,model)
+input_shape = (window_size,)
+model = prediction_nn(input_shape)
+result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model)
 with open('prediction_nn_results.obj','wb') as f:
     pickle.dump(result_files,f)
 write_result(algorithm_name='prediction_nn',data_files=result_files,results_path=cwd+'/results')
