@@ -109,7 +109,7 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch,probation_period
         Y_input = df["value"].values[i].reshape((1,1))
         history = model.fit(X_input,Y_input , nb_epoch=20, verbose=0)
         error_prediction.append((model.predict(X_input) -Y_input)[0][0])
-        print(i)
+#        print(i)
     temp_no_error = [0]*11
     error_prediction = temp_no_error + error_prediction
     error_prediction[0:probation_period] = [0]*probation_period
@@ -123,7 +123,7 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch,probation_perio
         X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         history = model.fit(X_input,X_input , nb_epoch=20, verbose=0)
         error_prediction.append((model.predict(X_input)-X_input)[0][0])
-        print(i)
+#        print(i)
     temp_no_error = [0]*11
     error_prediction = temp_no_error + error_prediction
     error_prediction[0:probation_period] = [0]*probation_period
@@ -136,6 +136,7 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
     result_files = data_files
     for key,value in data_files.items():
         for folder_key,df in value.items():
+            print(folder_key)
             if(len(df)>=5000):
                 probation_period = 750
             else:
