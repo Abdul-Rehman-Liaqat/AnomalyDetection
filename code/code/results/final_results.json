@@ -44,6 +44,16 @@
         "reward_low_FP_rate": 56.665308225043105,
         "standard": 64.55346441254311
     },
+    "predictionCnn": {
+        "reward_low_FN_rate": -117.57009808045976,
+        "reward_low_FP_rate": -359.60655502112064,
+        "standard": -178.0792850517241
+    },
+    "predictionNn": {
+        "reward_low_FN_rate": -273.26848863218396,
+        "reward_low_FP_rate": -830.055396724138,
+        "standard": -412.4889398448276
+    },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,
         "reward_low_FP_rate": 5.763682319827587,
