@@ -4,6 +4,11 @@
         "lstm_reward_low_FP_rate": -27489.56104409483,
         "lstm_standard": -13694.780522025863
     },
+    "autoencoderFullyConnected": {
+        "reward_low_FN_rate": -291.9877091637931,
+        "reward_low_FP_rate": -899.8642023965517,
+        "standard": -444.0160465043104
+    },
     "cnn": {
         "prediction_reward_low_FN_rate": -2033.7705911034482,
         "prediction_reward_low_FP_rate": -6212.730046767241,
