@@ -1,7 +1,7 @@
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense
 from utility import read_data,train_autoencoder_based_models,use_whole_data, write_result
-from models import autoencoder_fully_connected
+from models import autoencoderFullyConnected
 import os
 import pickle
 
@@ -12,7 +12,7 @@ window_size = 10
 nb_epoch = 20
 nb_features = 1
 input_shape = (window_size,)
-model = autoencoder_fully_connected(input_shape)
+model = autoencoderFullyConnected(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models,model)
 with open('autoencoderFullyConnected_results.obj','wb') as f:
     pickle.dump(result_files,f)
