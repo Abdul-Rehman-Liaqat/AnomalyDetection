@@ -1,8 +1,9 @@
+
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense, Reshape, LSTM, RepeatVector
 
 
-def autoencoder_fully_connected(input_shape,loss='mse',optimizer='adam'):
+def autoencoderFullyConnected(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Dense(5, input_shape=input_shape, activation='relu'))
     model.add(Dense(2, activation='relu'))
@@ -13,7 +14,7 @@ def autoencoder_fully_connected(input_shape,loss='mse',optimizer='adam'):
     return model
 
 
-def autoencoder_fully_convolutional(input_shape,loss='mse',optimizer='adam'):
+def autoencoderFullyConvolutional(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Conv1D(filters=5, kernel_size=10, input_shape=input_shape, activation='relu'))
     model.add(Reshape(target_shape=(5,1)))
@@ -23,7 +24,7 @@ def autoencoder_fully_convolutional(input_shape,loss='mse',optimizer='adam'):
     model.compile(loss=loss, optimizer=optimizer)
     return model
 
-def autoencoder_lstm(input_shape,loss='mse',optimizer='adam'):
+def autoencoderLstm(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(LSTM(2, input_shape=input_shape))
     model.add(RepeatVector(input_shape[0]))
@@ -33,7 +34,7 @@ def autoencoder_lstm(input_shape,loss='mse',optimizer='adam'):
     return model
 
 
-def prediction_cnn(input_shape,loss='mse',optimizer='adam'):
+def predictionCnn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Conv1D(nb_filter=5, kernel_size=10, input_shape=input_shape, activation='relu'))
     model.add(Flatten())
@@ -43,7 +44,7 @@ def prediction_cnn(input_shape,loss='mse',optimizer='adam'):
     model.compile(loss=loss, optimizer=optimizer)
     return model
 
-def prediction_lstm(input_shape,loss='mse',optimizer='adam'):
+def predictionLstm(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(LSTM(5, input_shape = input_shape))
     model.add(Dropout(0.5))
@@ -52,7 +53,7 @@ def prediction_lstm(input_shape,loss='mse',optimizer='adam'):
     model.compile(loss=loss, optimizer=optimizer)
     return model
 
-def prediction_nn(input_shape,loss='mse',optimizer='adam'):
+def predictionNn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Dense(5,input_shape = input_shape, activation='relu'))
     model.add(Dense(1, activation='relu'))
