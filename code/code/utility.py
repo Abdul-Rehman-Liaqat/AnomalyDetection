@@ -95,10 +95,10 @@ def _get_result_folder_structure(path,parent_folder_name):
     files['main_folder_files'] = list_file
     return(files)
 
-def get_sample_df():
+def get_sample_df(path = "/data/realKnownCause/", file = "nyc_taxi.csv"):
     cwd = os.getcwd()
-    path = cwd + "/data/realKnownCause/"
-    df = pd.read_csv(path+"nyc_taxi.csv")
+    path = cwd + path
+    df = pd.read_csv(path+file)
     return df
 
 
