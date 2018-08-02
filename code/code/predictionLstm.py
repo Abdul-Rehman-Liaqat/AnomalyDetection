@@ -1,7 +1,7 @@
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense
 from utility import read_data,train_prediction_based_models,use_whole_data, write_result
-from models import prediction_lstm
+from models import predictionLstm
 import os
 import pickle
 
@@ -12,7 +12,7 @@ window_size = 10
 nb_epoch = 20
 nb_features = 1
 input_shape = (window_size,nb_features)
-model = prediction_lstm(input_shape)
+model = predictionLstm(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model)
 with open('predictionLstm_results.obj','wb') as f:
     pickle.dump(result_files,f)
