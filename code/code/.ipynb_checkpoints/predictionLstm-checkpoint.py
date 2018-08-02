@@ -14,6 +14,6 @@ nb_features = 1
 input_shape = (window_size,nb_features)
 model = prediction_lstm(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model)
-with open('prediction_lstm_results.obj','wb') as f:
+with open('predictionLstm_results.obj','wb') as f:
     pickle.dump(result_files,f)
-write_result(algorithm_name='prediction_lstm',data_files=result_files,results_path=cwd+'/results')
+write_result(algorithm_name='predictionLstm',data_files=result_files,results_path=cwd+'/results')

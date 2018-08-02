@@ -7,8 +7,10 @@ Created on Fri Jul  6 07:41:07 2018
 """
 
 import pandas as pd
+import numpy as np
 import os
 import plotly.plotly as py
+
 
 
 def read_data(data_folder_path):
@@ -99,7 +101,50 @@ def get_sample_df():
     df = pd.read_csv(path+"nyc_taxi.csv")
     return df
 
-#def display_algo_prediction_score(results_paht):
+
+def train_prediction_based_models(df,model,input_shape,nb_epoch,probation_period):
+    error_prediction = []
+    for i in np.arange(11,len(df)):
+        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
+        Y_input = df["value"].values[i].reshape((1,1))
+        history = model.fit(X_input,Y_input , nb_epoch=20, verbose=0)
+        error_prediction.append((model.predict(X_input) -Y_input)[0][0])
+#        print(i)
+    temp_no_error = [0]*11
+    error_prediction = temp_no_error + error_prediction
+    error_prediction[0:probation_period] = [0]*probation_period
+    df['anomaly_score'] = error_prediction
+    return df
+
+
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch,probation_period):
+    error_prediction = []
+    for i in np.arange(11,len(df)):
+        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
+        history = model.fit(X_input,X_input , nb_epoch=20, verbose=0)
+        error_prediction.append((model.predict(X_input)-X_input)[0][0])
+#        print(i)
+    temp_no_error = [0]*11
+    error_prediction = temp_no_error + error_prediction
+    error_prediction[0:probation_period] = [0]*probation_period
+    df['anomaly_score'] = error_prediction
+    return df
+
+
+
+def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20):
+    result_files = data_files
+    for key,value in data_files.items():
+        for folder_key,df in value.items():
+            print(folder_key)
+            if(len(df)>=5000):
+                probation_period = 750
+            else:
+                probation_period = int(len(df)*0.15)
+            df = training_function(df,model,input_shape,nb_epoch,probation_period)
+            result_files[key][folder_key] = df
+    return result_files
+
 
 #def display_algo_confusion_matrix(results_path):
 
