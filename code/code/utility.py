@@ -102,29 +102,29 @@ def get_sample_df(path = "/data/realKnownCause/", file = "nyc_taxi.csv"):
     return df
 
 
-def train_prediction_based_models(df,model,input_shape,nb_epoch,probation_period):
+def train_prediction_based_models(df,model,input_shape,probation_period,nb_epoch=20):
     error_prediction = []
-    for i in np.arange(11,len(df)):
+    for i in np.arange(input_shape[0]+1,len(df)):
         X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         Y_input = df["value"].values[i].reshape((1,1))
-        history = model.fit(X_input,Y_input , nb_epoch=20, verbose=0)
+        history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         error_prediction.append((model.predict(X_input) -Y_input)[0][0])
 #        print(i)
-    temp_no_error = [0]*11
+    temp_no_error = [0]*(input_shape[0]+1)
     error_prediction = temp_no_error + error_prediction
     error_prediction[0:probation_period] = [0]*probation_period
     df['anomaly_score'] = error_prediction
     return df
 
 
-def train_autoencoder_based_models(df,model,input_shape,nb_epoch,probation_period):
+def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoch=20):
     error_prediction = []
-    for i in np.arange(11,len(df)):
+    for i in np.arange(input_shape[0]+1,len(df)):
         X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
-        history = model.fit(X_input,X_input , nb_epoch=20, verbose=0)
+        history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         error_prediction.append((model.predict(X_input)-X_input)[0][0])
 #        print(i)
-    temp_no_error = [0]*11
+    temp_no_error = [0]*(input_shape[0]+1)
     error_prediction = temp_no_error + error_prediction
     error_prediction[0:probation_period] = [0]*probation_period
     df['anomaly_score'] = error_prediction
@@ -141,7 +141,7 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
                 probation_period = 750
             else:
                 probation_period = int(len(df)*0.15)
-            df = training_function(df,model,input_shape,nb_epoch,probation_period)
+            df = training_function(df,model,input_shape,probation_period,nb_epoch)
             result_files[key][folder_key] = df
     return result_files
 
