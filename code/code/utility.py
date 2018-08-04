@@ -112,7 +112,7 @@ def train_prediction_based_models(df,model,input_shape,probation_period,nb_epoch
         prediction.append(model.predict(X_input))
         error_prediction.append((prediction[-1] -Y_input)[0][0])
 #        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
+    temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     error_prediction[0:probation_period] = [0]*probation_period
     df['anomaly_score'] = error_prediction
@@ -124,10 +124,9 @@ def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoc
     for i in np.arange(input_shape[0],len(df)):
         X_input = df["value"].values[i-(input_shape[0]):i].reshape((1,)+input_shape)
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
-        prediction.append(model.predict(X_input))
-        error_prediction.append((prediction[-1] -Y_input)[0][0])
+        error_prediction.append(sum((prediction[-1]-Y_input)[0][0]))
 #        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
+    temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     error_prediction[0:probation_period] = [0]*probation_period
     df['anomaly_score'] = error_prediction
