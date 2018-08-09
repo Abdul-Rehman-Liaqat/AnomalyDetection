@@ -140,7 +140,6 @@ def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoc
         X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         pred = model.predict(X_input)   
         error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
-        prediction.append(model.predict(X_input))      
         history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
 #        print(i)
