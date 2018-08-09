@@ -117,12 +117,12 @@ def train_prediction_based_models(df,model,input_shape,probation_period,nb_epoch
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
 #        print(i)
-    temp_no_error = [0]*(input_shape[0])
+    temp_no_error = [0]*(input_shape[0]+1)
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
-    L_no_error = [0.5]*(input_shape[0])
+    L[0] = 0.5
+    L_no_error = [0.5]*(input_shape[0]+1)
     L = L_no_error + L
-    L[input_shape[0]] = 0.5
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
     df['prediction'] = prediction
@@ -145,12 +145,12 @@ def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoc
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
 #        print(i)
-    temp_no_error = [0]*(input_shape[0])
+    temp_no_error = [0]*(input_shape[0]+1)
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
-    L_no_error = [0.5]*(input_shape[0])
+    L[0] = 0.5
+    L_no_error = [0.5]*(input_shape[0]+1)
     L = L_no_error + L
-    L[input_shape[0]] = 0.5
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
     df['prediction'] = prediction
