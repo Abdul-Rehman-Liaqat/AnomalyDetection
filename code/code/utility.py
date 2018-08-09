@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import os
 import plotly.plotly as py
-
+from scipy.stats import norm
 
 
 def read_data(data_folder_path):
@@ -151,6 +151,16 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
             result_files[key][folder_key] = df
     return result_files
 
+def score_postprocessing(s,t,W=8000,w=10):
+    def _select_window(s,W):
+        s_W = s[(t-W) if(t-W >= 0) else 0 : t]
+        miu_W = np.mean(s_W)
+        var_W = np.var(s_W)
+        return {'miu':miu_W,'var':var_W}
+    W_param = _select_window(s,W)
+    w_param = _select_window(s,w)
+    L = 1- norm.sf((w_param['miu']-W_param['miu'])/W_param['var'])
+    return L
 
 #def display_algo_confusion_matrix(results_path):
 
