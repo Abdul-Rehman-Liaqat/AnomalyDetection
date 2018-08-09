@@ -9,6 +9,11 @@
         "reward_low_FP_rate": -899.8642023965517,
         "standard": -444.0160465043104
     },
+    "autoencoderFullyConnectedOneEpoch": {
+        "reward_low_FN_rate": -46.54144576781608,
+        "reward_low_FP_rate": -172.04869602974142,
+        "standard": -78.43285830689655
+    },
     "cnn": {
         "prediction_reward_low_FN_rate": -2033.7705911034482,
         "prediction_reward_low_FP_rate": -6212.730046767241,
