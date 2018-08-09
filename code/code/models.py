@@ -5,9 +5,9 @@ from keras.layers import Conv1D, Flatten, Dropout, Dense, Reshape, LSTM, RepeatV
 
 def autoencoderFullyConnected(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(Dense(5, input_shape=input_shape, activation='relu'))
-    model.add(Dense(2, activation='relu'))
-    model.add(Dense(5, activation='relu'))
+    model.add(Dense(7, input_shape=input_shape, activation='relu'))
+    model.add(Dense(4, activation='relu'))
+    model.add(Dense(7, activation='relu'))
     model.add(Dense(10, activation='relu'))
     model.summary()
     model.compile(loss=loss, optimizer=optimizer)
@@ -36,7 +36,8 @@ def autoencoderLstm(input_shape,loss='mse',optimizer='adam'):
 
 def predictionCnn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(Conv1D(nb_filter=5, kernel_size=10, input_shape=input_shape, activation='relu'))
+    model.add(Conv1D(nb_filter=5, kernel_size=3, input_shape=input_shape, activation='relu'))
+    model.add(Conv1D(nb_filter=5, kernel_size=2, input_shape=input_shape, activation='relu'))
     model.add(Flatten())
     model.add(Dense(20, activation='relu'))
     model.add(Dense(1, activation='relu'))
@@ -46,8 +47,7 @@ def predictionCnn(input_shape,loss='mse',optimizer='adam'):
 
 def predictionLstm(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(LSTM(5, input_shape = input_shape))
-    model.add(Dropout(0.5))
+    model.add(LSTM(20, input_shape = input_shape))
     model.add(Dense(1, activation = 'relu'))
     print(model.summary())
     model.compile(loss=loss, optimizer=optimizer)
@@ -55,6 +55,8 @@ def predictionLstm(input_shape,loss='mse',optimizer='adam'):
 
 def predictionNn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
+    model.add(Dense(10,input_shape = input_shape, activation='relu'))
+    model.add(Dense(7,input_shape = input_shape, activation='relu'))
     model.add(Dense(5,input_shape = input_shape, activation='relu'))
     model.add(Dense(1, activation='relu'))
     model.summary()
