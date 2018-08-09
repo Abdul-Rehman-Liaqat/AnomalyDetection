@@ -9,11 +9,11 @@ cwd = os.getcwd()
 path = cwd + "/data"
 data_files = read_data(path)
 window_size = 10
-nb_epoch = 20
+nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
 model = autoencoderFullyConnected(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models,model)
-with open('autoencoderFullyConnected_results.obj','wb') as f:
+with open('autoencoderFullyConnectedOneEpoch.obj','wb') as f:
     pickle.dump(result_files,f)
-write_result(algorithm_name='autoencoderFullyConnected',data_files=result_files,results_path=cwd+'/results')
+write_result(algorithm_name='autoencoderFullyConnectedOneEpoch',data_files=result_files,results_path=cwd+'/results')
