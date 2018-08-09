@@ -11,7 +11,10 @@ import numpy as np
 import os
 import plotly.plotly as py
 from scipy.stats import norm
-
+from numpy.random import seed
+seed(1)
+from tensorflow import set_random_seed
+set_random_seed(2)
 
 def read_data(data_folder_path):
     '''
@@ -105,35 +108,56 @@ def get_sample_df(path = "/data/realKnownCause/", file = "nyc_taxi.csv"):
 def train_prediction_based_models(df,model,input_shape,probation_period,nb_epoch=20):
     error_prediction = []
     prediction = []
+    L = []
     for i in np.arange(input_shape[0]+1,len(df)):
         X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         Y_input = df["value"].values[i].reshape((1,1))
         prediction.append(model.predict(X_input))
         error_prediction.append((prediction[-1] -Y_input)[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
+        L.append(score_postprocessing(error_prediction,len(error_prediction)))
 #        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
+    temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
-    error_prediction[0:probation_period] = [0]*probation_period
-    df['anomaly_score'] = error_prediction
-    df['anomaly_prediction'] = prediction
+    prediction = temp_no_error + prediction
+    L_no_error = [0.5]*(input_shape[0])
+    L = L_no_error + L
+    L[input_shape[0]] = 0.5
+    df['error_prediction'] = error_prediction
+    df['anomaly_score'] = L
+    df['prediction'] = prediction
+#    temp_no_error = [0]*(input_shape[0]+1)
+#    error_prediction = temp_no_error + error_prediction
+#    error_prediction[0:probation_period] = [0]*probation_period
+#    df['anomaly_score'] = error_prediction
+#    df['anomaly_prediction'] = prediction
     return df
-
 
 def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoch=20):
     error_prediction = []
     prediction = []
+    L = []
     for i in np.arange(input_shape[0]+1,len(df)):
         X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
         pred = model.predict(X_input)   
-        prediction.append(model.predict(X_input))
+        prediction.append(model.predict(X_input))        
         error_prediction.append((prediction[-1] -Y_input)[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
+        L.append(score_postprocessing(error_prediction,len(error_prediction)))
 #        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
+    temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
-    error_prediction[0:probation_period] = [0]*probation_period
-    df['anomaly_score'] = error_prediction    
+    prediction = temp_no_error + prediction
+    L_no_error = [0.5]*(input_shape[0])
+    L = L_no_error + L
+    L[input_shape[0]] = 0.5
+    df['error_prediction'] = error_prediction
+    df['anomaly_score'] = L
+    df['prediction'] = prediction
+#    temp_no_error = [0]*(input_shape[0]+1)
+#    error_prediction = temp_no_error + error_prediction
+#    error_prediction[0:probation_period] = [0]*probation_period
+#    df['anomaly_score'] = error_prediction    
     return df
 
 
@@ -152,6 +176,8 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
     return result_files
 
 def score_postprocessing(s,t,W=8000,w=10):
+    if(t == 0):
+        return 0
     def _select_window(s,W):
         s_W = s[(t-W) if(t-W >= 0) else 0 : t]
         miu_W = np.mean(s_W)
