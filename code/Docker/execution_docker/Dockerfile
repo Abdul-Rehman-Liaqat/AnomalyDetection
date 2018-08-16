@@ -14,5 +14,7 @@ RUN pip install -r requirements.txt
 
 VOLUME /executor/code
 
+WORKDIR /executor/code/code/
+
 CMD ["jupyter", "lab", "--ip='0.0.0.0'", "--port=8888","--no-browser","--allow-root"]    
 
