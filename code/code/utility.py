@@ -105,7 +105,33 @@ def get_sample_df(path = "/data/realKnownCause/", file = "nyc_taxi.csv"):
     return df
 
 
-def train_prediction_based_models(df,model,input_shape,probation_period,nb_epoch=20):
+def train_prediction_based_models(df,model,input_shape,nb_epoch=20):
+    error_prediction = []
+    prediction = []
+    L = []
+    convergence_loss = []
+    for i in np.arange(input_shape[0]+1,len(df)):
+        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
+        Y_input = df["value"].values[i].reshape((1,1))
+        prediction.append(model.predict(X_input)[0][0])
+        error_prediction.append(prediction[-1]-Y_input[0][0])
+        history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
+        convergence_loss.append(history.history['loss'])
+        L.append(score_postprocessing(error_prediction,len(error_prediction)))
+        print(i)
+    temp_no_error = [0]*(input_shape[0]+1)
+    error_prediction = temp_no_error + error_prediction
+    prediction = temp_no_error + prediction
+    L[0] = 0.5
+    L_no_error = [0.5]*(input_shape[0]+1)
+    L = L_no_error + L
+    df['error_prediction'] = error_prediction
+    df['anomaly_score'] = L
+    df['convergence_loss'] = temp_no_error + convergence_loss
+    df['prediction'] = prediction
+    return df
+
+def train_prediction_based_models_with_recency(df,model,input_shape,nb_epoch=20):
     error_prediction = []
     prediction = []
     L = []
@@ -126,14 +152,9 @@ def train_prediction_based_models(df,model,input_shape,probation_period,nb_epoch
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
     df['prediction'] = prediction
-#    temp_no_error = [0]*(input_shape[0]+1)
-#    error_prediction = temp_no_error + error_prediction
-#    error_prediction[0:probation_period] = [0]*probation_period
-#    df['anomaly_score'] = error_prediction
-#    df['anomaly_prediction'] = prediction
     return df
 
-def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoch=20):
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20):
     error_prediction = []
     L = []
     for i in np.arange(input_shape[0]+1,len(df)):
@@ -150,10 +171,25 @@ def train_autoencoder_based_models(df,model,input_shape,probation_period,nb_epoc
     L = L_no_error + L
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
-#    temp_no_error = [0]*(input_shape[0]+1)
-#    error_prediction = temp_no_error + error_prediction
-#    error_prediction[0:probation_period] = [0]*probation_period
-#    df['anomaly_score'] = error_prediction    
+    return df
+
+def train_autoencoder_based_models_with_recency(df,model,input_shape,nb_epoch=20):
+    error_prediction = []
+    L = []
+    for i in np.arange(input_shape[0]+1,len(df)):
+        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
+        pred = model.predict(X_input)   
+        error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
+        history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
+        L.append(score_postprocessing(error_prediction,len(error_prediction)))
+#        print(i)
+    temp_no_error = [0]*(input_shape[0]+1)
+    error_prediction = temp_no_error + error_prediction
+    L[0] = 0.5
+    L_no_error = [0.5]*(input_shape[0]+1)
+    L = L_no_error + L
+    df['error_prediction'] = error_prediction
+    df['anomaly_score'] = L
     return df
 
 
@@ -163,11 +199,7 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
     for key,value in data_files.items():
         for folder_key,df in value.items():
             print(folder_key)
-            if(len(df)>=5000):
-                probation_period = 750
-            else:
-                probation_period = int(len(df)*0.15)
-            df = training_function(df,model,input_shape,probation_period,nb_epoch)
+            df = training_function(df,model,input_shape,nb_epoch)
             result_files[key][folder_key] = df
     return result_files
 
