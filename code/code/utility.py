@@ -12,6 +12,7 @@ import os
 import plotly.plotly as py
 from scipy.stats import norm
 from numpy.random import seed
+import matplotlib.pyplot as plt
 seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
@@ -216,6 +217,9 @@ def score_postprocessing(s,t,W=8000,w=10):
     L = 1- norm.sf((w_param['miu']-W_param['miu'])/W_param['var'])
     return L
 
+def display_result_with_anomlay(df):
+    plt.plot(df.value.values)
+    plt.show()
 #def display_algo_confusion_matrix(results_path):
 
 
