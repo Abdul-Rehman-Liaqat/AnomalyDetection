@@ -1,4 +1,18 @@
 {
+    "autoencoderFullyConnectedOneEpoch": {
+        "reward_low_FN_rate": {
+            "score": -393.96423127210653,
+            "threshold": 0.9999998092651373
+        },
+        "reward_low_FP_rate": {
+            "score": -515.1529747893436,
+            "threshold": 0.9999998092651373
+        },
+        "standard": {
+            "score": -297.96423127210653,
+            "threshold": 0.9999998092651373
+        }
+    },
     "bayesChangePt": {
         "reward_low_FN_rate": {
             "score": -119.7471580442638,
@@ -123,6 +137,34 @@
         "standard": {
             "score": 33.76403743713426,
             "threshold": 0.5126953125
+        }
+    },
+    "predictionCnnOneEpoch": {
+        "reward_low_FN_rate": {
+            "score": -354.1996461674139,
+            "threshold": 0.9999998092651373
+        },
+        "reward_low_FP_rate": {
+            "score": -404.1438387498887,
+            "threshold": 0.9999998092651373
+        },
+        "standard": {
+            "score": -249.1996461674139,
+            "threshold": 0.9999998092651373
+        }
+    },
+    "predictionNnOneEpoch": {
+        "reward_low_FN_rate": {
+            "score": -354.19964616741396,
+            "threshold": 0.9999998092651373
+        },
+        "reward_low_FP_rate": {
+            "score": -404.14383874988874,
+            "threshold": 0.9999998092651373
+        },
+        "standard": {
+            "score": -249.1996461674139,
+            "threshold": 0.9999998092651373
         }
     },
     "random": {
