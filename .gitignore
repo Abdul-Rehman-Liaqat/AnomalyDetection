@@ -1,2 +1,6 @@
 *.pyc
 *.obj
+code/code/__pycache__/*
+code/code/.ipynb_checkpoints/*
+.ipynb_checkpoints/
+
