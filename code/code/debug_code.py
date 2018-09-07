@@ -1,18 +1,21 @@
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense
 from utility import get_sample_df, train_prediction_based_models
-from models import predictionNn
+from models import predictionNn, predictionCnn
 import os
 import pickle
 import numpy as np
+os.chdir('code/code')
 df = get_sample_df()
 window_size = 10
-nb_epoch = 2
+nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
+cnn_input_shape = (window_size,nb_features)
 model = predictionNn(input_shape)
-#df = train_prediction_based_models(df,model,input_shape,probation_period=750)
-train_prediction_based_models(df,model,input_shape,750,nb_epoch=2)
+cnn_model = predictionCnn(cnn_input_shape)
+df1 = train_prediction_based_models(df,model,input_shape,nb_epoch=nb_epoch)
+df2 = train_prediction_based_models(df,cnn_model,cnn_input_shape,nb_epoch=nb_epoch)
 # error_prediction = []
 # prediction = []
 # L = []
