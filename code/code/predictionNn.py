@@ -6,7 +6,8 @@ import os
 import pickle
 
 cwd = os.getcwd()
-path = cwd + "/code/code/data"
+#path = cwd + "/code/code/data"
+path = cwd + "/data"
 data_files = read_data(path)
 window_size = 10
 nb_epoch = 1
