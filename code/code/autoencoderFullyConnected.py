@@ -14,6 +14,6 @@ nb_features = 1
 input_shape = (window_size,)
 model = autoencoderFullyConnected(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models,model,nb_epoch = nb_epoch)
-with open('autoencoderFullyConnectedOneEpoch.obj','wb') as f:
+with open('autoencoderFullyConnectedOneEpoch7Sep.obj','wb') as f:
     pickle.dump(result_files,f)
-write_result(algorithm_name='autoencoderFullyConnectedOneEpoch',data_files=result_files,results_path=cwd+'/results')
+write_result(algorithm_name='autoencoderFullyConnectedOneEpoch7Sep',data_files=result_files,results_path=cwd+'/results')

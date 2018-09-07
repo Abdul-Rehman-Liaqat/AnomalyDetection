@@ -13,6 +13,6 @@ nb_features = 1
 input_shape = (window_size,)
 model = predictionNn(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model,nb_epoch=nb_epoch)
-with open('predictionNnOneEpoch.obj','wb') as f:
+with open('predictionNnOneEpoch7Sep.obj','wb') as f:
     pickle.dump(result_files,f)
-write_result(algorithm_name='predictionNnOneEpoch',data_files=result_files,results_path=cwd+'/results')
+write_result(algorithm_name='predictionNnOneEpoch7Sep',data_files=result_files,results_path=cwd+'/results')
