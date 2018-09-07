@@ -1,5 +1,3 @@
-from keras.models import Sequential, Model
-from keras.layers import Conv1D, Flatten, Dropout, Dense
 from utility import read_data,train_prediction_based_models,use_whole_data, write_result
 from models import predictionNn
 import os
