@@ -74,6 +74,11 @@
         "reward_low_FP_rate": -124.19993049568966,
         "standard": -57.41364058922414
     },
+    "predictionNnOneEpoch9121121": {
+        "reward_low_FN_rate": -16.209389520114936,
+        "reward_low_FP_rate": -63.46939633965517,
+        "standard": -28.193394625000003
+    },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,
         "reward_low_FP_rate": 5.763682319827587,
