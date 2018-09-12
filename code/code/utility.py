@@ -128,7 +128,6 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var 
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'])
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
-        print(i)
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
@@ -152,7 +151,6 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var
         error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
         history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
-#        print(i)
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     L[0] = 0.5
