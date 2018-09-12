@@ -26,33 +26,33 @@ def read_data(data_folder_path):
     data_files_path = []
     data_files_name = []
     for folder in list_dir:
-        if(folder != 'README.md'):        
+        if(folder != 'README.md'):
             temp_path = data_folder_path+'/'+folder+'/'
             temp_data_files_name = os.listdir(temp_path)
             temp_data_files_path = os.listdir(temp_path)
             for i,file_path in enumerate(temp_data_files_path):
                 temp_data_files_path[i] = temp_path + temp_data_files_path[i]
             data_files_path.append(temp_data_files_path)
-            data_files_name.append(temp_data_files_name)            
-            
+            data_files_name.append(temp_data_files_name)
+
     data_files = {}
     for dataset_name,path_folder,name_folder in zip(list_dir,data_files_path,data_files_name):
         temp_dir = {}
         for path,name in zip(path_folder,name_folder):
             temp_dir[name] = pd.read_csv(path)
-            
+
         data_files[dataset_name] = temp_dir
-        
+
     return(data_files)
 
 #def iterate_data(data_files):
 #    '''
 #    Function to iterate through each dataset and receive result from the algorithm
 #    '''
-    
-    
+
+
 #def preprocess_data(df):
-    
+
 def write_result(algorithm_name,data_files,results_path):
     '''
     Function to receive results from algorithms and write them into result directory
@@ -62,7 +62,7 @@ def write_result(algorithm_name,data_files,results_path):
     for key in list(data_files.keys()):
         os.mkdir(algo_folder+'/'+key)
         for file_key in list(data_files[key].keys()):
-            df = data_files[key][file_key] 
+            df = data_files[key][file_key]
             df.to_csv(algo_folder+'/'+key+'/'+algorithm_name+'_'+file_key,index = False)
 
 
@@ -85,14 +85,14 @@ def _get_result_folder_structure(path,parent_folder_name):
         for i,file_path in enumerate(sub_list_dir):
             temp_files_path[i] = temp_path + temp_files_path[i]
         files_path.append(temp_files_path)
-        files_name.append(temp_files_name)            
-            
+        files_name.append(temp_files_name)
+
     files = {}
     for name,path_folder,name_folder in zip(list_dir,files_path,files_name):
         temp_dir = {}
         for path_file,name in zip(path_folder,name_folder):
             temp_dir[name] = pd.read_csv(path_file)
-            
+
         files[name] = temp_dir
     files['main_folder_files'] = list_file
     return(files)
@@ -109,20 +109,20 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20):
     prediction = []
     L = []
     convergence_loss = []
-    for i in np.arange(input_shape[0]+1,len(df)):
-        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
-        Y_input = df["value"].values[i-1].reshape((1,1))
+    for i in np.arange(input_shape[0],len(df)):
+        X_input = df["value"].values[i-(input_shape[0]):i].reshape((1,)+input_shape)
+        Y_input = df["value"].values[i].reshape((1,1))
         prediction.append(model.predict(X_input)[0][0])
         error_prediction.append(prediction[-1]-Y_input[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'])
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
         print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
+    temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
     L[0] = 0.5
-    L_no_error = [0.5]*(input_shape[0]+1)
+    L_no_error = [0.5]*(input_shape[0])
     L = L_no_error + L
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
@@ -130,68 +130,25 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20):
     df['prediction'] = prediction
     return df
 
-def train_prediction_based_models_with_recency(df,model,input_shape,nb_epoch=20):
-    error_prediction = []
-    prediction = []
-    L = []
-    for i in np.arange(input_shape[0]+1,len(df)):
-        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
-        Y_input = df["value"].values[i-1].reshape((1,1))
-        prediction.append(model.predict(X_input))
-        error_prediction.append((prediction[-1] -Y_input)[0][0])
-        history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
-        L.append(score_postprocessing(error_prediction,len(error_prediction)))
-#        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
-    error_prediction = temp_no_error + error_prediction
-    prediction = temp_no_error + prediction
-    L[0] = 0.5
-    L_no_error = [0.5]*(input_shape[0]+1)
-    L = L_no_error + L
-    df['error_prediction'] = error_prediction
-    df['anomaly_score'] = L
-    df['prediction'] = prediction
-    return df
 
 def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20):
     error_prediction = []
     L = []
-    for i in np.arange(input_shape[0]+1,len(df)):
-        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
-        pred = model.predict(X_input)   
+    for i in np.arange(input_shape[0],len(df)):
+        X_input = df["value"].values[i-(input_shape[0]):i].reshape((1,)+input_shape)
+        pred = model.predict(X_input)
         error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
         history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
 #        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
+    temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     L[0] = 0.5
-    L_no_error = [0.5]*(input_shape[0]+1)
+    L_no_error = [0.5]*(input_shape[0])
     L = L_no_error + L
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
     return df
-
-def train_autoencoder_based_models_with_recency(df,model,input_shape,nb_epoch=20):
-    error_prediction = []
-    L = []
-    for i in np.arange(input_shape[0]+1,len(df)):
-        X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
-        pred = model.predict(X_input)   
-        error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
-        history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
-        L.append(score_postprocessing(error_prediction,len(error_prediction)))
-#        print(i)
-    temp_no_error = [0]*(input_shape[0]+1)
-    error_prediction = temp_no_error + error_prediction
-    L[0] = 0.5
-    L_no_error = [0.5]*(input_shape[0]+1)
-    L = L_no_error + L
-    df['error_prediction'] = error_prediction
-    df['anomaly_score'] = L
-    return df
-
-
 
 def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20):
     result_files = data_files
