@@ -5,7 +5,7 @@ from models import predictionNn, predictionCnn
 import os
 import pickle
 import numpy as np
-os.chdir('code/code')
+#os.chdir('code/code')
 df = get_sample_df()
 window_size = 10
 nb_epoch = 1

@@ -4,7 +4,7 @@ from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense, Reshape, LSTM, RepeatVector
 
 
-def autoencoderFullyConnected(input_shape,loss='mse',optimizer='adam'):
+def autoencoderNn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Dense(7, input_shape=input_shape, activation='relu'))
     model.add(Dense(4, activation='relu'))
@@ -16,7 +16,7 @@ def autoencoderFullyConnected(input_shape,loss='mse',optimizer='adam'):
 
 
 
-def autoencoderFullyConvolutional(input_shape,loss='mse',optimizer='adam'):
+def autoencoderCnn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Conv1D(filters=5, kernel_size=10, input_shape=input_shape, activation='relu'))
     model.add(Reshape(target_shape=(5,1)))

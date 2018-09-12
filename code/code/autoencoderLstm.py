@@ -4,6 +4,9 @@ from utility import read_data,train_autoencoder_based_models,use_whole_data, wri
 from models import autoencoderLstm
 import os
 import pickle
+from datetime import datetime
+
+now = datetime.now()
 
 cwd = os.getcwd()
 path = cwd + "/data"
@@ -17,3 +20,7 @@ result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_mod
 with open('autoencoderLstm.obj','wb') as f:
     pickle.dump(result_files,f)
 write_result(algorithm_name='autoencoderLstm',data_files=result_files,results_path=cwd+'/results')
+algo_name = "autoencoderLstmOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,now.minute)
+with open(algo_name+".obj",'wb') as f:
+    pickle.dump(result_files,f)
+write_result(algorithm_name=algo_name,data_files=result_files,results_path=cwd+'/results')

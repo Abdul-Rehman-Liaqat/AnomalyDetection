@@ -4,6 +4,10 @@ from utility import read_data,train_prediction_based_models,use_whole_data, writ
 from models import predictionLstm
 import os
 import pickle
+from datetime import datetime
+
+now = datetime.now()
+
 
 cwd = os.getcwd()
 path = cwd + "/data"
@@ -14,6 +18,7 @@ nb_features = 1
 input_shape = (window_size,nb_features)
 model = predictionLstm(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model)
-with open('predictionLstm_results.obj','wb') as f:
+algo_name = "predictionLstmOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,now.minute)
+with open(algo_name+".obj",'wb') as f:
     pickle.dump(result_files,f)
-write_result(algorithm_name='predictionLstm',data_files=result_files,results_path=cwd+'/results')
+write_result(algorithm_name=algo_name,data_files=result_files,results_path=cwd+'/results')
