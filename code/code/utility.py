@@ -11,6 +11,8 @@ import numpy as np
 import os
 from scipy.stats import norm
 from numpy.random import seed
+from configparser import ConfigParser
+import json
 seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
@@ -103,21 +105,29 @@ def get_sample_df(path = "/data/realKnownCause/", file = "nyc_taxi.csv"):
     df = pd.read_csv(path+file)
     return df
 
+def max_min_normalize(val,max_min_var):
+    if(len(max_min_var) > 0):
+        val = val - max_min_var[1]
+        val = val / (max_min_var[0] - max_min_var[1])
+        return val
+    else:
+        return val
 
-def train_prediction_based_models(df,model,input_shape,nb_epoch=20):
+def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
     error_prediction = []
     prediction = []
     L = []
     convergence_loss = []
     for i in np.arange(input_shape[0],len(df)):
-        X_input = df["value"].values[i-(input_shape[0]):i].reshape((1,)+input_shape)
-        Y_input = df["value"].values[i].reshape((1,1))
+        X_input = max_min_normalize(df["value"].values[i - (input_shape[0]):i], max_min_var)
+        X_input = X_input.reshape((1,)+input_shape)
+        Y_input = max_min_normalize(df["value"].values[i],max_min_var)
+        Y_input = Y_input.reshape((1,1))
         prediction.append(model.predict(X_input)[0][0])
         error_prediction.append(prediction[-1]-Y_input[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'])
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
-        print(i)
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
@@ -131,16 +141,16 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20):
     return df
 
 
-def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20):
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
     error_prediction = []
     L = []
     for i in np.arange(input_shape[0],len(df)):
-        X_input = df["value"].values[i-(input_shape[0]):i].reshape((1,)+input_shape)
+        X_input = max_min_normalize(df["value"].values[i-(input_shape[0]):i], max_min_var)
+        X_input = X_input.reshape((1,)+input_shape)
         pred = model.predict(X_input)
         error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
         history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
         L.append(score_postprocessing(error_prediction,len(error_prediction)))
-#        print(i)
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     L[0] = 0.5
@@ -150,12 +160,19 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20):
     df['anomaly_score'] = L
     return df
 
-def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20):
+def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
+    if(config_path != None):
+        config = ConfigParser()
+        config.read(config_path)
+
     result_files = data_files
     for key,value in data_files.items():
         for folder_key,df in value.items():
+            max_min_var = []
+            if(config_path != None):
+                max_min_var = json.loads(config.get(key,folder_key))
             print(folder_key)
-            df = training_function(df,model,input_shape,nb_epoch)
+            df = training_function(df,model,input_shape,nb_epoch,max_min_var = max_min_var)
             result_files[key][folder_key] = df
     return result_files
 
@@ -172,6 +189,35 @@ def score_postprocessing(s,t,W=8000,w=10):
     L = 1- norm.sf((w_param['miu']-W_param['miu'])/W_param['var'])
     return L
 
+def update_data_config(data_folder_path,config_path):
+    '''
+    Function to read whole dataset using input data_folder_path and return a             dictionary with key names
+    as data-set folder name. The values of each key is another dictionary whose
+    keys are csv file names and values are csv files read using pandas.
+    '''
+    config = ConfigParser()
+    list_dir = os.listdir(data_folder_path)
+    list_dir.remove('README.md')
+    data_files_path = []
+    data_files_name = []
+    for folder in list_dir:
+        if(folder != 'README.md'):
+            temp_path = data_folder_path+'/'+folder+'/'
+            temp_data_files_name = os.listdir(temp_path)
+            temp_data_files_path = os.listdir(temp_path)
+            for i,file_path in enumerate(temp_data_files_path):
+                temp_data_files_path[i] = temp_path + temp_data_files_path[i]
+            data_files_path.append(temp_data_files_path)
+            data_files_name.append(temp_data_files_name)
+
+    data_files = {}
+    for dataset_name,path_folder,name_folder in zip(list_dir,data_files_path,data_files_name):
+        config.add_section(dataset_name)
+        for path,name in zip(path_folder,name_folder):
+            df = pd.read_csv(path)
+            config.set(dataset_name,name,str([max(df.value.values),min(df.value.values)]))
+    with open(config_path, 'w') as configfile:
+        config.write(configfile)
 #def display_algo_confusion_matrix(results_path):
 
 
