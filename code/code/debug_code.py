@@ -1,21 +1,25 @@
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense
-from utility import get_sample_df, train_prediction_based_models
-from models import predictionNn, predictionCnn
+from utility import get_sample_df, train_prediction_based_models,update_data_config
+from models import predictionNn, predictionCnn, predictionLstm
 import os
 import pickle
 import numpy as np
 #os.chdir('code/code')
+cwd = os.getcwd()
+path = cwd + "/data"
+config_path = cwd + "/config/data.config"
 df = get_sample_df()
 window_size = 10
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
 cnn_input_shape = (window_size,nb_features)
-model = predictionNn(input_shape)
+lstm_input_shape = (window_size,nb_features)
 cnn_model = predictionCnn(cnn_input_shape)
-df1 = train_prediction_based_models(df,model,input_shape,nb_epoch=nb_epoch)
-df2 = train_prediction_based_models(df,cnn_model,cnn_input_shape,nb_epoch=nb_epoch)
+lstm_model = predictionLstm(lstm_input_shape)
+df3 = train_prediction_based_models(df,lstm_model,lstm_input_shape,nb_epoch)
+#df2 = train_prediction_based_models(df,cnn_model,cnn_input_shape,nb_epoch=nb_epoch)
 # error_prediction = []
 # prediction = []
 # L = []
