@@ -218,6 +218,24 @@ def update_data_config(data_folder_path,config_path):
             config.set(dataset_name,name,str([max(df.value.values),min(df.value.values)]))
     with open(config_path, 'w') as configfile:
         config.write(configfile)
+
+
+def common_code():
+    import argparse
+    from datetime import datetime
+    parser = argparse.ArgumentParser(description='Add to existing name')
+    parser.add_argument('--name', help='add to existing name especially if I am testing some new feature.')
+    args = parser.parse_args()
+    now = datetime.now()
+    add_to_name = "{}{}{}{}".format(now.month, now.day, now.hour, now.minute)
+    cwd = os.getcwd()
+    # path = cwd + "/code/code/data"
+    path = cwd + "/data"
+    data_files = read_data(path)
+    if (args.name != None):
+        add_to_name = args.name + add_to_name
+    return data_files,add_to_name
+
 #def display_algo_confusion_matrix(results_path):
 
 
