@@ -13,6 +13,4 @@ data_files,add_to_name = common_code()
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model,nb_epoch=nb_epoch)
 algo_name = "predictionNnOneEpoch" + add_to_name
 print(algo_name)
-with open("dump/"+algo_name+".obj",'wb') as f:
-    pickle.dump(result_files,f)
 write_result(algorithm_name=algo_name,data_files=result_files,results_path=cwd+'/results')
