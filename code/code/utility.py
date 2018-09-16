@@ -13,6 +13,7 @@ from scipy.stats import norm
 from numpy.random import seed
 from configparser import ConfigParser
 import json
+import matplotlib.pyplot as plt
 seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
@@ -235,6 +236,33 @@ def common_code():
     if (args.name != None):
         add_to_name = args.name + add_to_name
     return data_files,add_to_name
+
+
+def plot_original_anomalies(from_index=None, from_plus=None, data_set='realKnownCause/nyc_taxi.csv',
+                            path='/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/data/'):
+    df = get_sample_df(path=path, file=data_set)
+    with open('combined_windows.json', 'r') as f:
+        anomaly_window = json.load(f)
+    if (from_index != None):
+        df = df.iloc[from_index:]
+    if (from_plus != None):
+        df = df.iloc[:from_plus]
+    windows_to_index = []
+    time_stamp = list(df.timestamp.values)
+    for window in anomaly_window[data_set]:
+        window_index = []
+        for val in window:
+            if (val[0:-7] in time_stamp):
+                window_index.append(time_stamp.index(val[0:-7]))
+            print(val, window_index)
+        if (len(window_index) == 2):
+            windows_to_index.append(window_index)
+
+    plt.plot(df.value.values)
+    for window in windows_to_index:
+        plt.axvspan(window[0], window[1], color='red', alpha=0.5)
+    plt.show()
+    return plt
 
 #def display_algo_confusion_matrix(results_path):
 
