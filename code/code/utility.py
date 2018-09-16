@@ -240,8 +240,8 @@ def common_code():
 
 def plot_original_anomalies(from_index=None, from_plus=None, data_set='realKnownCause/nyc_taxi.csv',
                             path='/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/data/'):
-    df = get_sample_df(path=path, file=data_set)
-    with open('combined_windows.json', 'r') as f:
+    df =  pd.read_csv(path+data_set)
+    with open('/home/abdulliaqat/Desktop/thesis/NAB/labels/combined_windows.json', 'r') as f:
         anomaly_window = json.load(f)
     if (from_index != None):
         df = df.iloc[from_index:]
