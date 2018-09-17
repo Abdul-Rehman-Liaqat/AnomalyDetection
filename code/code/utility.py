@@ -13,7 +13,6 @@ from scipy.stats import norm
 from numpy.random import seed
 from configparser import ConfigParser
 import json
-import matplotlib.pyplot as plt
 seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
