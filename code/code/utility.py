@@ -274,6 +274,34 @@ def plot_original_anomalies(from_index=None, from_plus=None, data_set='realKnown
     plt.show()
     return plt
 
+def plot_all_in_one():
+    import matplotlib.pyplot as plt
+
+    import pandas as pd
+    df = pd.read_csv(
+        '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/results/predictionNnOneEpoch9121121/realKnownCause/predictionNnOneEpoch9121121_nyc_taxi.csv')
+
+    val = {}
+    val['value'] = df.value.values
+    val['prediction'] = df.prediction.values
+    val['error_prediction'] = df.error_prediction.values
+    val['anomaly_score'] = df.anomaly_score.values
+    # val['convergence_loss'] = df.convergence_loss.values
+
+    fig = plt.figure(figsize=(18, 15))
+    ax = {}
+    total_graphs = len(list(val.keys()))
+    for ind, item in enumerate(val.items()):
+        ax[item[0]] = plt.subplot(total_graphs, 1, ind + 1)
+
+    for ind, item in enumerate(ax.items()):
+        item[1].plot(val[item[0]])
+        item[1].set_ylabel(item[0])
+        if (ind != total_graphs - 1):
+            item[1].set_xticklabels([])
+    plt.show()
+
+
 #def display_algo_confusion_matrix(results_path):
 
 
