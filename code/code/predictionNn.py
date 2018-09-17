@@ -1,6 +1,5 @@
 from utility import train_prediction_based_models,use_whole_data, write_result, common_code, store_param
 import os
-import pickle
 from models import predictionNn
 
 cwd = os.getcwd()
