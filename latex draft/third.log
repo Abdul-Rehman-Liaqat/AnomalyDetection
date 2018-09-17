@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.7)  3 AUG 2018 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.7)  16 SEP 2018 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -424,7 +424,7 @@ LaTeX Info: Redefining \nameref on input line 19.
 \@outlinefile=\write3
 \openout3 = `third.out'.
 
- <logoUHi.jpg, id=108, 406.38257pt x 406.20097pt>
+ <logoUHi.jpg, id=56, 406.38257pt x 406.20097pt>
 File: logoUHi.jpg Graphic file (type jpg)
 
 <use logoUHi.jpg>
@@ -446,30 +446,30 @@ rd.toc)
 \openout4 = `third.toc'.
 
  [3]
-[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 95.
+[4] [5] [6] [7] [8] [9] [10] [11] [12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
- [20] [21] (./third.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 116.
- [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 116.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
+ [13] [14] (./third.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
  (./third.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 116.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 116.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `third.out' has not changed.
-(rerunfilecheck)             Checksum: ECCE2BB36747523D1512A494BB911A71;1706.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 116.
+(rerunfilecheck)             Checksum: 001A1EB6317A25BCE76C3910F6A2F897;845.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  ) 
 Here is how much of TeX's memory you used:
- 7318 strings out of 493029
- 102049 string characters out of 6136235
- 207132 words of memory out of 5000000
- 10695 multiletter control sequences out of 15000+600000
+ 7293 strings out of 493029
+ 101604 string characters out of 6136235
+ 204132 words of memory out of 5000000
+ 10681 multiletter control sequences out of 15000+600000
  13011 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,6n,28p,720b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -479,10 +479,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on third.pdf (22 pages, 1075396 bytes).
+Output written on third.pdf (15 pages, 1072735 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 241 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
