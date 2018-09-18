@@ -167,6 +167,20 @@
             "threshold": 0.9998542785644535
         }
     },
+    "predictionLstmcorrectOneEpoch917166": {
+        "reward_low_FN_rate": {
+            "score": -2916.5905316389626,
+            "threshold": 0.9999998092651373
+        },
+        "reward_low_FP_rate": {
+            "score": -5820.305292863123,
+            "threshold": 0.9999998092651373
+        },
+        "standard": {
+            "score": -2885.5905316389626,
+            "threshold": 0.9999998092651373
+        }
+    },
     "predictionNnOneEpoch": {
         "reward_low_FN_rate": {
             "score": -354.19964616741396,
@@ -192,6 +206,20 @@
         },
         "standard": {
             "score": -181.4086755300679,
+            "threshold": 0.9999998092651373
+        }
+    },
+    "predictionNnOneEpochnewStartwithParamStored917168": {
+        "reward_low_FN_rate": {
+            "score": -286.25642251356044,
+            "threshold": 0.9999998092651373
+        },
+        "reward_low_FP_rate": {
+            "score": -260.25739144218176,
+            "threshold": 0.9999998092651373
+        },
+        "standard": {
+            "score": -179.25642251356044,
             "threshold": 0.9999998092651373
         }
     },

@@ -69,6 +69,11 @@
         "reward_low_FP_rate": 0.02744129827586271,
         "standard": -1.0781966284482696
     },
+    "predictionLstmcorrectOneEpoch917166": {
+        "reward_low_FN_rate": -771.4340608160919,
+        "reward_low_FP_rate": -2458.752281405172,
+        "standard": -1193.7890222586207
+    },
     "predictionNn": {
         "reward_low_FN_rate": -273.26848863218396,
         "reward_low_FP_rate": -830.055396724138,
@@ -83,6 +88,11 @@
         "reward_low_FN_rate": -16.209389520114936,
         "reward_low_FP_rate": -63.46939633965517,
         "standard": -28.193394625000003
+    },
+    "predictionNnOneEpochnewStartwithParamStored917168": {
+        "reward_low_FN_rate": -15.590926009770117,
+        "reward_low_FP_rate": -62.17991010431036,
+        "standard": -27.26569935948276
     },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,
