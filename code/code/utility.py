@@ -225,6 +225,7 @@ def common_code():
     from datetime import datetime
     parser = argparse.ArgumentParser(description='Add to existing name')
     parser.add_argument('--name', help='add to existing name especially if I am testing some new feature.')
+    parser.add_argument('--normalize', help='add to existing name especially if I am testing some new feature.', action='store_true')
     args = parser.parse_args()
     now = datetime.now()
     add_to_name = "{}{}{}{}".format(now.month, now.day, now.hour, now.minute)
@@ -232,18 +233,26 @@ def common_code():
     # path = cwd + "/code/code/data"
     path = cwd + "/data"
     data_files = read_data(path)
+    data_config = None
     if (args.name != None):
         add_to_name = args.name + add_to_name
-    return data_files,add_to_name
+    if (args.normalize == True):
+        data_config = 'config/data.config'
+    return data_files,add_to_name,data_config
 
-def store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model):
+def store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,data_config):
     param_dict = {}
     param_dict['window_size'] = window_size
     param_dict['nb_epoch'] = nb_epoch
-    param_dict['input_shape'] = input_shape
+    param_dict['input_shape'] = list(input_shape)
     param_dict['algo_type'] = algo_type
     param_dict['algo_name'] = algo_name
+    if(data_config == None):
+        param_dict['normalize'] = True
+    else:
+        param_dict['normalize'] = False
     param_dict['model'] = model.to_json()
+
     df = pd.DataFrame.from_dict(param_dict)
     df.to_csv('results_param.csv', mode='a', index=False, header=False, sep=';')
 
