@@ -84,6 +84,11 @@
         "reward_low_FP_rate": -124.19993049568966,
         "standard": -57.41364058922414
     },
+    "predictionNnOneEpoch3rdIterationOfSameSetting92046": {
+        "reward_low_FN_rate": -16.403344875287356,
+        "reward_low_FP_rate": -62.9675039198276,
+        "standard": -28.05329317499999
+    },
     "predictionNnOneEpoch9121121": {
         "reward_low_FN_rate": -16.209389520114936,
         "reward_low_FP_rate": -63.46939633965517,
