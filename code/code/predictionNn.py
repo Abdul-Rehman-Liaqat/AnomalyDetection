@@ -9,7 +9,7 @@ nb_features = 1
 input_shape = (window_size,)
 model = predictionNn(input_shape)
 data_files,add_to_name, data_config = common_code()
-result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model,nb_epoch=nb_epoch, data_config=data_config)
+result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model,nb_epoch=nb_epoch, config_path=data_config)
 algo_type = "predictionNnOneEpoch"
 algo_name = algo_type + add_to_name
 print(algo_name)
