@@ -48,12 +48,21 @@ Anomaly detection is a crucial task for machine learning due to wide-spread usag
 \newpage
 \section{Introduction 10 pages}
 \begin{enumerate}
-	\item Usage of streaming data
+	\item Usage of streaming data		
 	\item Usage of anomaly detection in general
 	\item Software2.0 development and anomaly detection role
 	\item Usage of anomaly detection in streaming data
 	\item problems in the concept and brief intro to our innovation
 \end{enumerate}
+\subsection{Usage of streaming data}
+With the increase in networking of objects, amount of data being generated is increasing. A big chunk of this data involves streaming data. Streaming data can be defined as data being generated continuously or with a continuous time interval. Statistically, IoT data has grow from 4.4ZB (Zeta Bytes) to 44.4ZB with 50 billions devices. These devices include a small temperature sensor installed in a room to ECG data to satellite communication data. Even videos are kind of streaming data since they include data points (frames) separated by a constant interval. 
+\subsection{Usage of anomaly detection in general}
+An anomaly is defined as significantly different data point from other data points. The difference is dependent upon the at least two things. One is the data point being an outlier in general among all data points available. Second is that the data point value doens't make sense in the sequence data is being generated hence it is possible for new data point to be extremely different from all previous ones but still make sense to have in the sequence and vice versa. Detecting an anomaly helps in identifying abnormal behavior of a process with potentially useful information. 
+\subsection{Software2.0 development and anomaly detection role}
+As described in (reference name Software2), going forward software development especially machine learning based software development will be divided into two parts. One part is the preparation of the data and the second part is the design and optimization of algorithms. Both of these steps are used iteratively. Interestingly, as described in the (reference name Software2), more and more time is spent on accumulating, massaging and cleaning datasets. One major part of this process is outlier detection, anomaly detection and novelty detection. By detection of anomalies, it will become sufficiently easy for human expert to find the one data point in a heap of millions data points and then decide whether to remove that data or get more of the same data points.
+Need of an anomaly detection algorithm to identify faulty devices or prevent potential system failure before it happens. Thus the anomaly detection algorithm should be generic (unsupervised), be ready to predict on live data and be able to consider the important past data points (temporal and spatial pattern detection).
+\subsection{Usage of anomaly detection in streaming data}
+\subsection{problems in the concept and brief intro to our innovation}
 \newpage
 \section{Related Work and State of the art 10 pages}
 \begin{enumerate}

@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: third.aux
 I couldn't open style file IEEEtrans.bst
----line 35 of file third.aux
+---line 32 of file third.aux
  : \bibstyle{IEEEtrans
  :                    }
 I'm skipping whatever remains of this command
