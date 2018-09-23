@@ -38,11 +38,12 @@ def autoencoderLstm(input_shape,loss='mse',optimizer='adam'):
 
 def predictionCnn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(Conv1D(kernel_size=3, input_shape=input_shape, activation="relu", filters=5))
-    model.add(Conv1D(kernel_size=2, input_shape=input_shape, activation="relu", filters=5))
+    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
+#    model.add(Flatten())
+    model.add(Dense(10, activation='relu'))
     model.add(Flatten())
-    model.add(Dense(20, activation='relu'))
-    model.add(Dense(1, activation='relu'))
+    model.add(Dense(1))
     model.summary()
     model.compile(loss=loss, optimizer=optimizer)
     return model
