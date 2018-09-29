@@ -1,4 +1,4 @@
-from utility import read_data,train_prediction_based_models,use_whole_data, write_result, common_code
+from utility import read_data,train_prediction_based_models,use_whole_data, write_result, common_code, store_param
 from models import predictionCnn
 import os
 
