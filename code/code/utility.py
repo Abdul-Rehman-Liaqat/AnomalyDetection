@@ -310,6 +310,82 @@ def plot_all_in_one():
     plt.show()
 
 
+def convert_resultjson_to_csv():
+    import json
+    import pandas as pd
+    with open('code/code/results/final_results.json') as f:
+        data = json.load(f)
+    columns = ['algo_name', 'standard', 'low_FN_rate', 'low_FP_rate']
+    df = pd.DataFrame(columns=columns)
+    for item in list(data.items()):
+        algo_dict = {}
+        algo_dict['algo_name'] = item[0]
+        first_reading = list(item[1].keys())[0]
+        first_value = list(item[1].values())[0]
+        second_reading = list(item[1].keys())[1]
+        second_value = list(item[1].values())[1]
+        third_reading = list(item[1].keys())[2]
+        third_value = list(item[1].values())[2]
+        if ('FN_rate' in first_reading):
+            algo_dict['low_FN_rate'] = first_value
+        elif ('FP_rate' in first_reading):
+            algo_dict['low_FP_rate'] = first_value
+        elif ('standard' in first_reading):
+            algo_dict['standard'] = first_value
+
+        if ('FN_rate' in second_reading):
+            algo_dict['low_FN_rate'] = second_value
+        elif ('FP_rate' in second_reading):
+            algo_dict['low_FP_rate'] = second_value
+        elif ('standard' in second_reading):
+            algo_dict['standard'] = second_value
+
+        if ('FN_rate' in third_reading):
+            algo_dict['low_FN_rate'] = third_value
+        elif ('FP_rate' in third_reading):
+            algo_dict['low_FP_rate'] = third_value
+        elif ('standard' in third_reading):
+            algo_dict['standard'] = third_value
+        df_temp = pd.DataFrame([algo_dict])
+        df = df.append(df_temp, ignore_index=True)
+    df.to_csv('scores.csv', index=False)
+    return df
+
+
+def plot_anomlay(val_list,anomaly_index):
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib.collections import LineCollection
+    from matplotlib.colors import ListedColormap, BoundaryNorm
+
+    x = np.linspace(0, 3 * np.pi, 10)
+    y = np.sin(x)
+    z = np.cos(0.5 * (x[:-1] + x[1:]))  # first derivative
+
+    # Create a colormap for red, green and blue and a norm to color
+    # f' < -0.5 red, f' > 0.5 blue, and the rest green
+    cmap = ListedColormap(['r', 'g', 'b'])
+    norm = BoundaryNorm([-1, -0.5, 0.5, 1], cmap.N)
+
+    # Create a set of line segments so that we can color them individually
+    # This creates the points as a N x 1 x 2 array so that we can stack points
+    # together easily to get the segments. The segments array for line collection
+    # needs to be numlines x points per line x 2 (x and y)
+    points = np.array([x, y]).T.reshape(-1, 1, 2)
+    segments = np.concatenate([points[:-1], points[1:]], axis=1)
+
+    # Create the line collection object, setting the colormapping parameters.
+    # Have to set the actual values used for colormapping separately.
+    lc = LineCollection(segments, cmap=cmap, norm=norm)
+    lc.set_array(z)
+    lc.set_linewidth(3)
+
+    fig1 = plt.figure()
+    plt.gca().add_collection(lc)
+    plt.xlim(x.min(), x.max())
+    plt.ylim(-1.1, 1.1)
+    plt.show()
+
 #def display_algo_confusion_matrix(results_path):
 
 
