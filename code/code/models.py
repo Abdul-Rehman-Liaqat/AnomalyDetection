@@ -1,7 +1,7 @@
 
 
 from keras.models import Sequential, Model
-from keras.layers import Conv1D, Flatten, Dropout, Dense, Reshape, LSTM, RepeatVector
+from keras.layers import Conv1D, Flatten, Dropout, Dense, Reshape, LSTM, RepeatVector, Conv2DTranspose
 
 
 def autoencoderNn(input_shape,loss='mse',optimizer='adam'):
@@ -15,16 +15,32 @@ def autoencoderNn(input_shape,loss='mse',optimizer='adam'):
     return model
 
 
-
 def autoencoderCnn(input_shape,loss='mse',optimizer='adam'):
+#    model = Sequential()
+#    model.add(Conv1D(filters=5, kernel_size=10, input_shape=input_shape, activation='relu'))
+#    model.add(Reshape(target_shape=(5,1)))
+#    model.add(Conv1D(filters=input_shape[0], kernel_size=5, activation='relu'))
+#    model.add(Reshape(target_shape=(input_shape[0],1)))
+#    model.summary()
+#    model.compile(loss=loss, optimizer=optimizer)
+#    return model
+
     model = Sequential()
-    model.add(Conv1D(filters=5, kernel_size=10, input_shape=input_shape, activation='relu'))
-    model.add(Reshape(target_shape=(5,1)))
-    model.add(Conv1D(filters=input_shape[0], kernel_size=5, activation='relu'))
-    model.add(Reshape(target_shape=(input_shape[0],1)))
+    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
+    model.add(Dense(10, activation='relu'))
+#        model.add(Reshape(target_shape=(0, 3, 10)))
+#    model.add(Flatten())
+    model.add(Reshape((0,) + model.output_shape))
+    print(model.output_shape)
     model.summary()
-    model.compile(loss=loss, optimizer=optimizer)
+#    model.add(Dense(1))
+#    model.add(Conv2DTranspose(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
+#    model.summary()
+#    model.compile(loss=loss, optimizer=optimizer)
     return model
+
+
 
 def autoencoderLstm(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
@@ -40,7 +56,6 @@ def predictionCnn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
     model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
-#    model.add(Flatten())
     model.add(Dense(10, activation='relu'))
     model.add(Flatten())
     model.add(Dense(1))
