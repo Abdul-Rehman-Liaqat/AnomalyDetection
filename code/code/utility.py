@@ -17,6 +17,8 @@ seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
 
+def read_yahoo_data():
+    pass
 def read_data(data_folder_path):
     '''
     Function to read whole dataset using input data_folder_path and return a             dictionary with key names
@@ -102,7 +104,7 @@ def _get_result_folder_structure(path,parent_folder_name):
 def get_sample_df(path = "/data/realKnownCause/", file = "nyc_taxi.csv"):
     cwd = os.getcwd()
     path = cwd + path
-    df = pd.read_csv(path+file)
+    df = pd.read_csv(path+'/'+file)
     return df
 
 def max_min_normalize(val,max_min_var):
