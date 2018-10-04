@@ -406,7 +406,22 @@ def cal_f1score(y,pre):
     from sklearn.metrics import f1_score
     return f1_score(y,pre)
 
+def get_all_files_path(root):
+    files = [val for sublist in [[os.path.join(i[0], j) for j in i[2]] for i in os.walk(root)] for val in sublist]
+    return files
 
+def use_yahoo_data(model,algo_type,input_shape,train_model):
+    root = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/data/'
+    result_root = root + algo_type
+    os.mkdir(result_root)
+    data_root = root + 'yahoo/'
+    files = get_all_files_path(data_root)
+    for file in files:
+        df = pd.read_csv(file)
+        df = train_model(df, model, input_shape, nb_epoch=1)
+        file_name = file.split('/')[-1]
+        file = result_root+ '/' + algo_type + '_' + file_name
+        df.to_csv(file, index=False)
 #def display_algo_confusion_matrix(results_path):
 
 
