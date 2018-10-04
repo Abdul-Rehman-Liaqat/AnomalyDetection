@@ -1,40 +1,39 @@
-from keras.models import Sequential, Model
-from keras.layers import Conv1D, Flatten, Dropout, Dense
-from utility import get_sample_df, train_prediction_based_models,update_data_config
-from models import predictionNn, predictionCnn, predictionLstm
-import os
-import pickle
-import numpy as np
-#os.chdir('code/code')
-cwd = os.getcwd()
-path = cwd + "/data"
-config_path = cwd + "/config/data.config"
-df = get_sample_df()
+from models import autoencoderCnn, convert_resultjson_to_csv
+
+
 window_size = 10
 nb_epoch = 1
 nb_features = 1
-input_shape = (window_size,)
-cnn_input_shape = (window_size,nb_features)
-lstm_input_shape = (window_size,nb_features)
-cnn_model = predictionCnn(cnn_input_shape)
-lstm_model = predictionLstm(lstm_input_shape)
-df3 = train_prediction_based_models(df,lstm_model,lstm_input_shape,nb_epoch)
-#df2 = train_prediction_based_models(df,cnn_model,cnn_input_shape,nb_epoch=nb_epoch)
-# error_prediction = []
-# prediction = []
-# L = []
-# for i in np.arange(input_shape[0]+1,len(df)):
-#     X_input = df["value"].values[i-(1+input_shape[0]):i-1].reshape((1,)+input_shape)
-#     Y_input = df["value"].values[i].reshape((1,1))
-#     prediction.append(model.predict(X_input)[0][0])
-#     error_prediction.append(prediction[-1]-Y_input[0][0])
-#     history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
-#     L.append(history.history['loss'])
-#    L.append(score_postprocessing(error_prediction,len(error_prediction)))
-#        print(i)
-#    temp_no_error = [0]*(input_shape[0]+1)
-#    error_prediction = temp_no_error + error_prediction
-#    error_prediction[0:probation_period] = [0]*probation_period
-#    df['anomaly_score'] = error_prediction
-#    df['anomaly_prediction'] = prediction
-#    return df
+input_shape = (window_size, nb_features)
+
+
+def autoencoderCnn(input_shape,loss='mse',optimizer='adam'):
+#    model = Sequential()
+#    model.add(Conv1D(filters=5, kernel_size=10, input_shape=input_shape, activation='relu'))
+#    model.add(Reshape(target_shape=(5,1)))
+#    model.add(Conv1D(filters=input_shape[0], kernel_size=5, activation='relu'))
+#    model.add(Reshape(target_shape=(input_shape[0],1)))
+#    model.summary()
+#    model.compile(loss=loss, optimizer=optimizer)
+#    return model
+    model = Sequential()
+    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
+#        model.add(Reshape(target_shape=(0, 3, 10)))
+#    model.add(Flatten())
+    model.add(Reshape((1,) + model.output_shape[1:]))
+    print(model.output_shape)
+    model.summary()
+#    model.add(Dense(1))
+    model.add(Conv2DTranspose(kernel_size=2, filters=5, strides = 2,  activation="relu"))
+    model.add(Conv2DTranspose(kernel_size=3, filters=5, strides = 2,  activation="relu"))
+    model.add(Conv2DTranspose(kernel_size=1, filters=10, activation="relu"))
+    model.summary()
+#    model.compile(loss=loss, optimizer=optimizer)
+    return model
+
+
+
+model = autoencoderCnn(input_shape)
+df = convert_resultjson_to_csv()
+df = df.iloc[[0,1,2,3,4,11,12,13,14,15,16,17,18,19,20,21]]

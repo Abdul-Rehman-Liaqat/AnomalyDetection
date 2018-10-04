@@ -1,5 +1,3 @@
-from keras.models import Sequential, Model
-from keras.layers import Conv1D, Flatten, Dropout, Dense
 from utility import read_data,train_autoencoder_based_models,use_whole_data, write_result
 from models import autoencoderCnn
 import os
@@ -21,4 +19,5 @@ algo_name = "autoencoderCnnOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,n
 with open("dump/"+algo_name+".obj",'wb') as f:
     pickle.dump(result_files,f)
 write_result(algorithm_name=algo_name,data_files=result_files,results_path=cwd+'/results')
+
 

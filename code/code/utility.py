@@ -13,6 +13,7 @@ from scipy.stats import norm
 from numpy.random import seed
 from configparser import ConfigParser
 import json
+
 seed(1)
 from tensorflow import set_random_seed
 set_random_seed(2)
@@ -146,8 +147,8 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var 
 def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
     error_prediction = []
     L = []
-    for i in np.arange(input_shape[0],len(df)):
-        X_input = max_min_normalize(df["value"].values[i-(input_shape[0]):i], max_min_var)
+    for i in np.arange(len(df) - input_shape[0]):
+        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
         X_input = X_input.reshape((1,)+input_shape)
         pred = model.predict(X_input)
         error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
@@ -166,7 +167,6 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
     if(config_path != None):
         config = ConfigParser()
         config.read(config_path)
-
     result_files = data_files
     for key,value in data_files.items():
         for folder_key,df in value.items():
@@ -387,6 +387,25 @@ def plot_anomlay(val_list,anomaly_index):
     plt.xlim(x.min(), x.max())
     plt.ylim(-1.1, 1.1)
     plt.show()
+
+def cal_threshold(df,col,sigma = 5):
+    df['anomaly'] = 0
+    val = df[col]
+    mean = np.mean(val)
+    std = np.std(val)
+    threshold = mean + std * sigma
+    df.loc[df[col].values > threshold, 'anomaly'] = 1
+    return df
+
+def cal_auc(y,pre):
+    from sklearn.metrics import roc_curve,auc
+    fpr, tpr, thresholds = roc_curve(y,pre)
+    return auc(fpr, tpr)
+
+def cal_f1score(y,pre):
+    from sklearn.metrics import f1_score
+    return f1_score(y,pre)
+
 
 #def display_algo_confusion_matrix(results_path):
 
