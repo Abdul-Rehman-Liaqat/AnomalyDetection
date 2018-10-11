@@ -29,45 +29,54 @@ import pandas as pd
 #datetime.datetime.fromtimestamp(1485714600)
 
 
-
-
-path = '/home/abdulliaqat/Desktop/thesis/yahoo/A1Benchmark'
-dir = os.listdir(path)
-dir = [i for i in dir if('txt' not in i)]
-for d in dir:
-    dir_path = path+'/'+d
-    df = pd.read_csv(dir_path)
-    val = df['timestamp'].values
-    original_time = '2014-04-01 00:00:00'
-    original = parser.parse(original_time)
-    converted = []
-    for i in val:
-        converted.append(str(original + timedelta(hours = int(i))))
-    df['timestamp'] = converted
-    df.to_csv(dir_path, index = False)
-
-
-algos = ['null','numenta','random','skyline','bayesChangePt','windowedGaussian','expose','relativeEntropy']
-file = ['real_','synthetic_']
-
-original_path = {'real':'/home/abdulliaqat/Desktop/thesis/yahoo/A1Benchmark/',
-                 'synthetic':'/home/abdulliaqat/Desktop/thesis/yahoo/A2Benchmark/'}
-
+import os
 import pandas as pd
-from utility import cal_threshold,cal_auc,cal_f1score
-import matplotlib.pyplot as plt
+data_folder_path = '/home/abdulliaqat/Desktop/thesis/NAB original/data'
 
-algo_name = algos[1]
-i = 1
-data_type = 'real'
-path  = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/results/'
-df = pd.read_csv(path+algo_name+'/'+'yahoo/'+algo_name+'_'+data_type+'_'+str(i)+'.csv')
-df_original = pd.read_csv(original_path[data_type]+data_type+'_'+str(i)+'.csv')
-df['is_anomaly'] = df_original['is_anomaly']
-df = cal_threshold(df,'anomaly_score')
-print(cal_f1score(df['is_anomaly'].values,df['anomaly'].values))
-print(cal_auc(df['is_anomaly'].values,df['anomaly'].values))
-plt.plot(df.is_anomaly)
-#plt.plot(df.anomaly)
-plt.show()
+list_dir = os.listdir(data_folder_path)
+list_dir.remove('README.md')
+data_files_path = []
+data_files_name = []
+for folder in list_dir:
+    if (folder != 'README.md'):
+        temp_path = data_folder_path + '/' + folder + '/'
+        temp_data_files_name = os.listdir(temp_path)
+        temp_data_files_path = os.listdir(temp_path)
+        for i, file_path in enumerate(temp_data_files_path):
+            temp_data_files_path[i] = temp_path + temp_data_files_path[i]
+        data_files_path.append(temp_data_files_path)
+        data_files_name.append(temp_data_files_name)
 
+cols = ['length','max_val','min_val','mean','std','data_type','file_name']
+meta_df = pd.DataFrame(columns = cols)
+data_files = {}
+for dataset_name, path_folder, name_folder in zip(list_dir, data_files_path, data_files_name):
+    temp_dir = {}
+    for path, name in zip(path_folder, name_folder):
+        df = pd.read_csv(path)
+        length = len(df)
+        max_val = max(df.value.values)
+        min_val = min(df.value.values)
+        mean = df.value.values.mean()
+        std = df.value.values.std()
+        meta_df.loc[len(meta_df)] = [length,max_val,min_val,mean,std,dataset_name,name]
+meta_df.to_csv('NAB_data_meta.csv',index = False)
+
+
+import os
+import pandas as pd
+from utility import get_all_files_path
+files = get_all_files_path('/home/abdulliaqat/Desktop/thesis/yahoo')
+files = [file for file in files if ('.txt' not in file)]
+cols = ['length','max_val','min_val','mean','std','data_type','file_name']
+meta_df = pd.DataFrame(columns = cols)
+for file in files:
+    df = pd.read_csv(file)
+    cols = ['length','max_val','min_val','mean','std','data_type','file_name']
+    length = len(df)
+    max_val = max(df.value.values)
+    min_val = min(df.value.values)
+    mean = df.value.values.mean()
+    std = df.value.values.std()
+    meta_df.loc[len(meta_df)] = [length, max_val, min_val, mean, std, '/'.join(file.split('/')[0:-1]),file.split('/')[-1]]
+meta_df.to_csv('Yahoo_data_meta.csv',index = False)

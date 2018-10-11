@@ -10,3 +10,5 @@ input_shape = (window_size,)
 model = autoencoderNn(input_shape)
 algo_type = "autoencoderNnOneEpoch"
 use_yahoo_data(model,algo_type,input_shape,train_autoencoder_based_models)
+
+
