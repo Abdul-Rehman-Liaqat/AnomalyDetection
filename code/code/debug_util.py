@@ -80,3 +80,12 @@ for file in files:
     std = df.value.values.std()
     meta_df.loc[len(meta_df)] = [length, max_val, min_val, mean, std, '/'.join(file.split('/')[0:-1]),file.split('/')[-1]]
 meta_df.to_csv('Yahoo_data_meta.csv',index = False)
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+r1 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data/yahoo/real_1.csv')
+r2 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data/yahoo/real_2.csv')
+r3 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data/yahoo/real_3.csv')
+r4 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data/yahoo/real_4.csv')
+
