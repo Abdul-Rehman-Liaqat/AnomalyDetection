@@ -89,3 +89,4 @@ r2 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/ac
 r3 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data/yahoo/real_3.csv')
 r4 = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data/yahoo/real_4.csv')
 
+r = pd.concat([r1,r2,r3,r4])
