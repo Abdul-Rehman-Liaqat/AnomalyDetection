@@ -1,39 +1,49 @@
-from models import autoencoderCnn, convert_resultjson_to_csv
+import pandas as pd
+import json
+from utility import *
+import os
+
+f = open('/home/abdulliaqat/Desktop/thesis/archive/NAB/labels/combined_windows.json', 'r')
+file = json.load(f)
+path = '/home/abdulliaqat/Desktop/thesis/archive/NAB/data'
+path_new = '/home/abdulliaqat/Desktop/thesis/archive/NAB/data_new'
+for fi in list(file.keys()):
+    df = pd.read_csv(path+'/'+fi)
+    df['is_anomaly'] = 0
+    for time_range in file[fi]:
+        df.loc[(df['timestamp'] >= time_range[0].split('.')[0]) & (df['timestamp'] <= time_range[1].split('.')[0]),'is_anomaly'] = 1
+    df.to_csv(path_new+'/'+fi,index = False)
 
 
-window_size = 10
-nb_epoch = 1
-nb_features = 1
-input_shape = (window_size, nb_features)
+algo_list = ['numenta',
+            'random',
+            'skyline',
+            'bayesChangePt',
+            'windowedGaussian',
+            'expose',
+            'relativeEntropy']
 
 
-def autoencoderCnn(input_shape,loss='mse',optimizer='adam'):
-#    model = Sequential()
-#    model.add(Conv1D(filters=5, kernel_size=10, input_shape=input_shape, activation='relu'))
-#    model.add(Reshape(target_shape=(5,1)))
-#    model.add(Conv1D(filters=input_shape[0], kernel_size=5, activation='relu'))
-#    model.add(Reshape(target_shape=(input_shape[0],1)))
-#    model.summary()
-#    model.compile(loss=loss, optimizer=optimizer)
-#    return model
-    model = Sequential()
-    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
-    model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
-#        model.add(Reshape(target_shape=(0, 3, 10)))
-#    model.add(Flatten())
-    model.add(Reshape((1,) + model.output_shape[1:]))
-    print(model.output_shape)
-    model.summary()
-#    model.add(Dense(1))
-    model.add(Conv2DTranspose(kernel_size=2, filters=5, strides = 2,  activation="relu"))
-    model.add(Conv2DTranspose(kernel_size=3, filters=5, strides = 2,  activation="relu"))
-    model.add(Conv2DTranspose(kernel_size=1, filters=10, activation="relu"))
-    model.summary()
-#    model.compile(loss=loss, optimizer=optimizer)
-    return model
+path = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/results'
+labeled_data = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/actual_data'
+n_sigma = [1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6]
 
-
-
-model = autoencoderCnn(input_shape)
-df = convert_resultjson_to_csv()
-df = df.iloc[[0,1,2,3,4,11,12,13,14,15,16,17,18,19,20,21]]
+col = 'anomaly_score'
+data_folder = 'yahoo'
+for algo in algo_list:
+    files_path = path+'/'+algo+'/'+ data_folder
+    files = os.listdir(files_path)
+    fi_auc = []
+    for fi in files:
+        fi_path = files_path + '/' + fi
+        fi_name = '_'.join(fi.split('_')[1:])
+        labeled_df = pd.read_csv(labeled_data+'/'+data_folder+'/'+fi_name)
+        df = pd.read_csv(fi_path)
+        sig_auc = []
+        df['is_anomaly'] = labeled_df['is_anomaly']
+        for sig in n_sigma:
+            df = cal_threshold(df,col,sig)
+            sig_auc.append(cal_auc(df['is_anomaly'].values,df['prediction'].values))
+        fi_auc.append(sig_auc)
+    fi_auc_df = pd.DataFrame(pd.DataFrame(fi_auc),columns = n_sigma)
+    fi_auc_df.dropna()

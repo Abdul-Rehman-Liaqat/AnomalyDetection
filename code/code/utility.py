@@ -13,6 +13,8 @@ from scipy.stats import norm
 from numpy.random import seed
 from configparser import ConfigParser
 import json
+import keras.backend as k
+from keras.metrics import  mse
 
 seed(1)
 from tensorflow import set_random_seed
@@ -57,6 +59,24 @@ def read_data(data_folder_path):
 
 
 #def preprocess_data(df):
+
+def create_exponential_weights(alpha,L):
+    exp_weights = np.array([])
+    for i in range(L-1):
+        exp_weights = np.append(exp_weights,(1-alpha)**(i+1))
+    exp_weights = alpha*exp_weights
+    exp_weights = np.append(exp_weights,(1-alpha)**L)
+    return exp_weights
+
+
+def customLoss(previous_loss):
+    def lossFunction(y_true, y_pred):
+        loss = mse(y_true, y_pred)
+        exp_weights = create_exponential_weights(alpha,len(previous_loss))
+        previous_loss = np.sum(np.multiply(exp_weights,previous_loss))
+        loss += k.sum(previous_loss,loss*alpha)
+        return loss
+    return lossFunction
 
 def write_result(algorithm_name,data_files,results_path):
     '''
@@ -162,6 +182,8 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var
     df['error_prediction'] = error_prediction
     df['anomaly_score'] = L
     return df
+
+
 
 def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
     if(config_path != None):
@@ -389,12 +411,12 @@ def plot_anomlay(val_list,anomaly_index):
     plt.show()
 
 def cal_threshold(df,col,sigma = 5):
-    df['anomaly'] = 0
+    df['prediction'] = 0
     val = df[col]
     mean = np.mean(val)
     std = np.std(val)
     threshold = mean + std * sigma
-    df.loc[df[col].values > threshold, 'anomaly'] = 1
+    df.loc[df[col] > threshold, 'prediction'] = 1
     return df
 
 def cal_auc(y,pre):
