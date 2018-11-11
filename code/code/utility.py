@@ -68,13 +68,19 @@ def create_exponential_weights(alpha,L):
     exp_weights = np.append(exp_weights,(1-alpha)**L)
     return exp_weights
 
+def mse(y_true,y_pred):
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    diff = y_true - y_pred
+    return sum(diff**2)
 
-def customLoss(previous_loss):
+def customLoss(alpha,previousLoss):
     def lossFunction(y_true, y_pred):
         loss = mse(y_true, y_pred)
-        exp_weights = create_exponential_weights(alpha,len(previous_loss))
-        previous_loss = np.sum(np.multiply(exp_weights,previous_loss))
-        loss += k.sum(previous_loss,loss*alpha)
+        exp_weights = create_exponential_weights(alpha,len(previousLoss))
+        previous_loss = np.sum(np.multiply(exp_weights,previousLoss))
+#        loss = previous_loss+loss*alpha
+        loss = k.sum(previousLoss,loss*alpha)
         return loss
     return lossFunction
 
