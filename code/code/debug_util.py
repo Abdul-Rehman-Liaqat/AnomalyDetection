@@ -34,17 +34,16 @@ import os
 from models import predictionNn
 import pandas as pd
 import numpy as np
+from matplotlib.pyplot import plot
 
-root = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/data/'
-algo_type = "predictionNnOneEpoch"
 cwd = os.getcwd()
 window_size = 10
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
 model = predictionNn(input_shape)
-df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv')
-df = df.head(50)
+df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/yahoo_data_result/yahoo/real_1.csv')
+#df = df.head(1000)
 error_prediction = []
 prediction = []
 L = []
@@ -57,20 +56,12 @@ for i in np.arange(input_shape[0], len(df)):
     prediction.append(model.predict(X_input)[0][0])
     error_prediction.append(prediction[-1] - Y_input[0][0])
     history = model.fit(X_input, Y_input, nb_epoch=nb_epoch, verbose=0)
-    convergence_loss.append(history.history['loss'])
+    convergence_loss.append(history.history['loss'][0])
 
 
 temp_no_error = [0] * (input_shape[0])
 error_prediction = temp_no_error + error_prediction
 prediction = temp_no_error + prediction
-L[0] = 0.5
-L_no_error = [0.5] * (input_shape[0])
-L = L_no_error + L
-df['error_prediction'] = error_prediction
-df['convergence_loss'] = temp_no_error + convergence_loss
-df['prediction'] = prediction
-
-
-
-import matplotlib.pyplot as plt
-plt.plot(convergence_loss)
+df['error_prediction'] = np.array(error_prediction)
+df['convergence_loss'] = np.array(temp_no_error + convergence_loss)
+df['prediction'] = np.array(prediction)

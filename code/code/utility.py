@@ -15,6 +15,7 @@ from configparser import ConfigParser
 import json
 import keras.backend as k
 from keras.metrics import  mse
+import datetime
 
 seed(1)
 from tensorflow import set_random_seed
@@ -68,7 +69,7 @@ def create_exponential_weights(alpha,L):
     exp_weights = np.append(exp_weights,(1-alpha)**L)
     return exp_weights
 
-def mse(y_true,y_pred):
+def mse_cal(y_true,y_pred):
     y_true = np.array(y_true)
     y_pred = np.array(y_pred)
     diff = y_true - y_pred
@@ -76,11 +77,12 @@ def mse(y_true,y_pred):
 
 def customLoss(alpha,previousLoss):
     def lossFunction(y_true, y_pred):
-        loss = mse(y_true, y_pred)
+        #loss = mse(y_true, y_pred)
+        loss = mse_cal(y_true, y_pred)
         exp_weights = create_exponential_weights(alpha,len(previousLoss))
         previous_loss = np.sum(np.multiply(exp_weights,previousLoss))
-#        loss = previous_loss+loss*alpha
-        loss = k.sum(previousLoss,loss*alpha)
+        loss = previous_loss+loss*alpha
+#        loss = k.sum(previous_loss,loss*alpha)
         return loss
     return lossFunction
 
@@ -185,9 +187,9 @@ def artificial_data_generation(random_seed=2):
     base_array[14000:14020] = np.random.randint(20, 30, 20)
     base_array[15000:sep1] = np.random.randint(10, 20, 20)
     base_array[16000:16000 + sep1] = base_array[0:sep1] + 3.14
-    base_array[2 * 16000:2 * 16000 + sep1] = base_array[0:sep1]
+    base_array[2 * 16000:2 * 16000 + sep1] = base_array[0:sep1] + 3.14
     base_array[3 * 16000:3 * 16000 + sep1] = base_array[0:sep1] + 3.14
-    base_array[4 * 16000:4 * 16000 + sep1] = base_array[0:sep1]
+    base_array[4 * 16000:4 * 16000 + sep1] = base_array[0:sep1] + 3.14
     df = pd.DataFrame(base_array, columns=['value'])
 
     is_anomaly = np.array([0] * len(base_array))
