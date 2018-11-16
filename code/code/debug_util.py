@@ -45,7 +45,8 @@ nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
 model = predictionNn(input_shape)
-df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv')
+#df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv')
+df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/archive/AnomalyDetection-old/code/code/data/realAWSCloudwatch/grok_asg_anomaly.csv')
 #df = df.head(1000)
 error_prediction = []
 prediction = []
@@ -69,7 +70,8 @@ df['error_prediction'] = np.array(error_prediction)
 df['convergence_loss'] = np.array(temp_no_error + convergence_loss)
 df['prediction'] = np.array(prediction)
 df = cal_threshold(df,'error_prediction')
-
+df.predicted_anomaly.plot()
+#df.error_prediction.plot()
 
 # First diagnosis of autoencoder based models on artificial dataset
 from utility import *
@@ -86,7 +88,8 @@ nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
 model = autoencoderNn(input_shape)
-df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_2.csv')
+#df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_2.csv')
+df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/archive/AnomalyDetection-old/code/code/data/realAWSCloudwatch/grok_asg_anomaly.csv')
 #df = df.head(1000)
 error_prediction = []
 convergence_loss = []
@@ -107,3 +110,49 @@ for i in np.arange(len(df) - input_shape[0]):
 df['error_prediction'] = error_prediction +  [0] * (input_shape[0])
 df['prediction'] = np.array([[0]] * (input_shape[0]) +prediction)
 df = cal_threshold(df,'error_prediction')
+#df.predicted_anomaly.plot()
+plot(convergence_loss)
+print("===>Done<====")
+
+
+
+# First diagnosis of autoencoder based models on artificial dataset
+from utility import *
+import os
+from models import autoencoderNn
+import pandas as pd
+import numpy as np
+from matplotlib.pyplot import plot
+
+
+cwd = os.getcwd()
+window_size = 10
+nb_epoch = 1
+nb_features = 1
+input_shape = (window_size,)
+model = autoencoderNn(input_shape)
+#df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_2.csv')
+df = pd.read_csv('/home/abdulliaqat/Desktop/thesis/archive/AnomalyDetection-old/code/code/data/realAWSCloudwatch/grok_asg_anomaly.csv')
+#df = df.head(1000)
+error_prediction = []
+convergence_loss = []
+prediction = []
+for i in np.arange(len(df) - input_shape[0]):
+    X_input = max_min_normalize(df["value"].values[i:i + (input_shape[0])], [])
+    X_input = X_input.reshape((1,) + input_shape)
+    pred = model.predict(X_input)
+    prediction.append(pred.tolist()[0])
+    error_prediction.append(np.sqrt((pred - X_input) * (pred - X_input))[0][0])
+    history = model.fit(X_input, X_input, nb_epoch=nb_epoch, verbose=0)
+    convergence_loss.append(history.history['loss'][0])
+# temp_no_error = [0] * (input_shape[0])
+# error_prediction = temp_no_error + error_prediction
+# df['error_prediction'] = error_prediction
+# df['prediction'] = np.array([[0]] * (input_shape[0]) +prediction)
+# df = cal_threshold(df,'error_prediction')
+df['error_prediction'] = error_prediction +  [0] * (input_shape[0])
+df['prediction'] = np.array([[0]] * (input_shape[0]) +prediction)
+df = cal_threshold(df,'error_prediction')
+df.predicted_anomaly.plot()
+df.error_prediction.plot()
+plot(convergence_loss)
