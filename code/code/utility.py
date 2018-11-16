@@ -473,12 +473,12 @@ def plot_anomlay(val_list,anomaly_index):
     plt.show()
 
 def cal_threshold(df,col,sigma = 5):
-    df['prediction'] = 0
+    df['predicted_anomaly'] = 0
     val = df[col]
     mean = np.mean(val)
     std = np.std(val)
     threshold = mean + std * sigma
-    df.loc[df[col] > threshold, 'prediction'] = 1
+    df.loc[df[col] > threshold, 'predicted_anomaly'] = 1
     return df
 
 def cal_auc(y,pre):
