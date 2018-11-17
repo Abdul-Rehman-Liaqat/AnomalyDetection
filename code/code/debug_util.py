@@ -73,6 +73,8 @@ df = cal_threshold(df,'error_prediction')
 df.predicted_anomaly.plot()
 #df.error_prediction.plot()
 
+
+
 # First diagnosis of autoencoder based models on artificial dataset
 from utility import *
 import os
