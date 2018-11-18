@@ -9,7 +9,7 @@ def autoencoderNn(input_shape,loss='mse',optimizer='adam'):
     model.add(Dense(7, input_shape=input_shape, activation='relu'))
     model.add(Dense(4, activation='relu'))
     model.add(Dense(7, activation='relu'))
-    model.add(Dense(10, activation='relu'))
+    model.add(Dense(10))
     model.summary()
     model.compile(loss=loss, optimizer=optimizer)
     return model
@@ -77,7 +77,7 @@ def predictionNn(input_shape,loss='mse',optimizer='adam'):
     model.add(Dense(50,input_shape = input_shape, activation='relu'))
     model.add(Dense(25,input_shape = input_shape, activation='relu'))
     model.add(Dense(10,input_shape = input_shape, activation='relu'))
-    model.add(Dense(1, activation='relu'))
+    model.add(Dense(1))
     model.summary()
     model.compile(loss=loss, optimizer=optimizer)
     return model
@@ -87,7 +87,7 @@ def predictionNnWithRecency(input_shape,loss='mse',optimizer='adam'):
     model.add(Dense(50,input_shape = input_shape, activation='relu'))
     model.add(Dense(25,input_shape = input_shape, activation='relu'))
     model.add(Dense(10,input_shape = input_shape, activation='relu'))
-    model.add(Dense(1, activation='relu'))
+    model.add(Dense(1))
     model.summary()
     model.compile(loss=loss, optimizer=optimizer)
     return model
