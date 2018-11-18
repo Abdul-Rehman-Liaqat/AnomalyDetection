@@ -1,5 +1,4 @@
-from utility import train_prediction_based_models,use_whole_data, write_result,
- common_code_normalized, store_param
+from utility import train_prediction_based_models,use_whole_data, write_result,common_code_normalized, store_param
 import os
 from models import predictionNn
 
