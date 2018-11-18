@@ -14,6 +14,11 @@
         "reward_low_FP_rate": -172.04869602974142,
         "standard": -78.43285830689655
     },
+    "autoencoderNnnormalized18Nov1118134": {
+        "reward_low_FN_rate": -2.7555481431034443,
+        "reward_low_FP_rate": 2.264228173275868,
+        "standard": 3.600251929741382
+    },
     "cnn": {
         "prediction_reward_low_FN_rate": -2033.7705911034482,
         "prediction_reward_low_FP_rate": -6212.730046767241,
