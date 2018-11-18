@@ -200,6 +200,26 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var 
     df['prediction'] = prediction
     return df
 
+def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
+    error_prediction = []
+    prediction = []
+    convergence_loss = []
+    for i in np.arange(input_shape[0],len(df)):
+        X_input = max_min_normalize(df["value"].values[i - (input_shape[0]):i], max_min_var)
+        X_input = X_input.reshape((1,)+input_shape)
+        Y_input = max_min_normalize(df["value"].values[i],max_min_var)
+        Y_input = Y_input.reshape((1,1))
+        prediction.append(model.predict(X_input)[0][0])
+        error_prediction.append(prediction[-1]-Y_input[0][0])
+        history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
+        convergence_loss.append(history.history['loss'])
+    temp_no_error = [0]*(input_shape[0])
+    error_prediction = temp_no_error + error_prediction
+    prediction = temp_no_error + prediction
+    df['anomaly_score'] = error_prediction
+    df['convergence_loss'] = temp_no_error + convergence_loss
+    df['prediction'] = prediction
+    return df
 
 def artificial_data_generation(random_seed=2):
     length = 100000
