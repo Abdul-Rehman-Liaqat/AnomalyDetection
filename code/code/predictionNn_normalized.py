@@ -1,4 +1,4 @@
-from utility import train_prediction_based_models,use_whole_data, write_result,common_code_normalized, store_param
+from utility import train_prediction_based_models_new,use_whole_data, write_result,common_code_normalized, store_param
 import os
 from models import predictionNn
 
@@ -10,7 +10,7 @@ input_shape = (window_size,)
 model = predictionNn(input_shape)
 data_files,add_to_name, data_config = common_code_normalized()
 result_files = use_whole_data(data_files,input_shape,
-                              train_prediction_based_models,model,
+                              train_prediction_based_models_new,model,
                               nb_epoch=nb_epoch, config_path=data_config)
 algo_type = "predictionNnOneEpoch"
 algo_name = algo_type + add_to_name
