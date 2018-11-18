@@ -1,4 +1,4 @@
-from utility import train_autoencoder_based_models_new,use_whole_data, write_result,common_code_normalized, store_param, common_code_normalized
+from utility import train_autoencoder_based_models_new,use_whole_data, write_result, store_param, common_code_normalized
 import os
 from models import autoencoderNn
 

@@ -294,6 +294,17 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var
     df['anomaly_score'] = L
     return df
 
+def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
+    error_prediction = []
+    for i in np.arange(len(df) - input_shape[0]):
+        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
+        X_input = X_input.reshape((1,)+input_shape)
+        pred = model.predict(X_input)
+        error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
+    temp_no_error = [0]*(input_shape[0])
+    error_prediction = temp_no_error + error_prediction
+    df['anomaly_score'] = error_prediction
+    return df
 
 
 def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
