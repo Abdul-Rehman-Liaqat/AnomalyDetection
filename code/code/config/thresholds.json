@@ -293,6 +293,20 @@
             "threshold": 0.3749969482421875
         }
     },
+    "predictionNnOneEpochnormalized18Nov11181222": {
+        "reward_low_FN_rate": {
+            "score": -211.018866890242,
+            "threshold": 0.6283203125000002
+        },
+        "reward_low_FP_rate": {
+            "score": -110.5028823607611,
+            "threshold": 0.7296890258789066
+        },
+        "standard": {
+            "score": -105.01886689024201,
+            "threshold": 0.6283203125000002
+        }
+    },
     "random": {
         "reward_low_FN_rate": {
             "score": -137.34043451378136,
