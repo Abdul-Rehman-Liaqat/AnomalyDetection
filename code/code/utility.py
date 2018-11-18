@@ -355,6 +355,26 @@ def common_code():
         data_config = 'config/data.config'
     return data_files,add_to_name,data_config
 
+def common_code_normalized():
+    import argparse
+    from datetime import datetime
+    parser = argparse.ArgumentParser(description='Add to existing name')
+    parser.add_argument('--name', help='add to existing name especially if I am testing some new feature.')
+    parser.add_argument('--normalize', help='add to existing name especially if I am testing some new feature.', action='store_true')
+    args = parser.parse_args()
+    now = datetime.now()
+    add_to_name = "{}{}{}{}".format(now.month, now.day, now.hour, now.minute)
+    cwd = os.getcwd()
+    # path = cwd + "/code/code/data"
+    path = cwd + "/actual_data_normalized"
+    data_files = read_data(path)
+    data_config = None
+    if (args.name != None):
+        add_to_name = args.name + add_to_name
+    if (args.normalize == True):
+        data_config = 'config/data.config'
+    return data_files,add_to_name,data_config
+
 def store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,data_config):
     param_dict = {}
     param_dict['window_size'] = window_size

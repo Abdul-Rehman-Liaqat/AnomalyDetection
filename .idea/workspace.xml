@@ -1,38 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/code/code/debug_util.py" line="99" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f7198252-3826-4413-9472-8e0741d97b0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/AnomalyDetection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AnomalyDetection.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/autoencoderFullyConnected-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/autoencoderFullyConnected-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/autoencoderFullyConvolutional-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/autoencoderFullyConvolutional-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/autoencoderLstm-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/autoencoderLstm-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/models-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/models-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionCnn-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionCnn-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionLstm-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionLstm-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionNn-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionNn-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionNn-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/predictionNn-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/utility-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/.ipynb_checkpoints/utility-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderFullyConnected.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderFullyConnected.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderFullyConnected.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderFullyConnected.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderFullyConvolution.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderFullyConvolution.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderFullyConvolutional.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderFullyConvolutional.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderFullyConvolutional.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderFullyConvolutional.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderLstm.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderLstm.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/autoencoderLstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/autoencoderLstm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/config/thresholds.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/config/thresholds.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/debug_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/debug_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/plotting.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/plotting.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/predictionCnn.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/predictionCnn.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/predictionLstm.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/predictionLstm.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/predictionLstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/predictionLstm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/predictionNn.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/predictionNn.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code/predictionNn_debug.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,15 +40,15 @@
     <session id="78114270">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.closed" value="30" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="5" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.13" value="8" />
+          <entry key="project.open.time.15" value="4" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.3" value="2" />
@@ -81,34 +56,35 @@
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1806" />
-          <entry key="py" value="972" />
+          <entry key="Python Console" value="4176" />
+          <entry key="py" value="1492" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ipynb" value="1" />
-          <entry key="py" value="23" />
+          <entry key="py" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IPNB" value="1" />
-          <entry key="Python" value="23" />
+          <entry key="Python" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2778" />
+          <entry key="Python" value="5668" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FavoritesManager">
@@ -131,22 +107,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/code/debug_code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="90">
               <caret line="7" column="21" selection-start-line="7" selection-end-line="7" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/code/debug_util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/code/debug_util.py">
+        <entry file="file://$PROJECT_DIR$/code/code/autoencoderNn_yahoo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
-                <element signature="e#0#62#0" expanded="true" />
+                <element signature="e#0#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,8 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/code/utility.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3225">
-              <caret line="221" column="14" selection-start-line="220" selection-end-line="221" selection-end-column="14" />
+            <state relative-caret-position="495">
+              <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding>
                 <element signature="e#114#133#0" expanded="true" />
               </folding>
@@ -195,16 +177,16 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="11" />
-    <option name="y" value="327" />
-    <option name="width" value="1916" />
-    <option name="height" value="1068" />
+    <option name="y" value="-4" />
+    <option name="width" value="960" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,12 +209,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -255,6 +236,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.debug_util">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="AnomalyDetection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="debug_code" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AnomalyDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -517,9 +520,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.33084312" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.35218784" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50190115" side_tool="true" weight="0.28228387" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -529,11 +532,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294979" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4994664" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" auto_hide="true" x="1920" y="-4" width="1080" height="1924" id="Python Console" order="9" sideWeight="0.49786553" side_tool="true" type="FLOATING" visible="true" weight="0.44874477" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50213444" side_tool="true" weight="0.44874477" />
-      <window_info anchor="bottom" id="Docker" order="11" sideWeight="0.4994664" weight="0.3294979" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32914045" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49839914" visible="true" weight="0.33962265" />
+      <window_info anchor="bottom" auto_hide="true" x="1920" y="24" width="960" height="1056" id="Python Console" order="9" sideWeight="0.49786553" side_tool="true" type="FLOATING" weight="0.44874477" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50160086" side_tool="true" weight="0.33962265" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" sideWeight="0.4994664" weight="0.3294979" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -541,8 +544,9 @@
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="right" id="R Graphics" order="4" weight="0.32977587" />
       <window_info anchor="right" id="R Packages" order="5" />
-      <window_info anchor="right" auto_hide="true" id="SciView" order="6" show_stripe_button="false" type="FLOATING" weight="0.6168623" />
+      <window_info anchor="right" id="SciView" order="6" weight="0.6168623" />
       <window_info anchor="right" id="Database" order="7" weight="0.32977587" />
+      <window_info anchor="right" x="0" y="0" width="430" height="884" id="Documentation" order="8" side_tool="true" visible="true" weight="0.32977587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +575,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/code/code/utility.py</url>
-          <line>113</line>
+          <line>142</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -604,55 +608,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="2670" selection-start-line="2670" selection-end-line="2670" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/code/autoencoderFullyConnected.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/code/predictionNn.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/keras/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="1241" selection-start-line="1241" selection-end-line="1241" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/keras/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="1001" selection-start-line="1001" selection-end-line="1001" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-605128486/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="310" selection-start-line="310" selection-end-line="310" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/pandas/core/frame.py" />
+    <entry file="file://$PROJECT_DIR$/code/code/autoencoderFullyConnected.py" />
+    <entry file="file://$PROJECT_DIR$/code/code/predictionNn.ipynb" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/keras/callbacks.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/keras/engine/training.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-1679216578/keras/models.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/329823579/-605128486/codecs.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -683,30 +645,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/code/debug_code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="90">
           <caret line="7" column="21" selection-start-line="7" selection-end-line="7" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/code/debug_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/code/utility.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3225">
-          <caret line="221" column="14" selection-start-line="220" selection-end-line="221" selection-end-column="14" />
+        <state relative-caret-position="495">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding>
             <element signature="e#114#133#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/code/debug_util.py">
+    <entry file="file://$PROJECT_DIR$/code/code/autoencoderNn_yahoo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#0#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
