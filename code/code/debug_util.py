@@ -112,8 +112,8 @@ for i in np.arange(len(df) - input_shape[0]):
 df['error_prediction'] = error_prediction +  [0] * (input_shape[0])
 df['prediction'] = np.array([[0]] * (input_shape[0]) +prediction)
 df = cal_threshold(df,'error_prediction')
-#df.predicted_anomaly.plot()
-plot(convergence_loss)
+df.predicted_anomaly.plot()
+#plot(convergence_loss)
 print("===>Done<====")
 
 
