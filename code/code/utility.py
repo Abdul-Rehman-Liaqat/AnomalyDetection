@@ -205,9 +205,9 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     prediction = []
     convergence_loss = []
     for i in np.arange(input_shape[0],len(df)):
-        X_input = max_min_normalize(df["value"].values[i - (input_shape[0]):i], max_min_var)
+        X_input = df["value"].values[i - (input_shape[0]):i]
         X_input = X_input.reshape((1,)+input_shape)
-        Y_input = max_min_normalize(df["value"].values[i],max_min_var)
+        Y_input = df["value"].values[i]
         Y_input = Y_input.reshape((1,1))
         prediction.append(model.predict(X_input)[0][0])
         error_prediction.append(prediction[-1]-Y_input[0][0])
@@ -216,8 +216,9 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
-    df['anomaly_score'] = error_prediction
+    df['error_prediction'] = error_prediction
     df['convergence_loss'] = temp_no_error + convergence_loss
+    df['anomaly_score'] = temp_no_error + convergence_loss
     df['prediction'] = prediction
     return df
 
