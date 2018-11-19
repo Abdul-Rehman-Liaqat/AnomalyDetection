@@ -212,13 +212,13 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
         prediction.append(model.predict(X_input)[0][0])
         error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
-        convergence_loss.append(history.history['loss'])
+        convergence_loss.append(history.history['loss'][0])
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
     df['error_prediction'] = error_prediction
     df['convergence_loss'] = temp_no_error + convergence_loss
-    df['anomaly_score'] = error_prediction
+    df['anomaly_score'] = convergence_loss
     df['prediction'] = prediction
     return df
 
@@ -477,10 +477,10 @@ def plot_all_in_one():
     plt.show()
 
 
-def convert_resultjson_to_csv():
+def convert_resultjson_to_csv(path = 'code/code/results/final_results.json'):
     import json
     import pandas as pd
-    with open('code/code/results/final_results.json') as f:
+    with open(path) as f:
         data = json.load(f)
     columns = ['algo_name', 'standard', 'low_FN_rate', 'low_FP_rate']
     df = pd.DataFrame(columns=columns)
