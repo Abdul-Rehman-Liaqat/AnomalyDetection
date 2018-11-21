@@ -199,11 +199,13 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var 
     df['convergence_loss'] = temp_no_error + convergence_loss
     df['prediction'] = prediction
     return df
-
+def sigmoid(val):
+    return 1/(1+(np.exp(-1*val)))
 def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
     error_prediction = []
     prediction = []
     convergence_loss = []
+    sigmoid_loss = []
     for i in np.arange(input_shape[0],len(df)):
         X_input = df["value"].values[i - (input_shape[0]):i]
         X_input = X_input.reshape((1,)+input_shape)
@@ -213,12 +215,14 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
         error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
+        sigmoid_loss.append(sigmoid(error_prediction[-1]))
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
     df['error_prediction'] = error_prediction
     df['convergence_loss'] = temp_no_error + convergence_loss
-    df['anomaly_score'] = df['convergence_loss']
+    df['sigmoid_error_prediction'] = temp_no_error + sigmod_loss
+    df['anomaly_score'] = df['sigmoid_error_prediction']
     df['prediction'] = prediction
     return df
 
