@@ -134,10 +134,20 @@
         "reward_low_FP_rate": 6.525939937068962,
         "standard": 16.832789167370688
     },
+    "predictionNnOneEpochnormalized30WindowSize20Nov11201632": {
+        "reward_low_FN_rate": 22.885889847988512,
+        "reward_low_FP_rate": 8.269695266293105,
+        "standard": 17.087455461810347
+    },
     "predictionNnOneEpochnormalizedConvergenceLoss19Nov1119110": {
         "reward_low_FN_rate": 23.281602508045975,
         "reward_low_FP_rate": 6.525939937068962,
         "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalzied30WindowSize20Nov11201656": {
+        "reward_low_FN_rate": 22.885889847988512,
+        "reward_low_FP_rate": 8.269695266293105,
+        "standard": 17.087455461810347
     },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,
