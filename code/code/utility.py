@@ -221,7 +221,7 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     prediction = temp_no_error + prediction
     df['error_prediction'] = error_prediction
     df['convergence_loss'] = temp_no_error + convergence_loss
-    df['sigmoid_error_prediction'] = temp_no_error + sigmod_loss
+    df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
     df['anomaly_score'] = df['sigmoid_error_prediction']
     df['prediction'] = prediction
     return df
