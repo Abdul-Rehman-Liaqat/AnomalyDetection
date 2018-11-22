@@ -160,9 +160,9 @@
         "standard": 16.832789167370688
     },
     "predictionNnOneEpochnormalzied30WindowSize20Nov11201656": {
-        "reward_low_FN_rate": 22.885889847988512,
-        "reward_low_FP_rate": 8.269695266293105,
-        "standard": 17.087455461810347
+        "reward_low_FN_rate": 22.544581745977016,
+        "reward_low_FP_rate": 16.550022543232757,
+        "standard": 20.454803653577592
     },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,
