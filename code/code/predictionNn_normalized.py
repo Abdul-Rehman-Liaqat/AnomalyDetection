@@ -20,3 +20,6 @@ write_result(algorithm_name=algo_name,data_files=result_files,
 store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,
             data_config)
 
+
+#for i in range(len(df)): 
+#    a.append(al.anomalyProbability(df.value.values[i],df.anomaly_score.values[i],df.timestamp.values[i]))

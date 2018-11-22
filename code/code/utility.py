@@ -9,13 +9,14 @@ Created on Fri Jul  6 07:41:07 2018
 import pandas as pd
 import numpy as np
 import os
-from scipy.stats import norm
+from scipy import stats
 from numpy.random import seed
 from configparser import ConfigParser
 import json
 import keras.backend as k
 from keras.metrics import  mse
 import datetime
+from math import erfc
 
 #seed(1)
 #from tensorflow import set_random_seed
@@ -199,8 +200,25 @@ def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var 
     df['convergence_loss'] = temp_no_error + convergence_loss
     df['prediction'] = prediction
     return df
+
 def sigmoid(val):
     return 1/(1+(np.exp(-1*val)))
+
+
+def score_postprocessing(s,t,W=8000,w=10):
+    if(t == 0):
+        return 0
+    def _select_window(s,W):
+        s_W = s[(t-W) if(t-W >= 0) else 0 : t]
+        miu_W = np.mean(s_W)
+        var_W = np.var(s_W)
+        return {'miu':miu_W,'var':var_W}
+    W_param = _select_window(s,W)
+    w_param = _select_window(s,w)
+    L = 1- 0.5*  erfc(((w_param['miu']-W_param['miu'])/W_param['var'])/1.4142)
+    return L
+
+
 def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
     error_prediction = []
     prediction = []
@@ -215,14 +233,15 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
         error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
-        sigmoid_loss.append(sigmoid(error_prediction[-1]))
+#        sigmoid_loss.append(sigmoid(error_prediction[-1]))
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     prediction = temp_no_error + prediction
     df['error_prediction'] = error_prediction
     df['convergence_loss'] = temp_no_error + convergence_loss
     df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
-    df['anomaly_score'] = df['sigmoid_error_prediction']
+#   df['anomaly_score'] = df['sigmoid_error_prediction']
+    df['anomaly_score'] = df['error_prediction']
     df['prediction'] = prediction
     return df
 
@@ -481,7 +500,7 @@ def plot_all_in_one():
     plt.show()
 
 
-def convert_resultjson_to_csv(path = 'code/code/results/final_results.json'):
+def convert_resultjson_to_csv(path = 'results/final_results.json'):
     import json
     import pandas as pd
     with open(path) as f:
