@@ -127,16 +127,16 @@
     },
     "predictionLstmnormalized30Window11222039": {
         "reward_low_FN_rate": {
-            "score": -207.78788917109472,
-            "threshold": 0.5574218749999998
+            "score": -127.7975190001808,
+            "threshold": 0.999998092651368
         },
         "reward_low_FP_rate": {
-            "score": -105.52921617684854,
-            "threshold": 0.5574218749999998
+            "score": -90.06925034614167,
+            "threshold": 0.999999046325684
         },
         "standard": {
-            "score": -101.78788917109463,
-            "threshold": 0.5574218749999998
+            "score": -59.79751900018076,
+            "threshold": 0.999998092651368
         }
     },
     "predictionNnOneEpochnormalized30WindowMseError11222038": {

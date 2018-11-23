@@ -40,9 +40,9 @@
         "standard": 64.55346441254311
     },
     "predictionLstmnormalized30Window11222039": {
-        "reward_low_FN_rate": 6.957503111781612,
-        "reward_low_FP_rate": 4.5132688892241335,
-        "standard": 6.125909840086205
+        "reward_low_FN_rate": 29.94324166666667,
+        "reward_low_FP_rate": 11.177047264612066,
+        "standard": 24.225207327499994
     },
     "predictionNnOneEpochnormalized30WindowMseError11222038": {
         "reward_low_FN_rate": 4.532500389942529,
