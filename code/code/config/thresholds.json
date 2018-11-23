@@ -1,32 +1,4 @@
 {
-    "autoencoderFullyConnectedOneEpoch": {
-        "reward_low_FN_rate": {
-            "score": -393.96423127210653,
-            "threshold": 0.9999998092651373
-        },
-        "reward_low_FP_rate": {
-            "score": -515.1529747893436,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -297.96423127210653,
-            "threshold": 0.9999998092651373
-        }
-    },
-    "autoencoderNnnormalized18Nov1118134": {
-        "reward_low_FN_rate": {
-            "score": -241.5893075382814,
-            "threshold": 0.9527832031250004
-        },
-        "reward_low_FP_rate": {
-            "score": -110.7469906381425,
-            "threshold": 0.9905273437500005
-        },
-        "standard": {
-            "score": -107.6474155228802,
-            "threshold": 0.9906219482421882
-        }
-    },
     "bayesChangePt": {
         "reward_low_FN_rate": {
             "score": -119.7471580442638,
@@ -57,7 +29,7 @@
     },
     "contextOSE": {
         "reward_low_FN_rate": {
-            "score": 22.67222031445549,
+            "score": 22.672220314455487,
             "threshold": 0.7047851562500003
         },
         "reward_low_FP_rate": {
@@ -65,7 +37,7 @@
             "threshold": 0.7656372070312502
         },
         "standard": {
-            "score": 46.167000006791156,
+            "score": 46.16700000679116,
             "threshold": 0.7655273437500002
         }
     },
@@ -153,270 +125,32 @@
             "threshold": 0.5126953125
         }
     },
-    "predictionCnnOneEpoch": {
+    "predictionLstmnormalized30Window11222039": {
         "reward_low_FN_rate": {
-            "score": -354.1996461674139,
-            "threshold": 0.9999998092651373
+            "score": -207.78788917109472,
+            "threshold": 0.5574218749999998
         },
         "reward_low_FP_rate": {
-            "score": -404.1438387498887,
-            "threshold": 0.9999998092651373
+            "score": -105.52921617684854,
+            "threshold": 0.5574218749999998
         },
         "standard": {
-            "score": -249.1996461674139,
-            "threshold": 0.9999998092651373
+            "score": -101.78788917109463,
+            "threshold": 0.5574218749999998
         }
     },
-    "predictionCnnOneEpoch923169": {
+    "predictionNnOneEpochnormalized30WindowMseError11222038": {
         "reward_low_FN_rate": {
-            "score": -243.40257334880053,
-            "threshold": 0.9994758605957038
+            "score": -216.22689864290973,
+            "threshold": 0.4917964935302736
         },
         "reward_low_FP_rate": {
-            "score": -153.40934052205438,
-            "threshold": 0.9999998092651373
+            "score": -114.36468139506023,
+            "threshold": 0.8031250000000002
         },
         "standard": {
-            "score": -136.2307360484859,
-            "threshold": 0.9998537063598637
-        }
-    },
-    "predictionLstmOneEpoch912123": {
-        "reward_low_FN_rate": {
-            "score": -232.50141617783632,
-            "threshold": 0.9998542785644535
-        },
-        "reward_low_FP_rate": {
-            "score": -115.9363361884661,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -118.50141617783632,
-            "threshold": 0.9998542785644535
-        }
-    },
-    "predictionLstmcorrectOneEpoch917166": {
-        "reward_low_FN_rate": {
-            "score": -2916.5905316389626,
-            "threshold": 0.9999998092651373
-        },
-        "reward_low_FP_rate": {
-            "score": -5820.305292863123,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -2885.5905316389626,
-            "threshold": 0.9999998092651373
-        }
-    },
-    "predictionLstmoneEpochWithoutNormalization92041": {
-        "reward_low_FN_rate": {
-            "score": -228.74949501887758,
-            "threshold": 0.9957038879394536
-        },
-        "reward_low_FP_rate": {
-            "score": -120.71329053826797,
-            "threshold": 0.9998542785644535
-        },
-        "standard": {
-            "score": -114.77371333828678,
-            "threshold": 0.9998542785644535
-        }
-    },
-    "predictionNnOneEpoch": {
-        "reward_low_FN_rate": {
-            "score": -354.19964616741396,
-            "threshold": 0.9999998092651373
-        },
-        "reward_low_FP_rate": {
-            "score": -404.14383874988874,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -249.1996461674139,
-            "threshold": 0.9999998092651373
-        }
-    },
-    "predictionNnOneEpoch3rdIterationOfSameSetting92046": {
-        "reward_low_FN_rate": {
-            "score": -289.0836401657288,
-            "threshold": 0.9999998092651373
-        },
-        "reward_low_FP_rate": {
-            "score": -262.0846090943501,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -181.08364016572887,
-            "threshold": 0.9999998092651373
-        }
-    },
-    "predictionNnOneEpoch9121121": {
-        "reward_low_FN_rate": {
-            "score": -288.4086755300679,
-            "threshold": 0.9999998092651373
-        },
-        "reward_low_FP_rate": {
-            "score": -263.2489995076016,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -181.4086755300679,
-            "threshold": 0.9999998092651373
-        }
-    },
-    "predictionNnOneEpochnewStartwithParamStored917168": {
-        "reward_low_FN_rate": {
-            "score": -286.25642251356044,
-            "threshold": 0.9999998092651373
-        },
-        "reward_low_FP_rate": {
-            "score": -260.25739144218176,
-            "threshold": 0.9999998092651373
-        },
-        "standard": {
-            "score": -179.25642251356044,
-            "threshold": 0.9999998092651373
-        }
-    },
-    "predictionNnOneEpochnormalized10WindowSigmoid11211649": {
-        "reward_low_FN_rate": {
-            "score": -150.9800232716578,
-            "threshold": 0.6418952941894531
-        },
-        "reward_low_FP_rate": {
-            "score": -100.85981934649213,
-            "threshold": 0.6960937500000001
-        },
-        "standard": {
-            "score": -76.94792913169479,
-            "threshold": 0.657275390625
-        }
-    },
-    "predictionNnOneEpochnormalized10WindowSizeSigmoidScore11211548": {
-        "reward_low_FN_rate": {
-            "score": -150.9800232716578,
-            "threshold": 0.6418952941894531
-        },
-        "reward_low_FP_rate": {
-            "score": -100.85981934649213,
-            "threshold": 0.6960937500000001
-        },
-        "standard": {
-            "score": -76.94792913169478,
-            "threshold": 0.657275390625
-        }
-    },
-    "predictionNnOneEpochnormalized18Nov11181117": {
-        "reward_low_FN_rate": {
-            "score": -202.26492565835755,
-            "threshold": 0.3749969482421875
-        },
-        "reward_low_FP_rate": {
-            "score": -107.09751342729388,
-            "threshold": 0.5749755859375002
-        },
-        "standard": {
-            "score": -100.26492565835761,
-            "threshold": 0.3749969482421875
-        }
-    },
-    "predictionNnOneEpochnormalized18Nov11181142": {
-        "reward_low_FN_rate": {
-            "score": -202.2649256583576,
-            "threshold": 0.3749969482421875
-        },
-        "reward_low_FP_rate": {
-            "score": -107.09751342729388,
-            "threshold": 0.5749755859375002
-        },
-        "standard": {
-            "score": -100.2649256583576,
-            "threshold": 0.3749969482421875
-        }
-    },
-    "predictionNnOneEpochnormalized18Nov11181222": {
-        "reward_low_FN_rate": {
-            "score": -211.018866890242,
-            "threshold": 0.6283203125000002
-        },
-        "reward_low_FP_rate": {
-            "score": -110.5028823607611,
-            "threshold": 0.7296890258789066
-        },
-        "standard": {
-            "score": -105.01886689024201,
-            "threshold": 0.6283203125000002
-        }
-    },
-    "predictionNnOneEpochnormalized18Nov11181351": {
-        "reward_low_FN_rate": {
-            "score": -154.9479291316948,
-            "threshold": 0.65076904296875
-        },
-        "reward_low_FP_rate": {
-            "score": -100.85981934649212,
-            "threshold": 0.8249984741210941
-        },
-        "standard": {
-            "score": -76.94792913169479,
-            "threshold": 0.65076904296875
-        }
-    },
-    "predictionNnOneEpochnormalized30WindowSize20Nov11201632": {
-        "reward_low_FN_rate": {
-            "score": -152.357103328591,
-            "threshold": 0.4007808685302735
-        },
-        "reward_low_FP_rate": {
-            "score": -96.81430698220788,
-            "threshold": 0.7617309570312502
-        },
-        "standard": {
-            "score": -76.35710332859102,
-            "threshold": 0.4007808685302735
-        }
-    },
-    "predictionNnOneEpochnormalized50Window11212255": {
-        "reward_low_FN_rate": {
-            "score": -166.47126865813772,
-            "threshold": 0.6765609741210941
-        },
-        "reward_low_FP_rate": {
-            "score": -102.45009844447367,
-            "threshold": 0.7166992187499999
-        },
-        "standard": {
-            "score": -84.47126865813775,
-            "threshold": 0.6765609741210941
-        }
-    },
-    "predictionNnOneEpochnormalizedConvergenceLoss19Nov1119110": {
-        "reward_low_FN_rate": {
-            "score": -150.98002327165779,
-            "threshold": 0.34061889648437504
-        },
-        "reward_low_FP_rate": {
-            "score": -100.85981934649212,
-            "threshold": 0.6812498092651368
-        },
-        "standard": {
-            "score": -76.94792913169478,
-            "threshold": 0.42344970703124996
-        }
-    },
-    "predictionNnOneEpochnormalzied30WindowSize20Nov11201656": {
-        "reward_low_FN_rate": {
-            "score": -153.54485552366535,
-            "threshold": 0.9998283386230472
-        },
-        "reward_low_FP_rate": {
-            "score": -77.6039476996536,
-            "threshold": 0.9998537063598637
-        },
-        "standard": {
-            "score": -68.54485552366535,
-            "threshold": 0.9998283386230472
+            "score": -110.86066346853738,
+            "threshold": 0.5126953125
         }
     },
     "random": {
