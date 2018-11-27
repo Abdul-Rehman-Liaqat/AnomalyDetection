@@ -153,6 +153,20 @@
             "threshold": 0.5126953125
         }
     },
+    "predictionNnOneEpochnormalized50WindowMSEscore11271631": {
+        "reward_low_FN_rate": {
+            "score": -211.31932006307716,
+            "threshold": 0.5320320129394531
+        },
+        "reward_low_FP_rate": {
+            "score": -105.04621472381926,
+            "threshold": 0.549999237060547
+        },
+        "standard": {
+            "score": -103.31932006307714,
+            "threshold": 0.5320320129394531
+        }
+    },
     "random": {
         "reward_low_FN_rate": {
             "score": -137.34043451378136,
