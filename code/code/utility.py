@@ -230,8 +230,8 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
         Y_input = df["value"].values[i]
         Y_input = Y_input.reshape((1,1))
         prediction.append(model.predict(X_input)[0][0])
-#        error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
-        error_prediction.append(prediction[-1]-Y_input[0][0] * prediction[-1]-Y_input[0][0])
+        error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
+#        error_prediction.append(prediction[-1]-Y_input[0][0] * prediction[-1]-Y_input[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
         sigmoid_loss.append(sigmoid(error_prediction[-1]))
