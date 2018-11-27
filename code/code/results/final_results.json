@@ -1,4 +1,24 @@
 {
+    "autoencoder": {
+        "lstm_reward_low_FN_rate": -9096.520348017242,
+        "lstm_reward_low_FP_rate": -27489.56104409483,
+        "lstm_standard": -13694.780522025863
+    },
+    "autoencoderFullyConnected": {
+        "reward_low_FN_rate": -291.9877091637931,
+        "reward_low_FP_rate": -899.8642023965517,
+        "standard": -444.0160465043104
+    },
+    "autoencoderFullyConnectedOneEpoch": {
+        "reward_low_FN_rate": -46.54144576781608,
+        "reward_low_FP_rate": -172.04869602974142,
+        "standard": -78.43285830689655
+    },
+    "autoencoderNnnormalized18Nov1118134": {
+        "reward_low_FN_rate": -2.7555481431034443,
+        "reward_low_FP_rate": 2.264228173275868,
+        "standard": 3.600251929741382
+    },
     "cnn": {
         "prediction_reward_low_FN_rate": -2033.7705911034482,
         "prediction_reward_low_FP_rate": -6212.730046767241,
@@ -39,6 +59,26 @@
         "reward_low_FP_rate": 56.665308225043105,
         "standard": 64.55346441254311
     },
+    "predictionCnn": {
+        "reward_low_FN_rate": -117.57009808045976,
+        "reward_low_FP_rate": -359.60655502112064,
+        "standard": -178.0792850517241
+    },
+    "predictionCnnOneEpoch": {
+        "reward_low_FN_rate": -35.1148408525862,
+        "reward_low_FP_rate": -124.19993049568966,
+        "standard": -57.41364058922414
+    },
+    "predictionCnnOneEpoch923169": {
+        "reward_low_FN_rate": -3.276601537068972,
+        "reward_low_FP_rate": -16.12471574224138,
+        "standard": -8.720144848275854
+    },
+    "predictionLstmOneEpoch912123": {
+        "reward_low_FN_rate": -0.14408510862068952,
+        "reward_low_FP_rate": 0.02744129827586271,
+        "standard": -1.0781966284482696
+    },
     "predictionLstmnormalized30Window11222039": {
         "reward_low_FN_rate": 29.94324166666667,
         "reward_low_FP_rate": 11.177047264612066,
@@ -48,6 +88,91 @@
         "reward_low_FN_rate": 4.532500389942529,
         "reward_low_FP_rate": 0.7048787090517219,
         "standard": 2.215231263362068
+    },
+    "predictionLstmcorrectOneEpoch917166": {
+        "reward_low_FN_rate": -771.4340608160919,
+        "reward_low_FP_rate": -2458.752281405172,
+        "standard": -1193.7890222586207
+    },
+    "predictionLstmoneEpochWithoutNormalization92041": {
+        "reward_low_FN_rate": 0.9340531554597636,
+        "reward_low_FP_rate": -2.031590749137929,
+        "standard": 0.5285718370689685
+    },
+    "predictionNn": {
+        "reward_low_FN_rate": -273.26848863218396,
+        "reward_low_FP_rate": -830.055396724138,
+        "standard": -412.4889398448276
+    },
+    "predictionNnOneEpoch": {
+        "reward_low_FN_rate": -35.1148408525862,
+        "reward_low_FP_rate": -124.19993049568966,
+        "standard": -57.41364058922414
+    },
+    "predictionNnOneEpoch3rdIterationOfSameSetting92046": {
+        "reward_low_FN_rate": -16.403344875287356,
+        "reward_low_FP_rate": -62.9675039198276,
+        "standard": -28.05329317499999
+    },
+    "predictionNnOneEpoch9121121": {
+        "reward_low_FN_rate": -16.209389520114936,
+        "reward_low_FP_rate": -63.46939633965517,
+        "standard": -28.193394625000003
+    },
+    "predictionNnOneEpochnewStartwithParamStored917168": {
+        "reward_low_FN_rate": -15.590926009770117,
+        "reward_low_FP_rate": -62.17991010431036,
+        "standard": -27.26569935948276
+    },
+    "predictionNnOneEpochnormalized10WindowSigmoid11211649": {
+        "reward_low_FN_rate": 23.281602508045975,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalized10WindowSizeSigmoidScore11211548": {
+        "reward_low_FN_rate": 23.281602508045975,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalized18Nov11181117": {
+        "reward_low_FN_rate": 8.54456159252874,
+        "reward_low_FP_rate": 3.8372786952586164,
+        "standard": 6.782359630172416
+    },
+    "predictionNnOneEpochnormalized18Nov11181142": {
+        "reward_low_FN_rate": 8.54456159252874,
+        "reward_low_FP_rate": 3.8372786952586164,
+        "standard": 6.782359630172416
+    },
+    "predictionNnOneEpochnormalized18Nov11181222": {
+        "reward_low_FN_rate": 6.029061238505747,
+        "reward_low_FP_rate": 2.3694472581896533,
+        "standard": 4.733247030172414
+    },
+    "predictionNnOneEpochnormalized18Nov11181351": {
+        "reward_low_FN_rate": 22.14139967471264,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalized30WindowSize20Nov11201632": {
+        "reward_low_FN_rate": 22.885889847988512,
+        "reward_low_FP_rate": 8.269695266293105,
+        "standard": 17.087455461810347
+    },
+    "predictionNnOneEpochnormalized50Window11212255": {
+        "reward_low_FN_rate": 18.830095213218392,
+        "reward_low_FP_rate": 5.8404748086206935,
+        "standard": 13.589970405991378
+    },
+    "predictionNnOneEpochnormalizedConvergenceLoss19Nov1119110": {
+        "reward_low_FN_rate": 23.281602508045975,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalzied30WindowSize20Nov11201656": {
+        "reward_low_FN_rate": 22.544581745977016,
+        "reward_low_FP_rate": 16.550022543232757,
+        "standard": 20.454803653577592
     },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,

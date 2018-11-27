@@ -73,7 +73,18 @@ Need of an anomaly detection algorithm to identify faulty devices or prevent pot
 \end{enumerate}
 \newpage
 \section{Proposed method 10 pages}
-\newpage
+Proposed method can be divided in multiple parts. First part would be the implementation of baselines using latest deep learning architectural components. We use these components to develop two different kind of detectors.\\
+One detector is based upon prediction of a next data point. Let $T_{(t-L-1):(t-1)}$ is the small window taken from time series. The starting point is $t-L-1$ where $L$ is the window size and last data point is taken from $t-1$ which is the data point at previous time step. This data window is used to predict the time series value at time $t$. To predict at time $t$ various different kind of functions as baselines using latest architectural components are designed. Generally the output of such a function would be
+\begin{equation}
+f(T_{(t-L-1):(t-1)}) = \hat{f}(t)
+\end{equation} 
+Thus the function $f$ in prediction based models map data points as: $f: L \mapsto 1$ where $L$ is the window size and output is the prediction of value at current time. For optimization of function $f$, the difference between time series value at current time step and predicted value at current time is taken. More specifically the objective function will be
+\begin{equation}
+min |\hat{f}(t) - f(t)|
+\end{equation}
+That is to minimize the difference between time series value at time $t$ and predicted time series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
+
+\newpage 
 \section{Empirical Formulation and Experiments 5 pages}
 \newpage
 \section{Results 10 pages}

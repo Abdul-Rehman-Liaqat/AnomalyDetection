@@ -502,6 +502,12 @@ def plot_all_in_one():
     plt.show()
 
 
+def load_result_file(algo,file,result_path = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/results'):
+    algo = 'predictionNnOneEpochnormalzied30WindowSize20Nov11201656'
+    file = 'realKnownCause/nyc_taxi.csv'
+    path = result_path + '/' + algo + '/' + file.split('/')[0] + '/' + algo +'_'+file.split('/')[1]
+    return pd.read_csv(path)
+    
 def convert_resultjson_to_csv(path = 'results/final_results.json'):
     import json
     import pandas as pd
