@@ -13,12 +13,18 @@ Created on Thu Nov 22 13:16:05 2018
 import os
 import pandas as pd
 from nupic.algorithms.anomaly_likelihood import AnomalyLikelihood
+import argparse
+
+parser = argparse.ArgumentParser(description='Add to existing name')
+parser.add_argument('--algo', help='add to existing name especially if I am testing some new feature.')
+args = parser.parse_args()
+algo = args.algo
 
 def get_all_files_path(root):
     files = [val for sublist in [[os.path.join(i[0], j) for j in i[2]] for i in os.walk(root)] for val in sublist]
     return files
 
-algo = 'predictionNnOneEpochnormalzied30WindowSize20Nov11201656'
+
 files = get_all_files_path('results/' + algo )
 for f in files:
     if(not ('score' in f)):

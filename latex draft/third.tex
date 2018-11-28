@@ -93,7 +93,10 @@ Need of an anomaly detection algorithm to identify faulty devices or prevent pot
     \caption{General Anomaly Detection Framework}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
-
+Considering figure ~\ref{generalAnomalyDetectionFrameWork}, each algorithm will be using  
+all parts with few variations and a cusotmized algorithm part.\\
+\break
+Pre-processing is playing crucial role in the generalization of the algorithms. There are two different kind of normalization techniques tested. First kind is global normalization
 Proposed method can be divided in multiple parts. First part would be the implementation of baselines using latest deep learning architectural components. We use these components to develop two different kind of detectors.\\
 \break
 One detector is based upon prediction of a next data point. Let $T_{(t-L-1):(t-1)}$ is the small window taken from time series. The starting point is $t-L-1$ where $L$ is the window size and last data point is taken from $t-1$ which is the data point at previous time step. This data window is used to predict the time series value at time $t$. To predict at time $t$ various different kind of functions as baselines using latest architectural components are designed. Generally the output of such a function would be
@@ -106,10 +109,6 @@ min |\hat{f}(t) - f(t)|
 \end{equation}
 That is to minimize the difference between time series value at time $t$ and predicted time series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
 \subsection{Describe fully connected prediction architecture}
-Considering figure ~\ref{generalAnomalyDetectionFrameWork}, each algorithm will be using  
-all parts with few variations and a cusotmized algorithm part.\\
-\break
-Pre-processing is playing crucial role in the generalization of the algorithms. There are two different kind of normalization techniques tested. First kind is global normalization
 \subsection{Describe Convolution based prediction architecture}
 
 \subsection{Describe LSTM based prediction architecture}

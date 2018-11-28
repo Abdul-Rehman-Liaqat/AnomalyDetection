@@ -326,7 +326,7 @@ def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min
         X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
         X_input = X_input.reshape((1,)+input_shape)
         pred = model.predict(X_input)
-        error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
+        error_prediction.append((np.sqrt((pred-X_input)*(pred-X_input))[0][0])/input_shape[0])
     temp_no_error = [0]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     df['anomaly_score'] = error_prediction
@@ -502,9 +502,7 @@ def plot_all_in_one():
     plt.show()
 
 
-def load_result_file(algo,file,result_path = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/results'):
-    algo = 'predictionNnOneEpochnormalzied30WindowSize20Nov11201656'
-    file = 'realKnownCause/nyc_taxi.csv'
+def load_result_file(algo,file = 'realKnownCause/nyc_taxi.csv',result_path = '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/results'):
     path = result_path + '/' + algo + '/' + file.split('/')[0] + '/' + algo +'_'+file.split('/')[1]
     return pd.read_csv(path)
     
