@@ -1,15 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 22 13:16:05 2018
-
-@author: abdulliaqat
-"""
-
-
-#for i in range(len(df)): 
-#    a.append(al.anomalyProbability(df.value.values[i],df.anomaly_score.values[i],df.timestamp.values[i]))
-
 import os
 import pandas as pd
 from nupic.algorithms.anomaly_likelihood import AnomalyLikelihood
@@ -27,7 +15,8 @@ def get_all_files_path(root):
 
 files = get_all_files_path('results/' + algo )
 for f in files:
-    if(not ('score' in f)):
+    if(not ('_score' in f)):
+        print(f)
         df = pd.read_csv(f)
         a = []
         al = AnomalyLikelihood()
