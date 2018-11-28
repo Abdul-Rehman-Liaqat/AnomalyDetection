@@ -6,3 +6,5 @@ code/code/.ipynb_checkpoints/*
 .idea/*
 .ipynb_checkpoints
 .Rhistory
+.csv#
+.~lock.
