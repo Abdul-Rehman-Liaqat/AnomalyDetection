@@ -616,6 +616,11 @@ def use_yahoo_data(model,algo_type,input_shape,train_model):
         file_name = file.split('/')[-1]
         file = result_root+ '/' + algo_type + '_' + file_name
         df.to_csv(file, index=False)
+
+def threshold(df,val):
+    df['predicted_anomaly'] = 0
+    df.loc[df['anomaly_score']>=val,'predicted_anomaly'] = 1
+    return df
 #def display_algo_confusion_matrix(results_path):
 
 
