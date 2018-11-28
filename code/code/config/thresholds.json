@@ -155,16 +155,16 @@
     },
     "predictionNnOneEpochnormalized50WindowMAEscore11271726": {
         "reward_low_FN_rate": {
-            "score": -166.27064216964646,
-            "threshold": 0.7411132812500002
+            "score": -104.17904793165823,
+            "threshold": 0.9999904632568364
         },
         "reward_low_FP_rate": {
-            "score": -102.45009844447368,
-            "threshold": 0.9281219482421882
+            "score": -47.09765933509379,
+            "threshold": 0.9999904632568364
         },
         "standard": {
-            "score": -84.27064216964646,
-            "threshold": 0.7411132812500002
+            "score": -37.17904793165822,
+            "threshold": 0.9999904632568364
         }
     },
     "predictionNnOneEpochnormalized50WindowMSEscore11271631": {
@@ -183,16 +183,16 @@
     },
     "predictionNnOneEpochnormalized70WindowMAEscore11272225": {
         "reward_low_FN_rate": {
-            "score": -156.8873161553809,
-            "threshold": 0.6210935592651368
+            "score": -106.56738397116557,
+            "threshold": 0.9999757766723638
         },
         "reward_low_FP_rate": {
-            "score": -101.87728463609234,
-            "threshold": 0.8374984741210941
+            "score": -48.99982752966372,
+            "threshold": 0.999990272521973
         },
         "standard": {
-            "score": -79.32944925631686,
-            "threshold": 0.6351562500000002
+            "score": -38.03104471797511,
+            "threshold": 0.999990272521973
         }
     },
     "random": {
