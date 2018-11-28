@@ -165,9 +165,9 @@
         "standard": 13.589970405991378
     },
     "predictionNnOneEpochnormalized50WindowMAEscore11271726": {
-        "reward_low_FN_rate": 18.88774650287356,
-        "reward_low_FP_rate": 5.8404748086206935,
-        "standard": 13.676447340689657
+        "reward_low_FN_rate": 36.73015864022989,
+        "reward_low_FP_rate": 29.699284769353447,
+        "standard": 33.974548305301724
     },
     "predictionNnOneEpochnormalized50WindowMSEscore11271631": {
         "reward_low_FN_rate": 5.942724119827589,
