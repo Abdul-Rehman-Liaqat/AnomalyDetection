@@ -8,3 +8,4 @@ code/code/.ipynb_checkpoints/*
 .Rhistory
 .csv#
 .~lock.
+.~lock*
