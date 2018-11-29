@@ -169,6 +169,11 @@
         "reward_low_FP_rate": 8.269695266293105,
         "standard": 17.087455461810347
     },
+    "predictionNnOneEpochnormalized35WindowMAE11291042": {
+        "reward_low_FN_rate": 38.88096669514368,
+        "reward_low_FP_rate": 29.724722084827587,
+        "standard": 35.47662245650862
+    },
     "predictionNnOneEpochnormalized40Window1128238": {
         "reward_low_FN_rate": 40.24735934057471,
         "reward_low_FP_rate": 31.761923457241377,
