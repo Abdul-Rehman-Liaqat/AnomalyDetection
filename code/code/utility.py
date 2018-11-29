@@ -247,6 +247,47 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     return df
 
 
+
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
+    error_prediction = []
+    L = []
+    for i in np.arange(len(df) - input_shape[0]):
+        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
+        X_input = X_input.reshape((1,)+input_shape)
+        pred = model.predict(X_input)
+        error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
+        history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
+        L.append(score_postprocessing(error_prediction,len(error_prediction)))
+    temp_no_error = [0]*(input_shape[0])
+    error_prediction = temp_no_error + error_prediction
+    L[0] = 0.5
+    L_no_error = [0.5]*(input_shape[0])
+    L = L_no_error + L
+    df['error_prediction'] = error_prediction
+    df['anomaly_score'] = L
+    return df
+
+def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
+    error_prediction = []
+    convergence_loss = []
+    sigmoid_loss = []
+    for i in np.arange(len(df) - input_shape[0]):
+        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
+        X_input = X_input.reshape((1,)+input_shape)
+        pred = model.predict(X_input)
+        history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
+        error_prediction.append(np.sum((np.abs(pred-X_input)[0][0]))/input_shape[0])
+        convergence_loss.append(history.history['loss'][0])
+        sigmoid_loss.append(sigmoid(error_prediction[-1]))
+    temp_no_error = [0]*(input_shape[0])
+    error_prediction = temp_no_error + error_prediction
+    df['error_prediction'] = error_prediction
+    df['convergence_loss'] = temp_no_error + convergence_loss
+    df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
+    df['anomaly_score'] = error_prediction
+    return df
+
+
 def artificial_data_generation(random_seed=2):
     length = 100000
     sep1 = 15020
@@ -300,38 +341,6 @@ def artificial_data_generation(random_seed=2):
     df.to_csv(
         '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv',
         index=False)
-
-def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
-    error_prediction = []
-    L = []
-    for i in np.arange(len(df) - input_shape[0]):
-        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
-        X_input = X_input.reshape((1,)+input_shape)
-        pred = model.predict(X_input)
-        error_prediction.append(np.sqrt((pred-X_input)*(pred-X_input))[0][0])
-        history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
-        L.append(score_postprocessing(error_prediction,len(error_prediction)))
-    temp_no_error = [0]*(input_shape[0])
-    error_prediction = temp_no_error + error_prediction
-    L[0] = 0.5
-    L_no_error = [0.5]*(input_shape[0])
-    L = L_no_error + L
-    df['error_prediction'] = error_prediction
-    df['anomaly_score'] = L
-    return df
-
-def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
-    error_prediction = []
-    for i in np.arange(len(df) - input_shape[0]):
-        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
-        X_input = X_input.reshape((1,)+input_shape)
-        pred = model.predict(X_input)
-        error_prediction.append((np.sqrt((pred-X_input)*(pred-X_input))[0][0])/input_shape[0])
-    temp_no_error = [0]*(input_shape[0])
-    error_prediction = temp_no_error + error_prediction
-    df['anomaly_score'] = error_prediction
-    return df
-
 
 def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
     if(config_path != None):
