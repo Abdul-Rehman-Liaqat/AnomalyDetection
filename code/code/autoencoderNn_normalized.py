@@ -7,6 +7,7 @@ window_size = 10
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
+#model = autoencoderNn(input_shape,loss = 'mae')
 model = autoencoderNn(input_shape)
 data_files,add_to_name, data_config = common_code_normalized()
 result_files = use_whole_data(data_files,input_shape,

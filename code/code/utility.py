@@ -279,12 +279,12 @@ def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min
         error_prediction.append(np.sum((np.abs(pred-X_input)[0][0]))/input_shape[0])
         convergence_loss.append(history.history['loss'][0])
         sigmoid_loss.append(sigmoid(error_prediction[-1]))
-    temp_no_error = [0]*(input_shape[0])
+    temp_no_error = [error_prediction[0]]*(input_shape[0])
     error_prediction = temp_no_error + error_prediction
     df['error_prediction'] = error_prediction
-    df['convergence_loss'] = temp_no_error + convergence_loss
-    df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
-    df['anomaly_score'] = error_prediction
+    df['convergence_loss'] = [convergence_loss[0]]*(input_shape[0]) + convergence_loss
+    df['sigmoid_error_prediction'] = [sigmoid_loss[0]]*(input_shape[0]) + sigmoid_loss
+    df['anomaly_score'] = convergence_loss
     return df
 
 
