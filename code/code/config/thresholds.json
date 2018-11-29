@@ -1,4 +1,18 @@
 {
+    "autoencoderNnnormalized10WindowMAEAveraged11292252": {
+        "reward_low_FN_rate": {
+            "score": -232.0,
+            "threshold": 0.9765625000000007
+        },
+        "reward_low_FP_rate": {
+            "score": -116.0,
+            "threshold": 0.9765625000000007
+        },
+        "standard": {
+            "score": -116.0,
+            "threshold": 0.9765625000000007
+        }
+    },
     "bayesChangePt": {
         "reward_low_FN_rate": {
             "score": -119.7471580442638,
