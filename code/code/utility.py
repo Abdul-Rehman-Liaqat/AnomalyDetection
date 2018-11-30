@@ -247,16 +247,16 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     return df
 
 
-def train_nStepPrediction_based_models_new(df,model,input_shape,nStep,nb_epoch=20, max_min_var = []):
+def train_nStepPrediction_based_models_new(df,model,input_shape,nStepAhead=0,anomaly_score="error_prediction",nb_epoch=20, max_min_var = []):
     error_prediction = []
     prediction = []
     convergence_loss = []
     sigmoid_loss = []
-    for i in np.arange(input_shape[0]+nStep,len(df)):
-        X_input = df["value"].values[i - (input_shape[0]+nStep):i-nStep]
+    for i in np.arange(input_shape[0]+nStepAhead,len(df)):
+        X_input = df["value"].values[i - (input_shape[0]+nStepAhead):i-nStepAhead]
         X_input = X_input.reshape((1,)+input_shape)
-        Y_input = df["value"].values[i-nStep:i]
-        Y_input = Y_input.reshape((1,)+nStep)
+        Y_input = df["value"].values[i-nStepAhead:i]
+        Y_input = Y_input.reshape((1,)+nStepAhead)
         prediction.append(model.predict(X_input)[0][0])
         error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
 #        error_prediction.append(prediction[-1]-Y_input[0][0] * prediction[-1]-Y_input[0][0])
@@ -275,7 +275,7 @@ def train_nStepPrediction_based_models_new(df,model,input_shape,nStep,nb_epoch=2
     return df
 
 
-def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = [],nStepAhead=0):
     error_prediction = []
     L = []
     for i in np.arange(len(df) - input_shape[0]):
@@ -294,7 +294,7 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var
     df['anomaly_score'] = L
     return df
 
-def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_score = "error_prediction", max_min_var = []):
+def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_score = "error_prediction", max_min_var = [],nStepAhead=0):
     error_prediction = []
     convergence_loss = []
     sigmoid_loss = []
@@ -370,7 +370,7 @@ def artificial_data_generation(random_seed=2):
         '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv',
         index=False)
 
-def use_whole_data(data_files,input_shape,training_function,model,anomaly_score='error_prediction',loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
+def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,anomaly_score='error_prediction',loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
     if(config_path != None):
         config = ConfigParser()
         config.read(config_path)
@@ -385,6 +385,7 @@ def use_whole_data(data_files,input_shape,training_function,model,anomaly_score=
                                    model,
                                    input_shape,
                                    nb_epoch,
+                                   nStepAhead = nStepAhead,
                                    anomaly_score = anomaly_score,
                                    max_min_var = max_min_var)
             result_files[key][folder_key] = df
