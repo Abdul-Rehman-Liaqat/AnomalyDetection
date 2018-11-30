@@ -55,6 +55,20 @@
             "threshold": 0.9999549865722663
         }
     },
+    "autoencoderNnnormalized10WindowMAEAverageCorrect1130160": {
+        "reward_low_FN_rate": {
+            "score": -130.44462110191841,
+            "threshold": 0.9999773025512699
+        },
+        "reward_low_FP_rate": {
+            "score": -60.59278115194935,
+            "threshold": 0.9999773025512699
+        },
+        "standard": {
+            "score": -53.444621101918386,
+            "threshold": 0.9999773025512699
+        }
+    },
     "autoencoderNnnormalized10WindowMAEAveraged11292252": {
         "reward_low_FN_rate": {
             "score": -232.0,
