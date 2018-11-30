@@ -272,7 +272,7 @@ def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min
     convergence_loss = []
     sigmoid_loss = []
     for i in np.arange(len(df) - input_shape[0]):
-        X_input = max_min_normalize(df["value"].values[i:i+(input_shape[0])], max_min_var)
+        X_input = df["value"].values[i:i+(input_shape[0])]
         X_input = X_input.reshape((1,)+input_shape)
         pred = model.predict(X_input)
         history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
@@ -600,6 +600,21 @@ def cal_threshold(df,col,sigma = 5):
     df.loc[df[col] > threshold, 'predicted_anomaly'] = 1
     return df
 
+def set_threshold(df,t,col):    
+    df['predicted_anomaly'] = 0
+    df.loc[df[col] > t, 'predicted_anomaly'] = 1
+    return df 
+
+def write_anomalies(algo,col = 'anomaly_score'):
+    t = pd.read_csv('results/'+algo+'/'+algo+'_standard_scores.csv').Threshold.unique()[0]
+    files = get_all_files_path('results/'+algo)
+    for f in files:
+        if(not ('_score' in f)):
+            print(f)
+            df = pd.read_csv(f)
+            df = set_threshold(df,t,col)
+            df.to_csv(f,index = False)
+    
 def cal_auc(y,pre):
     from sklearn.metrics import roc_curve,auc
     fpr, tpr, thresholds = roc_curve(y,pre)

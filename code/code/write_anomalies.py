@@ -1,4 +1,4 @@
-
+from utility import *
 import argparse
 from subprocess import call
 
@@ -8,6 +8,5 @@ parser.add_argument('--algo', help='add to existing name especially if I am test
 args = parser.parse_args()
 algo = args.algo
 
-call(["python","anomaly_likelihood.py","--algo",algo])
-call(["python","run.py","-d",algo,"--optimize","--score","--normalize","--skipConfirmation"])
-call(["python","write_anomalies.py","--algo",algo])
+
+write_anomalies(algo)
