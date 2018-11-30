@@ -294,7 +294,7 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var
     df['anomaly_score'] = L
     return df
 
-def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
+def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_score = "error_prediction", max_min_var = []):
     error_prediction = []
     convergence_loss = []
     sigmoid_loss = []
@@ -311,7 +311,8 @@ def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20, max_min
     df['error_prediction'] = error_prediction
     df['convergence_loss'] = [convergence_loss[0]]*(input_shape[0]) + convergence_loss
     df['sigmoid_error_prediction'] = [sigmoid_loss[0]]*(input_shape[0]) + sigmoid_loss
-    df['anomaly_score'] = df['convergence_loss']
+#    anomaly_score = "convergence_loss"
+    df['anomaly_score'] = df[anomaly_score]
     return df
 
 
