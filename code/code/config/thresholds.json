@@ -27,6 +27,20 @@
             "threshold": 0.9765625000000007
         }
     },
+    "autoencoderNnnormalized10WindowCovnergenceLoss11301213": {
+        "reward_low_FN_rate": {
+            "score": -216.66133852838783,
+            "threshold": 0.9999549865722663
+        },
+        "reward_low_FP_rate": {
+            "score": -107.69410182372754,
+            "threshold": 0.9999549865722663
+        },
+        "standard": {
+            "score": -106.66133852838782,
+            "threshold": 0.9999549865722663
+        }
+    },
     "autoencoderNnnormalized10WindowMAEAveraged11292252": {
         "reward_low_FN_rate": {
             "score": -232.0,

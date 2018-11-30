@@ -24,6 +24,11 @@
         "reward_low_FP_rate": 0.0,
         "standard": 0.0
     },
+    "autoencoderNnnormalized10WindowCovnergenceLoss11301213": {
+        "reward_low_FN_rate": 4.40766134252874,
+        "reward_low_FP_rate": 3.5801285241379306,
+        "standard": 4.025285117241385
+    },
     "autoencoderNnnormalized10WindowMAEAveraged11292252": {
         "reward_low_FN_rate": 0.0,
         "reward_low_FP_rate": 0.0,
