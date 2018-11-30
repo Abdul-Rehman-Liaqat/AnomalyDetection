@@ -15,7 +15,7 @@ result_files = use_whole_data(data_files,
                               train_autoencoder_based_models_new,
                               model,
                               nb_epoch=nb_epoch,
-                              anomaly_score = "convergence_loss",
+                              anomaly_score = "error_prediction",
                               config_path=data_config)
 algo_type = "autoencoderNn"
 algo_name = algo_type + add_to_name
