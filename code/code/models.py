@@ -133,7 +133,7 @@ def autoencoderNnAdaptive(input_shape,loss='mse',optimizer='adam'):
         model.add(Dense(35, activation='relu'))
         model.add(Dense(40, activation='relu'))
         model.add(Dense(45, activation='relu'))
-        model.add(Dense(45))
+        model.add(Dense(50))
     model.summary()
     model.compile(loss=loss, optimizer=optimizer)
     return model

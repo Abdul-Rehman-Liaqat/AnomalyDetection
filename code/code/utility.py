@@ -303,7 +303,7 @@ def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_
         X_input = X_input.reshape((1,)+input_shape)
         pred = model.predict(X_input)
         history = model.fit(X_input,X_input , nb_epoch=nb_epoch, verbose=0)
-        error_prediction.append(np.sum((np.abs(pred-X_input)[0][0]))/input_shape[0])
+        error_prediction.append(np.sum(np.abs(pred-X_input))/input_shape[0])
         convergence_loss.append(history.history['loss'][0])
         sigmoid_loss.append(sigmoid(error_prediction[-1]))
     temp_no_error = [error_prediction[0]]*(input_shape[0])
@@ -370,7 +370,7 @@ def artificial_data_generation(random_seed=2):
         '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv',
         index=False)
 
-def use_whole_data(data_files,input_shape,training_function,model,loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
+def use_whole_data(data_files,input_shape,training_function,model,anomaly_score='error_prediction',loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
     if(config_path != None):
         config = ConfigParser()
         config.read(config_path)
@@ -381,7 +381,12 @@ def use_whole_data(data_files,input_shape,training_function,model,loss='mse',opt
             if(config_path != None):
                 max_min_var = json.loads(config.get(key,folder_key))
             print(folder_key)
-            df = training_function(df,model,input_shape,nb_epoch,max_min_var = max_min_var)
+            df = training_function(df,
+                                   model,
+                                   input_shape,
+                                   nb_epoch,
+                                   anomaly_score = anomaly_score,
+                                   max_min_var = max_min_var)
             result_files[key][folder_key] = df
     return result_files
 
