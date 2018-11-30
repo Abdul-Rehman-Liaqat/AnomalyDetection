@@ -5,6 +5,8 @@
 code/code/.ipynb_checkpoints/*
 .ipynb_checkpoints/
 .idea/*
+*.idea*
+*.xml
 .ipynb_checkpoints
 .Rhistory
 .csv#
