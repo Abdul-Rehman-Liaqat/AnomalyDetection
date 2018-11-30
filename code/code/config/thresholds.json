@@ -1,4 +1,18 @@
 {
+    "autoencoderNnnormalized10WindowConverenceLoss11301035": {
+        "reward_low_FN_rate": {
+            "score": -216.6613385283878,
+            "threshold": 0.9999549865722663
+        },
+        "reward_low_FP_rate": {
+            "score": -107.69410182372755,
+            "threshold": 0.9999549865722663
+        },
+        "standard": {
+            "score": -106.66133852838783,
+            "threshold": 0.9999549865722663
+        }
+    },
     "autoencoderNnnormalized10WindowConvergenceLoss11292348": {
         "reward_low_FN_rate": {
             "score": -232.0,
