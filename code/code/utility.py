@@ -247,6 +247,33 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     return df
 
 
+def train_nStepPrediction_based_models_new(df,model,input_shape,nStep,nb_epoch=20, max_min_var = []):
+    error_prediction = []
+    prediction = []
+    convergence_loss = []
+    sigmoid_loss = []
+    for i in np.arange(input_shape[0]+nStep,len(df)):
+        X_input = df["value"].values[i - (input_shape[0]+nStep):i-nStep]
+        X_input = X_input.reshape((1,)+input_shape)
+        Y_input = df["value"].values[i-nStep:i]
+        Y_input = Y_input.reshape((1,)+nStep)
+        prediction.append(model.predict(X_input)[0][0])
+        error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
+#        error_prediction.append(prediction[-1]-Y_input[0][0] * prediction[-1]-Y_input[0][0])
+        history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
+        convergence_loss.append(history.history['loss'][0])
+        sigmoid_loss.append(sigmoid(error_prediction[-1]))
+    temp_no_error = [0]*(input_shape[0])
+    error_prediction = temp_no_error + error_prediction
+    prediction = temp_no_error + prediction
+    df['error_prediction'] = error_prediction
+    df['convergence_loss'] = temp_no_error + convergence_loss
+    df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
+ #   df['anomaly_score'] = df['sigmoid_error_prediction']
+    df['anomaly_score'] = df['error_prediction']
+    df['prediction'] = prediction
+    return df
+
 
 def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
     error_prediction = []
