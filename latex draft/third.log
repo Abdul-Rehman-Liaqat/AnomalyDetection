@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.7)  28 NOV 2018 00:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.7)  3 DEC 2018 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,13 +483,17 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `third.out' has not changed.
 (rerunfilecheck)             Checksum: 632014D4750FCCFD8DBC384ECC2C8FA0;2397.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 7353 strings out of 493029
- 102532 string characters out of 6136235
+ 7354 strings out of 493029
+ 102542 string characters out of 6136235
  208189 words of memory out of 5000000
- 10705 multiletter control sequences out of 15000+600000
+ 10706 multiletter control sequences out of 15000+600000
  13011 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,6n,28p,779b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -503,7 +507,7 @@ type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb>
-Output written on third.pdf (17 pages, 1132776 bytes).
+Output written on third.pdf (17 pages, 1132778 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  287 compressed objects within 3 object streams
