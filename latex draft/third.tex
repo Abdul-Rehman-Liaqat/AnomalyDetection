@@ -63,6 +63,9 @@ As described in (reference name Software2), going forward software development e
 Need of an anomaly detection algorithm to identify faulty devices or prevent potential system failure before it happens. Thus the anomaly detection algorithm should be generic (unsupervised), be ready to predict on live data and be able to consider the important past data points (temporal and spatial pattern detection).
 \subsection{Usage of anomaly detection in streaming data}
 \subsection{problems in the concept and brief intro to our innovation}
+Now to define the problem officialy, time series can be defined as an ordered sequence of values of a variable at equally spaced time intervals. It can be a variable or group of variables. For example a heat sensor will be producing one time series which is why it is called univariate time series. If we also consider the output of humidity sensor and noise sensor then the group of these univariate time series will be called multi variate time series. Usually techniques applied on univariate time series can also be used on multivariate after some modification. That's why we will be focusing on univariate time series only in this research thesis. \\
+\break
+
 \begin{enumerate}
 	\item Stationary and non-stationary time series
 	\item lack of labelled data
