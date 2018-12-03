@@ -69,6 +69,20 @@
             "threshold": 0.9999773025512699
         }
     },
+    "autoencoderNnnormalized10WindowMAEAverageMAEloss123948": {
+        "reward_low_FN_rate": {
+            "score": -140.90571631207283,
+            "threshold": 0.9999118804931648
+        },
+        "reward_low_FP_rate": {
+            "score": -60.78294712825676,
+            "threshold": 0.9999917984008794
+        },
+        "standard": {
+            "score": -57.349947737395254,
+            "threshold": 0.9999917984008794
+        }
+    },
     "autoencoderNnnormalized10WindowMAEAveraged11292252": {
         "reward_low_FN_rate": {
             "score": -232.0,
@@ -305,6 +319,20 @@
         "standard": {
             "score": -29.93918949480879,
             "threshold": 0.9999900817871097
+        }
+    },
+    "predictionNnOneEpochnormalized40WindowMAEscoreMAEloss123954": {
+        "reward_low_FN_rate": {
+            "score": -95.95025654219373,
+            "threshold": 0.9999889373779303
+        },
+        "reward_low_FP_rate": {
+            "score": -42.46122548107692,
+            "threshold": 0.9999938964843755
+        },
+        "standard": {
+            "score": -31.9502565421937,
+            "threshold": 0.9999889373779303
         }
     },
     "predictionNnOneEpochnormalized45WindowMAE1129948": {
