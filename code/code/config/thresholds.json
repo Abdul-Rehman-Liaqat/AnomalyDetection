@@ -111,6 +111,20 @@
             "threshold": 0.9765625000000007
         }
     },
+    "autoencoderNnnormalized20WindowMSEAverageScoreMSELoss1231756": {
+        "reward_low_FN_rate": {
+            "score": -133.6913450744691,
+            "threshold": 0.9999898910522464
+        },
+        "reward_low_FP_rate": {
+            "score": -55.997935378336216,
+            "threshold": 0.9999898910522464
+        },
+        "standard": {
+            "score": -53.69134507446909,
+            "threshold": 0.9999898910522464
+        }
+    },
     "bayesChangePt": {
         "reward_low_FN_rate": {
             "score": -119.7471580442638,

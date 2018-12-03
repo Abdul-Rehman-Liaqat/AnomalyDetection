@@ -59,6 +59,11 @@
         "reward_low_FP_rate": 2.264228173275868,
         "standard": 3.600251929741382
     },
+    "autoencoderNnnormalized20WindowMSEAverageScoreMSELoss1231756": {
+        "reward_low_FN_rate": 28.249613484482758,
+        "reward_low_FP_rate": 25.862958888663794,
+        "standard": 26.857178847198277
+    },
     "cnn": {
         "prediction_reward_low_FN_rate": -2033.7705911034482,
         "prediction_reward_low_FP_rate": -6212.730046767241,
