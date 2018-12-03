@@ -1,13 +1,14 @@
 from utility import train_autoencoder_based_models_new,use_whole_data, write_result, store_param, common_code_normalized
 import os
-from models import autoencoderNn
+#from models import autoencoderNn
+from models import autoencoderNnAdaptive
 
 cwd = os.getcwd()
-window_size = 10
+window_size = 20
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
-model = autoencoderNn(input_shape,loss = 'mae')
+model = autoencoderNnAdaptive(input_shape)
 #model = autoencoderNn(input_shape)
 data_files,add_to_name, data_config = common_code_normalized()
 result_files = use_whole_data(data_files,
