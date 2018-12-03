@@ -247,7 +247,7 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_
     return df
 
 
-def train_nStepPrediction_based_models_new(df,model,input_shape,nStepAhead=0,anomaly_score="error_prediction",nb_epoch=20, max_min_var = []):
+def train_nStepPrediction_based_models_new(df,model,input_shape,nb_epoch=20,nStepAhead=0,anomaly_score="error_prediction", max_min_var = []):
     error_prediction = []
     prediction = []
     convergence_loss = []
@@ -256,8 +256,9 @@ def train_nStepPrediction_based_models_new(df,model,input_shape,nStepAhead=0,ano
         X_input = df["value"].values[i - (input_shape[0]+nStepAhead):i-nStepAhead]
         X_input = X_input.reshape((1,)+input_shape)
         Y_input = df["value"].values[i-nStepAhead:i]
-        Y_input = Y_input.reshape((1,)+nStepAhead)
-        prediction.append(model.predict(X_input)[0][0])
+        Y_input = Y_input.reshape((1,)+(nStepAhead,))
+        pred = (model.predict(X_input))
+        error_prediction.append(np.sum(np.abs(pred-Y_input))/input_shape[0])
         error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
 #        error_prediction.append(prediction[-1]-Y_input[0][0] * prediction[-1]-Y_input[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
@@ -384,7 +385,7 @@ def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,a
             df = training_function(df,
                                    model,
                                    input_shape,
-                                   nb_epoch,
+                                   nb_epoch=nb_epoch,
                                    nStepAhead = nStepAhead,
                                    anomaly_score = anomaly_score,
                                    max_min_var = max_min_var)
