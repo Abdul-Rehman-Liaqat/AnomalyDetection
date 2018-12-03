@@ -174,7 +174,7 @@ def max_min_normalize(val,max_min_var):
     else:
         return val
 
-def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var = []):
+def train_prediction_based_models(df,model,input_shape,nb_epoch=20, max_min_var = [],nStepAhead=0):
     error_prediction = []
     prediction = []
     L = []
@@ -219,7 +219,7 @@ def score_postprocessing(s,t,W=8000,w=10):
     return L
 
 
-def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = []):
+def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20, max_min_var = [],nStepAhead=0):
     error_prediction = []
     prediction = []
     convergence_loss = []
