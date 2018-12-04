@@ -64,6 +64,21 @@
         "reward_low_FP_rate": 25.862958888663794,
         "standard": 26.857178847198277
     },
+    "autoencoderNnnormalized30WindowMSEAverageScoreMSELoss1232143": {
+        "reward_low_FN_rate": 23.88505496091954,
+        "reward_low_FP_rate": 21.8480904149569,
+        "standard": 22.46446041935345
+    },
+    "autoencoderNnnormalized40WindowMSEAverageScoreMSELoss123223": {
+        "reward_low_FN_rate": 21.234777329885052,
+        "reward_low_FP_rate": 19.650972662758623,
+        "standard": 20.125520614870688
+    },
+    "autoencoderNnnormalized50WindowMSEAverageScoreMSELoss124754": {
+        "reward_low_FN_rate": 16.945477754310346,
+        "reward_low_FP_rate": 15.365035071594821,
+        "standard": 15.935458010689654
+    },
     "cnn": {
         "prediction_reward_low_FN_rate": -2033.7705911034482,
         "prediction_reward_low_FP_rate": -6212.730046767241,

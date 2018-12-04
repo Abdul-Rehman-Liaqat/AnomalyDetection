@@ -125,6 +125,48 @@
             "threshold": 0.9999898910522464
         }
     },
+    "autoencoderNnnormalized30WindowMSEAverageScoreMSELoss1232143": {
+        "reward_low_FN_rate": {
+            "score": -148.88000873634624,
+            "threshold": 0.9998535156250006
+        },
+        "reward_low_FP_rate": {
+            "score": -65.3124302372692,
+            "threshold": 0.9999900817871097
+        },
+        "standard": {
+            "score": -63.88245182711961,
+            "threshold": 0.9999900817871097
+        }
+    },
+    "autoencoderNnnormalized40WindowMSEAverageScoreMSELoss123223": {
+        "reward_low_FN_rate": {
+            "score": -158.10297489236476,
+            "threshold": 0.9999719619750984
+        },
+        "reward_low_FP_rate": {
+            "score": -70.40974342239063,
+            "threshold": 0.9999900817871097
+        },
+        "standard": {
+            "score": -69.30879217354749,
+            "threshold": 0.9999900817871097
+        }
+    },
+    "autoencoderNnnormalized50WindowMSEAverageScoreMSELoss124754": {
+        "reward_low_FN_rate": {
+            "score": -173.0297374152333,
+            "threshold": 0.9999893188476566
+        },
+        "reward_low_FP_rate": {
+            "score": -80.35311863387905,
+            "threshold": 0.9999893188476566
+        },
+        "standard": {
+            "score": -79.02973741523331,
+            "threshold": 0.9999893188476566
+        }
+    },
     "bayesChangePt": {
         "reward_low_FN_rate": {
             "score": -119.7471580442638,
