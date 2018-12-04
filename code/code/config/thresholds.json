@@ -111,6 +111,20 @@
             "threshold": 0.9765625000000007
         }
     },
+    "autoencoderNnnormalized15WindowMSEAverageScoreMSELoss1241637": {
+        "reward_low_FN_rate": {
+            "score": -123.89634435735546,
+            "threshold": 0.9999900817871097
+        },
+        "reward_low_FP_rate": {
+            "score": -51.03678305606157,
+            "threshold": 0.9999900817871097
+        },
+        "standard": {
+            "score": -47.89634435735545,
+            "threshold": 0.9999900817871097
+        }
+    },
     "autoencoderNnnormalized20WindowMSEAverageScoreMSELoss1231756": {
         "reward_low_FN_rate": {
             "score": -133.6913450744691,
@@ -123,6 +137,20 @@
         "standard": {
             "score": -53.69134507446909,
             "threshold": 0.9999898910522464
+        }
+    },
+    "autoencoderNnnormalized25WindowMSEAverageScoreMSELoss1241655": {
+        "reward_low_FN_rate": {
+            "score": -141.5791203329579,
+            "threshold": 0.9999879837036139
+        },
+        "reward_low_FP_rate": {
+            "score": -60.3689015928576,
+            "threshold": 0.9999879837036139
+        },
+        "standard": {
+            "score": -58.579120332957906,
+            "threshold": 0.9999879837036139
         }
     },
     "autoencoderNnnormalized30WindowMSEAverageScoreMSELoss1232143": {
@@ -305,6 +333,20 @@
         "standard": {
             "score": -59.79751900018076,
             "threshold": 0.999998092651368
+        }
+    },
+    "predictionNnNStepAheadnormalizedMultiStepAhed5MAEscore1241722": {
+        "reward_low_FN_rate": {
+            "score": -191.8172371139622,
+            "threshold": 0.9991195678710943
+        },
+        "reward_low_FP_rate": {
+            "score": -98.98650911311029,
+            "threshold": 0.9995132446289069
+        },
+        "standard": {
+            "score": -92.81723711396221,
+            "threshold": 0.9991226196289069
         }
     },
     "predictionNnOneEpochnormalized20WindowMAEscore11282025": {
