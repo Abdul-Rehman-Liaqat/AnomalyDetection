@@ -51,12 +51,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="1708" />
-          <entry key="py" value="1829" />
+          <entry key="py" value="1832" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3537" />
+          <entry key="Python" value="3540" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -95,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/utility.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="539">
-              <caret line="390" column="61" lean-forward="true" selection-start-line="390" selection-start-column="61" selection-end-line="390" selection-end-column="61" />
+              <caret line="265" column="58" lean-forward="true" selection-start-line="265" selection-start-column="58" selection-end-line="265" selection-end-column="58" />
               <folding>
                 <element signature="e#114#133#0" expanded="true" />
               </folding>
@@ -106,11 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/predictionNnMultiStepAhead.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#123#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="32" selection-start-column="32" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -381,7 +378,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" x="1920" y="-4" width="1920" height="1084" id="Debug" order="3" type="FLOATING" visible="true" weight="0.39958158" />
+      <window_info anchor="bottom" x="1920" y="-4" width="1920" height="1084" id="Debug" order="3" type="FLOATING" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -632,18 +629,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/predictionNnMultiStepAhead.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#123#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utility.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
-          <caret line="390" column="61" lean-forward="true" selection-start-line="390" selection-start-column="61" selection-end-line="390" selection-end-column="61" />
+          <caret line="265" column="58" lean-forward="true" selection-start-line="265" selection-start-column="58" selection-end-line="265" selection-end-column="58" />
           <folding>
             <element signature="e#114#133#0" expanded="true" />
           </folding>

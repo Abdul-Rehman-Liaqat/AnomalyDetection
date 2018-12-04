@@ -272,7 +272,7 @@ def train_nStepPrediction_based_models_new(df,model,input_shape,nb_epoch=20,nSte
     df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
  #   df['anomaly_score'] = df['sigmoid_error_prediction']
     df['anomaly_score'] = df['error_prediction']
-    df['prediction'] = prediction
+#    df['prediction'] = prediction
     return df
 
 
