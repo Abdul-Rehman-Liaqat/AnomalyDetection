@@ -4,7 +4,7 @@ import os
 from models import autoencoderNnAdaptive
 
 cwd = os.getcwd()
-window_size = 15
+window_size = 25
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)

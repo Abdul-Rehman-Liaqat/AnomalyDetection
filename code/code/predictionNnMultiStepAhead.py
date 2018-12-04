@@ -16,7 +16,7 @@ result_files = use_whole_data(data_files,input_shape,
                               nStepAhead=nStepAhead,
                               nb_epoch=nb_epoch,
                               config_path=data_config)
-algo_type = "predictionNnOneEpoch"
+algo_type = "predictionNnNStepAhead"
 algo_name = algo_type + add_to_name
 print(algo_name)
 write_result(algorithm_name=algo_name,data_files=result_files,
