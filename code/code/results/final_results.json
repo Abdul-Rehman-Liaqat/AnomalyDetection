@@ -79,6 +79,11 @@
         "reward_low_FP_rate": 21.8480904149569,
         "standard": 22.46446041935345
     },
+    "autoencoderNnnormalized35WindowMSEAverageScoreMSELoss1242112": {
+        "reward_low_FN_rate": 20.911391023850573,
+        "reward_low_FP_rate": 19.502558991939654,
+        "standard": 20.071515450603446
+    },
     "autoencoderNnnormalized40WindowMSEAverageScoreMSELoss123223": {
         "reward_low_FN_rate": 21.234777329885052,
         "reward_low_FP_rate": 19.650972662758623,
@@ -168,6 +173,11 @@
         "reward_low_FN_rate": -273.26848863218396,
         "reward_low_FP_rate": -830.055396724138,
         "standard": -412.4889398448276
+    },
+    "predictionNnNStepAheadnormalized30WindowMultiStepAhed5MAEscore1242110": {
+        "reward_low_FN_rate": 4.75257460431034,
+        "reward_low_FP_rate": 2.020752471982761,
+        "standard": 2.328703686637927
     },
     "predictionNnNStepAheadnormalizedMultiStepAhed5MAEscore1241722": {
         "reward_low_FN_rate": 11.546770944252867,

@@ -167,6 +167,20 @@
             "threshold": 0.9999900817871097
         }
     },
+    "autoencoderNnnormalized35WindowMSEAverageScoreMSELoss1242112": {
+        "reward_low_FN_rate": {
+            "score": -159.22835923728462,
+            "threshold": 0.9998779296875003
+        },
+        "reward_low_FP_rate": {
+            "score": -70.75406313869763,
+            "threshold": 0.9999893188476566
+        },
+        "standard": {
+            "score": -69.43408415455117,
+            "threshold": 0.9999893188476566
+        }
+    },
     "autoencoderNnnormalized40WindowMSEAverageScoreMSELoss123223": {
         "reward_low_FN_rate": {
             "score": -158.10297489236476,
@@ -333,6 +347,20 @@
         "standard": {
             "score": -59.79751900018076,
             "threshold": 0.999998092651368
+        }
+    },
+    "predictionNnNStepAheadnormalized30WindowMultiStepAhed5MAEscore1242110": {
+        "reward_low_FN_rate": {
+            "score": -215.4610403769142,
+            "threshold": 0.9862304687500009
+        },
+        "reward_low_FP_rate": {
+            "score": -111.31185426514863,
+            "threshold": 0.9992923736572273
+        },
+        "standard": {
+            "score": -110.59740744749575,
+            "threshold": 0.9943862915039066
         }
     },
     "predictionNnNStepAheadnormalizedMultiStepAhed5MAEscore1241722": {
