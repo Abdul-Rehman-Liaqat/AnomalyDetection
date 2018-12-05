@@ -4,7 +4,7 @@ from models import predictionNnStepAhead
 
 cwd = os.getcwd()
 #first window_size was 20
-window_size = 30
+window_size = 10
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
