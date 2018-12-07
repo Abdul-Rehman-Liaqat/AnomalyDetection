@@ -218,8 +218,10 @@ def score_postprocessing(s,t,W=8000,w=10):
     L = 1- 0.5*  erfc(((w_param['miu']-W_param['miu'])/W_param['var'])/1.4142)
     return L
 
+def addDummyData(arr,length):
+    return [arr[-1]]*length + arr
 
-def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_score = "error_prediction",nStepAhead=0):
+def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,anomaly_score = "error_prediction",nStepAhead=0):
     error_prediction = []
     prediction = []
     convergence_loss = []
@@ -235,14 +237,13 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_s
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
         sigmoid_loss.append(sigmoid(error_prediction[-1]))
-    temp_no_error = [0]*(input_shape[0])
-    error_prediction = temp_no_error + error_prediction
-    prediction = temp_no_error + prediction
+    error_prediction = addDummyData(error_prediction,input_shape[0])
+    prediction = addDummyData(prediction,input_shape[0])
     df['error_prediction'] = error_prediction
-    df['convergence_loss'] = temp_no_error + convergence_loss
-    df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
+    df['convergence_loss'] = addDummyData(convergence_loss)
+    df['sigmoid_error_prediction'] = addDummyData(sigmoid_loss)
  #   df['anomaly_score'] = df['sigmoid_error_prediction']
-    df['anomaly_score'] = df['error_prediction']
+    df['anomaly_score'] = df[anomaly_score]
     df['prediction'] = prediction
     return df
 
@@ -276,7 +277,7 @@ def train_nStepPrediction_based_models_new(df,model,input_shape,nb_epoch=20,nSte
     return df
 
 
-def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20,nStepAhead=0):
+def train_autoencoder_based_models(df,model,input_shape,nb_epoch=1,nStepAhead=0):
     error_prediction = []
     L = []
     for i in np.arange(len(df) - input_shape[0]):
@@ -295,7 +296,7 @@ def train_autoencoder_based_models(df,model,input_shape,nb_epoch=20,nStepAhead=0
     df['anomaly_score'] = L
     return df
 
-def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=20,anomaly_score = "error_prediction",nStepAhead=0):
+def train_autoencoder_based_models_new(df,model,input_shape,nb_epoch=1,anomaly_score = "error_prediction",nStepAhead=0):
     error_prediction = []
     convergence_loss = []
     sigmoid_loss = []
@@ -371,24 +372,18 @@ def artificial_data_generation(random_seed=2):
         '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv',
         index=False)
 
-def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,anomaly_score='error_prediction',loss='mse',optimizer='adam',nb_epoch = 20,config_path = None):
-    if(config_path != None):
-        config = ConfigParser()
-        config.read(config_path)
+def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,anomaly_score='error_prediction',
+                    nb_epoch = 1):
     result_files = data_files
     for key,value in data_files.items():
         for folder_key,df in value.items():
-            max_min_var = []
-            if(config_path != None):
-                max_min_var = json.loads(config.get(key,folder_key))
             print(folder_key)
             df = training_function(df,
                                    model,
                                    input_shape,
                                    nb_epoch=nb_epoch,
                                    nStepAhead = nStepAhead,
-                                   anomaly_score = anomaly_score,
-                                   max_min_var = max_min_var)
+                                   anomaly_score = anomaly_score)
             result_files[key][folder_key] = df
     return result_files
 
@@ -469,12 +464,9 @@ def common_code_normalized():
     # path = cwd + "/code/code/data"
     path = cwd + "/actual_data_normalized"
     data_files = read_data(path)
-    data_config = None
     if (args.name != None):
         add_to_name = args.name + add_to_name
-    if (args.normalize == True):
-        data_config = 'config/data.config'
-    return data_files,add_to_name,data_config
+    return data_files,add_to_name,None
 
 def store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,data_config):
     param_dict = {}
