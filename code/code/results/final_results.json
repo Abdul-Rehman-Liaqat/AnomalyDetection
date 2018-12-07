@@ -1,28 +1,8 @@
 {
-    "autoencoder": {
-        "lstm_reward_low_FN_rate": -9096.520348017242,
-        "lstm_reward_low_FP_rate": -27489.56104409483,
-        "lstm_standard": -13694.780522025863
-    },
-    "autoencoderFullyConnected": {
-        "reward_low_FN_rate": -291.9877091637931,
-        "reward_low_FP_rate": -899.8642023965517,
-        "standard": -444.0160465043104
-    },
-    "autoencoderFullyConnectedOneEpoch": {
-        "reward_low_FN_rate": -46.54144576781608,
-        "reward_low_FP_rate": -172.04869602974142,
-        "standard": -78.43285830689655
-    },
     "autoencoderNnnormalized10WindowConverenceLoss11301035": {
         "reward_low_FN_rate": 4.40766134252874,
         "reward_low_FP_rate": 3.5801285241379306,
         "standard": 4.025285117241385
-    },
-    "autoencoderNnnormalized10WindowConvergenceLoss11292348": {
-        "reward_low_FN_rate": 0.0,
-        "reward_low_FP_rate": 0.0,
-        "standard": 0.0
     },
     "autoencoderNnnormalized10WindowCovnergenceLoss11301213": {
         "reward_low_FN_rate": 4.40766134252874,
@@ -43,16 +23,6 @@
         "reward_low_FN_rate": 26.176518301149425,
         "reward_low_FP_rate": 23.80045382400862,
         "standard": 25.280194940775864
-    },
-    "autoencoderNnnormalized10WindowMAEAveraged11292252": {
-        "reward_low_FN_rate": 0.0,
-        "reward_low_FP_rate": 0.0,
-        "standard": 0.0
-    },
-    "autoencoderNnnormalized10WindowMAEAveraged11301313": {
-        "reward_low_FN_rate": 0.0,
-        "reward_low_FP_rate": 0.0,
-        "standard": 0.0
     },
     "autoencoderNnnormalized15WindowMSEAverageScoreMSELoss1241637": {
         "reward_low_FN_rate": 31.064268862931034,
@@ -94,11 +64,6 @@
         "reward_low_FP_rate": 15.365035071594821,
         "standard": 15.935458010689654
     },
-    "cnn": {
-        "prediction_reward_low_FN_rate": -2033.7705911034482,
-        "prediction_reward_low_FP_rate": -6212.730046767241,
-        "prediction_standard": -3078.6731280344825
-    },
     "contextOSE": {
         "reward_low_FN_rate": 73.18167250416667,
         "reward_low_FP_rate": 66.97713919047413,
@@ -134,31 +99,6 @@
         "reward_low_FP_rate": 56.665308225043105,
         "standard": 64.55346441254311
     },
-    "predictionCnn": {
-        "reward_low_FN_rate": -117.57009808045976,
-        "reward_low_FP_rate": -359.60655502112064,
-        "standard": -178.0792850517241
-    },
-    "predictionCnnOneEpoch": {
-        "reward_low_FN_rate": -35.1148408525862,
-        "reward_low_FP_rate": -124.19993049568966,
-        "standard": -57.41364058922414
-    },
-    "predictionCnnOneEpoch923169": {
-        "reward_low_FN_rate": -3.276601537068972,
-        "reward_low_FP_rate": -16.12471574224138,
-        "standard": -8.720144848275854
-    },
-    "predictionLstmOneEpoch912123": {
-        "reward_low_FN_rate": -0.14408510862068952,
-        "reward_low_FP_rate": 0.02744129827586271,
-        "standard": -1.0781966284482696
-    },
-    "predictionLstmcorrectOneEpoch917166": {
-        "reward_low_FN_rate": -771.4340608160919,
-        "reward_low_FP_rate": -2458.752281405172,
-        "standard": -1193.7890222586207
-    },
     "predictionLstmnormalized30Window11222039": {
         "reward_low_FN_rate": 29.94324166666667,
         "reward_low_FP_rate": 11.177047264612066,
@@ -168,11 +108,6 @@
         "reward_low_FN_rate": 0.9340531554597636,
         "reward_low_FP_rate": -2.031590749137929,
         "standard": 0.5285718370689685
-    },
-    "predictionNn": {
-        "reward_low_FN_rate": -273.26848863218396,
-        "reward_low_FP_rate": -830.055396724138,
-        "standard": -412.4889398448276
     },
     "predictionNnNStepAheadnormalized10WindowMultiStepAhed5MAEscore125358": {
         "reward_low_FN_rate": 23.09160420402299,
@@ -188,26 +123,6 @@
         "reward_low_FN_rate": 11.546770944252867,
         "reward_low_FP_rate": 7.333401244353449,
         "standard": 9.99257020948276
-    },
-    "predictionNnOneEpoch": {
-        "reward_low_FN_rate": -35.1148408525862,
-        "reward_low_FP_rate": -124.19993049568966,
-        "standard": -57.41364058922414
-    },
-    "predictionNnOneEpoch3rdIterationOfSameSetting92046": {
-        "reward_low_FN_rate": -16.403344875287356,
-        "reward_low_FP_rate": -62.9675039198276,
-        "standard": -28.05329317499999
-    },
-    "predictionNnOneEpoch9121121": {
-        "reward_low_FN_rate": -16.209389520114936,
-        "reward_low_FP_rate": -63.46939633965517,
-        "standard": -28.193394625000003
-    },
-    "predictionNnOneEpochnewStartwithParamStored917168": {
-        "reward_low_FN_rate": -15.590926009770117,
-        "reward_low_FP_rate": -62.17991010431036,
-        "standard": -27.26569935948276
     },
     "predictionNnOneEpochnormalized10WindowSigmoid11211649": {
         "reward_low_FN_rate": 23.281602508045975,

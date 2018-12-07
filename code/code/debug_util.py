@@ -21,7 +21,6 @@ def create_exponential_weights(alpha,L):
 
 def customLoss(alpha,previousLoss):
     def lossFunction(y_true, y_pred):
-f =
         exp_weights = create_exponential_weights(alpha,len(previousLoss))
         previous_loss = np.sum(np.multiply(exp_weights,previousLoss))
 #        loss = previous_loss+loss*alpha
