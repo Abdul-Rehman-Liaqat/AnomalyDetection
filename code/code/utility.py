@@ -237,11 +237,12 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,anomaly_sc
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
         sigmoid_loss.append(sigmoid(error_prediction[-1]))
-    error_prediction = addDummyData(error_prediction,input_shape[0])
-    prediction = addDummyData(prediction,input_shape[0])
+    length = input_shape[0]
+    error_prediction = addDummyData(error_prediction,length)
+    prediction = addDummyData(prediction,length)
     df['error_prediction'] = error_prediction
-    df['convergence_loss'] = addDummyData(convergence_loss)
-    df['sigmoid_error_prediction'] = addDummyData(sigmoid_loss)
+    df['convergence_loss'] = addDummyData(convergence_loss,length)
+    df['sigmoid_error_prediction'] = addDummyData(sigmoid_loss,length)
  #   df['anomaly_score'] = df['sigmoid_error_prediction']
     df['anomaly_score'] = df[anomaly_score]
     df['prediction'] = prediction
