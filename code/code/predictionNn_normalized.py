@@ -7,8 +7,8 @@ window_size = 40
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
-#model = predictionNn(input_shape,loss='mae')
-model = predictionNn(input_shape,loss='logcosh')
+model = predictionNn(input_shape,loss='mae')
+#model = predictionNn(input_shape,loss='logcosh')
 data_files,add_to_name, data_config = common_code_normalized()
 result_files = use_whole_data(data_files,input_shape,
                               train_prediction_based_models_new,model,
