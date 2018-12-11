@@ -221,7 +221,10 @@ def score_postprocessing(s,t,W=8000,w=10):
 def addDummyData(arr,length):
     return [arr[-1]]*length + arr
 
-def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,anomaly_score = "error_prediction",nStepAhead=0):
+def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,
+                                      anomaly_score = "error_prediction",
+                                      nStepAhead=0
+                                      ):
     error_prediction = []
     prediction = []
     convergence_loss = []
@@ -373,8 +376,9 @@ def artificial_data_generation(random_seed=2):
         '/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/test_select_data/artificial/artificialData_1.csv',
         index=False)
 
-def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,anomaly_score='error_prediction',
-                    nb_epoch = 1):
+def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,
+                   anomaly_score='error_prediction',nb_epoch = 1
+                   ):
     result_files = data_files
     for key,value in data_files.items():
         for folder_key,df in value.items():
@@ -469,17 +473,21 @@ def common_code_normalized():
         add_to_name = args.name + add_to_name
     return data_files,add_to_name,None
 
-def store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,data_config):
+def store_param(window_size,nb_epoch,input_shape,algo_core,
+                algo_type,algo_name,model,normalized_input,
+                anomalyScore_func,anomalyScore_type,multistep
+                ):
     param_dict = {}
     param_dict['window_size'] = window_size
     param_dict['nb_epoch'] = nb_epoch
     param_dict['input_shape'] = list(input_shape)
+    param_dict['algo_core'] = algo_core
     param_dict['algo_type'] = algo_type
     param_dict['algo_name'] = algo_name
-    if(data_config == None):
-        param_dict['normalize'] = True
-    else:
-        param_dict['normalize'] = False
+    param_dict['normalized_input'] = normalized_input
+    param_dict['anomalyScore_func'] = anomalyScore_func
+    param_dict['anomalyScore_type'] = anomalyScore_type
+    param_dict['multistep'] = anomalyScore_type
     param_dict['model'] = model.to_json()
 
     df = pd.DataFrame.from_dict(param_dict)
@@ -672,7 +680,41 @@ def use_yahoo_data(model,algo_type,input_shape,train_model):
 def threshold(df,val):
     df['predicted_anomaly'] = 0
     df.loc[df['anomaly_score']>=val,'predicted_anomaly'] = 1
-    return df
+    return 
+
+def plotMultipleGraph(df,start,end):
+    import matplotlib.pyplot as plt
+    t = list(range(start,end))
+    s1 = df.value[t]
+    s2 = df.error_prediction[t]
+    s3 = df.anomaly_score[t]
+    
+    ax1 = plt.subplot(311)
+    plt.plot(t, s1)
+    plt.setp(ax1.get_xticklabels(), fontsize=6)
+    plt.tick_params(
+        axis='x',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
+        bottom=False,      # ticks along the bottom edge are off
+        top=False,         # ticks along the top edge are off
+        labelbottom=False) # labels along the bottom edge are off
+    # share x only
+    ax2 = plt.subplot(312, sharex=ax1)
+    plt.plot(t, s2)
+    # make these tick labels invisible
+    plt.setp(ax2.get_xticklabels(), visible=False)
+    plt.tick_params(
+        axis='x',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
+        bottom=False,      # ticks along the bottom edge are off
+        top=False,         # ticks along the top edge are off
+        labelbottom=False) # labels along the bottom edge are off
+    
+    # share x and y
+    ax3 = plt.subplot(313, sharex=ax1, sharey=ax1)
+    plt.plot(t, s3)
+    #plt.xlim(0.01, 5.0)
+    plt.show()
 #def display_algo_confusion_matrix(results_path):
 
 
