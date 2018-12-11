@@ -29,13 +29,13 @@ if(normalized_input):
     data_files,add_to_name, data_config = common_code_normalized()
 else:
     data_files,add_to_name, data_config = common_code()
+algo_name = algo_core+algo_type +"Window"+str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
 result_files = use_whole_data(data_files,
                               input_shape,
                               train_prediction_based_models_new,
                               model,
                               nb_epoch=nb_epoch,
                               anomaly_score = anomalyScore_type)
-algo_name = algo_core+algo_type +window_size+anomalyScore_func+anomalyScore_type+add_to_name
 print(algo_name)
 write_result(algorithm_name=algo_name,data_files=result_files,
              results_path=cwd+'/results')
