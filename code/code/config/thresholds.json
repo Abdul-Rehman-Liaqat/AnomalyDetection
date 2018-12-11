@@ -349,6 +349,34 @@
             "threshold": 0.999998092651368
         }
     },
+    "predictionLstmnormalized30WindowNewModel1211658": {
+        "reward_low_FN_rate": {
+            "score": -108.63924930476468,
+            "threshold": 0.999981880187989
+        },
+        "reward_low_FP_rate": {
+            "score": -47.933370191803014,
+            "threshold": 0.9999910354614262
+        },
+        "standard": {
+            "score": -39.086929470027584,
+            "threshold": 0.9999898910522466
+        }
+    },
+    "predictionLstmnormalized30WindowsNewModel1211658": {
+        "reward_low_FN_rate": {
+            "score": 0.0,
+            "threshold": 0.5
+        },
+        "reward_low_FP_rate": {
+            "score": 0.0,
+            "threshold": 0.5
+        },
+        "standard": {
+            "score": 0.0,
+            "threshold": 0.5
+        }
+    },
     "predictionNnNStepAheadnormalized10WindowMultiStepAhed5MAEscore125358": {
         "reward_low_FN_rate": {
             "score": -151.64121737005223,

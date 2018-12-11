@@ -104,6 +104,11 @@
         "reward_low_FP_rate": 11.177047264612066,
         "standard": 24.225207327499994
     },
+    "predictionLstmnormalized30WindowNewModel1211658": {
+        "reward_low_FN_rate": 35.448491579022985,
+        "reward_low_FP_rate": 29.3390645725,
+        "standard": 33.15218557327586
+    },
     "predictionLstmoneEpochWithoutNormalization92041": {
         "reward_low_FN_rate": 0.9340531554597636,
         "reward_low_FP_rate": -2.031590749137929,
