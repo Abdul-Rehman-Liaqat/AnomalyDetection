@@ -188,8 +188,8 @@ def predictionCnn(input_shape,loss='mse',optimizer='adam'):
 
 def predictionLstm(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(LSTM(20, input_shape = input_shape,activation = 'relu'))
-    model.add(Dense(5,activation = 'relu'))
+    model.add(LSTM(50, input_shape = input_shape,activation = 'relu'))
+    model.add(Dense(5))
     model.add(Dense(1))
     print(model.summary())
     model.compile(loss=loss, optimizer=optimizer)
