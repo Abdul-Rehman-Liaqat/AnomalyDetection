@@ -39,8 +39,8 @@ result_files = use_whole_data(data_files,
 print(algo_name)
 write_result(algorithm_name=algo_name,data_files=result_files,
              results_path=cwd+'/results')
-store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,
-            data_config)
+#store_param(window_size,nb_epoch,input_shape,algo_type,algo_name,model,
+#            data_config)
 
 store_param(window_size,nb_epoch,input_shape,algo_core,
                 algo_type,algo_name,model,normalized_input,
