@@ -20,9 +20,9 @@ normalized_input = True
 multistep = 5
 # mse, mae or logcosh
 anomalyScore_func = "mse"
-anomalyScore_type = "convergence_loss"
+anomalyScore_type = "convergenceLoss"
 algo_core = "predictionMultiStep"
-algo_type = "LSTM"
+algo_type = "CNN"
 input_shape = (window_size,nb_features)
 if(normalized_input):
     data_files,add_to_name, data_config = common_code_normalized()
