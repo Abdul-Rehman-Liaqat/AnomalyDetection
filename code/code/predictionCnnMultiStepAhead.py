@@ -1,29 +1,36 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 12 09:26:03 2018
+
+@author: abdulliaqat
+"""
+
 from utility import train_nStepPrediction_based_models_new
 from utility import common_code,use_whole_data, write_result
 from utility import common_code_normalized, store_param
 import os
-from models import predictionNnStepAhead
+from models import predictionLstmStepAhead
 
 cwd = os.getcwd()
-#first window_size was 20
-window_size = 10
+window_size = 30
 nb_epoch = 1
 nb_features = 1
-input_shape = (window_size,)
-multistep = 5
 normalized_input = True
+multistep = 1
+# mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergence_loss"
 algo_core = "predictionMultiStep"
-algo_type = "NN"
+algo_type = "LSTM"
+input_shape = (window_size,nb_features)
 if(normalized_input):
     data_files,add_to_name, data_config = common_code_normalized()
 else:
     data_files,add_to_name, data_config = common_code()
 algo_name = algo_core+algo_type +"Window"+str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
+model = predictionLstmStepAhead(input_shape,multistep,loss=anomalyScore_func)
 
-
-model = predictionNnStepAhead(input_shape,multistep)
 
 result_files = use_whole_data(data_files,
                               input_shape,

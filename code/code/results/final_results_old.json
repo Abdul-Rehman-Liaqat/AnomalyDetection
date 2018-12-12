@@ -1,0 +1,272 @@
+{
+    "autoencoderNnnormalized10WindowConverenceLoss11301035": {
+        "reward_low_FN_rate": 4.40766134252874,
+        "reward_low_FP_rate": 3.5801285241379306,
+        "standard": 4.025285117241385
+    },
+    "autoencoderNnnormalized10WindowCovnergenceLoss11301213": {
+        "reward_low_FN_rate": 4.40766134252874,
+        "reward_low_FP_rate": 3.5801285241379306,
+        "standard": 4.025285117241385
+    },
+    "autoencoderNnnormalized10WindowMAEAverageCorrect11301515": {
+        "reward_low_FN_rate": 4.40766134252874,
+        "reward_low_FP_rate": 3.5801285241379306,
+        "standard": 4.025285117241385
+    },
+    "autoencoderNnnormalized10WindowMAEAverageCorrect1130160": {
+        "reward_low_FN_rate": 29.182580143103444,
+        "reward_low_FP_rate": 23.882421917284482,
+        "standard": 26.96352538711207
+    },
+    "autoencoderNnnormalized10WindowMAEAverageMAEloss123948": {
+        "reward_low_FN_rate": 26.176518301149425,
+        "reward_low_FP_rate": 23.80045382400862,
+        "standard": 25.280194940775864
+    },
+    "autoencoderNnnormalized15WindowMSEAverageScoreMSELoss1241637": {
+        "reward_low_FN_rate": 31.064268862931034,
+        "reward_low_FP_rate": 28.00138661375,
+        "standard": 29.355023983879313
+    },
+    "autoencoderNnnormalized18Nov1118134": {
+        "reward_low_FN_rate": -2.7555481431034443,
+        "reward_low_FP_rate": 2.264228173275868,
+        "standard": 3.600251929741382
+    },
+    "autoencoderNnnormalized20WindowMSEAverageScoreMSELoss1231756": {
+        "reward_low_FN_rate": 28.249613484482758,
+        "reward_low_FP_rate": 25.862958888663794,
+        "standard": 26.857178847198277
+    },
+    "autoencoderNnnormalized25WindowMSEAverageScoreMSELoss1241655": {
+        "reward_low_FN_rate": 25.98301139856322,
+        "reward_low_FP_rate": 23.978921727198276,
+        "standard": 24.750379166810344
+    },
+    "autoencoderNnnormalized30WindowMSEAverageScoreMSELoss1232143": {
+        "reward_low_FN_rate": 23.88505496091954,
+        "reward_low_FP_rate": 21.8480904149569,
+        "standard": 22.46446041935345
+    },
+    "autoencoderNnnormalized35WindowMSEAverageScoreMSELoss1242112": {
+        "reward_low_FN_rate": 20.911391023850573,
+        "reward_low_FP_rate": 19.502558991939654,
+        "standard": 20.071515450603446
+    },
+    "autoencoderNnnormalized40WindowMSEAverageScoreMSELoss123223": {
+        "reward_low_FN_rate": 21.234777329885052,
+        "reward_low_FP_rate": 19.650972662758623,
+        "standard": 20.125520614870688
+    },
+    "autoencoderNnnormalized50WindowMSEAverageScoreMSELoss124754": {
+        "reward_low_FN_rate": 16.945477754310346,
+        "reward_low_FP_rate": 15.365035071594821,
+        "standard": 15.935458010689654
+    },
+    "contextOSE": {
+        "reward_low_FN_rate": 73.18167250416667,
+        "reward_low_FP_rate": 66.97713919047413,
+        "standard": 69.89956896844828
+    },
+    "expose": {
+        "reward_low_FN_rate": 26.920946783333335,
+        "reward_low_FP_rate": 3.1909311068965485,
+        "standard": 16.43666922426724
+    },
+    "htmjava": {
+        "reward_low_FN_rate": 70.42407766520115,
+        "reward_low_FP_rate": 53.25694971610345,
+        "standard": 65.54990960125
+    },
+    "knncad": {
+        "reward_low_FN_rate": 64.81232086001505,
+        "reward_low_FP_rate": 43.40851703291233,
+        "standard": 57.99434335898808
+    },
+    "null": {
+        "reward_low_FN_rate": 0.0,
+        "reward_low_FP_rate": 0.0,
+        "standard": 0.0
+    },
+    "numenta": {
+        "reward_low_FN_rate": 74.3202443095115,
+        "reward_low_FP_rate": 63.11684160219828,
+        "standard": 70.10105611943965
+    },
+    "numentaTM": {
+        "reward_low_FN_rate": 69.18506822906035,
+        "reward_low_FP_rate": 56.665308225043105,
+        "standard": 64.55346441254311
+    },
+    "predictionLstmnormalized30Window11222039": {
+        "reward_low_FN_rate": 29.94324166666667,
+        "reward_low_FP_rate": 11.177047264612066,
+        "standard": 24.225207327499994
+    },
+    "predictionLstmnormalized30WindowNewModel1211658": {
+        "reward_low_FN_rate": 35.448491579022985,
+        "reward_low_FP_rate": 29.3390645725,
+        "standard": 33.15218557327586
+    },
+    "predictionLstmoneEpochWithoutNormalization92041": {
+        "reward_low_FN_rate": 0.9340531554597636,
+        "reward_low_FP_rate": -2.031590749137929,
+        "standard": 0.5285718370689685
+    },
+    "predictionNnNStepAheadnormalized10WindowMultiStepAhed5MAEscore125358": {
+        "reward_low_FN_rate": 23.09160420402299,
+        "reward_low_FP_rate": 20.64599001594828,
+        "standard": 22.066161020258622
+    },
+    "predictionNnNStepAheadnormalized30WindowMultiStepAhed5MAEscore1242110": {
+        "reward_low_FN_rate": 4.75257460431034,
+        "reward_low_FP_rate": 2.020752471982761,
+        "standard": 2.328703686637927
+    },
+    "predictionNnNStepAheadnormalizedMultiStepAhed5MAEscore1241722": {
+        "reward_low_FN_rate": 11.546770944252867,
+        "reward_low_FP_rate": 7.333401244353449,
+        "standard": 9.99257020948276
+    },
+    "predictionNnOneEpochnormalized10WindowSigmoid11211649": {
+        "reward_low_FN_rate": 23.281602508045975,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalized10WindowSizeSigmoidScore11211548": {
+        "reward_low_FN_rate": 23.281602508045975,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalized18Nov11181117": {
+        "reward_low_FN_rate": 8.54456159252874,
+        "reward_low_FP_rate": 3.8372786952586164,
+        "standard": 6.782359630172416
+    },
+    "predictionNnOneEpochnormalized18Nov11181142": {
+        "reward_low_FN_rate": 8.54456159252874,
+        "reward_low_FP_rate": 3.8372786952586164,
+        "standard": 6.782359630172416
+    },
+    "predictionNnOneEpochnormalized18Nov11181222": {
+        "reward_low_FN_rate": 6.029061238505747,
+        "reward_low_FP_rate": 2.3694472581896533,
+        "standard": 4.733247030172414
+    },
+    "predictionNnOneEpochnormalized18Nov11181351": {
+        "reward_low_FN_rate": 22.14139967471264,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalized20WindowMAEscore11282025": {
+        "reward_low_FN_rate": 34.88503434971265,
+        "reward_low_FP_rate": 27.98007089206897,
+        "standard": 32.289254830474135
+    },
+    "predictionNnOneEpochnormalized30WindowMAEscore11281536": {
+        "reward_low_FN_rate": 37.84019200890804,
+        "reward_low_FP_rate": 31.172900927456897,
+        "standard": 35.208563875517235
+    },
+    "predictionNnOneEpochnormalized30WindowMseError11222038": {
+        "reward_low_FN_rate": 4.532500389942529,
+        "reward_low_FP_rate": 0.7048787090517219,
+        "standard": 2.215231263362068
+    },
+    "predictionNnOneEpochnormalized30WindowSize20Nov11201632": {
+        "reward_low_FN_rate": 22.885889847988512,
+        "reward_low_FP_rate": 8.269695266293105,
+        "standard": 17.087455461810347
+    },
+    "predictionNnOneEpochnormalized35WindowMAE11291042": {
+        "reward_low_FN_rate": 38.88096669514368,
+        "reward_low_FP_rate": 29.724722084827587,
+        "standard": 35.47662245650862
+    },
+    "predictionNnOneEpochnormalized40Window1128238": {
+        "reward_low_FN_rate": 40.24735934057471,
+        "reward_low_FP_rate": 31.761923457241377,
+        "standard": 37.09517694189655
+    },
+    "predictionNnOneEpochnormalized40WindowMAElossConvergenceLossAnomalyScore128138": {
+        "reward_low_FN_rate": 39.094753867183904,
+        "reward_low_FP_rate": 31.697747637456896,
+        "standard": 36.22833769732759
+    },
+    "predictionNnOneEpochnormalized40WindowMAElossConvergenceLossAnomalyScore12881": {
+        "reward_low_FN_rate": 10.031354453160926,
+        "reward_low_FP_rate": 8.80022128107758,
+        "standard": 6.426342024568969
+    },
+    "predictionNnOneEpochnormalized40WindowMAEscoreMAEloss123954": {
+        "reward_low_FN_rate": 39.094753867183904,
+        "reward_low_FP_rate": 31.697747637456896,
+        "standard": 36.22833769732759
+    },
+    "predictionNnOneEpochnormalized45WindowMAE1129948": {
+        "reward_low_FN_rate": 35.015267284195396,
+        "reward_low_FP_rate": 29.032794821249997,
+        "standard": 32.61626387198276
+    },
+    "predictionNnOneEpochnormalized50Window11212255": {
+        "reward_low_FN_rate": 18.830095213218392,
+        "reward_low_FP_rate": 5.8404748086206935,
+        "standard": 13.589970405991378
+    },
+    "predictionNnOneEpochnormalized50WindowMAEscore11271726": {
+        "reward_low_FN_rate": 36.73015864022989,
+        "reward_low_FP_rate": 29.699284769353447,
+        "standard": 33.974548305301724
+    },
+    "predictionNnOneEpochnormalized50WindowMSEscore11271631": {
+        "reward_low_FN_rate": 5.942724119827589,
+        "reward_low_FP_rate": 4.721459170689657,
+        "standard": 5.4658103176724175
+    },
+    "predictionNnOneEpochnormalized70WindowMAEscore11272225": {
+        "reward_low_FN_rate": 36.04385518074713,
+        "reward_low_FP_rate": 28.87938468547414,
+        "standard": 33.60730831120689
+    },
+    "predictionNnOneEpochnormalizedConvergenceLoss19Nov1119110": {
+        "reward_low_FN_rate": 23.281602508045975,
+        "reward_low_FP_rate": 6.525939937068962,
+        "standard": 16.832789167370688
+    },
+    "predictionNnOneEpochnormalzied30WindowSize20Nov11201656": {
+        "reward_low_FN_rate": 22.544581745977016,
+        "reward_low_FP_rate": 16.550022543232757,
+        "standard": 20.454803653577592
+    },
+    "random": {
+        "reward_low_FN_rate": 27.201024564942525,
+        "reward_low_FP_rate": 5.763682319827587,
+        "standard": 17.655439698232758
+    },
+    "randomCutForest": {
+        "reward_low_FN_rate": 59.74876476310345,
+        "reward_low_FP_rate": 38.360772142413786,
+        "standard": 51.717054557073276
+    },
+    "relativeEntropy": {
+        "reward_low_FN_rate": 58.84229239324713,
+        "reward_low_FP_rate": 47.598351759844824,
+        "standard": 54.64274893469828
+    },
+    "skyline": {
+        "reward_low_FN_rate": 44.4810173429885,
+        "reward_low_FP_rate": 27.08121005969828,
+        "standard": 35.687043255862065
+    },
+    "twitterADVec": {
+        "reward_low_FN_rate": 53.50107495100574,
+        "reward_low_FP_rate": 33.610051641206894,
+        "standard": 47.06195725408189
+    },
+    "windowedGaussian": {
+        "reward_low_FN_rate": 47.4100271583046,
+        "reward_low_FP_rate": 20.86798582474138,
+        "standard": 39.649523496077585
+    }
+}

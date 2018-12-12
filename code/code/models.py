@@ -195,6 +195,28 @@ def predictionLstm(input_shape,loss='mse',optimizer='adam'):
     model.compile(loss=loss, optimizer=optimizer)
     return model
 
+def predictionCnnStepAhead(input_shape,nStep,loss='mse',optimizer='adam'):
+    model = Sequential()
+    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
+    model.add(Dense(10, activation='relu'))
+    model.add(Flatten())
+    model.add(Dense(nStep))
+    model.summary()
+    model.compile(loss=loss, optimizer=optimizer)
+    return model
+
+
+def predictionLstmStepAhead(input_shape,nStep,loss='mse',optimizer='adam'):
+    model = Sequential()
+    model.add(LSTM(50, input_shape = input_shape,activation = 'relu'))
+    model.add(Dense(nStep))
+#    model.add(Dense(1))
+    print(model.summary())
+    model.compile(loss=loss, optimizer=optimizer)
+    return model
+
+
 def predictionNn(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(Dense(50,input_shape = input_shape, activation='relu'))
