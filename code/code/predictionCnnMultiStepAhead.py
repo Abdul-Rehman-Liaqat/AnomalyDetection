@@ -10,14 +10,14 @@ from utility import train_nStepPrediction_based_models_new
 from utility import common_code,use_whole_data, write_result
 from utility import common_code_normalized, store_param
 import os
-from models import predictionLstmStepAhead
+from models import predictionCnnStepAhead
 
 cwd = os.getcwd()
 window_size = 30
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 1
+multistep = 5
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergence_loss"
@@ -28,17 +28,19 @@ if(normalized_input):
     data_files,add_to_name, data_config = common_code_normalized()
 else:
     data_files,add_to_name, data_config = common_code()
-algo_name = algo_core+algo_type +"Window"+str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
-model = predictionLstmStepAhead(input_shape,multistep,loss=anomalyScore_func)
+algo_name = algo_core+algo_type +"Window"+str(window_size)+anomalyScore_func+\
+anomalyScore_type+add_to_name
 
+
+model = predictionCnnStepAhead(input_shape,multistep)
 
 result_files = use_whole_data(data_files,
                               input_shape,
                               train_nStepPrediction_based_models_new,
                               model,
+                              nStepAhead=multistep,
                               nb_epoch=nb_epoch,
                               anomaly_score = anomalyScore_type)
-algo_name = algo_type + add_to_name
 print(algo_name)
 write_result(algorithm_name=algo_name,data_files=result_files,
              results_path=cwd+'/results')

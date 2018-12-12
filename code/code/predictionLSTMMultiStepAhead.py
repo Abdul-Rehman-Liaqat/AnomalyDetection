@@ -20,7 +20,7 @@ normalized_input = True
 multistep = 1
 # mse, mae or logcosh
 anomalyScore_func = "mse"
-anomalyScore_type = "convergence_loss"
+anomalyScore_type = "convergenceLoss"
 algo_core = "predictionMultiStep"
 algo_type = "LSTM"
 input_shape = (window_size,nb_features)
@@ -28,17 +28,19 @@ if(normalized_input):
     data_files,add_to_name, data_config = common_code_normalized()
 else:
     data_files,add_to_name, data_config = common_code()
-algo_name = algo_core+algo_type +"Window"+str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
-model = predictionLstmStepAhead(input_shape,multistep,loss=anomalyScore_func)
+algo_name = algo_core+algo_type +"Window"+str(window_size)+anomalyScore_func+\
+anomalyScore_type+add_to_name
 
+
+model = predictionLstmStepAhead(input_shape,multistep)
 
 result_files = use_whole_data(data_files,
                               input_shape,
                               train_nStepPrediction_based_models_new,
                               model,
+                              nStepAhead=multistep,
                               nb_epoch=nb_epoch,
                               anomaly_score = anomalyScore_type)
-algo_name = algo_type + add_to_name
 print(algo_name)
 write_result(algorithm_name=algo_name,data_files=result_files,
              results_path=cwd+'/results')
