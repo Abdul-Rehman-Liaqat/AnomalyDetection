@@ -252,32 +252,30 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,
     return df
 
 
-def train_nStepPrediction_based_models_new(df,model,input_shape,nb_epoch=20,nStepAhead=0,anomaly_score="error_prediction"):
-    error_prediction = []
+def train_nStepPrediction_based_models_new(df,
+                                           model,
+                                           input_shape,
+                                           nb_epoch=20,
+                                           nStepAhead=1,
+                                           anomaly_score="convergenceLoss"
+                                           ):
     prediction = []
     convergence_loss = []
-    sigmoid_loss = []
     for i in np.arange(input_shape[0]+nStepAhead,len(df)):
-        X_input = df["value"].values[i - (input_shape[0]+nStepAhead):i-nStepAhead]
+        X_input = df["value"].values[i - (input_shape[0]+nStepAhead):\
+                    i-nStepAhead]
         X_input = X_input.reshape((1,)+input_shape)
         Y_input = df["value"].values[i-nStepAhead:i]
         Y_input = Y_input.reshape((1,)+(nStepAhead,))
         pred = (model.predict(X_input))
-        error_prediction.append(np.sum(np.abs(pred-Y_input))/input_shape[0])
-#        error_prediction.append(np.abs(prediction[-1]-Y_input[0][0]))
-#        error_prediction.append(prediction[-1]-Y_input[0][0] * prediction[-1]-Y_input[0][0])
+        prediction.append(pred)
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
-        sigmoid_loss.append(sigmoid(error_prediction[-1]))
-    temp_no_error = [0]*(input_shape[0]+nStepAhead)
-    error_prediction = temp_no_error + error_prediction
-    prediction = temp_no_error + prediction
-    df['error_prediction'] = error_prediction
-    df['convergence_loss'] = temp_no_error + convergence_loss
-    df['sigmoid_error_prediction'] = temp_no_error + sigmoid_loss
- #   df['anomaly_score'] = df['sigmoid_error_prediction']
-    df['anomaly_score'] = df['error_prediction']
-#    df['prediction'] = prediction
+    length = input_shape[0] + nStepAhead
+    prediction = [[0]]*length + prediction
+    df['convergenceLoss'] = addDummyData(convergence_loss,length)
+    df['anomaly_score'] = df[anomaly_score]
+    df['prediction'] = prediction
     return df
 
 
