@@ -377,6 +377,20 @@
             "threshold": 0.5
         }
     },
+    "predictionMultiStepCNNMultiStep5Window20mseconvergenceLoss12131837": {
+        "reward_low_FN_rate": {
+            "score": -218.71159826462582,
+            "threshold": 0.5374969482421876
+        },
+        "reward_low_FP_rate": {
+            "score": -116.0,
+            "threshold": 0.8031250000000002
+        },
+        "standard": {
+            "score": -109.71159826462582,
+            "threshold": 0.5375244140625001
+        }
+    },
     "predictionMultiStepCNNMultiStep5Window30mseconvergenceLoss1213948": {
         "reward_low_FN_rate": {
             "score": -212.23965159165212,
@@ -419,6 +433,20 @@
             "threshold": 0.4312469482421876
         }
     },
+    "predictionMultiStepLSTMMultiStep5Window20mseconvergenceLoss12131837": {
+        "reward_low_FN_rate": {
+            "score": -214.05718061193429,
+            "threshold": 0.5093765258789061
+        },
+        "reward_low_FP_rate": {
+            "score": -115.15262040073733,
+            "threshold": 0.7000976562500002
+        },
+        "standard": {
+            "score": -108.05718061193427,
+            "threshold": 0.5093765258789061
+        }
+    },
     "predictionMultiStepLSTMMultiStep5Window30mseconvergenceLoss12131245": {
         "reward_low_FN_rate": {
             "score": -215.4150837017953,
@@ -459,6 +487,20 @@
         "standard": {
             "score": -110.89326230565361,
             "threshold": 0.5310546875000001
+        }
+    },
+    "predictionMultiStepNNMultiStep5Window30mseconvergenceLoss12131837": {
+        "reward_low_FN_rate": {
+            "score": -215.09607249171052,
+            "threshold": 0.5144535064697268
+        },
+        "reward_low_FP_rate": {
+            "score": -116.0,
+            "threshold": 0.8031250000000002
+        },
+        "standard": {
+            "score": -108.09607249171054,
+            "threshold": 0.5144535064697268
         }
     },
     "predictionNnNStepAheadnormalized10WindowMultiStepAhed5MAEscore125358": {
