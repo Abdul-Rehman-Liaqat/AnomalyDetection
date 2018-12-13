@@ -391,6 +391,20 @@
             "threshold": 0.5144538879394531
         }
     },
+    "predictionMultiStepCNNMultiStep5Window40mseconvergenceLoss12131246": {
+        "reward_low_FN_rate": {
+            "score": -216.16106341314963,
+            "threshold": 0.5046871185302736
+        },
+        "reward_low_FP_rate": {
+            "score": -116.0,
+            "threshold": 0.8031250000000002
+        },
+        "standard": {
+            "score": -109.16106341314963,
+            "threshold": 0.5046871185302736
+        }
+    },
     "predictionMultiStepLSTMMultiStep1Window30mseconvergenceLoss1213948": {
         "reward_low_FN_rate": {
             "score": -161.2717897974925,
@@ -405,6 +419,20 @@
             "threshold": 0.4312469482421876
         }
     },
+    "predictionMultiStepLSTMMultiStep5Window30mseconvergenceLoss12131245": {
+        "reward_low_FN_rate": {
+            "score": -215.4150837017953,
+            "threshold": 0.48286132812500016
+        },
+        "reward_low_FP_rate": {
+            "score": -114.48821932506266,
+            "threshold": 0.6750015258789066
+        },
+        "standard": {
+            "score": -108.04465258439035,
+            "threshold": 0.5195327758789061
+        }
+    },
     "predictionMultiStepNNMultiStep5Window10mseconvergenceLoss1213948": {
         "reward_low_FN_rate": {
             "score": -215.89002683663506,
@@ -417,6 +445,20 @@
         "standard": {
             "score": -108.86497963635907,
             "threshold": 0.509765625
+        }
+    },
+    "predictionMultiStepNNMultiStep5Window20mseconvergenceLoss12131245": {
+        "reward_low_FN_rate": {
+            "score": -220.66587955190187,
+            "threshold": 0.517968559265137
+        },
+        "reward_low_FP_rate": {
+            "score": -116.21928306238708,
+            "threshold": 0.8996093750000005
+        },
+        "standard": {
+            "score": -110.89326230565361,
+            "threshold": 0.5310546875000001
         }
     },
     "predictionNnNStepAheadnormalized10WindowMultiStepAhed5MAEscore125358": {
