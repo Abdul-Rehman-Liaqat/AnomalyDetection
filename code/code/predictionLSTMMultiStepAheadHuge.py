@@ -21,7 +21,7 @@ multistep = 1
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"
-algo_core = "predictionMultiStep"
+algo_core = "predictionMultiStepHuge"
 algo_type = "LSTM"
 input_shape = (window_size,nb_features)
 if(normalized_input):
