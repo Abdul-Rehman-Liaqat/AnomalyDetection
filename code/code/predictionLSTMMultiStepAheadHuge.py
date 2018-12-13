@@ -10,7 +10,7 @@ from utility import train_nStepPrediction_based_models_new
 from utility import common_code,use_whole_data, write_result
 from utility import common_code_normalized, store_param
 import os
-from models import predictionLstmStepAhead
+from models import predictionLstmStepAheadHuge
 
 cwd = os.getcwd()
 window_size = 200
@@ -32,7 +32,7 @@ algo_name = algo_core+algo_type+"MultiStep"+str(multistep) +"Window"+\
 str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
 
 
-model = predictionLstmStepAhead(input_shape,multistep)
+model = predictionLstmStepAheadHuge(input_shape,multistep)
 
 result_files = use_whole_data(data_files,
                               input_shape,
