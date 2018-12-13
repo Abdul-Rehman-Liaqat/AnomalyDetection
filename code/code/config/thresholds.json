@@ -379,16 +379,16 @@
     },
     "predictionMultiStepCNNMultiStep5Window20mseconvergenceLoss12131837": {
         "reward_low_FN_rate": {
-            "score": -218.71159826462582,
-            "threshold": 0.5374969482421876
+            "score": -157.1066313441217,
+            "threshold": 0.9999658584594734
         },
         "reward_low_FP_rate": {
-            "score": -116.0,
-            "threshold": 0.8031250000000002
+            "score": -73.91061578658407,
+            "threshold": 0.9999900817871097
         },
         "standard": {
-            "score": -109.71159826462582,
-            "threshold": 0.5375244140625001
+            "score": -70.4389669392241,
+            "threshold": 0.9999900817871097
         }
     },
     "predictionMultiStepCNNMultiStep5Window30mseconvergenceLoss1213948": {
@@ -435,16 +435,16 @@
     },
     "predictionMultiStepLSTMMultiStep5Window20mseconvergenceLoss12131837": {
         "reward_low_FN_rate": {
-            "score": -214.05718061193429,
-            "threshold": 0.5093765258789061
+            "score": -149.2897502389068,
+            "threshold": 0.9999698638916024
         },
         "reward_low_FP_rate": {
-            "score": -115.15262040073733,
-            "threshold": 0.7000976562500002
+            "score": -68.87213080149351,
+            "threshold": 0.9999824523925788
         },
         "standard": {
-            "score": -108.05718061193427,
-            "threshold": 0.5093765258789061
+            "score": -64.39287086548083,
+            "threshold": 0.9999824523925788
         }
     },
     "predictionMultiStepLSTMMultiStep5Window30mseconvergenceLoss12131245": {
@@ -491,16 +491,16 @@
     },
     "predictionMultiStepNNMultiStep5Window30mseconvergenceLoss12131837": {
         "reward_low_FN_rate": {
-            "score": -215.09607249171052,
-            "threshold": 0.5144535064697268
+            "score": -164.1441015010637,
+            "threshold": 0.9999073028564458
         },
         "reward_low_FP_rate": {
-            "score": -116.0,
-            "threshold": 0.8031250000000002
+            "score": -74.12130937841101,
+            "threshold": 0.9999898910522464
         },
         "standard": {
-            "score": -108.09607249171054,
-            "threshold": 0.5144535064697268
+            "score": -70.54636414997665,
+            "threshold": 0.9999898910522464
         }
     },
     "predictionNnNStepAheadnormalized10WindowMultiStepAhed5MAEscore125358": {

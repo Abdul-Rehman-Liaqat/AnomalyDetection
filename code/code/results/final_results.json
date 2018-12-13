@@ -35,9 +35,9 @@
         "standard": 64.55346441254311
     },
     "predictionMultiStepCNNMultiStep5Window20mseconvergenceLoss12131837": {
-        "reward_low_FN_rate": 3.8185062456896572,
-        "reward_low_FP_rate": 0.0,
-        "standard": 2.710517989224135
+        "reward_low_FN_rate": 21.521082947126438,
+        "reward_low_FP_rate": 18.141975954051723,
+        "standard": 19.638376319310346
     },
     "predictionMultiStepCNNMultiStep5Window30mseconvergenceLoss1213948": {
         "reward_low_FN_rate": 5.678261036781609,
@@ -55,9 +55,9 @@
         "standard": 14.538021639008619
     },
     "predictionMultiStepLSTMMultiStep5Window20mseconvergenceLoss12131837": {
-        "reward_low_FN_rate": 5.155982582758622,
-        "reward_low_FP_rate": 0.3652498271551693,
-        "standard": 3.4236290465517194
+        "reward_low_FN_rate": 23.767313149712642,
+        "reward_low_FP_rate": 20.313736723491385,
+        "standard": 22.244452213146552
     },
     "predictionMultiStepLSTMMultiStep5Window30mseconvergenceLoss12131245": {
         "reward_low_FN_rate": 4.765780545402298,
@@ -75,9 +75,9 @@
         "standard": 2.201180040517243
     },
     "predictionMultiStepNNMultiStep5Window30mseconvergenceLoss12131837": {
-        "reward_low_FN_rate": 4.8574504333333275,
-        "reward_low_FP_rate": 0.0,
-        "standard": 3.4068653051724116
+        "reward_low_FN_rate": 19.498821407758623,
+        "reward_low_FP_rate": 18.051159750689656,
+        "standard": 19.592084418103447
     },
     "random": {
         "reward_low_FN_rate": 27.201024564942525,
