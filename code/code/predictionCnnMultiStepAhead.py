@@ -13,7 +13,7 @@ import os
 from models import predictionCnnStepAhead
 
 cwd = os.getcwd()
-window_size = 40
+window_size = 20
 nb_epoch = 1
 nb_features = 1
 normalized_input = True

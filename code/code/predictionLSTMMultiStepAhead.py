@@ -13,7 +13,7 @@ import os
 from models import predictionLstmStepAhead
 
 cwd = os.getcwd()
-window_size = 30
+window_size = 20
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
