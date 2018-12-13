@@ -206,6 +206,15 @@ def predictionCnnStepAhead(input_shape,nStep,loss='mse',optimizer='adam'):
     model.compile(loss=loss, optimizer=optimizer)
     return model
 
+def predictionLstmStepAheadHuge(input_shape,nStep,loss='mse',optimizer='adam'):
+    model = Sequential()
+    model.add(LSTM(300, input_shape = input_shape,activation = 'relu'))
+    model.add(Dense(100))
+    model.add(Dense(nStep))
+    print(model.summary())
+    model.compile(loss=loss, optimizer=optimizer)
+    return model
+
 
 def predictionLstmStepAhead(input_shape,nStep,loss='mse',optimizer='adam'):
     model = Sequential()
