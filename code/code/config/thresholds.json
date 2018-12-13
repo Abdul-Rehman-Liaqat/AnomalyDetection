@@ -293,6 +293,20 @@
             "threshold": 1.0
         }
     },
+    "normalizedDataNABpostProcessing": {
+        "reward_low_FN_rate": {
+            "score": -45.34802224822921,
+            "threshold": 0.9999895095825199
+        },
+        "reward_low_FP_rate": {
+            "score": -10.900536750845735,
+            "threshold": 0.9999900817871097
+        },
+        "standard": {
+            "score": 0.6519777517707857,
+            "threshold": 0.9999895095825199
+        }
+    },
     "null": {
         "reward_low_FN_rate": {
             "score": -232.0,

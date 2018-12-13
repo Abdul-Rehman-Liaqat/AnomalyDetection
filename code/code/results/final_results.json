@@ -19,6 +19,11 @@
         "reward_low_FP_rate": 43.40851703291233,
         "standard": 57.99434335898808
     },
+    "normalizedDataNABpostProcessing": {
+        "reward_low_FN_rate": 53.63562579074713,
+        "reward_low_FP_rate": 45.30149277982758,
+        "standard": 50.28102489300474
+    },
     "null": {
         "reward_low_FN_rate": 0.0,
         "reward_low_FP_rate": 0.0,
