@@ -261,17 +261,17 @@ def train_nStepPrediction_based_models_new(df,
                                            ):
     prediction = []
     convergence_loss = []
-    for i in np.arange(input_shape[0]+nStepAhead,len(df)):
-        X_input = df["value"].values[i - (input_shape[0]+nStepAhead):\
-                    i-nStepAhead]
+    for i in np.arange(input_shape[0],len(df)):
+        X_input = df["value"].values[i - (input_shape[0]):\
+                    i]
         X_input = X_input.reshape((1,)+input_shape)
-        Y_input = df["value"].values[i-nStepAhead:i]
+        Y_input = df["value"].values[i:i+nStepAhead]
         Y_input = Y_input.reshape((1,)+(nStepAhead,))
         pred = (model.predict(X_input))
-        prediction.append(pred)
+        prediction.append(pred[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
-    length = input_shape[0] + nStepAhead
+    length = input_shape[0]
     prediction = [[0]]*length + prediction
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
     df['anomaly_score'] = df[anomaly_score]
@@ -686,7 +686,7 @@ def plotMultipleGraph(df,start,end):
     import matplotlib.pyplot as plt
     t = list(range(start,end))
     s1 = df.value[t]
-    s2 = df.error_prediction[t]
+    s2 = df.convergenceLoss[t]
     s3 = df.anomaly_score[t]
     
     ax1 = plt.subplot(311)
