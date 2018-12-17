@@ -45,19 +45,24 @@
         "standard": 19.638376319310346
     },
     "predictionMultiStepCNNMultiStep5Window30mseconvergenceLoss1213948": {
-        "reward_low_FN_rate": 5.678261036781609,
-        "reward_low_FP_rate": 0.0,
-        "standard": 4.2070467275862065
+        "reward_low_FN_rate": 21.22795009166667,
+        "reward_low_FP_rate": 19.61880758806035,
+        "standard": 20.94740678
     },
     "predictionMultiStepCNNMultiStep5Window40mseconvergenceLoss12131246": {
         "reward_low_FN_rate": 4.5514185594827605,
         "reward_low_FP_rate": 0.0,
         "standard": 2.9478174943965545
     },
+    "predictionMultiStepHugeLSTMMultiStep1Window200mseconvergenceLoss12132040": {
+        "reward_low_FN_rate": 0.7749755103448194,
+        "reward_low_FP_rate": 0.6616038284482796,
+        "standard": 0.7314287827586207
+    },
     "predictionMultiStepLSTMMultiStep1Window30mseconvergenceLoss1213948": {
-        "reward_low_FN_rate": 20.3241983341954,
-        "reward_low_FP_rate": 4.6622662258620675,
-        "standard": 14.538021639008619
+        "reward_low_FN_rate": 20.842165660344822,
+        "reward_low_FP_rate": 15.971356602844825,
+        "standard": 18.33221400797414
     },
     "predictionMultiStepLSTMMultiStep5Window20mseconvergenceLoss12131837": {
         "reward_low_FN_rate": 23.767313149712642,

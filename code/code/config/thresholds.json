@@ -407,16 +407,16 @@
     },
     "predictionMultiStepCNNMultiStep5Window30mseconvergenceLoss1213948": {
         "reward_low_FN_rate": {
-            "score": -212.23965159165212,
-            "threshold": 0.5144538879394531
+            "score": -158.1267336813801,
+            "threshold": 0.9999065399169926
         },
         "reward_low_FP_rate": {
-            "score": -116.0,
-            "threshold": 0.8031250000000002
+            "score": -70.48436639565084,
+            "threshold": 0.9999898910522464
         },
         "standard": {
-            "score": -106.23965159165208,
-            "threshold": 0.5144538879394531
+            "score": -67.40201627040868,
+            "threshold": 0.9999898910522464
         }
     },
     "predictionMultiStepCNNMultiStep5Window40mseconvergenceLoss12131246": {
@@ -433,18 +433,32 @@
             "threshold": 0.5046871185302736
         }
     },
-    "predictionMultiStepLSTMMultiStep1Window30mseconvergenceLoss1213948": {
+    "predictionMultiStepHugeLSTMMultiStep1Window200mseconvergenceLoss12132040": {
         "reward_low_FN_rate": {
-            "score": -161.2717897974925,
-            "threshold": 0.4328125
+            "score": -229.30308522367034,
+            "threshold": 0.5
         },
         "reward_low_FP_rate": {
-            "score": -105.18354235603705,
-            "threshold": 0.6999996185302736
+            "score": -114.4650791177784,
+            "threshold": 0.5
         },
         "standard": {
-            "score": -82.27178979749254,
-            "threshold": 0.4312469482421876
+            "score": -114.30308522367034,
+            "threshold": 0.5
+        }
+    },
+    "predictionMultiStepLSTMMultiStep1Window30mseconvergenceLoss1213948": {
+        "reward_low_FN_rate": {
+            "score": -159.4692635015262,
+            "threshold": 0.9996915817260746
+        },
+        "reward_low_FP_rate": {
+            "score": -78.94645268136554,
+            "threshold": 0.9999633789062505
+        },
+        "standard": {
+            "score": -73.46926350152623,
+            "threshold": 0.9996915817260748
         }
     },
     "predictionMultiStepLSTMMultiStep5Window20mseconvergenceLoss12131837": {
