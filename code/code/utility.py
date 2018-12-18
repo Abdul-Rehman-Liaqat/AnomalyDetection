@@ -219,7 +219,7 @@ def score_postprocessing(s,t,W=8000,w=10):
     return L
 
 def addDummyData(arr,length):
-    return [arr[-1]]*length + arr
+    return [arr[0]]*length + arr
 
 def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,
                                       anomaly_score = "error_prediction",
@@ -259,6 +259,7 @@ def train_nStepPrediction_based_models_new(df,
                                            nStepAhead=1,
                                            anomaly_score="convergenceLoss"
                                            ):
+    df = df.loc[0:220]
     prediction = []
     convergence_loss = []
     for i in np.arange(input_shape[0],len(df)):
@@ -275,7 +276,6 @@ def train_nStepPrediction_based_models_new(df,
     df['prediction'] = addDummyData(prediction,length)
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
     df['anomaly_score'] = df[anomaly_score]
-    df['prediction'] = prediction
     return df
 
 
