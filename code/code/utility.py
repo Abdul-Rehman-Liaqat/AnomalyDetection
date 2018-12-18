@@ -271,7 +271,7 @@ def train_nStepPrediction_based_models_new(df,
         prediction.append(pred[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
-        print(pred,convergence_loss[-1])
+        print(pred,convergence_loss[-1],Y_input,df["value"][i-1])
     length = input_shape[0]
     df['prediction'] = addDummyData(prediction,length)
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
