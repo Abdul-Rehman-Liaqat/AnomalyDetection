@@ -389,6 +389,7 @@ def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,
                                    nb_epoch=nb_epoch,
                                    nStepAhead = nStepAhead,
                                    anomaly_score = anomaly_score)
+            print(df)
             result_files[key][folder_key] = df
     return result_files
 
