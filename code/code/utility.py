@@ -273,10 +273,10 @@ def train_nStepPrediction_based_models_new(df,
         convergence_loss.append(history.history['loss'][0])
     length = input_shape[0]
     prediction = [[0]]*length + prediction
-    print(prediction,convergence_loss)
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
     df['anomaly_score'] = df[anomaly_score]
     df['prediction'] = prediction
+    print(df)
     return df
 
 
@@ -390,7 +390,6 @@ def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,
                                    nb_epoch=nb_epoch,
                                    nStepAhead = nStepAhead,
                                    anomaly_score = anomaly_score)
-            print(df)
             result_files[key][folder_key] = df
     return result_files
 
