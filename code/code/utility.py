@@ -271,14 +271,11 @@ def train_nStepPrediction_based_models_new(df,
         prediction.append(pred[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         convergence_loss.append(history.history['loss'][0])
+        print(pred,convergence_loss[-1])
     length = input_shape[0]
-    print("11111111111111")
     df['prediction'] = addDummyData(prediction,length)
-    print(df.head(),"22222222222")
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
-    print(df.head(),"333333333333")
     df['anomaly_score'] = df[anomaly_score]
-    print(df.head(),"444444444444")
     return df
 
 
