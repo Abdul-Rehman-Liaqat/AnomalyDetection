@@ -252,6 +252,9 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,
     return df
 
 
+def movingNormal(val,max,min):
+    return (val-min+0.00001)/(max-min+0.00001)
+
 def train_nStepPrediction_based_models_new(df,
                                            model,
                                            input_shape,
@@ -261,7 +264,10 @@ def train_nStepPrediction_based_models_new(df,
                                            ):
     prediction = []
     convergence_loss = []
-    for i in np.arange(input_shape[0],len(df)):
+    convergence_loss_normal = []
+    min = 0
+    max = 0
+    for ind,i in enumerate(np.arange(input_shape[0],len(df))):
         X_input = df["value"].values[i - (input_shape[0]):\
                     i]
         X_input = X_input.reshape((1,)+input_shape)
@@ -270,11 +276,21 @@ def train_nStepPrediction_based_models_new(df,
         pred = (model.predict(X_input))
         prediction.append(pred[0][0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
-        convergence_loss.append(history.history['loss'][0])
-        print(X_input,Y_input)
+        loss = history.history['loss'][0]
+        convergence_loss.append(loss)
+        if(ind == 0):
+            min = loss
+            max = min
+        elif(loss < min):
+            min = loss
+        elif(loss > max):
+            max = loss
+        convergence_loss_normal.append(movingNormal(loss,max,min))
+        print(convergence_loss_normal[-1],pred)
     length = input_shape[0]
     df['prediction'] = addDummyData(prediction,length)
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
+    df['convergenceLossNormal'] = addDummyData(convergence_loss_normal,length)
     df['anomaly_score'] = df[anomaly_score]
     return df
 
