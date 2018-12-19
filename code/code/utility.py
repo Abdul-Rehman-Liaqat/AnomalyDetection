@@ -271,7 +271,7 @@ def train_nStepPrediction_based_models_new(df,
         X_input = df["value"].values[i - (input_shape[0]):\
                     i]
         X_input = X_input.reshape((1,)+input_shape)
-        Y_input = df["value"].values[i:i+nStepAhead+1]
+        Y_input = df["value"].values[i:i+nStepAhead]
         Y_input = Y_input.reshape((1,)+(nStepAhead,))
         pred = (model.predict(X_input))
         prediction.append(pred[0][0])
