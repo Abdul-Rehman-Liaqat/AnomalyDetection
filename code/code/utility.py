@@ -399,13 +399,13 @@ def use_whole_data(data_files,input_shape,training_function,model,nStepAhead=1,
     for key,value in data_files.items():
         for folder_key,df in value.items():
             print(folder_key)
-            df = training_function(df,
+            f = training_function(df,
                                    model,
                                    input_shape,
                                    nb_epoch=nb_epoch,
                                    nStepAhead = nStepAhead,
                                    anomaly_score = anomaly_score)
-            result_files[key][folder_key] = df
+            result_files[key][folder_key] = f
     return result_files
 
 def score_postprocessing(s,t,W=8000,w=10):
