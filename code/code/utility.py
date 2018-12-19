@@ -267,11 +267,13 @@ def train_nStepPrediction_based_models_new(df,
     convergence_loss_normal = []
     min = 0
     max = 0
-    for ind,i in enumerate(np.arange(input_shape[0],len(df))):
-        X_input = df["value"].values[i - (input_shape[0]):\
-                    i]
+    W = input_shape[0]
+    start_point = W+nStepAhead
+    for ind,i in enumerate(np.arange(start_point,len(df)-nStepAhead)):
+        X_input = df["value"].values[i - (start_point):\
+                    i-nStepAhead]
         X_input = X_input.reshape((1,)+input_shape)
-        Y_input = df["value"].values[i:i+nStepAhead]
+        Y_input = df["value"].values[i-nStepAhead:i]
         Y_input = Y_input.reshape((1,)+(nStepAhead,))
         pred = (model.predict(X_input))
         prediction.append(pred[0][0])
@@ -286,7 +288,7 @@ def train_nStepPrediction_based_models_new(df,
         elif(loss > max):
             max = loss
         convergence_loss_normal.append(movingNormal(loss,max,min))
-        print(i)
+        print(i,)
     length = input_shape[0]
     df['prediction'] = addDummyData(prediction,length)
     df['convergenceLoss'] = addDummyData(convergence_loss,length)
