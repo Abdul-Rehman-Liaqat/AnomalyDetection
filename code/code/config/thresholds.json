@@ -475,6 +475,20 @@
             "threshold": 0.9999824523925788
         }
     },
+    "predictionMultiStepLSTMMultiStep5Window20mseconvergenceLoss1219237": {
+        "reward_low_FN_rate": {
+            "score": -214.05718061193426,
+            "threshold": 0.5093765258789061
+        },
+        "reward_low_FP_rate": {
+            "score": -115.15262040073733,
+            "threshold": 0.7000976562500002
+        },
+        "standard": {
+            "score": -108.05718061193427,
+            "threshold": 0.5093765258789061
+        }
+    },
     "predictionMultiStepLSTMMultiStep5Window30mseconvergenceLoss12131245": {
         "reward_low_FN_rate": {
             "score": -215.4150837017953,
