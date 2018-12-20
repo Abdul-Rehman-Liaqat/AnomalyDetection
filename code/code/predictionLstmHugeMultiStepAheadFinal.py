@@ -9,7 +9,7 @@ Created on Thu Dec 20 23:05:11 2018
 from utility import addDummyData,get_all_files_path
 from utility import  store_param, movingNormal
 import os
-from models import predictionLstmStepAhead
+from models import predictionLstmStepAheadHuge
 from datetime import datetime
 import numpy as np
 import pandas as pd
@@ -89,7 +89,7 @@ str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
 for file in all_files_path:
     if(not ".md" in file):
         df = pd.read_csv(file)
-        model = predictionLstmStepAhead(input_shape,multistep)
+        model = predictionLstmStepAheadHuge(input_shape,multistep)
         f = train_nStepPrediction_based_models_new(df, 
                                                    model,
                                            input_shape,
