@@ -49,6 +49,11 @@ def train_nStepPrediction_based_models_new(df,
 
 def convertNameToWrite(name,algo_name):
     split = name.split("/")
+    dirName = algo_name+"/"+split[1]
+    if(not os.path.isdir("results/"+algo_name)):
+        os.mkdir("results/"+algo_name)
+    if(not os.path.isdir("results/"+dirName)):
+        os.mkdir("results/"+dirName)
     return algo_name+"/"+split[1]+"/"+algo_name+"_"+split[-1]
 
 
@@ -71,11 +76,12 @@ add_to_name = "{}{}{}{}".format(now.month, now.day, now.hour, now.minute)
 algo_name = algo_core+algo_type+"MultiStep"+str(multistep) +"Window"+\
 str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
 
-model = predictionLstmStepAhead(input_shape,multistep)
+#model = predictionLstmStepAhead(input_shape,multistep)
 
 for file in all_files_path:
     if(not ".md" in file):
         df = pd.read_csv(file)
+        model = predictionLstmStepAhead(input_shape,multistep)
         f = train_nStepPrediction_based_models_new(df, 
                                                    model,
                                            input_shape,
