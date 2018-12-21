@@ -99,10 +99,10 @@ for file in all_files_path:
         name_to_write = convertNameToWrite(file,algo_name)
         f.to_csv("results/"+name_to_write)
         print("results/"+name_to_write)
-#store_param(window_size,nb_epoch,input_shape,algo_core,
-#                algo_type,algo_name,model,normalized_input,
-#                anomalyScore_func,anomalyScore_type,multistep
-#                )
+store_param(window_size,nb_epoch,input_shape,algo_core,
+                algo_type,algo_name,model,normalized_input,
+                anomalyScore_func,anomalyScore_type,multistep
+                )
 
 
 #for i in range(len(df)): 

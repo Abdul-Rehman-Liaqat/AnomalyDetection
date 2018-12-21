@@ -63,7 +63,7 @@ window_size = 20
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 5
+multistep = 1
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"
@@ -91,10 +91,10 @@ for file in all_files_path:
         name_to_write = convertNameToWrite(file,algo_name)
         f.to_csv("results/"+name_to_write)
         print("results/"+name_to_write)
-#store_param(window_size,nb_epoch,input_shape,algo_core,
-#                algo_type,algo_name,model,normalized_input,
-#                anomalyScore_func,anomalyScore_type,multistep
-#                )
+store_param(window_size,nb_epoch,input_shape,algo_core,
+                algo_type,algo_name,model,normalized_input,
+                anomalyScore_func,anomalyScore_type,multistep
+                )
 
 
 #for i in range(len(df)): 
