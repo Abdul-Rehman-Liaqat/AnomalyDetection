@@ -49,11 +49,6 @@ def train_nStepPrediction_based_models_new(df,
 
 def convertNameToWrite(name,algo_name):
     split = name.split("/")
-    dirName = algo_name+"/"+split[1]
-    if(not os.path.isdir("results/"+algo_name)):
-        os.mkdir("results/"+algo_name)
-    if(not os.path.isdir("results/"+dirName)):
-        os.mkdir("results/"+dirName)
     return algo_name+"/"+split[1]+"/"+algo_name+"_"+split[-1]
 
 
@@ -69,14 +64,21 @@ anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"
 algo_core = "predictionMultiStep"
 algo_type = "LSTM"
+data_path = "actual_data_normalized"
 input_shape = (window_size,nb_features)
-all_files_path = get_all_files_path("actual_data_normalized")
+all_files_path = get_all_files_path(data_path)
+all_folders_path = os.listdir(data_path)
+all_folders_path.remove("README.md")
 now = datetime.now()
 add_to_name = "{}{}{}{}".format(now.month, now.day, now.hour, now.minute)
 algo_name = algo_core+algo_type+"MultiStep"+str(multistep) +"Window"+\
 str(window_size)+anomalyScore_func+anomalyScore_type+add_to_name
 
 #model = predictionLstmStepAhead(input_shape,multistep)
+os.mkdir("results/"+algo_name)
+
+for folder in all_folders_path:
+    os.mkdir("results/"+algo_name+"/"+folder)
 
 for file in all_files_path:
     if(not ".md" in file):
