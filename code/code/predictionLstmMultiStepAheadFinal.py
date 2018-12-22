@@ -38,7 +38,10 @@ def train_nStepPrediction_based_models_new(df,
             min = loss
         elif(loss > max):
             max = loss
-        convergence_loss_normal.append(movingNormal(loss,max,min))
+        if(ind < 500):
+            convergence_loss_normal.append(0.5)
+        else:
+            convergence_loss_normal.append(movingNormal(loss,max,min))
     print(len(convergence_loss),len(df))
     length = input_shape[0] + nStepAhead
     df['prediction'] = addDummyData(prediction,length)
