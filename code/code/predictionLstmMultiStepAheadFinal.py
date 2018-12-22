@@ -54,7 +54,7 @@ def convertNameToWrite(name,algo_name):
 
 
 cwd = os.getcwd()
-window_size = 20
+window_size = 30
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
