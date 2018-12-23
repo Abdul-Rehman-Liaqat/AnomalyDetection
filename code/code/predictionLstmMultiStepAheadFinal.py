@@ -57,11 +57,11 @@ def convertNameToWrite(name,algo_name):
 
 
 cwd = os.getcwd()
-window_size = 30
+window_size = 20
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 5
+multistep = 3
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"
@@ -92,7 +92,7 @@ for file in all_files_path:
                                            input_shape,
                                            nb_epoch=nb_epoch,
                                            nStepAhead=multistep,
-                                           anomaly_score="convergenceLossNormal")
+                                           anomaly_score=anomalyScore_type)
         name_to_write = convertNameToWrite(file,algo_name)
         f.to_csv("results/"+name_to_write)
         print("results/"+name_to_write)
