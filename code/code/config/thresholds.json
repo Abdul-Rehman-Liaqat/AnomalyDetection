@@ -447,6 +447,20 @@
             "threshold": 0.5
         }
     },
+    "predictionMultiStepLSTMMultiStep1Window200mseconvergenceLoss12222256": {
+        "reward_low_FN_rate": {
+            "score": -91.85867732370264,
+            "threshold": 0.8406234741210941
+        },
+        "reward_low_FP_rate": {
+            "score": -43.75921354243585,
+            "threshold": 0.9972534179687503
+        },
+        "standard": {
+            "score": -32.422882572467316,
+            "threshold": 0.9538574218750004
+        }
+    },
     "predictionMultiStepLSTMMultiStep1Window20mseconvergenceLoss12211529": {
         "reward_low_FN_rate": {
             "score": -82.378028615814,
@@ -571,6 +585,20 @@
         "standard": {
             "score": -38.93622742975931,
             "threshold": 0.9728485107421881
+        }
+    },
+    "predictionMultiStepLSTMMultiStep7Window30mseconvergenceLoss12222256": {
+        "reward_low_FN_rate": {
+            "score": -106.86617911355324,
+            "threshold": 0.9648925781250005
+        },
+        "reward_low_FP_rate": {
+            "score": -48.59260376414765,
+            "threshold": 0.9999572753906257
+        },
+        "standard": {
+            "score": -41.866179113553265,
+            "threshold": 0.9648925781250005
         }
     },
     "predictionMultiStepNNMultiStep5Window10mseconvergenceLoss1213948": {
