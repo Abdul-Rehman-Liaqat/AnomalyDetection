@@ -491,16 +491,16 @@
     },
     "predictionMultiStepLSTMMultiStep3Window20mseconvergenceLoss12212156": {
         "reward_low_FN_rate": {
-            "score": -84.39119901771079,
-            "threshold": 0.9976564407348637
+            "score": -116.33951533922719,
+            "threshold": 0.7007324218750001
         },
         "reward_low_FP_rate": {
-            "score": -31.360929358465953,
-            "threshold": 0.999218940734864
+            "score": -67.4997732142592,
+            "threshold": 0.8996093750000005
         },
         "standard": {
-            "score": -23.391199017710772,
-            "threshold": 0.9976564407348637
+            "score": -54.339515339227184,
+            "threshold": 0.7007324218750001
         }
     },
     "predictionMultiStepLSTMMultiStep3Window20mseconvergenceLoss12232244": {
