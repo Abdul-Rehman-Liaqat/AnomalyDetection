@@ -252,8 +252,8 @@ def train_prediction_based_models_new(df,model,input_shape,nb_epoch=1,
     return df
 
 
-def movingNormal(val,max,min):
-    return (val-min+0.00001)/(max-min+0.00001)
+def movingNormal(val,maxVal,minVal):
+    return (val-minVal+0.00001)/(maxVal-minVal+0.00001)
 
 def train_nStepPrediction_based_models_new(df,
                                            model,

@@ -14,8 +14,8 @@ def get_all_files_path(root):
     files = [val for sublist in [[os.path.join(i[0], j) for j in i[2]] for i in os.walk(root)] for val in sublist]
     return files
 
-def movingNormal(val,max,min):
-    return (val-min+0.00001)/(max-min+0.00001)
+def movingNormal(val,maxVal,minVal):
+    return (val-minVal+0.00001)/(maxVal-minVal+0.00001)
 
             
 def differentInitialPointNormalization(df,start):
@@ -37,6 +37,13 @@ def differentInitialPointNormalization(df,start):
             l.append(movingNormal(loss,maxVal,minVal))        
     df["convergenceLossNormal"+str(start)] = l
     return df
+            
+def OverallNormalization(df,start):
+    minVal = df.convergenceLoss[start:].min()
+    maxVal = df.convergenceLoss[start:].max()
+    l = df.convergenceLoss
+    df["convergenceLossNormalOverall"+str(start)] = (l-minVal)/(maxVal-minVal)
+    return df
 
 files = get_all_files_path('results/' + algo )
 for f in files:
@@ -44,6 +51,9 @@ for f in files:
         print(f)
         df = pd.read_csv(f)
         a = []
-        df = differentInitialPointNormalization(df,start)
-        df["anomaly_score"] = df["convergenceLossNormal"+str(start)]
+        df = OverallNormalization(df,start)
+        df["anomaly_score"] = df["convergenceLossNormalOverall"+str(start)]
+#        df = differentInitialPointNormalization(df,start)
+#        df["anomaly_score"] = df["convergenceLossNormal"+str(start)]
         df.to_csv(f,index = False)        
+
