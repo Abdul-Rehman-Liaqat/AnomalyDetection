@@ -75,9 +75,9 @@
         "standard": 18.33221400797414
     },
     "predictionMultiStepLSTMMultiStep3Window20mseconvergenceLoss12212156": {
-        "reward_low_FN_rate": 33.235771454310346,
-        "reward_low_FP_rate": 20.90527016625,
-        "standard": 26.577795112413796
+        "reward_low_FN_rate": 32.015723295689654,
+        "reward_low_FP_rate": 21.455379187672413,
+        "standard": 25.609791840043105
     },
     "predictionMultiStepLSTMMultiStep3Window20mseconvergenceLoss12232244": {
         "reward_low_FN_rate": 8.32084436982759,
