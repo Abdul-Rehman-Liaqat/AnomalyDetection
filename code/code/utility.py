@@ -700,6 +700,14 @@ def threshold(df,val):
     df.loc[df['anomaly_score']>=val,'predicted_anomaly'] = 1
     return 
 
+def nWindowMovingAverage(val,n):
+    start = max(len(val)-n,0)
+    return np.mean(val[start:len(val)])
+    
+def nWindowMovingStd(val,n):
+    start = max(len(val)-n,0)
+    return np.std(val[start:len(val)])
+
 def plotMultipleGraph(df,start,end):
     import matplotlib.pyplot as plt
     t = list(range(start,end))
