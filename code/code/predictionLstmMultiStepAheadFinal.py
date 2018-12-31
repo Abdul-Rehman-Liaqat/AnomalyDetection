@@ -57,11 +57,11 @@ def convertNameToWrite(name,algo_name):
 
 
 cwd = os.getcwd()
-window_size = 20
+window_size = 50
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 3
+multistep = 1
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"
