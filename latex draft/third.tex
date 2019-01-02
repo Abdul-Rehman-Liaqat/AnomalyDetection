@@ -184,13 +184,39 @@ The backpropagation will try to  $h_{W,b}(x) \approx x$ , so as to minimise the 
 L(x,y) = \sum(x-h_{W,b}(x))^2
 \end{equation}
 Similarly for time series let $X_t$ be the input value of the streaming data at time $t$ then the input of autoencoder based architecture will be $X_{t-w:t}$ and output will be $Y_{t-w:t}$ as $Y$ is the predicted reconstruction of the input. 
+\begin{equation}
+Y_{t-w:t} = h(X_{t-w:t})
+\end{equation}
+The reconstruction loss is defined as:
+\begin{equation}
+L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
+\end{equation}
+$\gg \ll$ picture of an autoencoder
 \subsection{Describe Multistep-Ahead based architecture}
+$\gg \ll$ picture of an multi-step based architecture
+Second type of architecture used is multi-step prediction architecture. In this type of architecutre 
+For time series let $X_t$ be the input value of the streaming data at time $t$ then the input of multistep prediction based architecture will be $X_{t-w-l:t-l}$ and output will be $Y_{t-l:t}$ as $Y$ is the prediction of the input. 
+More specifically
+\begin{equation}
+Y_{t-l:t} = h(X_{t-w-l:t-l})
+\end{equation}
+and the prediction loss will be defined as:
+\begin{equation}
+L(x,y) = \frac{1}{l}\sum(Y_{t-l:t}-h(X_{t-w-l:t-l}))^2
+\end{equation}
+
+Above two are the basic outputs which are repeated with following different architectures.
+\subsection{Describe fully connected architecture}
+\begin{figure}
+\centering
+        \includegraphics[width=\textwidth]{images/nn.png}
+    \caption{General Anomaly Detection Framework}
+    \label{generalAnomalyDetectionFrameWork}
+\end{figure}
 \subsection{Describe fully connected prediction architecture}
+\subsection{Describe fully connected autoencoder architecture}
 \subsection{Describe Convolution based prediction architecture}
 \subsection{Describe LSTM based prediction architecture}
-\subsection{Describe autoencoder based architecture}
-\subsection{Describe fully connected based autoencoder based architecture}
-\subsection{Describe Convolution based autoencoder based architecture}
 \subsection{Describe LSTM based autoencoder based architecture}
 \subsection{Recency concept}
 \subsection{Post-processing}
