@@ -61,7 +61,7 @@ window_size = 70
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 1
+multistep = 4
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"
