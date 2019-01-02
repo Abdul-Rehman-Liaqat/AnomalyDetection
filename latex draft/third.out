@@ -7,24 +7,29 @@
 \BOOKMARK [1][-]{section.2}{Related Work and State of the art 10 pages}{}% 7
 \BOOKMARK [1][-]{section.3}{Proposed method 10 pages}{}% 8
 \BOOKMARK [2][-]{subsection.3.1}{General anomaly score based architecture and detailed explanation}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Describe fully connected prediction architecture}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Describe Convolution based prediction architecture}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.4}{Describe LSTM based prediction architecture}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.5}{Describe autoencoder based architecture}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.6}{Describe fully connected based autoencoder based architecture}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.7}{Describe Convolution based autoencoder based architecture}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.8}{Describe LSTM based autoencoder based architecture}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.9}{Recency concept}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.10}{Post-processing}{section.3}% 18
-\BOOKMARK [2][-]{subsection.3.11}{Thresholding}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.12}{Parameterinzing the anomaly score}{section.3}% 20
-\BOOKMARK [1][-]{section.4}{Empirical Formulation and Experiments 5 pages}{}% 21
-\BOOKMARK [1][-]{section.5}{Results 10 pages}{}% 22
-\BOOKMARK [1][-]{section.6}{Conclusion and Discussion 5 pages}{}% 23
-\BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 24
-\BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 25
-\BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 26
-\BOOKMARK [1][-]{section.8}{Best practices}{}% 27
-\BOOKMARK [2][-]{subsection.8.1}{Moving from jupyterlab to pycharm}{section.8}% 28
-\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 29
-\BOOKMARK [1][-]{section.10}{References}{}% 30
+\BOOKMARK [2][-]{subsection.3.2}{Describe autoencoder based architecture}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Describe Multistep-Ahead based architecture}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Describe fully connected prediction architecture}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.5}{Describe Convolution based prediction architecture}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.6}{Describe LSTM based prediction architecture}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.7}{Describe autoencoder based architecture}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.8}{Describe fully connected based autoencoder based architecture}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.9}{Describe Convolution based autoencoder based architecture}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.10}{Describe LSTM based autoencoder based architecture}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.11}{Recency concept}{section.3}% 19
+\BOOKMARK [2][-]{subsection.3.12}{Post-processing}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.13}{Thresholding}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.14}{Parameterinzing the anomaly score}{section.3}% 22
+\BOOKMARK [1][-]{section.4}{Empirical Formulation and Experiments 5 pages}{}% 23
+\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 24
+\BOOKMARK [1][-]{section.5}{Results 10 pages}{}% 25
+\BOOKMARK [2][-]{subsection.5.1}{Scoring}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.2}{Comparing with others}{section.5}% 27
+\BOOKMARK [1][-]{section.6}{Conclusion and Discussion 5 pages}{}% 28
+\BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 29
+\BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 30
+\BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 31
+\BOOKMARK [1][-]{section.8}{Best practices}{}% 32
+\BOOKMARK [2][-]{subsection.8.1}{Moving from jupyterlab to pycharm}{section.8}% 33
+\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 34
+\BOOKMARK [1][-]{section.10}{References}{}% 35
