@@ -197,11 +197,11 @@ def predictionLstm(input_shape,loss='mse',optimizer='adam'):
 
 def predictionCnnStepAhead(input_shape,nStep,loss='mse',optimizer='adam'):
     model = Sequential()
-    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
-    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
-    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
-    model.add(Conv1D(kernel_size=3, filters=5, strides = 2, input_shape=input_shape, activation="relu"))
-    model.add(Conv1D(kernel_size=2, filters=5, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=4, filters=8, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=4, filters=8, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=3, filters=10, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=3, filters=10, strides = 2, input_shape=input_shape, activation="relu"))
+    model.add(Conv1D(kernel_size=2, filters=12, input_shape=input_shape, activation="relu"))
     model.add(Dense(10, activation='relu'))
     model.add(Flatten())
     model.add(Dense(nStep))
