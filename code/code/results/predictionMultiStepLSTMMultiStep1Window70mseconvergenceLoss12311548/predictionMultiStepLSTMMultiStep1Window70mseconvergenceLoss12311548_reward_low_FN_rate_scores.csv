@@ -1,0 +1,12 @@
+Detector,Profile,File,Threshold,Score,TP,TN,FP,FN,Total_Count
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,artificialWithAnomaly/art_daily_flatmiddle.csv,0.5126953125,-0.521639402878,2,3011,14,401,4032
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,artificialWithAnomaly/art_daily_jumpsdown.csv,0.5126953125,-2.71429804014,0,3018,7,403,4032
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,artificialWithAnomaly/art_increase_spike_density.csv,0.5126953125,-5.44890556862,12,2965,60,391,4032
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,realKnownCause/cpu_utilization_asg_misconfiguration.csv,0.5126953125,-0.683353675221,2,15786,15,1497,18050
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,artificialWithAnomaly/art_daily_nojump.csv,0.5126953125,0.665779421523,1,3022,3,402,4032
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,realKnownCause/nyc_taxi.csv,0.5126953125,-10.11,0,8534,1,1035,10320
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,realKnownCause/machine_temperature_system_failure.csv,0.5126953125,-8.0,0,19677,0,2268,22695
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,artificialWithAnomaly/art_daily_jumpsup.csv,0.5126953125,0.858908670438,2,3025,0,401,4032
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,realKnownCause/rogue_agent_key_hold.csv,0.5126953125,-4.22,0,1408,2,190,1882
+predictionMultiStepLSTMMultiStep1Window70mseconvergenceLoss12311548,reward_low_FN_rate,artificialWithAnomaly/art_load_balancer_spikes.csv,0.5126953125,-0.433202028909,8,3011,14,395,4032
+Totals,,,,-30.6067106238,27,63457,116,7383,77139
