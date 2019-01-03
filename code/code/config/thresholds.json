@@ -391,6 +391,20 @@
             "threshold": 0.5
         }
     },
+    "predictionMultiStepCNNMultiStep4Window50mseconvergenceLoss122116": {
+        "reward_low_FN_rate": {
+            "score": -227.72440317214932,
+            "threshold": 0.6011596679687499
+        },
+        "reward_low_FP_rate": {
+            "score": -116.0,
+            "threshold": 0.9937507629394536
+        },
+        "standard": {
+            "score": -118.72440317214932,
+            "threshold": 0.6011596679687499
+        }
+    },
     "predictionMultiStepCNNMultiStep5Window20mseconvergenceLoss12131837": {
         "reward_low_FN_rate": {
             "score": -157.1066313441217,
@@ -655,6 +669,20 @@
         "standard": {
             "score": -41.866179113553265,
             "threshold": 0.9648925781250005
+        }
+    },
+    "predictionMultiStepNNMultiStep4Window50mseconvergenceLoss122116": {
+        "reward_low_FN_rate": {
+            "score": -130.719078535119,
+            "threshold": 0.9998785018920903
+        },
+        "reward_low_FP_rate": {
+            "score": -56.52318212356761,
+            "threshold": 0.999990844726563
+        },
+        "standard": {
+            "score": -59.310244338314405,
+            "threshold": 0.9998992919921882
         }
     },
     "predictionMultiStepNNMultiStep5Window10mseconvergenceLoss1213948": {
