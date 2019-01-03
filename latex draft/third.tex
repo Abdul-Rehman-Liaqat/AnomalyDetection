@@ -210,7 +210,7 @@ Above two are the basic outputs which are repeated with following different arch
 \subsection{Describe fully connected architecture}
 \begin{figure}
 \centering
-        \includegraphics[width=\textwidth]{images/nn.png}
+        \includegraphics[width=\textwidth]{images/architecture/NnMultistepAheadPrediction.png}
     \caption{Fully connected autoencoder}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
@@ -258,14 +258,53 @@ The diversity of these categories provide the second benefit. With the diversity
     \caption{Artificial with sudden flat}
   \end{subfigure}
   \caption{Examples of artifical anomaly data set}
-  \label{lane_detection}
+  \label{artificialDataPlots}
 \end{figure}
 
+Many datasets contains concept drift. These datasets are mostly real life ones. Example of these are following:
 
+\begin{figure}
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png}
+    \caption{Artificial with sudden flat-middle}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/grok_asg_anomaly.png}
+    \caption{Artificial with sudden jumps-down}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png}
+    \caption{Artificial with sudden jumps-up}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5	\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png}
+    \caption{Artificial with sudden flat}
+  \end{subfigure}
+  \caption{Examples of artifical anomaly data set}
+  \label{AwsConceptDrift}
+\end{figure}
 
 \subsection{Dataset}
 \newpage
 \section{Results 10 pages}
+\begin{table}
+\centering
+\begin{tabular}{llll}
+Algorithm & low FN rate & low FP rate & Standard  \\
+numenta   & 74.3202     & 63.1168 & 70.1011 \\
+          & 73.1817     & 66.9771   69.8996  &           \\
+          & 70.4241     & 53.2569   65.5499  &          
+\end{tabular}
+\end{table}
 \subsection{Scoring}
 \subsection{Comparing with others}
 \newpage
