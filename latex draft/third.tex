@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{fullpage}
@@ -224,6 +225,44 @@ Above two are the basic outputs which are repeated with following different arch
 \subsection{Parameterinzing the anomaly score}
 \newpage 
 \section{Empirical Formulation and Experiments 5 pages}
+To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) was used. Numenta is a benchmark specifically designed for online time series anomaly detection.\\
+\break
+Using NAB provides with many benefits. First is a benchmark dataset which $58$ various univariate time series, each with timestamp as index and value. Length of each time series ranges from $1000$ to $22000$ data points. These $58$ time series are from six different categories. These categories include artificially generated time series, times series gathered from advertisement industry related data such as click through rate (CTR), AWS usage metrics, server traffic data, tweets volume time series and known cause anomaly which has the a solid reason for the labeled anomaly.\\
+\break
+The diversity of these categories provide the second benefit. With the diversity almost all type of anomalies are covered hence each algorithm can be tested against each type. Artificial datasets further contains time series with anomalies and without anomalies. Datasets without anomalies contain only normal patterns and no anomaly thus any predicted anomaly will be a false positive here. 
+
+\begin{figure}
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_flatmiddle.png}
+    \caption{Artificial with sudden flat-middle}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_jumpsdown.png}
+    \caption{Artificial with sudden jumps-down}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_jumpsup.png}
+    \caption{Artificial with sudden jumps-up}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5	\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_nojump.png}
+    \caption{Artificial with sudden flat}
+  \end{subfigure}
+  \caption{Examples of artifical anomaly data set}
+  \label{lane_detection}
+\end{figure}
+
+
+
 \subsection{Dataset}
 \newpage
 \section{Results 10 pages}

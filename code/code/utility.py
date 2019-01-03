@@ -15,6 +15,7 @@ from configparser import ConfigParser
 import json
 import keras.backend as k
 from keras.metrics import  mse
+import matplotlib.pyplot as plt
 import datetime
 from math import erfc
 
@@ -530,10 +531,15 @@ def plot_original_anomalies(from_index=None, from_plus=None, data_set='realKnown
             print(val, window_index)
         if (len(window_index) == 2):
             windows_to_index.append(window_index)
-
+    fig = plt.figure()
     plt.plot(df.value.values)
     for window in windows_to_index:
         plt.axvspan(window[0], window[1], color='red', alpha=0.5)
+    plt.xlabel("index as time")
+    plt.ylabel("value")
+#    plt.title("Time series with highlighted anomalies")
+#    fig.savefig("tmp.png")
+    fig.savefig("/home/abdulliaqat/Desktop/thesis/AnomalyDetection/latex draft/images/"+data_set.split("/")[1]+".png")
     plt.show()
     return plt
 
