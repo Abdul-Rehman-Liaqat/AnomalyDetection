@@ -714,14 +714,15 @@ def nWindowMovingStd(val,n):
     start = max(len(val)-n,0)
     return np.std(val[start:len(val)])
 
-def plotMultipleGraph(df,start,end):
+def plotMultipleGraph(df,start,end,name="temp"):
     import matplotlib.pyplot as plt
     t = list(range(start,end))
     s1 = df.value[t]
     s2 = df.convergenceLoss[t]
     s3 = df.anomaly_score[t]
-    
-    ax1 = plt.subplot(311)
+    s4 = df.is_anomaly[t]  
+    fig = plt.figure()
+    ax1 = plt.subplot(411)
     plt.plot(t, s1)
     plt.setp(ax1.get_xticklabels(), fontsize=6)
     plt.tick_params(
@@ -731,7 +732,7 @@ def plotMultipleGraph(df,start,end):
         top=False,         # ticks along the top edge are off
         labelbottom=False) # labels along the bottom edge are off
     # share x only
-    ax2 = plt.subplot(312, sharex=ax1)
+    ax2 = plt.subplot(412, sharex=ax1)
     plt.plot(t, s2)
     # make these tick labels invisible
     plt.setp(ax2.get_xticklabels(), visible=False)
@@ -743,9 +744,20 @@ def plotMultipleGraph(df,start,end):
         labelbottom=False) # labels along the bottom edge are off
     
     # share x and y
-    ax3 = plt.subplot(313, sharex=ax1, sharey=ax1)
+    ax3 = plt.subplot(413, sharex=ax1, sharey=ax1)
     plt.plot(t, s3)
+    plt.setp(ax2.get_xticklabels(), visible=False)
+    plt.tick_params(
+        axis='x',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
+        bottom=False,      # ticks along the bottom edge are off
+        top=False,         # ticks along the top edge are off
+        labelbottom=False) # labels along the bottom edge are off
+   
     #plt.xlim(0.01, 5.0)
+    ax4 = plt.subplot(414, sharex=ax1, sharey=ax1)
+    plt.plot(t, s4)
+    fig.savefig(name+".png")
     plt.show()
 #def display_algo_confusion_matrix(results_path):
 

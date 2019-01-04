@@ -1,34 +1,33 @@
-\BOOKMARK [1][-]{section.1}{Introduction 10 pages}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Usage of streaming data}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Usage of anomaly detection in general}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Software2.0 development and anomaly detection role}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Usage of anomaly detection in streaming data}{section.1}% 5
-\BOOKMARK [2][-]{subsection.1.5}{problems in the concept and brief intro to our innovation}{section.1}% 6
-\BOOKMARK [1][-]{section.2}{Related Work and State of the art 10 pages}{}% 7
-\BOOKMARK [1][-]{section.3}{Proposed method 10 pages}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{General anomaly score based architecture and detailed explanation}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Describe autoencoder based architecture}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.3}{Describe Multistep-Ahead based architecture}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.4}{Describe fully connected architecture}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.5}{Describe fully connected prediction architecture}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.6}{Describe fully connected autoencoder architecture}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.7}{Describe Convolution based prediction architecture}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.8}{Describe LSTM based prediction architecture}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.9}{Describe LSTM based autoencoder based architecture}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.10}{Recency concept}{section.3}% 18
-\BOOKMARK [2][-]{subsection.3.11}{Post-processing}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.12}{Thresholding}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.13}{Parameterinzing the anomaly score}{section.3}% 21
-\BOOKMARK [1][-]{section.4}{Empirical Formulation and Experiments 5 pages}{}% 22
-\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 23
-\BOOKMARK [1][-]{section.5}{Results 10 pages}{}% 24
-\BOOKMARK [2][-]{subsection.5.1}{Scoring}{section.5}% 25
-\BOOKMARK [2][-]{subsection.5.2}{Comparing with others}{section.5}% 26
-\BOOKMARK [1][-]{section.6}{Conclusion and Discussion 5 pages}{}% 27
-\BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 28
-\BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 29
-\BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 30
-\BOOKMARK [1][-]{section.8}{Best practices}{}% 31
-\BOOKMARK [2][-]{subsection.8.1}{Moving from jupyterlab to pycharm}{section.8}% 32
-\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 33
-\BOOKMARK [1][-]{section.10}{References}{}% 34
+\BOOKMARK [2][-]{subsection.1.2}{Usage of anomaly detection in streaming data}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Challenges to resolve}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Related Work and State of the art}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Unsupervised Anomaly Detection}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Proposed method}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{General anomaly score based architecture and detailed explanation}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Autoencoder based architecture}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Multistep-Ahead based architecture}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Fully connected architecture}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.5}{Fully connected prediction architecture}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.6}{Fully connected autoencoder architecture}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.7}{Convolution based prediction architecture}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.8}{LSTM based prediction architecture}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.9}{LSTM based autoencoder based architecture}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.10}{Recency concept}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.11}{Post-processing}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.12}{Thresholding}{section.3}% 19
+\BOOKMARK [2][-]{subsection.3.13}{Parameterinzing the anomaly score}{section.3}% 20
+\BOOKMARK [1][-]{section.4}{Empirical Formulation and Experiments}{}% 21
+\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{Results}{}% 23
+\BOOKMARK [2][-]{subsection.5.1}{Scoring}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.2}{Comparing with others}{section.5}% 25
+\BOOKMARK [1][-]{section.6}{Conclusion and Discussion}{}% 26
+\BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 27
+\BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 28
+\BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 29
+\BOOKMARK [1][-]{section.8}{Best practices}{}% 30
+\BOOKMARK [2][-]{subsection.8.1}{Moving from jupyterlab to pycharm}{section.8}% 31
+\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 32
+\BOOKMARK [1][-]{section.10}{References}{}% 33
