@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  4 JAN 2019 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  4 JAN 2019 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,7 +564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
  []
 
-<images/generalAnomalyDetectionFrameWork.png, id=238, 963.6pt x 722.7pt>
+<images/generalAnomalyDetectionFrameWork.png, id=237, 963.6pt x 722.7pt>
 File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
 
 <use images/generalAnomalyDetectionFrameWork.png>
@@ -622,7 +622,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 351--354
  []
 
 [17]
-<images/architecture/NnMultistepAheadPrediction.png, id=312, 963.6pt x 722.7pt>
+<images/architecture/NnMultistepAheadPrediction.png, id=311, 963.6pt x 722.7pt>
 File: images/architecture/NnMultistepAheadPrediction.png Graphic file (type png
 )
 <use images/architecture/NnMultistepAheadPrediction.png>
@@ -638,7 +638,7 @@ Package pdftex.def Info: images/architecture/NnMultistepAheadPrediction.png use
 d on input line 401.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
  [19 <./images/architecture/NnMultistepAheadPrediction.png>]
-<images/architecture/CnnMultistepPrediction.png, id=329, 963.6pt x 722.7pt>
+<images/architecture/CnnMultistepPrediction.png, id=328, 963.6pt x 722.7pt>
 File: images/architecture/CnnMultistepPrediction.png Graphic file (type png)
 
 <use images/architecture/CnnMultistepPrediction.png>
@@ -646,7 +646,7 @@ Package pdftex.def Info: images/architecture/CnnMultistepPrediction.png used on
  input line 409.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
  [20]
-<images/architecture/LstmMultistepaheadPrediction.png, id=335, 963.6pt x 722.7p
+<images/architecture/LstmMultistepaheadPrediction.png, id=334, 963.6pt x 722.7p
 t>
 File: images/architecture/LstmMultistepaheadPrediction.png Graphic file (type p
 ng)
@@ -656,7 +656,7 @@ sed on input line 416.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
  [21 <./images/architecture/CnnMultistepPrediction.png>] [22 <./images/architec
 ture/LstmMultistepaheadPrediction.png>]
-<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=347, 433.62pt x 2
+<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=346, 433.62pt x 2
 89.08pt>
 File: images/dataAnomalies/artificial/art_daily_flatmiddle.png Graphic file (ty
 pe png)
@@ -665,7 +665,7 @@ Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_flatmiddle.p
 ng used on input line 436.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=348, 433.62pt x 28
+<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=347, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/artificial/art_daily_jumpsdown.png Graphic file (typ
 e png)
@@ -679,7 +679,7 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 434--445
  []
 
 
-<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=349, 433.62pt x 289.
+<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=348, 433.62pt x 289.
 08pt>
 File: images/dataAnomalies/artificial/art_daily_jumpsup.png Graphic file (type 
 png)
@@ -688,7 +688,7 @@ Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsup.png
 used on input line 450.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/artificial/art_daily_nojump.png, id=350, 433.62pt x 289.0
+<images/dataAnomalies/artificial/art_daily_nojump.png, id=349, 433.62pt x 289.0
 8pt>
 File: images/dataAnomalies/artificial/art_daily_nojump.png Graphic file (type p
 ng)
@@ -712,7 +712,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 428--461
  []
 
 [23]
-<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=355, 433.62pt x 28
+<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=354, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png Graphic file (typ
 e png)
@@ -721,7 +721,7 @@ Package pdftex.def Info: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.pn
 g used on input line 468.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/aws/grok_asg_anomaly.png, id=356, 433.62pt x 289.08pt>
+<images/dataAnomalies/aws/grok_asg_anomaly.png, id=355, 433.62pt x 289.08pt>
 File: images/dataAnomalies/aws/grok_asg_anomaly.png Graphic file (type png)
 
 <use images/dataAnomalies/aws/grok_asg_anomaly.png>
@@ -740,7 +740,7 @@ Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
 g used on input line 482.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=357, 433.62pt x 28
+<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=356, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png Graphic file (typ
 e png)
@@ -757,7 +757,7 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 480--491
 Anomalies/artificial/art_daily_jumpsdown.png> <./images/dataAnomalies/artificia
 l/art_daily_jumpsup.png> <./images/dataAnomalies/artificial/art_daily_nojump.pn
 g>]
-<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=367, 433.62pt x 289.08p
+<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=366, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/twitter/Twitter_volume_FB.png Graphic file (type png
 )
@@ -766,7 +766,7 @@ Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_FB.png use
 d on input line 500.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=368, 433.62pt x 289.08p
+<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=367, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/twitter/Twitter_volume_KO.png Graphic file (type png
 )
@@ -780,7 +780,7 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 498--507
  []
 
 
-<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=369, 433.62pt x 289.08
+<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=368, 433.62pt x 289.08
 pt>
 File: images/dataAnomalies/twitter/Twitter_volume_PFE.png Graphic file (type pn
 g)
@@ -789,7 +789,7 @@ Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_PFE.png us
 ed on input line 512.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=370, 433.62pt x 289.08
+<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=369, 433.62pt x 289.08
 pt>
 File: images/dataAnomalies/twitter/Twitter_volume_CRM.png Graphic file (type pn
 g)
@@ -906,7 +906,7 @@ amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 >
-Output written on third.pdf (41 pages, 1575140 bytes).
+Output written on third.pdf (41 pages, 1575039 bytes).
 PDF statistics:
  556 PDF objects out of 1000 (max. 8388607)
  460 compressed objects within 5 object streams
