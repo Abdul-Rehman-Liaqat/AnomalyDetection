@@ -64,9 +64,9 @@ As described above, anomaly detection is an important part of normal machine lea
     \label{machineTemperatureSystemFailure}
 \end{figure}
 Real-time data comes with special challenges and problems to solve for anomlay detection in streaming data. First constraint is the continuous arrival of data. 
-We cannot have access to any future data. More specifically we will only have access to current time data as $x_t$ and previous data points as $x_{t-1},x_{t-2},x_{t-3},...$ and so on. This apply a constraint of finding the important of data in the past and update the model online. Also as the data stream is continuous it becomes evident to have the system doing online training and prediction. Thus the first contraint of an anomaly detection algorithm is that it should train and predict online.\\
+We cannot have access to any future data. More specifically we will only have access to current time data as $x_t$ and previous data points as $x_{t-1},x_{t-2},x_{t-3},...$ and so on. This apply a constraint of finding the importance of data in the past and update the model online. Also as the data stream is continuous it becomes evident to have the system doing online training and prediction. Thus the first contraint of an anomaly detection algorithm is that it should train and predict online.\\
 \break
-Secondly, the ending point of the stream is not known which means we should expect it to be an infinite amount of data beign received continuously. Also most of the time to identify an anomaly help of a domain expert is needed. For this reason and possibly continuous changing state of the data (as described as concept drift up next) the model should be updated with latest labels. Consequently, it becomes impossible to have access to enough labeled data which is kept updated all the time. That is why an unsupervised anomaly detection system is prefered which will always update itself according to system change and we will not need to setup some manual training steps.\\
+Secondly, the ending point of the stream is not known which means we should expect it to be an infinite amount of data being received continuously. Also most of the time, to identify an anomaly help of a domain expert is needed. For this reason and possibly continuous changing state of the data (as described as concept drift up next) the model should be updated with latest labels. Consequently, it becomes impossible to have access to enough labeled data which is kept updated all the time. That is why an unsupervised anomaly detection system is prefered which will always update itself according to system change and we will not need to setup some manual training steps.\\
 \break
 Before moving on, there are some unique concepts related to uni-variate time series which will be helpful in the understanding of the research problem. Starting with stationary and non-stationary time series. A stationary time series is the one whose statistical properties are constant over time. These statistical properties include mean, variance and auto-correlation of the time series. Similarly with the change in one or more of these statistical properties, non-stationary time series comes into being. These non-stationary time series are also named as Concept drift. Concept drift is a terminology related to time series data specifically which is why we will be using the term Concept drift instead of non-stationary time series in future. There is also an intuitive meaning behind the name of Concept drift.\\
 \break
@@ -83,18 +83,29 @@ As in real life systems it is highly likely that there will be a change in the c
 \break
 Time series data is the output of a streaming data from multiple devices which makes it close to impossible to label it specially for anomalies. Also due to concept drift a regular labeling needed. Since it is very difficult to label streaming time series data to detect anomalies it makes sense to do it in an unsupervised fashion. With unsupervised anomaly detection we don't need any previous labeled data and the system developed will be very generic.
 An anomaly is defined as a data point $X_t$ or set of data points $X_{t-l:t}$ for which either of following is true
-$\gg \ll$ Example of each anomaly
 \begin{enumerate}
     \item Probability of point $X_t$ belonging to a probability distribution $\phi$ is very less then the probability of previous data points $X_n$ where $n \leq t-1$. In other words:\\
     \begin{equation}
         P(X_t) \in \phi  \ll P(X_n) \in \phi 
     \end{equation}
     This type of anomaly is called point anomaly. Here $\phi$ is the probability distribution generating all the data points.
+            \begin{figure}[H]
+\centering
+        \includegraphics[width=0.8\textwidth]{images/dataAnomalies/ad/exchange-3_cpm_results.png}
+    \caption{Cost Per 1000 impressions - An example of point anomaly}
+    \label{examleOfPointAnomaly}
+\end{figure}
     \item Probability of points $X_{t-l:t}$ belonging to a probability distribution $\phi$ is very less then the probability of $X_{n-l:n}$ where $n \leq t-1$. In other words: \\
     \begin{equation}
         P(X_{t-l:t}) \in \phi  \ll P(X_{n-l:n}) \in \phi         
     \end{equation}
         This type of anomaly is called collective anomaly.
+        \begin{figure}[H]
+\centering
+        \includegraphics[width=0.8\textwidth]{images/dataAnomalies/ad/exchange-2_cpc_results.png}
+    \caption{Cost Per Click with time - An example of collective anomaly}
+    \label{examleOfCollectiveAnomaly}
+\end{figure}
     \item Probability of point $X_t$ belonging to a probability distribution $\phi$ is almost same as the probability of previous data points $X_n$ where $n \leq t-1$ but the probability of point $X_t$ belonging to a probability distribution $\theta$ is very less than the probability of point $X_p$ belonging to $\theta$. Here In other words:\\
     \begin{equation}
         P(X_t) \in \phi  \approx P(X_n) \in \phi 
@@ -104,15 +115,21 @@ $\gg \ll$ Example of each anomaly
     \end{equation}
     Here $\theta$ and  $X_p$ are probability distribution and data points. $theta$ is a distribution defined to a set of local points $X_p$ where $p \leq t$ and $p$ is a set of indices. 
     This type of anomaly is called Contextual anomaly. 
+                \begin{figure}[H]
+\centering
+        \includegraphics[width=0.8\textwidth]{images/dataAnomalies/known/nyc_taxi.png}
+    \caption{Newyork taxi traffic  - Second and third are examples of contextual anomalies}
+    \label{examleOfPointAnomaly}
+\end{figure}
 \end{enumerate}
-As defined above, in many cases there is a system change which causes a permanent change in the probability distribution being generated by the data. As example is in figure \ref{awsCpuUtilizationConceptDrift}, where software updates and configuration changed can change the behavior of the system forever. Now the system must adapt to detect anomalies according to the new type of data. To do that the model must first recognize that if it is a concept drift and then change itself accordingly that too in an unsupervised and automated way.
+As defined above, in many cases there is a system change which causes a permanent change in the probability distribution being generated by the data and this change is called concept drift. As example is in figure \ref{awsCpuUtilizationConceptDrift}, where software updates and configuration changed can change the behavior of the system forever. Now the system must adapt to detect anomalies according to the new type of data. To do that the model must first recognize that if it is a concept drift and then change itself accordingly that too in an unsupervised and automated way.
 \begin{figure}[H]
 \centering
         \includegraphics[width=\textwidth]{images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png}
     \caption{AWS CPU Utilization Concept Drift}
     \label{awsCpuUtilizationConceptDrift}
 \end{figure}
-In streaming applications it is also very useful to detect the anomaly as early as possible. For example in the streaming data of cardiac patient's heart, earlier detection can help in taking emergency measures to stop the onset of heart attack. Obviously detecting them a little earlier is way better tham later. This early detection acts as an alarm and will really fulfill the purpose of alarm when enough time is remaining to take action to avoid catastrophic failure. Of course, having this early detection property of an algorithm comes with drawbacks. One drawback is that extra senstivity of the algorithm, which can cause many false alarms. Therefore there is a trade-off between false alarms and  true positives. Using the above properties of the anomaly detection algorithm we can define the characteristics of an unsupervised real-time anomaly detection algorithma as:
+In streaming applications it is also very useful to detect the anomaly as early as possible. For example in the streaming data of cardiac patient's heart; earlier detection can help in taking emergency measures to stop the onset of heart attack. Obviously detecting them a little earlier is way better tham later. This early detection acts as an alarm and will really fulfill the purpose of alarm when enough time is remaining to take action to avoid catastrophic failure. Of course, having this early detection property of an algorithm comes with drawbacks. One drawback is that extra senstivity of the algorithm, which can cause many false alarms. Therefore there is a trade-off between false alarms and  true positives. Using the above properties of the anomaly detection algorithm we can define the characteristics of an unsupervised real-time anomaly detection algorithma as:
 \begin{enumerate}
 \item Predictions must be made online which means that the algorithm must identify state $x_t$ as normal or anomalous before receiving the next data point $x_{t+1}$
 \item The algorithm msut learn continuously without a requirement to store the entire stream. 
@@ -121,29 +138,28 @@ In streaming applications it is also very useful to detect the anomaly as early 
 \item Algorihtms should make anomaly detections as early as possible.
 \item Algorithms should minimize false positives and false negatives.
 \end{enumerate}
-Of course, it is difficult to fulfill all the requirement. Still the best detection algorithm will try to maximize the completion of all above. Secondly based upon the requirement of the system few requriements can also be relaxed.
-Concluding, with the requriements given above it becomes obvious that many current anomaly detection algorithms do not fulfill them.\\
+Of course, it is difficult to fulfill all the requirement. Still the best detection algorithm will try to maximize the completion of all above. Secondly based upon the requirement of the system few requriements can also be relaxed or others few requirements can be given preference. For example, in case of heart's patient having anomaly detected as early as possible with extremely highly true positive will be necessary. In the process, few false postives can be afforded. On the other hand in a supply chain management system, where there are already a lot of alarms about low inventory are ringing, having false negatives can be afforded.
+Concluding, with the requriements given above it becomes obvious that many current anomaly detection algorithms do not fulfill them as discussed in the related work section. We tried to create a system which fulfill these requirements to their maximum.\\
 \break
-Now to detect all the type of anomalies described above it is necessary to estimate the underlying probability distributions responsible for generating the stream. In general there are following few steps in an Anomaly detection framework as described in figure \ref{generalAnomalyDetectionFrameWork}.\\
-\break
-First step is to pre-process the input data. We use min-max normalization to make sure that all input values are limited between $0$ and $1$. Min-max normalization can be defined as
-\begin{equation}
-    z = \frac{x - min(x)}{max(x) - min(x)}
-    \label{minMaxNormalization}
-\end{equation}
-Second step is to estimate the underlying probability distribution by building a model. This model can be used to model the streaming time series. \\
-\break
-Next step would be to score the incoming data point. At this moment we will use the previously estimated probability distribution and types of anomalies defined above to score the incoming data point. \\
-\break
-Afterwards the score is passed through a post-processing step. In this step possibly normalization and probabilistic likelihood estimation is applied on top of the previously calculated anomaly score. In other words previously calculated anomaly score is transformed between the range of $0$ and $1$. \\
-\break
-After post-processing, we can use this score to actually rank each incoming data point among previously existing data points. To label each data point as anomaly or not anomaly a thresholding procedure is necessary. Depending upon the type of post-processing extreme cases are considered as anomalies.
+Generally, most of anomlay detection frameworks follow a pipeline of steps.These steps are described in figure \ref{generalAnomalyDetectionFrameWork}. We will be summarizing each step to provide the extent of problems and possible area of innovations available in anomlay detection system.
 \begin{figure}[H]
 \centering
         \includegraphics[width=\textwidth]{images/generalAnomalyDetectionFrameWork.png}
     \caption{General Anomaly Detection Framework}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
+First step is to pre-process the input data. Usually this step is performed to engineer features or do normalization of the data. That way the algorithm will be able to learn better. We use min-max normalization to make sure that all input values are limited between $0$ and $1$. Normalization can have a big impact on the the learning process and generalizaiton of the model. By including normalization of input as first step makes it possible to be able to use the same anomaly detection model framework for all kind of input data range. Min-max normalization can be defined as
+\begin{equation}
+    z = \frac{x - min(x)}{max(x) - min(x)}
+    \label{minMaxNormalization}
+\end{equation}
+Second step is to estimate the underlying probability distribution. Instead of estimating the probability distribution directly, most of the time a model is built upon the streaming data such that the prediction of the model denoted by $Y_t$ at time $t$ is closed to the actual value $X_t$ at time $t$. Thus it is assumed that the model will automatically learn the underlying distribution of the data. Usually the difference of the predicted value $Y_t$ and actual value $X_t$ gives us some significant information about the data at $X_t$. The model should be build carefully so as it can learn online and is not fully converged as it will be trained continuously with incoming of data.\\
+\break
+Next step would be to score the output of the model. At this moment we will use the previously estimated probability distribution as model and types of anomalies defined above to score the incoming data point. Scoring each data point is also an important area of innovation. Each point should be scored if it is an anomaly or not. The score should be based upon the history of model predictions and actual point plus current prediction and actual value. The score will try to quantize each data point according to the types of anomalies described above.\\
+\break
+Afterwards the score is passed through a post-processing step. In this step possibly normalization and probabilistic likelihood estimation is applied on top of the previously calculated anomaly score. In other words previously calculated anomaly score is transformed between the range of $0$ and $1$. This step is also important and can be used to compliment the previous step of score calculation. One can also apply another model at this point which can be used to capture the long term and short term patterns in the anomaly scores itself.\\
+\break
+After post-processing, we can use this score to actually rank each incoming data point among previously existing data points. To label each data point as anomaly or not anomaly a thresholding procedure is necessary. Depending upon the type of post-processing extreme cases are considered as anomalies.
 Thus there are many possible points of innovation in the anomaly detection framework based upon the type of problem we are facing. A quick brief of these likely innovations are following:
 \begin{enumerate}
     \item First possible innovation is done at the pre-processing step. Here it is very helpful to normalize the input data and constrain it between $0$ and $1$. The benefits of normalization show up while calculating anomaly score as anomaly score will be then close to the range of $0$ and $1$. Another very important point is  

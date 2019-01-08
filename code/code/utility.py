@@ -543,6 +543,25 @@ def plot_original_anomalies(from_index=None, from_plus=None, data_set='realKnown
     plt.show()
     return plt
 
+
+def plot_original_anomalies_yahoo(from_index=None, from_plus=None, data_set='realKnownCause/nyc_taxi.csv',
+                            path='/home/abdulliaqat/Desktop/thesis/AnomalyDetection/code/code/data/'):
+    print(data_set)
+    df =  pd.read_csv(path+data_set)
+    windows_to_index = []
+    windows_to_index = list(df.index[df.is_anomaly == 1].values)
+    fig = plt.figure()
+    plt.plot(df.value.values)
+    for window in windows_to_index:
+        plt.axvspan(window, window, color='red', alpha=0.5)
+    plt.xlabel("index as time")
+    plt.ylabel("value")
+#    plt.title("Time series with highlighted anomalies")
+#    fig.savefig("tmp.png")
+    fig.savefig("/home/abdulliaqat/Desktop/thesis/AnomalyDetection/latex draft/images/"+data_set.split("/")[1]+".png")
+#    plt.show()
+    return plt
+
 def plot_all_in_one():
     import matplotlib.pyplot as plt
 

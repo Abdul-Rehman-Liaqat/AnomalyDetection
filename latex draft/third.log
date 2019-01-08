@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  4 JAN 2019 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  8 JAN 2019 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -324,6 +324,9 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \backup@length=\skip49
 ) (./third.aux
 
+LaTeX Warning: Label `examleOfPointAnomaly' multiply defined.
+
+
 LaTeX Warning: Label `generalAnomalyDetectionFrameWork' multiply defined.
 
 
@@ -534,213 +537,233 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--74
  []
 
 [5 <./images/dataAnomalies/known/machine_temperature_system_failure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 80--87
+Underfull \hbox (badness 10000) in paragraph at lines 80--86
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
+<images/dataAnomalies/ad/exchange-3_cpm_results.png, id=209, 433.62pt x 289.08p
+t>
+File: images/dataAnomalies/ad/exchange-3_cpm_results.png Graphic file (type png
+)
+ <use images/dataAnomalies/ad/exchange-3_cpm_results.png>
+Package pdftex.def Info: images/dataAnomalies/ad/exchange-3_cpm_results.png use
+d on input line 94.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
 
-<images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png, id=210, 433.62pt x 28
+<images/dataAnomalies/ad/exchange-2_cpc_results.png, id=210, 433.62pt x 289.08p
+t>
+File: images/dataAnomalies/ad/exchange-2_cpc_results.png Graphic file (type png
+)
+ <use images/dataAnomalies/ad/exchange-2_cpc_results.png>
+Package pdftex.def Info: images/dataAnomalies/ad/exchange-2_cpc_results.png use
+d on input line 105.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
+ [7 <./images/dataAnomalies/ad/exchange-3_cpm_results.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+<images/dataAnomalies/known/nyc_taxi.png, id=222, 433.62pt x 289.08pt>
+File: images/dataAnomalies/known/nyc_taxi.png Graphic file (type png)
+
+<use images/dataAnomalies/known/nyc_taxi.png>
+Package pdftex.def Info: images/dataAnomalies/known/nyc_taxi.png used on input 
+line 120.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
+ [8 <./images/dataAnomalies/ad/exchange-2_cpc_results.png>]
+<images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png, id=233, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png Graphic file (typ
 e png)
  <use images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>
 Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
-g used on input line 111.
+g used on input line 128.
 (pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
- [7]
-[8 <./images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 124--130
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--130
-
- []
-
-<images/generalAnomalyDetectionFrameWork.png, id=233, 963.6pt x 722.7pt>
+ [9 <./images/dataAnomalies/known/nyc_taxi.png>] [10 <./images/dataAnomalies/aw
+s/rds_cpu_utilization_cc0c53.png>]
+<images/generalAnomalyDetectionFrameWork.png, id=250, 917.4275pt x 294.09875pt>
 File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
-
 <use images/generalAnomalyDetectionFrameWork.png>
 Package pdftex.def Info: images/generalAnomalyDetectionFrameWork.png used on in
-put line 143.
-(pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
+put line 147.
+(pdftex.def)             Requested size: 469.75502pt x 150.5897pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--146
+Underfull \hbox (badness 10000) in paragraph at lines 141--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--146
+Underfull \hbox (badness 10000) in paragraph at lines 155--164
 
  []
 
-[9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 152.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+Underfull \hbox (badness 10000) in paragraph at lines 155--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--164
+
+ []
+
+[11 <./images/generalAnomalyDetectionFrameWork.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 168.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 152.
- [10 <./images/generalAnomalyDetectionFrameWork.png>] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 161--164
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
+ [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--164
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
  []
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [12] [13]
-[14]
+) [14] [15]
+[16]
 File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
  <use images/generalAnomalyDetectionFrameWork.png>
 Package pdftex.def Info: images/generalAnomalyDetectionFrameWork.png used on in
-put line 271.
-(pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
+put line 287.
+(pdftex.def)             Requested size: 469.75502pt x 150.5897pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--280
-
- []
-
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 312--315
+Underfull \hbox (badness 10000) in paragraph at lines 291--296
 
  []
 
 [17]
-<images/architecture/NnMultistepAheadPrediction.png, id=303, 963.6pt x 722.7pt>
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
+
+ []
+
+[18] [19]
+<images/architecture/NnMultistepAheadPrediction.png, id=324, 963.6pt x 722.7pt>
 File: images/architecture/NnMultistepAheadPrediction.png Graphic file (type png
 )
 <use images/architecture/NnMultistepAheadPrediction.png>
 Package pdftex.def Info: images/architecture/NnMultistepAheadPrediction.png use
-d on input line 355.
+d on input line 371.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
- [18]
 File: images/architecture/NnMultistepAheadPrediction.png Graphic file (type png
 )
 
 <use images/architecture/NnMultistepAheadPrediction.png>
 Package pdftex.def Info: images/architecture/NnMultistepAheadPrediction.png use
-d on input line 362.
+d on input line 378.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
- [19 <./images/architecture/NnMultistepAheadPrediction.png>]
-<images/architecture/CnnMultistepPrediction.png, id=320, 963.6pt x 722.7pt>
+ [20 <./images/architecture/NnMultistepAheadPrediction.png>]
+<images/architecture/CnnMultistepPrediction.png, id=333, 963.6pt x 722.7pt>
 File: images/architecture/CnnMultistepPrediction.png Graphic file (type png)
 
 <use images/architecture/CnnMultistepPrediction.png>
 Package pdftex.def Info: images/architecture/CnnMultistepPrediction.png used on
- input line 370.
+ input line 386.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
- [20]
-<images/architecture/LstmMultistepaheadPrediction.png, id=326, 963.6pt x 722.7p
+ [21]
+<images/architecture/LstmMultistepaheadPrediction.png, id=339, 963.6pt x 722.7p
 t>
 File: images/architecture/LstmMultistepaheadPrediction.png Graphic file (type p
 ng)
  <use images/architecture/LstmMultistepaheadPrediction.png>
 Package pdftex.def Info: images/architecture/LstmMultistepaheadPrediction.png u
-sed on input line 377.
+sed on input line 393.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
- [21 <./images/architecture/CnnMultistepPrediction.png>] [22 <./images/architec
+ [22 <./images/architecture/CnnMultistepPrediction.png>] [23 <./images/architec
 ture/LstmMultistepaheadPrediction.png>]
-<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=338, 433.62pt x 2
+<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=351, 433.62pt x 2
 89.08pt>
 File: images/dataAnomalies/artificial/art_daily_flatmiddle.png Graphic file (ty
 pe png)
  <use images/dataAnomalies/artificial/art_daily_flatmiddle.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_flatmiddle.p
-ng used on input line 397.
+ng used on input line 413.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=339, 433.62pt x 28
+<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=352, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/artificial/art_daily_jumpsdown.png Graphic file (typ
 e png)
  <use images/dataAnomalies/artificial/art_daily_jumpsdown.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsdown.pn
-g used on input line 403.
+g used on input line 419.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 395--406
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 411--422
 [][]  [] 
  []
 
 
-<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=340, 433.62pt x 289.
+<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=353, 433.62pt x 289.
 08pt>
 File: images/dataAnomalies/artificial/art_daily_jumpsup.png Graphic file (type 
 png)
  <use images/dataAnomalies/artificial/art_daily_jumpsup.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsup.png 
-used on input line 411.
+used on input line 427.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/artificial/art_daily_nojump.png, id=341, 433.62pt x 289.0
+<images/dataAnomalies/artificial/art_daily_nojump.png, id=354, 433.62pt x 289.0
 8pt>
 File: images/dataAnomalies/artificial/art_daily_nojump.png Graphic file (type p
 ng)
  <use images/dataAnomalies/artificial/art_daily_nojump.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_nojump.png u
-sed on input line 417.
+sed on input line 433.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 409--420
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 425--436
 [][]  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--422
+Underfull \hbox (badness 10000) in paragraph at lines 405--438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--422
+Underfull \hbox (badness 10000) in paragraph at lines 405--438
 
  []
 
-[23]
-<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=346, 433.62pt x 28
+[24]
+<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=359, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png Graphic file (typ
 e png)
  <use images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png>
 Package pdftex.def Info: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.pn
-g used on input line 429.
+g used on input line 445.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/aws/grok_asg_anomaly.png, id=347, 433.62pt x 289.08pt>
+<images/dataAnomalies/aws/grok_asg_anomaly.png, id=360, 433.62pt x 289.08pt>
 File: images/dataAnomalies/aws/grok_asg_anomaly.png Graphic file (type png)
 
 <use images/dataAnomalies/aws/grok_asg_anomaly.png>
 Package pdftex.def Info: images/dataAnomalies/aws/grok_asg_anomaly.png used on 
-input line 435.
+input line 451.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 427--438
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 443--454
 [][]  [] 
  []
 
@@ -748,157 +771,157 @@ File: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png Graphic file (typ
 e png)
 <use images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>
 Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
-g used on input line 443.
+g used on input line 459.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=348, 433.62pt x 28
+<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=361, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png Graphic file (typ
 e png)
  <use images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png>
 Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.pn
-g used on input line 449.
+g used on input line 465.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 441--452
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 457--468
 [][]  [] 
  []
 
-[24 <./images/dataAnomalies/artificial/art_daily_flatmiddle.png> <./images/data
+[25 <./images/dataAnomalies/artificial/art_daily_flatmiddle.png> <./images/data
 Anomalies/artificial/art_daily_jumpsdown.png> <./images/dataAnomalies/artificia
 l/art_daily_jumpsup.png> <./images/dataAnomalies/artificial/art_daily_nojump.pn
 g>]
-<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=358, 433.62pt x 289.08p
+<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=372, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/twitter/Twitter_volume_FB.png Graphic file (type png
 )
  <use images/dataAnomalies/twitter/Twitter_volume_FB.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_FB.png use
-d on input line 461.
+d on input line 477.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=359, 433.62pt x 289.08p
+<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=373, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/twitter/Twitter_volume_KO.png Graphic file (type png
 )
  <use images/dataAnomalies/twitter/Twitter_volume_KO.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_KO.png use
-d on input line 466.
+d on input line 482.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 459--468
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 475--484
 [][]  [] 
  []
 
 
-<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=360, 433.62pt x 289.08
+<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=374, 433.62pt x 289.08
 pt>
 File: images/dataAnomalies/twitter/Twitter_volume_PFE.png Graphic file (type pn
 g)
  <use images/dataAnomalies/twitter/Twitter_volume_PFE.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_PFE.png us
-ed on input line 473.
+ed on input line 489.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=361, 433.62pt x 289.08
+<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=375, 433.62pt x 289.08
 pt>
 File: images/dataAnomalies/twitter/Twitter_volume_CRM.png Graphic file (type pn
 g)
  <use images/dataAnomalies/twitter/Twitter_volume_CRM.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_CRM.png us
-ed on input line 478.
+ed on input line 494.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 471--480
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 487--496
 [][]  [] 
  []
 
-[25 <./images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png> <./images/dataA
+[26 <./images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png> <./images/dataA
 nomalies/aws/grok_asg_anomaly.png> <./images/dataAnomalies/aws/rds_cpu_utilizat
-ion_e47b3b.png>] [26 <./images/dataAnomalies/twitter/Twitter_volume_FB.png> <./
+ion_e47b3b.png>] [27 <./images/dataAnomalies/twitter/Twitter_volume_FB.png> <./
 images/dataAnomalies/twitter/Twitter_volume_KO.png> <./images/dataAnomalies/twi
 tter/Twitter_volume_PFE.png> <./images/dataAnomalies/twitter/Twitter_volume_CRM
-.png>] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 557--597
+.png>] [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 573--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--597
+Underfull \hbox (badness 10000) in paragraph at lines 573--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--597
+Underfull \hbox (badness 10000) in paragraph at lines 573--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--597
+Underfull \hbox (badness 10000) in paragraph at lines 573--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--597
+Underfull \hbox (badness 10000) in paragraph at lines 573--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--597
+Underfull \hbox (badness 10000) in paragraph at lines 573--613
 
  []
 
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 602--606
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 618--622
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--606
+Underfull \hbox (badness 10000) in paragraph at lines 618--622
 
  []
 
-<images/nabScoringExample.png, id=401, 875.27pt x 695.59875pt>
+<images/nabScoringExample.png, id=414, 875.27pt x 695.59875pt>
 File: images/nabScoringExample.png Graphic file (type png)
 
 <use images/nabScoringExample.png>
-Package pdftex.def Info: images/nabScoringExample.png used on input line 623.
+Package pdftex.def Info: images/nabScoringExample.png used on input line 639.
 (pdftex.def)             Requested size: 469.75502pt x 373.32512pt.
- [30]
-Underfull \hbox (badness 10000) in paragraph at lines 635--712
+ [31]
+Underfull \hbox (badness 10000) in paragraph at lines 651--728
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--712
+Underfull \hbox (badness 10000) in paragraph at lines 651--728
 
  []
 
-[31 <./images/nabScoringExample.png>] [32]
-Overfull \hbox (1.21152pt too wide) in paragraph at lines 750--798
+[32 <./images/nabScoringExample.png>] [33]
+Overfull \hbox (1.21152pt too wide) in paragraph at lines 766--814
  [][] 
  []
 
-[33] [34] [35] [36] [37] [38] [39] [40] (./third.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 849.
- [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 849.
+[34] [35] [36] [37] [38] [39] [40] [41] (./third.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 865.
+ [42]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 865.
  (./third.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 849.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 849.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 865.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 865.
 Package rerunfilecheck Info: File `third.out' has not changed.
 (rerunfilecheck)             Checksum: 98DEADE04153F1B30D45943745E350D9;2306.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 849.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 865.
  ) 
 Here is how much of TeX's memory you used:
- 8918 strings out of 493029
- 131174 string characters out of 6136234
- 238203 words of memory out of 5000000
- 12158 multiletter control sequences out of 15000+600000
+ 8940 strings out of 493029
+ 131982 string characters out of 6136234
+ 238405 words of memory out of 5000000
+ 12172 multiletter control sequences out of 15000+600000
  13011 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,8n,40p,1972b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -914,10 +937,10 @@ amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 >
-Output written on third.pdf (41 pages, 1548657 bytes).
+Output written on third.pdf (42 pages, 1642962 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 452 compressed objects within 5 object streams
- 151 named destinations out of 1000 (max. 500000)
- 352 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 561 PDF objects out of 1000 (max. 8388607)
+ 458 compressed objects within 5 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 
