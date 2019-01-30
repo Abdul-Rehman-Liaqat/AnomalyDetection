@@ -15,7 +15,7 @@ from configparser import ConfigParser
 import json
 import keras.backend as k
 from keras.metrics import  mse
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import datetime
 from math import erfc
 
