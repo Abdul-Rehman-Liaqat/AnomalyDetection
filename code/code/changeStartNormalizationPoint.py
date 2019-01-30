@@ -29,8 +29,7 @@ def differentInitialPointNormalization(df,start):
         elif(loss < minVal):
             minVal = loss
         elif(loss > maxVal):
-            maxVal = loss
-            
+            maxVal = loss            
         if(ind < start):
             l.append(0.5)
         else:

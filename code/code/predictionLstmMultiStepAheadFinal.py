@@ -27,7 +27,7 @@ def train_nStepPrediction_based_models_new(df,
         Y_input = df["value"].values[i-nStepAhead:i]
         Y_input = Y_input.reshape((1,)+(nStepAhead,))
         pred = (model.predict(X_input))
-        prediction.append(pred[0][0])
+        prediction.append(pred[0])
         history = model.fit(X_input,Y_input , nb_epoch=nb_epoch, verbose=0)
         loss = history.history['loss'][0]
         convergence_loss.append(loss)
@@ -61,7 +61,7 @@ window_size = 50
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 4
+multistep = 1
 # mse, mae or logcosh
 anomalyScore_func = "mse"
 anomalyScore_type = "convergenceLoss"

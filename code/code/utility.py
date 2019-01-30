@@ -539,7 +539,7 @@ def plot_original_anomalies(from_index=None, from_plus=None, data_set='realKnown
     plt.ylabel("value")
 #    plt.title("Time series with highlighted anomalies")
 #    fig.savefig("tmp.png")
-    fig.savefig("/home/abdulliaqat/Desktop/thesis/AnomalyDetection/latex draft/images/"+data_set.split("/")[1]+".png")
+    fig.    fig("/home/abdulliaqat/Desktop/thesis/AnomalyDetection/latex draft/images/"+data_set.split("/")[1]+".png")
     plt.show()
     return plt
 

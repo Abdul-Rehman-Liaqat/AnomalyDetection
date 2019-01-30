@@ -351,11 +351,10 @@ The reconstruction loss is defined as:
 L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
 \end{equation}
 $\gg \ll$ picture of an autoencoder
-\subsection{Multistep-Ahead based architecture}
+\subsection{Multistep-Ahead prediction based architecture}
 $\gg \ll$ picture of an multi-step based architecture
-Second type of architecture used is multi-step prediction architecture. In this type of architecutre 
-For time series let $X_t$ be the input value of the streaming data at time $t$ then the input of multistep prediction based architecture will be $X_{t-w-l:t-l}$ and output will be $Y_{t-l:t}$ as $Y$ is the prediction of the input. 
-More specifically
+Second type of architecture used is multi-step prediction architecture. In this type of architecutre sequence to sequence prediction task is trained. Input sequence for datapoint $X_t$ at time $t$ will be $X_{t-w-l:t-l}$. Here $w$ is the window size of input and $l$ is the length of output sequence. Thus the output will be $Y_{t-l:t}$.  
+More specifically the output prediction when the input sequence $X_{t-w-l:t-l}$ is fed to the trained function $h$ will be:
 \begin{equation}
 Y_{t-l:t} = h(X_{t-w-l:t-l})
 \end{equation}
@@ -364,211 +363,48 @@ and the prediction loss will be defined as:
 L(x,y) = \frac{1}{l}\sum(Y_{t-l:t}-h(X_{t-w-l:t-l}))^2
 \end{equation}
 
-Above two are the basic outputs which are repeated with following different architectures.
-\subsection{Fully connected architecture}
+Now we use different architecture to train the function $h$. Other then that, the window size $w$ and output sequence length $l$ is also a hyperparameter. Main three types of architecture designed and tested through Multistep-Ahead prediction based architecture are:
+\begin{enumerate}
+	\item Fully connected architecture
+	\item CNN based architecture
+	\item LSTM based architecture
+\end{enumerate}
+Here size of architecture is usually kept smaller and compact. The reason is to have the ability to train and predict online and having smaller faster architecture is important.
+\newpage
+\subsection{Fully connected multistep ahead prediction architecture}
+In fully connected multistep ahead prediction architecture, we use three fully-connected layers. Input is a one dimensional vector of window size $w$ which is passed to a fully connected layer of $50$ cells. Next two fully connected layers with $25$ and $10$ number of neurons are set up. Lastly there is another fully connected layer with the number of neurons equal to $l$. Here $l$ is multistep ahead prediction length or output sequence size. We test the architecture for different lenghts of $w$ and $l$.
 \begin{figure}[H]
-\centering
-        \includegraphics[width=\textwidth]{images/architecture/NnMultistepAheadPrediction.png}
-    \caption{Fully connected autoencoder}
+\centering	
+        \includegraphics[width=0.5\textwidth]{images/architecture/NnMultistepAheadPrediction.png}
+    \caption{Fully connected Multistep Ahead Prediction with input length W and output length L}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
-\subsection{Fully connected prediction architecture}
+\newpage
+\subsection{Convolutional multistep ahead prediction architecture}
+In convolutional mutlistep ahead prediction architecutre, input is fed to a convolution layer with $8$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Then we have two layers of $10$ different kernels of $1 \times 3$ with stride $2$. The last convolution layer consists of $12$ kernels of dimension $1 \times 2$ with no stride. Activation function for all the neurons of convolution layers is relu. Next a fully connected layer with $10$ neurons is set up whose activation function is relu. Lastly the output layer is a fully connected layers consisting of $L$ neurons where $L$ describes the size of output sequence.
 \begin{figure}[H]
 \centering
-        \includegraphics[width=\textwidth]{images/architecture/NnMultistepAheadPrediction.png}
-    \caption{Fully Connected Multistep Prediction Architecture}
-    \label{generalAnomalyDetectionFrameWork}
-\end{figure}
-\subsection{Fully connected autoencoder architecture}
-\subsection{Convolution based prediction architecture}
-\begin{figure}[H]
-\centering
-        \includegraphics[width=\textwidth]{images/architecture/CnnMultistepPrediction.png}
+        \includegraphics[width=0.8\textwidth]{images/architecture/CnnMultistepPrediction.png}
     \caption{Convolutional Network based Prediction Network}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
-\subsection{LSTM based prediction architecture}
+\subsection{LSTM multistep ahead prediction architecture}
+LSTM based multistep ahead prediction architecture is rather simple. As usual input is a uni-variate vector of size  $W$ which is fed to $50$ concatenated LSTM cells with Relu activation. Lastly a fully connected layers with $L$ neurons and no activation is kept as an output layer.
 \begin{figure}[H]
 \centering
-        \includegraphics[width=\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
+        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
     \caption{LSTM based Prediction Network}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
-\subsection{LSTM based autoencoder based architecture}
+\subsection{Autoencoder architecture}
+\subsection{Fully Connected Autoencoder architecture}
+\subsection{Convolutional Autoencoder architecture}
+\subsection{LSTM Autoencoder architecture}
 \subsection{Recency concept}
 \subsection{Post-processing}
+Post-processing is a very important part of anomlay detection. Here we	
 \subsection{Thresholding}
 \subsection{Parameterinzing the anomaly score}
-\newpage 
-\section{Empirical Formulation and Experiments}
-\subsection{Dataset}
-To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) was used. Numenta is a benchmark specifically designed for online time series anomaly detection.\\
-\break
-Using NAB provides with many benefits. First is a benchmark dataset which $58$ various univariate time series, each with timestamp as index and value. Length of each time series ranges from $1000$ to $22000$ data points. These $58$ time series are from six different categories. These categories include artificially generated time series, times series gathered from advertisement industry related data such as click through rate (CTR), AWS usage metrics, server traffic data, tweets volume time series and known cause anomaly which has the a solid reason for the labeled anomaly.\\
-\break
-The diversity of these categories provide the second benefit. With the diversity almost all type of anomalies are covered hence each algorithm can be tested against each type. Artificial datasets further contains time series with anomalies and without anomalies. Datasets without anomalies contain only normal patterns and no anomaly thus any predicted anomaly will be a false positive here. 
-\begin{figure}[H]
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_flatmiddle.png}
-    \caption{Artificial with sudden flat-middle}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_jumpsdown.png}
-    \caption{Artificial with sudden jumps-down}
-  \end{subfigure}
-
-  \medskip
-
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_jumpsup.png}
-    \caption{Artificial with sudden jumps-up}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{.5	\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_nojump.png}
-    \caption{Artificial with sudden flat}
-  \end{subfigure}
-  \caption{Examples of artifical anomaly data set}
-  \label{artificialDataPlots}
-\end{figure}
-
-Many datasets contains concept drift. These datasets are mostly real life ones. Example of these are following:
-
-\begin{figure}[H]
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png}
-    \caption{Artificial with sudden flat-middle}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/grok_asg_anomaly.png}
-    \caption{Artificial with sudden jumps-down}
-  \end{subfigure}
-
-  \medskip
-
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png}
-    \caption{Artificial with sudden jumps-up}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{.5	\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png}
-    \caption{Artificial with sudden flat}
-  \end{subfigure}
-  \caption{Examples of Concept drift in AWS data sets}
-  \label{AwsConceptDrift}
-\end{figure}
-
-Similarly almost all kind of anomalies exist in the dataset. For example for point anomaly we can see that in following.
-
-\begin{figure}[H]
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_FB.png}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_KO.png}
-  \end{subfigure}
-
-  \medskip
-
-  \begin{subfigure}[t]{.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_PFE.png}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{.5	\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_CRM.png}
-  \end{subfigure}
-  \caption{Examples of point anomalies from twitter volume dataset}
-  \label{AwsConceptDrift}
-\end{figure}
-
-Another important benefit is the availability of labeled data. Other then the seven time series for which we know the existance of anomaly, others were labeled using following process.
-\begin{enumerate}
-\item A number of human labelers have labeled the benchmark dataset. Each individual labeler read through the published labeling guidelines, and then looked through the individual data files in the benchmark dataset, using data visualization methods. They recorded the timestamps at which anomalies appeared to start. The collection of these labels for all the data
-files makeup the raw labels files, one for each labeler and data batch.
-\item Each raw label file is a dictionary of key-value pairs, where the dataset
-name identifies a list of labeled anomaly timestamps. Across these files,
-the timestamps are compared to identify the ground truth anomalies,
-yielding one ground truth label file. To determine the true anomalies, a
-custom “bucket-merge” algorithm is used:
-\begin{enumerate}
-\item For each given data file (i.e. the key), the start timestamps from all
-the raw labels are collected into buckets with other start timestamps
-within a certain range. That is, timestamps within a narrow range of
-one another are bucketed together because they (very likely)
-identify the same anomaly. Differences in anomaly start times
-amongst labelers can be attributed to human error. The size of the
-time range is set as 1/10 the size of an anomaly window (defined in
-step 3 below), both preceding and following the given timestamp.
-The rationale is straightforward: following the underlying
-assumption anomalies are rare, if multiple anomaly labels fall within
-the same window, they identify the same sequence of anomalous
-data.
-\item If a given bucket contains more timestamps (raw labels) than the
-agreement threshold, it is classified as a true anomaly. The
-standard threshold is 0.50, so a bucket must contain timestamps
-from 50\% or more of the labelers in order to become a true
-anomaly label .
-\item Each true anomaly bucket is then merged into a single timestamp
-based on frequency. That is, the timestamp which appears most
-often within a bucket is chosen to represent the entire bucket. Ties
-are determined by which timestamp occurs first. The resulting
-timestamps are the ground truth labels marking the start of the true
-anomalies.
-\end{enumerate}
-\item The combined labels are then converted into anomaly windows, indicated
-by a beginning and ending timestamp. The motivation behind anomaly
-windows is twofold. First, anomalous data often occurs over time, rather
-than at a single point, and thus defining anomaly windows improves the
-NAB scoring efficacy. Second, anomaly windows allow the DUT to not be
-penalized during scoring if the DUT anomaly detections are slightly before
-or after the ground truth. We want these windows to be large enough to
-allow early detection of anomalies, but not so large as to artificially boost
-the score of inaccurate detectors. That is, the windows give the benefit of
-the doubt to the detector, but not so much that false positives would count
-as true positives. The anomaly windows are calculated using the following
-algorithm:
-\begin{enumerate}
-\item The total amount of window length in a single data file was chosen
-to be 10\% of the data file length. For instance, if a data file contains
-4000 data points, then the total amount of relaxation shared by all
-anomaly windows in the data file is 0.1*4000, or 400 data points.
-The 10\% parameter was validated by qualitatively inspecting the
-dataset, and experimenting with a range of values showed no
-significant affect on the resulting scores, likely due to the scaled
-sigmoid scoring function (described later).
-\item The total window length for a data file is then divided by the total
-number of ground truth anomalies in the data file, and the resulting
-number of data points makeup each anomaly window, 1/2 before
-the start of the window, and 1/2 at the end of the window. For
-instance, if the data file above has four ground truth anomalies,
-then each anomaly window is 400/4, or 100 data points – i.e. 50
-data points both before and after the truth anomaly data point.
-\item If two ground truth anomalies are in close proximity such that they
-overlap, the anomalies are combined into one large window. The
-rationale being if multiple anomalies fall within the same window
-length, we assume they identify the same anomalous data.
-\end{enumerate}
-\end{enumerate}
-Thus ground labels of anomalies are obtained. 
-
-\newpage
-\section{Results}
 \subsection{Scoring}
 Another benefit of using NAB is that it comes with a customized scoring and evaluation mechanism which is quite suitable for the online anomaly detection algorithms. Each algorithm is tested against three different profiles. Each profile provides a specific weight to true positive (TP), false positive (FP) and false negative (FN). This way an algorithm can be tested according to the requirement of the system.\\
 \break
@@ -760,6 +596,169 @@ Here we scale the score based on the raw scores of a “perfect”
 detector (one that outputs all true positives and no false
 positives) and a “null” detector (one that outputs no anomaly
 detections). It follows from equation (\ref{scoreNormalization}) that the maximum (normalized) score a detector can achieve on NAB is 100, and an algorithm making no detections will score 0.
+\newpage 
+\section{Empirical Formulation and Experiments}
+\subsection{Dataset}
+To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) was used. Numenta is a benchmark specifically designed for online time series anomaly detection. It is first of its kind as NAB tries to cover all type of anomalies. Also they have come up with a custom scoring function to map the characteristics of an ideal online anomaly detector.\\
+\begin{figure}[H]
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_flatmiddle.png}
+    \caption{Artificial with sudden flat-middle}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_jumpsdown.png}
+    \caption{Artificial with sudden jumps-down}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_jumpsup.png}
+    \caption{Artificial with sudden jumps-up}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.5	\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/artificial/art_daily_nojump.png}
+    \caption{Artificial with sudden flat}
+  \end{subfigure}
+  \caption{Examples of artifical anomaly data set}
+  \label{artificialDataPlots}
+\end{figure}
+Using NAB provides with many benefits. First benefit is that it is a benchmark dataset which $58$ various univariate time series, each with timestamp as index and value. Length of each time series ranges from $1000$ to $22000$ data points. This provides us with enough variability in data. These $58$ time series are from six different categories. These categories include artificially generated time series, times series gathered from advertisement industry related data such as click through rate (CTR), AWS usage metrics, server traffic data, tweets volume time series and known cause anomaly which has the a solid reason for the labeled anomaly.\\
+\break
+The diversity of these categories provide the second benefit. With the diversity almost all type of anomalies are covered hence each algorithm can be tested against each type. Artificial datasets further contains time series with anomalies and without anomalies. Datasets without anomalies contain only normal patterns and no anomaly thus any predicted anomaly will be a false positive here. This way one can test false positive prediction tendency of an algorithm. \\
+\break
+In NAB, concept drift is given a special importance that is why many datasets contains concept drift. These datasets are mostly real life ones. Example of these are following:
+
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png}
+    \caption{Artificial with sudden flat-middle}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/grok_asg_anomaly.png}
+    \caption{Artificial with sudden jumps-down}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png}
+    \caption{Artificial with sudden jumps-up}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5	\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png}
+    \caption{Artificial with sudden flat}
+  \end{subfigure}
+  \caption{Examples of Concept drift in AWS data sets}
+  \label{AwsConceptDrift}
+\end{figure}
+\newpage
+Similarly almost all kind of anomalies exist in the dataset. For example for point anomaly we can see that in following.
+
+\begin{figure}[H]
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_FB.png}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_KO.png}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_PFE.png}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.5	\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/dataAnomalies/twitter/Twitter_volume_CRM.png}
+  \end{subfigure}
+  \caption{Examples of point anomalies from twitter volume dataset}
+  \label{AwsConceptDrift}
+\end{figure}
+
+Another important benefit is the availability of labeled data. Other then the seven real life time series, for which the cause of anomaly is known, all others were labeled diligently using a labelling process. \\
+\break
+Three different human labelers labeled the dataset. Each labeler would read each file using all available tools specially visualization and with some external human expertise in the field, label the dataset. The timestamp at the start of each anomaly is noted. This way there is a data file describing raw labels by each labeler. Since there were three human labelers hence three different raw label files were created. Each raw label file contains file name as key and the values contain the start timestamps of anomaly. Next up all these files are merged into one using following merging strategy:
+\begin{enumerate}
+\item  For each given data file (i.e. the key), the start timestamps from all
+the raw labels are collected into buckets with other start timestamps
+within a certain range. That is, timestamps within a narrow range of
+one another are bucketed together because they (very likely)
+identify the same anomaly. Differences in anomaly start times
+amongst labelers can be attributed to human error. The size of the
+time range is set as 1/10 the size of an anomaly window (defined in
+step 3 below), both preceding and following the given timestamp.
+The rationale is straightforward: following the underlying
+assumption anomalies are rare, if multiple anomaly labels fall within
+the same window, they identify the same sequence of anomalous
+data.
+\item If a given bucket contains more timestamps (raw labels) than the
+agreement threshold, it is classified as a true anomaly. The
+standard threshold is 0.50, so a bucket must contain timestamps
+from 50\% or more of the labelers in order to become a true
+anomaly label .
+\item Each true anomaly bucket is then merged into a single timestamp
+based on frequency. That is, the timestamp which appears most
+often within a bucket is chosen to represent the entire bucket. Ties
+are determined by which timestamp occurs first. The resulting
+timestamps are the ground truth labels marking the start of the true
+anomalies.
+\end{enumerate}
+The combined labels are then converted into anomaly windows, indicated
+by a beginning and ending timestamp. The motivation behind anomaly
+windows is twofold. First, anomalous data often occurs over time, rather
+than at a single point, and thus defining anomaly windows improves the
+NAB scoring efficacy. Second, anomaly windows allow the DUT to not be
+penalized during scoring if the DUT anomaly detections are slightly before
+or after the ground truth. We want these windows to be large enough to
+allow early detection of anomalies, but not so large as to artificially boost
+the score of inaccurate detectors. That is, the windows give the benefit of
+the doubt to the detector, but not so much that false positives would count
+as true positives. The anomaly windows are calculated using the following
+algorithm:
+\begin{enumerate}
+\item The total amount of window length in a single data file was chosen
+to be 10\% of the data file length. For instance, if a data file contains
+4000 data points, then the total amount of relaxation shared by all
+anomaly windows in the data file is 0.1*4000, or 400 data points.
+The 10\% parameter was validated by qualitatively inspecting the
+dataset, and experimenting with a range of values showed no
+significant affect on the resulting scores, likely due to the scaled
+sigmoid scoring function (described later).
+\item The total window length for a data file is then divided by the total
+number of ground truth anomalies in the data file, and the resulting
+number of data points makeup each anomaly window, 1/2 before
+the start of the window, and 1/2 at the end of the window. For
+instance, if the data file above has four ground truth anomalies,
+then each anomaly window is 400/4, or 100 data points – i.e. 50
+data points both before and after the truth anomaly data point.
+\item If two ground truth anomalies are in close proximity such that they
+overlap, the anomalies are combined into one large window. The
+rationale being if multiple anomalies fall within the same window
+length, we assume they identify the same anomalous data.
+\end{enumerate}
+Thus ground labels of anomalies are obtained. 
+
+\newpage
+\section{Results}
+
 \subsection{Comparing with others}
 \begin{table}[H]
 \centering
