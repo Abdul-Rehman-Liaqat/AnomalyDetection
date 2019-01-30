@@ -2,14 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: third.aux
 I couldn't open style file IEEEtrans.bst
----line 32 of file third.aux
+---line 87 of file third.aux
  : \bibstyle{IEEEtrans
  :                    }
 I'm skipping whatever remains of this command
 I found no style file---while reading file third.aux
-You've used 0 entries,
+You've used 1 entry,
             0 wiz_defined-function locations,
-            84 strings with 493 characters,
+            85 strings with 509 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0

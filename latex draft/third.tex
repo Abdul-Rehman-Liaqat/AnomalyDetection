@@ -402,8 +402,11 @@ LSTM based multistep ahead prediction architecture is rather simple. As usual in
 \subsection{LSTM Autoencoder architecture}
 \subsection{Recency concept}
 \subsection{Post-processing}
-Post-processing is a very important part of anomlay detection. Here we	
+Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
+\break
+
 \subsection{Thresholding}
+
 \subsection{Parameterinzing the anomaly score}
 \subsection{Scoring}
 Another benefit of using NAB is that it comes with a customized scoring and evaluation mechanism which is quite suitable for the online anomaly detection algorithms. Each algorithm is tested against three different profiles. Each profile provides a specific weight to true positive (TP), false positive (FP) and false negative (FN). This way an algorithm can be tested according to the requirement of the system.\\

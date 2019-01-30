@@ -50,9 +50,9 @@ for f in files:
         print(f)
         df = pd.read_csv(f)
         a = []
-        df = OverallNormalization(df,start)
-        df["anomaly_score"] = df["convergenceLossNormalOverall"+str(start)]
-#        df = differentInitialPointNormalization(df,start)
-#        df["anomaly_score"] = df["convergenceLossNormal"+str(start)]
+#        df = OverallNormalization(df,start)
+#       df["anomaly_score"] = df["convergenceLossNormalOverall"+str(start)]
+        df = differentInitialPointNormalization(df,start)
+        df["anomaly_score"] = df["convergenceLossNormal"+str(start)]
         df.to_csv(f,index = False)        
 
