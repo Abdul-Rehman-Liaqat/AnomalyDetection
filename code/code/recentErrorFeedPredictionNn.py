@@ -71,7 +71,7 @@ window_size = 50
 nb_epoch = 1
 nb_features = 1
 normalized_input = True
-multistep = 10
+multistep = 1
 errorInput = 5
 # mse, mae or logcosh
 anomalyScore_func = "mse"
