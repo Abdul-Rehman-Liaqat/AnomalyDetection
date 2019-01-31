@@ -22,7 +22,8 @@ def differentInitialPointNormalization(df,start):
     minVal = 0
     maxVal = 0
     l = []
-    for ind,loss in enumerate(df.convergenceLoss):
+#    for ind,loss in enumerate(df.convergenceLoss):
+    for ind,loss in enumerate(df.anomaly_score):
         if(ind == 0):
             minVal = loss
             maxVal = minVal
