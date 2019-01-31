@@ -219,6 +219,16 @@
         "reward_low_FP_rate": 38.360772142413786,
         "standard": 51.717054557073276
     },
+    "recentErrorpredictionMultiStepNNMultiStep10Window50errorInput5mseconvergenceLoss1301938": {
+        "reward_low_FN_rate": 35.39004683649425,
+        "reward_low_FP_rate": 23.147072078577583,
+        "standard": 31.10231163392241
+    },
+    "recentErrorpredictionMultiStepNNMultiStep1Window50errorInput5mseconvergenceLoss13146": {
+        "reward_low_FN_rate": 42.905147168160916,
+        "reward_low_FP_rate": 35.8860430086638,
+        "standard": 39.59779766228448
+    },
     "relativeEntropy": {
         "reward_low_FN_rate": 58.84229239324713,
         "reward_low_FP_rate": 47.598351759844824,
