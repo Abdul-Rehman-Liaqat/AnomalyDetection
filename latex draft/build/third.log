@@ -1,12 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  19 AUG 2017 01:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  31 JAN 2019 05:19
 entering extended mode
-**./third.tex
-(third.tex
-LaTeX2e <2017/01/01> patch level 1
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**third.tex
+(./third.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -21,39 +23,61 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen105
+\captionmargin@=\dimen106
+\captionwidth=\dimen107
+\caption@tempdima=\dimen108
+\caption@indent=\dimen109
+\caption@parindent=\dimen110
+\caption@hangindent=\dimen111
+)
+\c@ContinuedFloat=\count88
+)
+\c@subfigure=\count89
+\c@subtable=\count90
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
@@ -61,507 +85,881 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/11/05 v2.16a AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/03 v2.15a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen105
+\ex@=\dimen112
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen106
+\pmbraise@=\dimen113
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
-Package: amsopn 2016/03/08 v2.02 operator names
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count89
-\leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count91
-\DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen107
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks17
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks18
-\eqnshift@=\dimen108
-\alignsep@=\dimen109
-\tagshift@=\dimen110
-\tagwidth@=\dimen111
-\totwidth@=\dimen112
-\lineht@=\dimen113
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
 \@envbody=\toks19
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2735.
+LaTeX Info: Redefining \] on input line 2736.
 )
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\preprint\fullpage.
-sty"
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip46
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
 
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\utf8x.def"
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 ))
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucs.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-global.def
-"
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count100
+\uc@secondtry=\count103
 \uc@combtoks=\toks23
 \uc@combtoksb=\toks24
 \uc@temptokena=\toks25
-) ("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\cite\cite.sty"
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count104
+\float@exts=\toks26
+\float@box=\box28
+\@float@everytoks=\toks27
+\@floatcapt=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
-Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen114
-\Hy@linkcounter=\count101
-\Hy@pagecounter=\count102
+\@linkdim=\dimen121
+\Hy@linkcounter=\count105
+\Hy@pagecounter=\count106
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count103
+\Hy@SavedSpaceFactor=\count107
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4486.
-Package hyperref Info: Link nesting OFF on input line 4491.
-Package hyperref Info: Hyper index ON on input line 4494.
-Package hyperref Info: Plain pages OFF on input line 4501.
-Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4735.
-\c@Hy@tempcnt=\count104
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count108
 
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5088.
-\XeTeXLinkMargin=\dimen115
-\Fld@menulength=\count105
-\Field@Width=\dimen116
-\Fld@charsize=\dimen117
-Package hyperref Info: Hyper figures OFF on input line 6342.
-Package hyperref Info: Link nesting OFF on input line 6347.
-Package hyperref Info: Hyper index ON on input line 6350.
-Package hyperref Info: backreferencing OFF on input line 6357.
-Package hyperref Info: Link coloring OFF on input line 6362.
-Package hyperref Info: Link coloring with OCG OFF on input line 6367.
-Package hyperref Info: PDF/A mode OFF on input line 6372.
-LaTeX Info: Redefining \ref on input line 6412.
-LaTeX Info: Redefining \pageref on input line 6416.
-\Hy@abspage=\count106
-\c@Item=\count107
-\c@Hfootnote=\count108
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen122
+\Fld@menulength=\count109
+\Field@Width=\dimen123
+\Fld@charsize=\dimen124
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count110
+\c@Item=\count111
+\c@Hfootnote=\count112
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
-\Fld@listcount=\count109
-\c@bookmark@seq@number=\count110
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count113
+\c@bookmark@seq@number=\count114
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
 )
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\cjk\CJKutf8.sty"
+(/usr/share/texmf/tex/latex/CJK/CJKutf8.sty
 Package: CJKutf8 2015/04/18 4.8.4
 
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\cjk\CJK.sty"
+(/usr/share/texmf/tex/latex/CJK/CJK.sty
 Package: CJK 2015/04/18 4.8.4
 
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\cjk\mule\MULEenc.s
-ty"
+(/usr/share/texmf/tex/latex/CJK/mule/MULEenc.sty
 Package: MULEenc 2015/04/18 4.8.4
-) ("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\cjk\CJK.enc"
+)
+(/usr/share/texmf/tex/latex/CJK/CJK.enc
 File: CJK.enc 2015/04/18 4.8.4
 )
 LaTeX Info: Redefining \selectfont on input line 755.
-\CJK@indent=\box28
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2017/01/24 v2.0c Standard LaTeX package
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip48
-\multirow@cntb=\count111
-\multirow@dima=\skip49
-\bigstrutjot=\dimen118
+\CJK@indent=\box30
 )
-("E:\Semesters\2-Second semester\3112-                      Seminar - Deep Lear
-ning\Report\build\third.aux")
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen125
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen126
+\extrarowheight=\dimen127
+\NC@list=\toks28
+\extratabsurround=\skip48
+\backup@length=\skip49
+) (build/third.aux
+
+LaTeX Warning: Label `examleOfPointAnomaly' multiply defined.
+
+
+LaTeX Warning: Label `generalAnomalyDetectionFrameWork' multiply defined.
+
+
+LaTeX Warning: Label `generalAnomalyDetectionFrameWork' multiply defined.
+
+
+LaTeX Warning: Label `generalAnomalyDetectionFrameWork' multiply defined.
+
+
+LaTeX Warning: Label `generalAnomalyDetectionFrameWork' multiply defined.
+
+
+LaTeX Warning: Label `AwsConceptDrift' multiply defined.
+
+)
 \openout1 = `third.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mk
-ii"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen119
-\scratchbox=\box29
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen120
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks27
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+\scratchcounter=\count115
+\scratchdimen=\dimen128
+\scratchbox=\box31
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen129
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks30
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-)
-("C:\Users\Abdul Rehman\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucsencs.def"
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 14.
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring OFF on input line 21.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count118
+\c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
 
-("E:\Semesters\2-Second semester\3112-                      Seminar - Deep Lear
-ning\Report\build\third.out")
-("E:\Semesters\2-Second semester\3112-                      Seminar - Deep Lear
-ning\Report\build\third.out")
+(build/third.out) (build/third.out)
 \@outlinefile=\write3
 \openout3 = `third.out'.
 
- <logoUHi.jpg, id=91, 406.38257pt x 406.20097pt>
-File: logoUHi.jpg Graphic file (type jpg)
 
-<use logoUHi.jpg>
-Package pdftex.def Info: logoUHi.jpg used on input line 35.
+<logoUHi.jpg, id=136, 406.38257pt x 406.20097pt>
+File: logoUHi.jpg Graphic file (type jpg)
+ <use logoUHi.jpg>
+Package pdftex.def Info: logoUHi.jpg used on input line 42.
 (pdftex.def)             Requested size: 71.13188pt x 71.09862pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Abdul Rehman/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./lo
-goUHi.jpg>]
-[2]
-("E:\Semesters\2-Second semester\3112-                      Seminar - Deep Lear
-ning\Report\build\third.toc")
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logoUHi.jpg>] [2] (build
+/third.toc)
 \tf@toc=\write4
 \openout4 = `third.toc'.
 
- [3] [4] [5]
-Overfull \hbox (1.37575pt too wide) in paragraph at lines 95--96
-\OT1/cmr/m/n/12 stream out-put func-tion (or spa-tial deep con-vo-lu-tional neu
--ral net-work) and $\OML/cmm/m/it/12 TDCNN\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]
-\OT1/cmr/m/n/12 )$
- []
 
-[6] <one.PNG, id=169, 696.35156pt x 310.91156pt>
-File: one.PNG Graphic file (type png)
- <use one.PNG>
-Package pdftex.def Info: one.PNG used on input line 104.
-(pdftex.def)             Requested size: 469.75502pt x 209.73763pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
-
- []
-
-[7 <./one.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 53--58
 
  []
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 126.
+Underfull \hbox (badness 10000) in paragraph at lines 53--58
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 126.
+ []
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+[4]
+<images/dataAnomalies/known/machine_temperature_system_failure.png, id=195, 433
+.62pt x 289.08pt>
+File: images/dataAnomalies/known/machine_temperature_system_failure.png Graphic
+ file (type png)
+
+<use images/dataAnomalies/known/machine_temperature_system_failure.png>
+Package pdftex.def Info: images/dataAnomalies/known/machine_temperature_system_
+failure.png used on input line 62.
+(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--74
+
+ []
+
+[5 <./images/dataAnomalies/known/machine_temperature_system_failure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 80--86
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+
+<images/dataAnomalies/ad/exchange-3_cpm_results.png, id=214, 433.62pt x 289.08p
+t>
+File: images/dataAnomalies/ad/exchange-3_cpm_results.png Graphic file (type png
 )
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 126.
+ <use images/dataAnomalies/ad/exchange-3_cpm_results.png>
+Package pdftex.def Info: images/dataAnomalies/ad/exchange-3_cpm_results.png use
+d on input line 94.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 126.
+<images/dataAnomalies/ad/exchange-2_cpc_results.png, id=215, 433.62pt x 289.08p
+t>
+File: images/dataAnomalies/ad/exchange-2_cpc_results.png Graphic file (type png
+)
+ <use images/dataAnomalies/ad/exchange-2_cpc_results.png>
+Package pdftex.def Info: images/dataAnomalies/ad/exchange-2_cpc_results.png use
+d on input line 105.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
+ [7 <./images/dataAnomalies/ad/exchange-3_cpm_results.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 132.
+ []
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+<images/dataAnomalies/known/nyc_taxi.png, id=227, 433.62pt x 289.08pt>
+File: images/dataAnomalies/known/nyc_taxi.png Graphic file (type png)
+
+<use images/dataAnomalies/known/nyc_taxi.png>
+Package pdftex.def Info: images/dataAnomalies/known/nyc_taxi.png used on input 
+line 120.
+(pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
+ [8 <./images/dataAnomalies/ad/exchange-2_cpc_results.png>]
+<images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png, id=238, 433.62pt x 28
+9.08pt>
+File: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png Graphic file (typ
+e png)
+ <use images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>
+Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
+g used on input line 128.
+(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
+ [9 <./images/dataAnomalies/known/nyc_taxi.png>] [10 <./images/dataAnomalies/aw
+s/rds_cpu_utilization_cc0c53.png>]
+<images/generalAnomalyDetectionFrameWork.png, id=255, 917.4275pt x 294.09875pt>
+File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
+<use images/generalAnomalyDetectionFrameWork.png>
+Package pdftex.def Info: images/generalAnomalyDetectionFrameWork.png used on in
+put line 147.
+(pdftex.def)             Requested size: 469.75502pt x 150.5897pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--164
+
+ []
+
+[11 <./images/generalAnomalyDetectionFrameWork.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 168.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 136--142
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
+ [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
  []
 
-<two.PNG, id=198, 310.15875pt x 174.6525pt>
-File: two.PNG Graphic file (type png)
- <use two.PNG>
-Package pdftex.def Info: two.PNG used on input line 150.
-(pdftex.def)             Requested size: 375.80544pt x 211.61798pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9] [10 <./two.PNG>] <third.PNG, id=217, 308.65312pt x 163.3603pt>
-File: third.PNG Graphic file (type png)
-
-<use third.PNG>
-Package pdftex.def Info: third.PNG used on input line 190.
-(pdftex.def)             Requested size: 375.80544pt x 198.91788pt.
-
-Overfull \hbox (54.21767pt too wide) detected at line 198
-[]\OML/cmm/m/it/12 TS \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 DCNN > T \OMS/cmsy/m/
-n/12   \OML/cmm/m/it/12 DCNN > S \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 DCNN \OMS/
-cmsy/m/n/12  \OML/cmm/m/it/12 LR \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 IDT > Imp 
-\OT1/cmr/m/n/12 + \OML/cmm/m/it/12 IDT > LR \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 
-DCNN > Imp \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 DCNN
  []
 
-[11 <./third.PNG>] <fifth.PNG, id=227, 268.00125pt x 178.41656pt>
-File: fifth.PNG Graphic file (type png)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+) [14] [15]
+[16]
+File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
+ <use images/generalAnomalyDetectionFrameWork.png>
+Package pdftex.def Info: images/generalAnomalyDetectionFrameWork.png used on in
+put line 287.
+(pdftex.def)             Requested size: 469.75502pt x 150.5897pt.
 
-<use fifth.PNG>
-Package pdftex.def Info: fifth.PNG used on input line 210.
-(pdftex.def)             Requested size: 375.80544pt x 250.18437pt.
- [12 <./fifth.PNG>] [13] [14] [15]
-("E:\Semesters\2-Second semester\3112-                      Seminar - Deep Lear
-ning\Report\build\third.bbl")
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 287.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
+Underfull \hbox (badness 10000) in paragraph at lines 291--296
 
-("E:\Semesters\2-Second semester\3112-                      Seminar - Deep Lear
-ning\Report\build\third.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 287.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 287.
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
+
+ []
+
+[18] [19] [20]
+<images/architecture/NnMultistepAheadPrediction.png, id=338, 442.65375pt x 442.
+65375pt>
+File: images/architecture/NnMultistepAheadPrediction.png Graphic file (type png
+)
+ <use images/architecture/NnMultistepAheadPrediction.png>
+Package pdftex.def Info: images/architecture/NnMultistepAheadPrediction.png use
+d on input line 378.
+(pdftex.def)             Requested size: 234.8775pt x 234.88228pt.
+ [21 <./images/architecture/NnMultistepAheadPrediction.png>]
+<images/architecture/CnnMultistepPrediction.png, id=345, 675.52374pt x 692.5875
+pt>
+File: images/architecture/CnnMultistepPrediction.png Graphic file (type png)
+ <use images/architecture/CnnMultistepPrediction.png>
+Package pdftex.def Info: images/architecture/CnnMultistepPrediction.png used on
+ input line 387.
+(pdftex.def)             Requested size: 375.80544pt x 385.31003pt.
+
+<images/architecture/LstmMultistepaheadPrediction.png, id=346, 439.6425pt x 261
+.97874pt>
+File: images/architecture/LstmMultistepaheadPrediction.png Graphic file (type p
+ng)
+ <use images/architecture/LstmMultistepaheadPrediction.png>
+Package pdftex.def Info: images/architecture/LstmMultistepaheadPrediction.png u
+sed on input line 395.
+(pdftex.def)             Requested size: 187.89914pt x 111.96509pt.
+ [22 <./images/architecture/CnnMultistepPrediction.png>]
+
+LaTeX Warning: Citation `2017unsupervised' on page 23 undefined on input line 4
+05.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--452
+
+ []
+
+[23 <./images/architecture/LstmMultistepaheadPrediction.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 457--461
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--461
+
+ []
+
+[24] <images/nabScoringExample.png, id=362, 875.27pt x 695.59875pt>
+File: images/nabScoringExample.png Graphic file (type png)
+
+<use images/nabScoringExample.png>
+Package pdftex.def Info: images/nabScoringExample.png used on input line 478.
+(pdftex.def)             Requested size: 469.75502pt x 373.32512pt.
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 490--567
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--567
+
+ []
+
+[26 <./images/nabScoringExample.png>] [27] [28]
+<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=394, 433.62pt x 2
+89.08pt>
+File: images/dataAnomalies/artificial/art_daily_flatmiddle.png Graphic file (ty
+pe png)
+ <use images/dataAnomalies/artificial/art_daily_flatmiddle.png>
+Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_flatmiddle.p
+ng used on input line 609.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=395, 433.62pt x 28
+9.08pt>
+File: images/dataAnomalies/artificial/art_daily_jumpsdown.png Graphic file (typ
+e png)
+ <use images/dataAnomalies/artificial/art_daily_jumpsdown.png>
+Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsdown.pn
+g used on input line 615.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 607--618
+[][]  [] 
+ []
+
+
+<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=396, 433.62pt x 289.
+08pt>
+File: images/dataAnomalies/artificial/art_daily_jumpsup.png Graphic file (type 
+png)
+ <use images/dataAnomalies/artificial/art_daily_jumpsup.png>
+Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsup.png 
+used on input line 623.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+<images/dataAnomalies/artificial/art_daily_nojump.png, id=397, 433.62pt x 289.0
+8pt>
+File: images/dataAnomalies/artificial/art_daily_nojump.png Graphic file (type p
+ng)
+ <use images/dataAnomalies/artificial/art_daily_nojump.png>
+Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_nojump.png u
+sed on input line 629.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 621--632
+[][]  [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--634
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--640
+
+ []
+
+[29 <./images/dataAnomalies/artificial/art_daily_flatmiddle.png> <./images/data
+Anomalies/artificial/art_daily_jumpsdown.png> <./images/dataAnomalies/artificia
+l/art_daily_jumpsup.png> <./images/dataAnomalies/artificial/art_daily_nojump.pn
+g>]
+<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=407, 433.62pt x 28
+9.08pt>
+File: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png Graphic file (typ
+e png)
+ <use images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png>
+Package pdftex.def Info: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.pn
+g used on input line 644.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+<images/dataAnomalies/aws/grok_asg_anomaly.png, id=408, 433.62pt x 289.08pt>
+File: images/dataAnomalies/aws/grok_asg_anomaly.png Graphic file (type png)
+
+<use images/dataAnomalies/aws/grok_asg_anomaly.png>
+Package pdftex.def Info: images/dataAnomalies/aws/grok_asg_anomaly.png used on 
+input line 650.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 642--653
+[][]  [] 
+ []
+
+File: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png Graphic file (typ
+e png)
+<use images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>
+Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
+g used on input line 658.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=409, 433.62pt x 28
+9.08pt>
+File: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png Graphic file (typ
+e png)
+ <use images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png>
+Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.pn
+g used on input line 664.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 656--667
+[][]  [] 
+ []
+
+[30 <./images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png> <./images/dataA
+nomalies/aws/grok_asg_anomaly.png> <./images/dataAnomalies/aws/rds_cpu_utilizat
+ion_e47b3b.png>]
+<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=418, 433.62pt x 289.08p
+t>
+File: images/dataAnomalies/twitter/Twitter_volume_FB.png Graphic file (type png
+)
+ <use images/dataAnomalies/twitter/Twitter_volume_FB.png>
+Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_FB.png use
+d on input line 676.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=419, 433.62pt x 289.08p
+t>
+File: images/dataAnomalies/twitter/Twitter_volume_KO.png Graphic file (type png
+)
+ <use images/dataAnomalies/twitter/Twitter_volume_KO.png>
+Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_KO.png use
+d on input line 681.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 674--683
+[][]  [] 
+ []
+
+
+<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=420, 433.62pt x 289.08
+pt>
+File: images/dataAnomalies/twitter/Twitter_volume_PFE.png Graphic file (type pn
+g)
+ <use images/dataAnomalies/twitter/Twitter_volume_PFE.png>
+Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_PFE.png us
+ed on input line 688.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=421, 433.62pt x 289.08
+pt>
+File: images/dataAnomalies/twitter/Twitter_volume_CRM.png Graphic file (type pn
+g)
+ <use images/dataAnomalies/twitter/Twitter_volume_CRM.png>
+Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_CRM.png us
+ed on input line 693.
+(pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 686--695
+[][]  [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--702
+
+ []
+
+[31 <./images/dataAnomalies/twitter/Twitter_volume_FB.png> <./images/dataAnomal
+ies/twitter/Twitter_volume_KO.png> <./images/dataAnomalies/twitter/Twitter_volu
+me_PFE.png> <./images/dataAnomalies/twitter/Twitter_volume_CRM.png>] [32]
+Overfull \hbox (1.21152pt too wide) in paragraph at lines 768--816
+ [][] 
+ []
+
+[33] [34] [35] [36] [37] [38] [39] (build/third.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 867.
+ [40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 867.
+ (build/third.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 867.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 867.
 Package rerunfilecheck Info: File `third.out' has not changed.
-(rerunfilecheck)             Checksum: D4CE93D0322F626C77F9E72F10B18E3A;1406.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 287.
+(rerunfilecheck)             Checksum: AFC846F8609110D1EF15ED4A7C5F18EE;2429.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 867.
  ) 
 Here is how much of TeX's memory you used:
- 7416 strings out of 493333
- 105117 string characters out of 3139171
- 209056 words of memory out of 3000000
- 10751 multiletter control sequences out of 15000+200000
- 14605 words of font info for 56 fonts, out of 3000000 for 9000
+ 8958 strings out of 493029
+ 132381 string characters out of 6136234
+ 238551 words of memory out of 5000000
+ 12186 multiletter control sequences out of 15000+600000
+ 13358 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,28p,785b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb>
-Output written on "E:/Semesters/2-Second semester/3112-                      Se
-minar - Deep Learning/Report/build/third.pdf" (16 pages, 1557305 bytes).
+ 42i,8n,40p,1972b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on build/third.pdf (40 pages, 1763572 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 86 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 568 PDF objects out of 1000 (max. 8388607)
+ 466 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 375 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -297,7 +297,8 @@ Proposed method can be divided in multiple parts. First part would be the implem
 \item In the pre-processing part, each time-series is normalized using equation \ref{minMaxNormalization}. Here we assume that we already know the possible minimum and maximum values of the data which is generally true in most cases. All the dataasets are normalized before feeding into the algorithm.
 \item In the algorithm part, we use different kind of algorihtms with few things in common. For all kind of algorithms the input values are sequence of length $W$ and output values are also a sequence whose size is tested from $1$ to $5$. Another important thing to remember is that the output is different for autoencodre based architectures and multistep prediction architectures. More details are given below.
 \item We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
-\item Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is the usage of anomaly likelihood as described equation.
+\item Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
+First technique is the usage of anomaly likelihood as described equation.
 The anomaly likelihood is a probabilistic metric defining how anomalous the current state is based on the prediction history.To compute the anomaly likeli-
 hood we maintain a window of the last W error values. We model
 the distribution as a rolling normal distribution where the sample
@@ -402,7 +403,7 @@ LSTM based multistep ahead prediction architecture is rather simple. As usual in
 \subsection{LSTM Autoencoder architecture}
 \subsection{Recency concept}
 \subsection{Post-processing}
-Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
+Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
 \break
 
 \subsection{Thresholding}
@@ -861,7 +862,7 @@ algorithms at the same time.
 \begingroup
 \nocite{*}
 \renewcommand{\section}[2]{}
-\bibliographystyle{IEEEtrans}`
+\bibliographystyle{IEEEtran}
 \bibliography{third}
 \endgroup
 \end{document}
