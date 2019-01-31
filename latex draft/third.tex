@@ -57,6 +57,8 @@ An anomaly is defined as significantly different data point from other data poin
 Also as described in (reference name Software2), going forward software development especially machine learning based software development will be divided into two parts. One part is the preparation of the data and the second part is the design and optimization of algorithms. Both of these steps are used iteratively. Interestingly, as described in the (reference name Software2), more and more time is spent on accumulating, massaging and cleaning datasets. One major part of this process is outlier detection, anomaly detection and novelty detection. By detection of anomalies, it will become sufficiently easy for human expert to find the one data point in a heap of millions data points and then decide whether to remove that data or get more of the same data points.
 \subsection{Usage of anomaly detection in streaming data}
 As described above, anomaly detection is an important part of normal machine learning and data science projects. It is also very useful in streaming data systems. For example figure (\ref{machineTemperatureSystemFailure}) shows real-world temperature sensor data from an internal component of a large industrial machine. Anomalies are highlighted with red background. The second anomaly was a planned shutdown  hence there was an exceptional decrease in temperature. Last anomaly was a catastrophic system failure. Third anomaly just before the failure was a signal predicting the failure. If the anomlay detection system correctly detected the third anomaly system level failure could have been avoided hence saving a lot of time, money and resources.
+\subsection{Constraints}
+\subsubsection{Access to only current data}
 \begin{figure}[H]
 \centering
         \includegraphics[width=\textwidth]{images/dataAnomalies/known/machine_temperature_system_failure.png}
@@ -64,10 +66,10 @@ As described above, anomaly detection is an important part of normal machine lea
     \label{machineTemperatureSystemFailure}
 \end{figure}
 Real-time data comes with special challenges and problems to solve for anomlay detection in streaming data. First constraint is the continuous arrival of data. 
-We cannot have access to any future data. More specifically we will only have access to current time data as $x_t$ and previous data points as $x_{t-1},x_{t-2},x_{t-3},...$ and so on. This apply a constraint of finding the importance of data in the past and update the model online. Also as the data stream is continuous it becomes evident to have the system doing online training and prediction. Thus the first contraint of an anomaly detection algorithm is that it should train and predict online.\\
-\break
-Secondly, the ending point of the stream is not known which means we should expect it to be an infinite amount of data being received continuously. Also most of the time, to identify an anomaly help of a domain expert is needed. For this reason and possibly continuous changing state of the data (as described as concept drift up next) the model should be updated with latest labels. Consequently, it becomes impossible to have access to enough labeled data which is kept updated all the time. That is why an unsupervised anomaly detection system is prefered which will always update itself according to system change and we will not need to setup some manual training steps.\\
-\break
+We cannot have access to any future data. More specifically we will only have access to current time data as $x_t$ and previous data points as $x_{t-1},x_{t-2},x_{t-3},...$ and so on. This apply a constraint of finding the importance of data in the past and update the model online. Also as the data stream is continuous it becomes evident to have the system doing online training and prediction. Thus the first contraint of an anomaly detection algorithm is that it should train and predict online.
+\subsubsection{Infinite lenght hence continuous training}
+Secondly, the ending point of the stream is not known which means we should expect it to be an infinite amount of data being received continuously. Also most of the time, to identify an anomaly help of a domain expert is needed. For this reason and possibly continuous changing state of the data (as described as concept drift up next) the model should be updated with latest labels. Consequently, it becomes impossible to have access to enough labeled data which is kept updated all the time. That is why an unsupervised anomaly detection system is prefered which will always update itself according to system change and we will not need to setup some manual training steps.
+\subsubsection{Definitions related to time series}
 Before moving on, there are some unique concepts related to uni-variate time series which will be helpful in the understanding of the research problem. Starting with stationary and non-stationary time series. A stationary time series is the one whose statistical properties are constant over time. These statistical properties include mean, variance and auto-correlation of the time series. Similarly with the change in one or more of these statistical properties, non-stationary time series comes into being. These non-stationary time series are also named as Concept drift. Concept drift is a terminology related to time series data specifically which is why we will be using the term Concept drift instead of non-stationary time series in future. There is also an intuitive meaning behind the name of Concept drift.\\
 \break
 Considering that there is an underlying probability distribution in every time series and this underlying distribution is named Concept of time series such as
@@ -82,6 +84,7 @@ And the new data points are generated from the second distribution $p_u(X)$ onwa
 As in real life systems it is highly likely that there will be a change in the concept of the time-series hence happening of concept drift is very likely and possible. For example, there will be a concept drift in the time-series output of a heat sensor measuring the temperature of a motor of exhaust fan and the motor of the fan is changed. Thus it is necessary for our system to first recognize the concept drift. If there exists a concept drift then the model should adapt itself swiftly to avoid false positives. Similarly if there is not a concept drift then the model should not give much learning weight to these readings. Thus the model adaption according to presence of concept drift is necessary.\\
 \break
 Time series data is the output of a streaming data from multiple devices which makes it close to impossible to label it specially for anomalies. Also due to concept drift a regular labeling needed. Since it is very difficult to label streaming time series data to detect anomalies it makes sense to do it in an unsupervised fashion. With unsupervised anomaly detection we don't need any previous labeled data and the system developed will be very generic.
+\subsubsection{Anomaly Detection and types}
 An anomaly is defined as a data point $X_t$ or set of data points $X_{t-l:t}$ for which either of following is true
 \begin{enumerate}
     \item Probability of point $X_t$ belonging to a probability distribution $\phi$ is very less then the probability of previous data points $X_n$ where $n \leq t-1$. In other words:\\
@@ -129,6 +132,7 @@ As defined above, in many cases there is a system change which causes a permanen
     \caption{AWS CPU Utilization Concept Drift}
     \label{awsCpuUtilizationConceptDrift}
 \end{figure}
+\subsubsection{Characteristics of ideal anomaly detector}
 In streaming applications it is also very useful to detect the anomaly as early as possible. For example in the streaming data of cardiac patient's heart; earlier detection can help in taking emergency measures to stop the onset of heart attack. Obviously detecting them a little earlier is way better tham later. This early detection acts as an alarm and will really fulfill the purpose of alarm when enough time is remaining to take action to avoid catastrophic failure. Of course, having this early detection property of an algorithm comes with drawbacks. One drawback is that extra senstivity of the algorithm, which can cause many false alarms. Therefore there is a trade-off between false alarms and  true positives. Using the above properties of the anomaly detection algorithm we can define the characteristics of an unsupervised real-time anomaly detection algorithma as:
 \begin{enumerate}
 \item Predictions must be made online which means that the algorithm must identify state $x_t$ as normal or anomalous before receiving the next data point $x_{t+1}$
@@ -139,8 +143,8 @@ In streaming applications it is also very useful to detect the anomaly as early 
 \item Algorithms should minimize false positives and false negatives.
 \end{enumerate}
 Of course, it is difficult to fulfill all the requirement. Still the best detection algorithm will try to maximize the completion of all above. Secondly based upon the requirement of the system few requriements can also be relaxed or others few requirements can be given preference. For example, in case of heart's patient having anomaly detected as early as possible with extremely highly true positive will be necessary. In the process, few false postives can be afforded. On the other hand in a supply chain management system, where there are already a lot of alarms about low inventory are ringing, having false negatives can be afforded.
-Concluding, with the requriements given above it becomes obvious that many current anomaly detection algorithms do not fulfill them as discussed in the related work section. We tried to create a system which fulfill these requirements to their maximum.\\
-\break
+Concluding, with the requriements given above it becomes obvious that many current anomaly detection algorithms do not fulfill them as discussed in the related work section. We tried to create a system which fulfill these requirements to their maximum.
+\subsubsection{General framework of anomaly detectors and summary of each step}
 Generally, most of anomlay detection frameworks follow a pipeline of steps.These steps are described in figure \ref{generalAnomalyDetectionFrameWork}. We will be summarizing each step to provide the extent of problems and possible area of innovations available in anomlay detection system.
 \begin{figure}[H]
 \centering
@@ -172,6 +176,8 @@ Thus there are many possible points of innovation in the anomaly detection frame
 	\item Another possible innovation area is the values the algorithm is trained for. The algorithm can be an autoencoder based and be used to reconstruct a window of current and past values hence predicting a sequence which will then be compared with original values. The distance between the predicted sequence of reconstruction and actual values will be used as anomaly score then. Otherwise using a sub-sequence, one can predict another sub-sequence which is few time step ahead of the input sequence. The autoencoder learns how to reconstruct the current sequence and predictive learns how to predict the future values. 
 	\item Now that we have an anomaly score, next step is to apply some post-processing on top of this score. There are two possible variations used. First variation is moving min-max normalization. With this kind of normalization current point is normalized by using the minimum and maximum values of the data obtained so far. Seoncd type of post-processing is probability of values of a current small window from the previous values.
 \end{enumerate}
+\subsubsection{Our Innovation}
+\subsubsection{Details of sections coming up-next}
 \newpage
 \section{Related Work and State of the art}
 Here we will slowly build up to the techniques which are used in sate-of-the-
@@ -267,6 +273,14 @@ include comparisons to both of these methods in our Results sec-
 tion.
 \subsection{Unsupervised Anomaly Detection}
 In unsupervised anomaly detection, there are five differet type of algorithms used. First type is nearest-neighbor based. These methods 
+\subsection{Time series Introduction}
+\subsubsection{Time series trend, seasonality and stationary vs non-stationary or concept drift}
+\subsection{Time series based deep learning methods}
+\subsubsection{fully connected methods}
+\subsubsection{CNN based methods}
+\subsubsection{LSTM based methods}
+\subsection{Anomaly detection in time series}
+\subsection{Unsupervised time series Anomaly detection}
 \begin{enumerate}
 	\item Time series intro. Prediction and classification.
 	\item Unsupervised methods on time series 
@@ -279,7 +293,6 @@ In unsupervised anomaly detection, there are five differet type of algorithms us
 	\item paper 3
 	\item general review, problems, bottlenecks and trend
 \end{enumerate}
-\newpage
 \section{Proposed method}
 \subsection{General anomaly score based architecture and detailed explanation}
 \begin{figure}[H]
@@ -371,7 +384,7 @@ Now we use different architecture to train the function $h$. Other then that, th
 	\item LSTM based architecture
 \end{enumerate}
 Here size of architecture is usually kept smaller and compact. The reason is to have the ability to train and predict online and having smaller faster architecture is important.
-\newpage
+
 \subsection{Fully connected multistep ahead prediction architecture}
 In fully connected multistep ahead prediction architecture, we use three fully-connected layers. Input is a one dimensional vector of window size $w$ which is passed to a fully connected layer of $50$ cells. Next two fully connected layers with $25$ and $10$ number of neurons are set up. Lastly there is another fully connected layer with the number of neurons equal to $l$. Here $l$ is multistep ahead prediction length or output sequence size. We test the architecture for different lenghts of $w$ and $l$.
 \begin{figure}[H]
@@ -380,7 +393,7 @@ In fully connected multistep ahead prediction architecture, we use three fully-c
     \caption{Fully connected Multistep Ahead Prediction with input length W and output length L}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
-\newpage
+
 \subsection{Convolutional multistep ahead prediction architecture}
 In convolutional mutlistep ahead prediction architecutre, input is fed to a convolution layer with $8$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Then we have two layers of $10$ different kernels of $1 \times 3$ with stride $2$. The last convolution layer consists of $12$ kernels of dimension $1 \times 2$ with no stride. Activation function for all the neurons of convolution layers is relu. Next a fully connected layer with $10$ neurons is set up whose activation function is relu. Lastly the output layer is a fully connected layers consisting of $L$ neurons where $L$ describes the size of output sequence.
 \begin{figure}[H]
@@ -600,7 +613,7 @@ Here we scale the score based on the raw scores of a “perfect”
 detector (one that outputs all true positives and no false
 positives) and a “null” detector (one that outputs no anomaly
 detections). It follows from equation (\ref{scoreNormalization}) that the maximum (normalized) score a detector can achieve on NAB is 100, and an algorithm making no detections will score 0.
-\newpage 
+
 \section{Empirical Formulation and Experiments}
 \subsection{Dataset}
 To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) was used. Numenta is a benchmark specifically designed for online time series anomaly detection. It is first of its kind as NAB tries to cover all type of anomalies. Also they have come up with a custom scoring function to map the characteristics of an ideal online anomaly detector.\\
@@ -668,7 +681,7 @@ In NAB, concept drift is given a special importance that is why many datasets co
   \caption{Examples of Concept drift in AWS data sets}
   \label{AwsConceptDrift}
 \end{figure}
-\newpage
+
 Similarly almost all kind of anomalies exist in the dataset. For example for point anomaly we can see that in following.
 
 \begin{figure}[H]
@@ -760,7 +773,7 @@ length, we assume they identify the same anomalous data.
 \end{enumerate}
 Thus ground labels of anomalies are obtained. 
 
-\newpage
+
 \section{Results}
 
 \subsection{Comparing with others}
@@ -816,15 +829,15 @@ expose & 26.9209 & 3.19093 & 16.4367\\
 \end{tabular}
 \end{table}
 
-\newpage
+
 \section{Conclusion and Discussion}
-\newpage
+
 \section{Experiment Infrastructure}
-\newpage
+
 \subsection{Experiment Management using MLflow}
-\newpage
+
 \subsection{Parallel execution using Docker}
-\newpage
+
 \section{Best practices}
 Following steps were taken to maximize the efficiency and speed of research:
 \begin{enumerate}
@@ -843,7 +856,7 @@ Following steps were taken to maximize the efficiency and speed of research:
  	\end{itemize}
 	
 \end{enumerate}
-\newpage
+
 \subsection{Moving from jupyterlab to pycharm}
 While working with jupyterlab notebook following routine was followed:
 1- Load data with sample function
@@ -857,7 +870,7 @@ it was becoming harder to track the bugs and improve on efficiency.
 That's why pycharm was selected to create executeable files and test
 algorithms at the same time.
 \section{Reference Usage}
-\newpage
+
 \section{References}
 \begingroup
 \nocite{*}
