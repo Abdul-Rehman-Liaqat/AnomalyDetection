@@ -218,7 +218,7 @@ def predictionLstmStepAhead(input_shape,nStep,loss='mse',optimizer='adam'):
 
 def predictionLstmStepAheadWithErrorFeed(input_shape,nStep,loss='mse',optimizer='adam', errorInput = 5):
     model = Sequential()
-    model.add(LSTM(50, input_shape[0]+errorInput,input_shape[1],activation = 'relu'))
+    model.add(LSTM(50, input_shape = (input_shape[0]+errorInput,input_shape[1]),activation = 'relu'))
     model.add(Dense(nStep))
 #    model.add(Dense(1))
     print(model.summary())
