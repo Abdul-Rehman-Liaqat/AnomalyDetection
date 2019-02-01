@@ -1,17 +1,20 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Machine Temperature System Failure\relax }}{9}{figure.caption.4}
-\contentsline {figure}{\numberline {2}{\ignorespaces Cost Per 1000 impressions - An example of point anomaly\relax }}{11}{figure.caption.5}
-\contentsline {figure}{\numberline {3}{\ignorespaces Cost Per Click with time - An example of collective anomaly\relax }}{12}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces AWS CPU Utilization Concept Drift\relax }}{13}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces General Anomaly Detection Framework\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces General Anomaly Detection Framework\relax }}{18}{figure.caption.9}
-\contentsline {figure}{\numberline {7}{\ignorespaces Fully connected Multistep Ahead Prediction with input length W and output length L\relax }}{21}{figure.caption.10}
-\contentsline {figure}{\numberline {8}{\ignorespaces Convolutional Network based Prediction Network\relax }}{22}{figure.caption.11}
-\contentsline {figure}{\numberline {9}{\ignorespaces Convolutional Network based Prediction Network\relax }}{23}{figure.caption.12}
-\contentsline {figure}{\numberline {10}{\ignorespaces Fully Connected Autoencoder\relax }}{25}{figure.caption.13}
-\contentsline {figure}{\numberline {11}{\ignorespaces Convolutional Autoencoder\relax }}{26}{figure.caption.14}
-\contentsline {figure}{\numberline {12}{\ignorespaces LSTM Autoencoder\relax }}{27}{figure.caption.15}
-\contentsline {figure}{\numberline {13}{\ignorespaces Scoring example for a sample anomaly window, where the values represent the scaled sigmoid function. \relax }}{32}{figure.caption.16}
-\contentsline {figure}{\numberline {14}{\ignorespaces Examples of artifical anomaly data set\relax }}{35}{figure.caption.17}
-\contentsline {figure}{\numberline {15}{\ignorespaces Examples of Concept drift in AWS data sets\relax }}{36}{figure.caption.18}
-\contentsline {figure}{\numberline {16}{\ignorespaces Examples of point anomalies from twitter volume dataset\relax }}{37}{figure.caption.19}
-\contentsline {figure}{\numberline {17}{\ignorespaces An example of convergence of LSTM multistep prediction algorithm with multiplestep size 1 and window size 50, being trained online.\relax }}{41}{figure.caption.20}
+\contentsline {figure}{\numberline {1}{\ignorespaces Machine Temperature System Failure\relax }}{8}{figure.caption.4}
+\contentsline {figure}{\numberline {2}{\ignorespaces Cost Per 1000 impressions - An example of point anomaly\relax }}{10}{figure.caption.5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Cost Per Click with time - An example of collective anomaly\relax }}{11}{figure.caption.6}
+\contentsline {figure}{\numberline {4}{\ignorespaces AWS CPU Utilization Concept Drift\relax }}{12}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces General Anomaly Detection Framework\relax }}{14}{figure.caption.8}
+\contentsline {figure}{\numberline {6}{\ignorespaces General Anomaly Detection Framework\relax }}{17}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Fully connected Multistep Ahead Prediction with input length W and output length L\relax }}{19}{figure.caption.10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Convolutional Network based Prediction Network\relax }}{20}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Convolutional Network based Prediction Network\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {10}{\ignorespaces Fully Connected Autoencoder\relax }}{23}{figure.caption.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Convolutional Autoencoder\relax }}{24}{figure.caption.14}
+\contentsline {figure}{\numberline {12}{\ignorespaces LSTM Autoencoder\relax }}{25}{figure.caption.15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Scoring example for a sample anomaly window, where the values represent the scaled sigmoid function. \relax }}{30}{figure.caption.16}
+\contentsline {figure}{\numberline {14}{\ignorespaces Examples of artifical anomaly data set\relax }}{34}{figure.caption.17}
+\contentsline {figure}{\numberline {15}{\ignorespaces Examples of Concept drift in AWS data sets\relax }}{35}{figure.caption.18}
+\contentsline {figure}{\numberline {16}{\ignorespaces Examples of point anomalies from twitter volume dataset\relax }}{36}{figure.caption.19}
+\contentsline {figure}{\numberline {17}{\ignorespaces An example of convergence of LSTM multistep prediction algorithm with multiplestep size 1 and window size 50, being trained online.\relax }}{40}{figure.caption.20}
+\contentsline {figure}{\numberline {18}{\ignorespaces An example threshold being greater than any normalized anomaly score, Here threshold was set to 0.99687.\relax }}{44}{figure.caption.22}
+\contentsline {figure}{\numberline {19}{\ignorespaces An example of convergence of Fully connected multistep prediction algorithm with multiplestep size 1 and window size 50, being trained online.\relax }}{48}{figure.caption.23}
+\contentsline {figure}{\numberline {20}{\ignorespaces An example of convergence of Fully connected multistep prediction algorithm with multiplestep size 4 and window size 50, being trained online.\relax }}{49}{figure.caption.24}

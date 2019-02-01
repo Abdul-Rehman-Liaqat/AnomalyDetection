@@ -38,13 +38,6 @@ A.~Lavin and S.~Ahmad, ``Evaluating real-time anomaly detection algorithms --
   Conference on Machine Learning and Applications (ICMLA)}, Dec 2015, pp.
   38--44.
 
-\bibitem{stackedLstmFirst}
-\BIBentryALTinterwordspacing
-\emph{23rd European Symposium on Artificial Neural Networks, {ESANN} 2015,
-  Bruges, Belgium, April 22-24, 2015}, 2015. [Online]. Available:
-  \url{https://www.elen.ucl.ac.be/esann/proceedings/papers.php?ann=2015}
-\BIBentrySTDinterwordspacing
-
 \bibitem{stackedLstmSecond}
 \BIBentryALTinterwordspacing
 S.~Ranu, N.~Ganguly, R.~Ramakrishnan, S.~Sarawagi, and S.~Roy, Eds.,
@@ -99,6 +92,13 @@ P.~M. Ferreira, Ed., \emph{3rd {IFAC} International Conference on Intelligent
   September 2-4, 2013}.\hskip 1em plus 0.5em minus 0.4em\relax International
   Federation of Automatic Control, 2013. [Online]. Available:
   \url{http://www.ifac-papersonline.net/Intelligent\_Control\_and\_Automation\_Science/3rd\_IFAC\_International\_Conference\_on\_Intelligent\_Control\_and\_Automation\_Science\_\_2013\_/index.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{stackedLstmFirst}
+\BIBentryALTinterwordspacing
+\emph{23rd European Symposium on Artificial Neural Networks, {ESANN} 2015,
+  Bruges, Belgium, April 22-24, 2015}, 2015. [Online]. Available:
+  \url{https://www.elen.ucl.ac.be/esann/proceedings/papers.php?ann=2015}
 \BIBentrySTDinterwordspacing
 
 \bibitem{DBLP:conf/sdm/2017}

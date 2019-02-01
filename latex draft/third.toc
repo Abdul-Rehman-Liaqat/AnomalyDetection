@@ -1,50 +1,33 @@
-\contentsline {section}{\numberline {1}Introduction}{7}{section.1}
-\contentsline {subsection}{\numberline {1.1}Usage of streaming data}{7}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Usage of anomaly detection}{8}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Usage of anomaly detection in streaming data}{8}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}motivation}{10}{subsection.1.4}
-\contentsline {subsection}{\numberline {1.5}Constraints}{13}{subsection.1.5}
-\contentsline {subsection}{\numberline {1.6}General framework of anomaly detectors and summary of each step}{15}{subsection.1.6}
-\contentsline {subsubsection}{\numberline {1.6.1}Our Contribution}{17}{subsubsection.1.6.1}
-\contentsline {subsubsection}{\numberline {1.6.2}Details of sections coming up-next}{17}{subsubsection.1.6.2}
-\contentsline {section}{\numberline {2}Related Work and State-of-the-art}{18}{section.2}
-\contentsline {section}{\numberline {3}Proposed method}{18}{section.3}
-\contentsline {subsection}{\numberline {3.1}General anomaly score based architecture and detailed explanation}{18}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}preprocessing}{18}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}algorithm}{19}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Multistep prediction architecture}{19}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Fully connected multistep ahead prediction architecture}{21}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Convolutional multistep ahead prediction architecture}{22}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}LSTM multistep ahead prediction architecture}{23}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Autoencoder based architecture}{24}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Fully Connected Autoencoder}{25}{subsection.3.7}
-\contentsline {subsection}{\numberline {3.8}Convolutional Autoencoder }{26}{subsection.3.8}
-\contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{27}{subsection.3.9}
-\contentsline {subsection}{\numberline {3.10}Anomaly Score}{28}{subsection.3.10}
-\contentsline {subsection}{\numberline {3.11}Post-processing}{28}{subsection.3.11}
-\contentsline {subsection}{\numberline {3.12}Thresholding}{30}{subsection.3.12}
-\contentsline {subsection}{\numberline {3.13}Scoring}{30}{subsection.3.13}
-\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{34}{section.4}
-\contentsline {subsection}{\numberline {4.1}Dataset}{34}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Experimental setup}{39}{subsection.4.2}
-\contentsline {section}{\numberline {5}Results}{41}{section.5}
-\contentsline {subsection}{\numberline {5.1}post-processing type}{42}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}anomaly likelihood}{42}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}min-max normalization}{42}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}results tables}{42}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Difference of results in different algorithms}{42}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Change in window size in the same algorithm}{42}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}Change in multiple-step in the same algorithm}{42}{subsubsection.5.2.3}
-\contentsline {section}{\numberline {6}Conclusion and Discussion}{43}{section.6}
-\contentsline {subsection}{\numberline {6.1}Conclusion}{43}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Problems faced during experiments}{43}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Insights}{43}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Future work}{43}{subsection.6.4}
-\contentsline {section}{\numberline {7}Appendix A: Meta of NAB data sets}{44}{section.7}
-\contentsline {section}{\numberline {8}Experiment Infrastructure}{45}{section.8}
-\contentsline {subsection}{\numberline {8.1}Experiment Management using MLflow}{45}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Parallel execution using Docker}{45}{subsection.8.2}
-\contentsline {section}{\numberline {9}Best practices}{45}{section.9}
-\contentsline {subsection}{\numberline {9.1}Moving from jupyterlab to pycharm}{46}{subsection.9.1}
-\contentsline {section}{\numberline {10}Reference Usage}{46}{section.10}
-\contentsline {section}{\numberline {11}References}{46}{section.11}
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}
+\contentsline {subsection}{\numberline {1.1}Usage of streaming data}{6}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Usage of anomaly detection}{7}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Usage of anomaly detection in streaming data}{7}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}motivation}{9}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Constraints}{12}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}General framework of anomaly detectors and summary of each step}{14}{subsection.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}Our Contribution}{16}{subsubsection.1.6.1}
+\contentsline {section}{\numberline {2}Proposed method}{17}{section.2}
+\contentsline {subsection}{\numberline {2.1}General anomaly score based architecture and detailed explanation}{17}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}algorithms}{18}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Multistep prediction architecture}{18}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Fully connected multistep ahead prediction architecture}{19}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Convolutional multistep ahead prediction architecture}{20}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}LSTM multistep ahead prediction architecture}{21}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Autoencoder based architecture}{22}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Fully Connected Autoencoder}{23}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Convolutional Autoencoder }{23}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}LSTM Autoencoder }{25}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Anomaly Score}{26}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Post-processing}{26}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Thresholding}{28}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Scoring}{28}{subsection.2.7}
+\contentsline {section}{\numberline {3}Empirical Formulation and Experiments}{33}{section.3}
+\contentsline {subsection}{\numberline {3.1}Dataset}{33}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Experimental setup}{38}{subsection.3.2}
+\contentsline {section}{\numberline {4}Results}{40}{section.4}
+\contentsline {subsection}{\numberline {4.1}Evaluation}{42}{subsection.4.1}
+\contentsline {section}{\numberline {5}Conclusion}{43}{section.5}
+\contentsline {subsection}{\numberline {5.1}Insights and future work}{44}{subsection.5.1}
+\contentsline {section}{\numberline {6}Appendix A: Meta of NAB data sets}{46}{section.6}
+\contentsline {section}{\numberline {7}Appendix B: Example of convergences}{48}{section.7}
+\contentsline {section}{\numberline {8}References}{50}{section.8}

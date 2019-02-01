@@ -50,7 +50,13 @@ Unsupervised Real-Time Time-Series Anomaly Detection\\
 \newpage
 
 \begin{abstract}
-Anomaly detection is a crucial task for machine learning due to wide-spread usage and type. In particular, it is worth noting that most data arising in industrial setups are of a streaming nature, thus restricting the range of standard anomaly detection tools. This thesis will identify the potential approaches to learn the identification of abnormal behavior from large-scale streaming data. An empirical comparison of state-of-the-art methods will to be extended by a novel technical contribution. In this thesis, the focus is particularly on streaming time-series Anomaly Detection which changes in nature with time and novel contribution will especially try to target this dynamic nature of time-series.
+Streaming data is cruicial for many real work applications, due to wide-spread usage and type. In particular, it is worth noting that most data arising in industrial setups are of a streaming nature, thus increasing the value of real-time methods. Detecting irregular pattern in data is an important action being used in almost every field. Ranging from the  output of a sensor setup in an IoT device, to heart beat intensity of cardiac disease patient, to video feed quality of live streaming application, to a CPU usage of a server; it is highly important to detect nonsensical patterns which can at least lead to useful insight or at max provide a precautionary alarm after which suitable measure can be taken. \\
+\break
+That is why anomaly detection in streaming data is also becoming necessary. Although streaming data provide special challenges which are not seen in other types of data and that's what makes anomlay detection in streaming data an interesting research topic. This thesis will identify the potential approaches to learn the identification of abnormal behavior from large-scale streaming data. Starting with, defining characteristics of an ideal unsupervised anomaly detection algorithm for streaming data with the help of state-of-the-art benchmarks and papers, then describing a generic anomaly detection framework being used by most of the anomaly detection systems. Possible area of innovations in this framework are discussed which leads to specific contributions suggested.\\
+\break
+Two different type of algorithms are suggested following the characteristics of an ideal anomaly detection algorithm. These two core algorithms, multiplestep prediction and autoencoder prediction, are then further implemented by three different type of deep learning architecture components. Separately, state-of-the-art benchmark datasets and scoring functions specifically designed while following the characteristics of an ideal algorithm are thoroughly explained. In the practical part, first few benchmark algorithms loaded and results are reproduced. Then benchmark dataset and scoring function is setup, so that proposed algorihtms can be tested against same dataset and scoring function. After implementing the proposed methods, results are obtained. In results, it is proved that the proposed methods, specifically LSTM multiplestep prediction and fully connected multiplestep prediction are sufficient enough to break four benchmarks results. As there are few other benchmarks algorihtms which have better performance, proposed methods are inspected and useful insights are shared. These insights can be used for future research work.\\
+\break
+In the upcoming section, first the importance of streaming data and anomaly detection will be share both individually and collectively. Then propsed methodologies will be shared alongside describing state of the art benchmarks. As it is seen that state of the art are better presented at their location of usefulness. The proposed methodology section will describe each algorithm in detail. Then empirical formultion and exeprimental setup will be shared. Here again algonside experimental setup, benchmark datasets and scoring functions will be elaborated in detail. Next section would share results of the experiments and explain them. Afterwards conclusion alongside useful insights and possible future work will be share. 
 \end{abstract}
 \newpage
 
@@ -183,18 +189,11 @@ Third contribution is the implementation and testing of autoencoder based algori
 \\
 \break
 Next contribution is the implementation of anomaly liklihood calculation of anomlay score as a post-processing step. This is the same implementation as described in \cite{ahmad2017unsupervised}. Similarly, a second type of post-processing step is inspired by simple min-max normalization. We tried rolling min-max normalization which proves to provide better results than anomaly liklihood method on the same dataset.
-\subsubsection{Details of sections coming up-next}
-In the next sections we will first define the state of the art methods and related work needed as foundation for the understanding of proposed methodology. Next in the proposed methodology, we will describe each contribution and architecture in details. Then experimental setup and data set used will be explained in the next section. Afterwards results of these experiments and their comparison to other benchmarks will be done. Lastly, we will conclude with discussion on the experiments done providing useful insights, failed tries and future research direction.
+Next in the proposed methodology, we will describe each contribution and architecture in details. Then experimental setup and data set used will be explained in the next section. Afterwards results of these experiments and their comparison to other benchmarks will be done. Lastly, we will conclude with discussion on the experiments done providing useful insights, failed tries and future research direction.
 \newpage
-\section{Related Work and State-of-the-art}
-For the understanding of unsupervised anomaly detection in streaming data, it is important to have a summarized review of time series and it's features, general anomaly detection methods and general anomaly detection methods applied on streaming data. We will start with a quick review of time series.\\
-\break
-Time series is usually defined as a series of data points indexed in time. A single variable where the value of variable is time series and the only other information available for each data point is the time of occurence, is called uni-variate time series while if there are multiple variables for each time index such as: $X = \{ x^{1},x^{2},x^{3},x^{4},..,x^{m}\}$ where each point $x^{t} \in R^m$ in the time series is an m-dimensional vector $\{x_{1}^{t},x_{2}^{t},x_{3}^{t},....,x_{m}^{t}\}$. This is called multi-variate time series as defined in \cite{stackedLstmFirst}. 
-
 \section{Proposed method}
 Here we will again use figure \ref{generalAnomalyDetectionFrameWork2}, as generic framework for anomaly detection system and start with describing each individual component design for the proposed methodology. 
 \subsection{General anomaly score based architecture and detailed explanation}
-\subsubsection{preprocessing}
 
 \begin{figure}[H]
 \centering
@@ -211,7 +210,7 @@ We use min-max normalization to make sure that all input values are limited betw
     z = \frac{x - min(x)}{max(x) - min(x)}
     \label{minMaxNormalization}
 \end{equation}
-\subsubsection{algorithm}
+\subsubsection{algorithms}
 Now that we have availibility to the preprocessed input, it is time to describe the design of proposed algorithms. All of the proposed algorithms are designed to consider the characteristics of an ideal anomaly detection algorithm. Since we cannot store the whole data and have access to future data, as it is one of the characteristics, that is why we are keeping a small batch of input data which can be easily stored in memory of the system. Other two characteristics, which are related to online training and prediction, enforce the algorithm to have less number of computations.\\
 \break
 \subsection{Multistep prediction architecture}
@@ -233,7 +232,7 @@ At the end, the parameters of the function $h$ will be trained to minimze the lo
 	\item LSTM based architecture or LstmMultiStep
 \end{enumerate}
 Here size of architecture is usually kept smaller and compact. The reason is the same to have the ability to train and predict online and having smaller faster architecture is important. These algorithms are also modified later on to incorporate auto-regressive component. Moving on we will describe each of these architectures in detail.
-\subsection{Fully connected multistep ahead prediction architecture}
+\subsubsection{Fully connected multistep ahead prediction architecture}
 \begin{figure}[H]
 \centering	
         \includegraphics[width=0.5\textwidth]{images/architecture/NnMultistepAheadPrediction.png}
@@ -242,7 +241,7 @@ Here size of architecture is usually kept smaller and compact. The reason is the
 \end{figure}
 In fully connected multistep ahead prediction architecture as shown in figure \ref{NnMultiStep}, we use three fully-connected layers. Input is a one dimensional vector of window size $w$ and can be represented as $X_{t-w-l:t-l}$. Input is passed to a fully connected layer of $50$ cells. Next two fully connected layers with $25$ and $10$ number of neurons are set up. Lastly there is another fully connected layer with the number of neurons equal to $l$. Here $l$ is multistep ahead prediction length or output sequence size. This architecture is rather rigid against different input size or different window size $w$. We test the architecture for different lenghts of $w$ and $l$.
 
-\subsection{Convolutional multistep ahead prediction architecture}
+\subsubsection{Convolutional multistep ahead prediction architecture}
 \begin{figure}[H]
 \centering
         \includegraphics[width=0.8\textwidth]{images/architecture/CnnMultistepPrediction.png}
@@ -251,7 +250,7 @@ In fully connected multistep ahead prediction architecture as shown in figure \r
 \end{figure}
 
 In convolutional mutlistep ahead prediction architecutre, input is fed to a convolution layer with $8$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Then we have two layers of $10$ different kernels of $1 \times 3$ with stride $2$. The last convolution layer consists of $12$ kernels of dimension $1 \times 2$ with no stride. Activation function for all the neurons of convolution layers is relu. Next a fully connected layer with $10$ neurons is set up whose activation function is relu. Lastly the output layer is a fully connected layers consisting of $L$ neurons where $L$ describes the size of output sequence.
-\subsection{LSTM multistep ahead prediction architecture}
+\subsubsection{LSTM multistep ahead prediction architecture}
 \begin{figure}[H]
 \centering
         \includegraphics[width=0.6\textwidth]{images/architecture/LstmAutoencoder.png}
@@ -276,7 +275,7 @@ Thus the input and the output will have an identical size. The loss function of 
 L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
 \end{equation}
 \newpage
-\subsection{Fully Connected Autoencoder}
+\subsubsection{Fully Connected Autoencoder}
 In fully connected autoencoder architecture as shown in figure \ref{nnAutoencoder}, we use a symmetric fully connected autoencoder. After input, first layer of encoder consist of $30$ neurons with Relu activation. Second layer contains $15$ and third layers is the last layer consisting of $7$ neurons. This layers also represents endoded representation of input. Next layers are decoder and to follow the symmetry. Fourth layer has $15$ nerons, fifth has $30$. All previous layers has Relu as an activation function. Last layer contains the same number of neurons as the length of input vector which is $w$. Last layer has no activation function and the output should be identical to the input.
 
 \begin{figure}[H]
@@ -286,7 +285,7 @@ In fully connected autoencoder architecture as shown in figure \ref{nnAutoencode
     \label{nnAutoencoder}
 \end{figure}
 
-\subsection{Convolutional Autoencoder } 
+\subsubsection{Convolutional Autoencoder } 
 In convolutional autoencoder architecutre, input is fed to a convolution layer with $5$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Next layer is the encoder layer wihch represents the input in compressed format. Last layer of encoder is a fully connected layer with $neurons$. Unlike fully connected autoencoder, convolutional autoencoder is not symmetric although we tried to make it as symmetrics as possible. First layer of decoder, which is the fourth layer of the architecture, consist of convolutional transpose layer having $5$ filters of size $2 \times 1$. Next layer has $2$ filters of the same dimension. Lastly the output of fifth layer is flattened and treated as output of the decoder. It has the same size and dimension as input layer. Convolution transpose layer tries to reverse the effect of convolution. 
 \begin{figure}[H]
 \centering
@@ -295,7 +294,7 @@ In convolutional autoencoder architecutre, input is fed to a convolution layer w
     \label{cnnAutoencoder}
 \end{figure}
 \newpage
-\subsection{LSTM Autoencoder }
+\subsubsection{LSTM Autoencoder }
 LSTM based autoencoder has the intrinsic characteristics of understanding temporal relationships. The architecture of LSTM autoencoder is also simple. Uni-variate input vector of size $w$ is fed to stacked LSTM layers whose number is equal to $w/2$. Since we have set the value of $w$ to $50$ hence the amount of LSTM cells used in encoder is $25$. Final layer of encoder consist of a fully connected layer with $10$ neurons. Decoder layer takes input from the fully connected layer and consist of $w/2$ number of LSTM cells. Last layer of the architecture again consists of a fully connected layer with $W$ number of neurons as $W$ is the length of the input data.
 \begin{figure}[H]
 \center
@@ -474,7 +473,7 @@ Here we scale the score based on the raw scores of a “perfect”
 detector (one that outputs all true positives and no false
 positives) and a “null” detector (one that outputs no anomaly
 detections). It follows from equation (\ref{scoreNormalization}) that the maximum (normalized) score a detector can achieve on NAB is 100, and an algorithm making no detections will score 0.
-
+\newpage
 \section{Empirical Formulation and Experiments}
 \subsection{Dataset}
 To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) \ref{DBLP:journals/corr/LavinA15} was used. Numenta is a benchmark specifically designed for online time series anomaly detection. It is first of its kind as NAB tries to cover all type of anomalies. Also they have come up with a custom scoring function to map the characteristics of an ideal online anomaly detector as defined in the previous section.\\
@@ -688,13 +687,10 @@ Figure \ref{firstConvergenceProof}, displays few important variables of our anom
 \break
 Moving on to the third grpah from top in the figure \ref{firstConvergenceProof}, one can see post-processed anomaly score. Here min-max normalization was used. Another imporant aspect to be noted is that the normalization value remains constant for first $100$ time indices as shown pointed out by green arrow. The reason is, as described already, out of bound convergence loss in the beginning which can cause the whole incoming anomlay scores to be of less value. For example in a set of ${5,3,2,4}$ after min-max normalization vector ${1,0.49,0.33,0.67}$ will be generated. If this was an anomaly score post-processing, we will never be able to detect any anomaly in the upcoming data as the upcoming anomaly score will seldom be greater than or closer to $5$. Since we know that in the beginning the anomaly score generated by the model will always be huge as it just started learning, it is necessary to ignore first few values to not skew our post-processing. We set this threshold to $100$.\\
 \break
-Last graph at the botton in figure \ref{firstConvergenceProof} shows that, there was no labelled anomaly in the first $150$ index timestamps. 
-\subsection{results tables}
-\subsubsection{Difference of results in different algorithms}
-\subsubsection{Change in window size in the same algorithm}
-\subsubsection{Change in multiple-step in the same algorithm}
-
-First step was to 
+Last graph at the botton in figure \ref{firstConvergenceProof} shows that, there was no labelled anomaly in the first $150$ index timestamps. Similar proof of convergence of other algorithms can be seen in appendix \ref{appendixB}
+\newpage
+\subsection{Evaluation}
+Numenta anomaly detection benchmark \cite{DBLP:journals/corr/LavinA15}, also manages a benchmark results with the same scoring function on the same dataset. We first reproduced the results of results on benchmark algorithms locally and then combined them with our own methodology. Significant mentions are shown in the table \ref{mainResultsTable}
 \begin{table}[H]
 \centering
 \begin{tabular}{llll}
@@ -717,42 +713,71 @@ randomCutForest & 59.7488 & 38.3608 & 51.7171\\
 \hline
 twitterADVec & 53.5011 & 33.6101 & 47.062\\
 \hline
-predictionMultiStepLSTMMultiStep1Window50 & 59.3125 & 43.5927 & 43.2791\\
+\textbf{predictionMultiStepLSTMMultiStep1Window50} & 59.3125 & 43.5927 & 43.2791\\
+\hline
+\textbf{predictionMultiStepNNMultiStep1Window50} & 41.0929 & 40.0501 & 43.1228\\
 \hline
 windowedGaussian & 47.41 & 20.868 & 39.6495\\
  \hline
-predictionMultiStepLSTMMultiStep5Window20 & 41.6451 & 35.4072 & 39.1918\\
+\textbf{predictionMultiStepLSTMMultiStep5Window20} & 41.6451 & 35.4072 & 39.1918\\
  \hline
-predictionMultiStepLSTMMultiStep5Window20 & 40.8274 & 34.6116 & 38.3963\\
- \hline
-predictionMultiStepLSTMMultiStep1Window200 & 40.2705 & 31.1383 & 36.0246\\
+\textbf{predictionMultiStepLSTMMultiStep1Window200} & 40.2705 & 31.1383 & 36.0246\\
  \hline
 skyline & 44.481 & 27.0812 & 35.687\\
  \hline
-predictionMultiStepNNMultiStep4Window50 & 29.1037 & 25.6366 & 24.4352\\
+\textbf{predictionMultiStepNNMultiStep4Window50} & 29.1037 & 25.6366 & 24.4352\\
  \hline
-predictionMultiStepCNNMultiStep5Window30 & 21.228 & 19.6188 & 20.9474\\
+ \textbf{predictionMultiStepLSTMMultiStep1Window20}  & 42.9948 & 37.4394 & 34.7508\\
  \hline
-predictionMultiStepCNNMultiStep5Window20 & 21.5211 & 18.142 & 19.6384\\
+\textbf{autoencoderCnnOneEpoch} & 26.509 & 21.2153 & 24.2462\\
  \hline
-predictionMultiStepNNMultiStep5Window30 & 19.4988 & 18.0512 & 19.5921\\
+\textbf{predictionMultiStepCNNMultiStep5Window30} & 21.228 & 19.6188 & 20.9474\\
+ \hline
+\textbf{predictionMultiStepCNNMultiStep5Window20} & 21.5211 & 18.142 & 19.6384\\
+ \hline
+\textbf{predictionMultiStepNNMultiStep5Window30} & 19.4988 & 18.0512 & 19.5921\\
  \hline
 random & 27.201 & 5.76368 & 17.6554\\
  \hline
 expose & 26.9209 & 3.19093 & 16.4367\\
- 
-
-
-  
+   
 \end{tabular}
+\caption{Proposed Algorithms against NAB benchmark}
+\label{mainResultsTable}
 \end{table}
 
+As displayed in the table \ref{mainResultsTable}, we were able to cross some benchmarks although not many. In general one can understand the architecture type by the name. For example \textit{predictionMultiStepLSTMMultiStep1Window50} means the architecture is an LSTM based multiplestep prediction architecture with multiplestep size equal to $1$ and window size equal to $50$. Similarly \textit{autoencoderCnnOneEpoch}, means it is a Convolution based autoencoder.
 
-\section{Conclusion and Discussion}
-\subsection{Conclusion}
-\subsection{Problems faced during experiments}
-\subsection{Insights}
-\subsection{Future work}
+\newpage
+\section{Conclusion}
+In this work we have explored the different approaches for of unsupervised anomaly detection on streaming data. Streaming data is becoming more and more important with time and with that real-time analytics and insights are needed. Anomaly detection is a key component of such real-time system. Although due to the nature of streaming data it becomes difficult to use simple suprevised or un-supervised anomaly detection methods. Which is why we first introduced few key problems and characteristics of such systems. We took help from already implemented benchmark datasets and customized scoring function.\\
+\break
+We started with the implementation of the benchmark datasets and reproducing the results. After generating the results successfully, we devised our modifications in the \ref{generalAnomalyDetectionFrameWork2}. Starting with the preprocessing of the data we introduced two different kind of algorithms.\\
+\break
+First kind was prediction based which will solve a problem of sequence to sequence prediction where output sequence size is way smaller than input sequence. We used commonly used architecture components to design three different kind of algorithm all of which had the same output and input vector types.\\
+\break
+The second kind was autoencoder based implementation which is also a sequence to sequence prediction problem but here both the input and the output vectors have identical size. Just like prediction based methods, we designed. autoencoder based three different algorithms.\\
+\break
+As a final contribution, we introduced two type of post-processing steps inspired by the state-of-the-art literature. First type which is called anomaly liklihood estimation, was taken from \cite{ahmad2017unsupervised} and implemented. Second type, rolling min-max normalization was introduced by ourselves. This type of post-processing proved to be useful and crossed the first post-processing type at times.\\
+\break
+Then we setup the experimental setup to include the benchmark datasets and scoring functions. This way each algorithm designed by us was tested against benchmark scorer. We explained the data set in detail providing examples of each type of anomalies and variety of data available. Similarly, we also explained the scoring mechanism of the benchmark in detail. \\
+\break
+Finally we explained the experimental setup and how both type of algorithms were made to train and predict online which simulating the benchmark datasets as streaming data. This section led to results obtained through experiments. We proved that the algorithm designed are sufficent enough to break four benchmarks. Although many benchmark scores were better preforming than us. We inspected the reason of such performance and cam
+
+\subsection{Insights and future work}
+  Some interesting insights were obtained while detecting the reason of not improving. These insights are listed below. One can use these insights for further research
+
+\begin{enumerate}
+\item Upon inspecting it is found out that, one main reason of not being able to improve the performance is single threshold for all datasets because of which many times anomalies which should be detected are not detected because threshold is higher than any post-processed normalized anomaly score. This constraint of having single threshold for all data sets was applied by NAB itself. An example of such failure is in figure \ref{thresholdFailure} where threshold was set to 0.996868896484 and it is obvious from the figure that no normalized or simple convergence loss is able to cross the threshold. Obviously there are spikes at the occurance of anomalies but still threshold is too high for anomalies to be detected.
+\begin{figure}[H]
+\center
+        \includegraphics[width=\textwidth]{images/results/predictionMultiStepNNMultiStep4Window50mseconvergenceLoss1271913.png}
+    \caption{An example threshold being greater than any normalized anomaly score, Here threshold was set to 0.99687.}
+    \label{thresholdFailure}
+\end{figure}
+\item Another important insight was obtained through the variation of window size. Interestingly, there is always a mid range of window size which is suitable. For example \textit{predictionMultiStepLSTMMultiStep1Window20} ...,\textit{predictionMultiStepLSTMMultiStep1Window5} .. and \textit{predictionMultiStepLSTMMultiStep1Window200} all have the standard profile score of $43.28$, $34.75$ and $36.02$ respectively. This depicts the dependence of algorithms on anomaly size. Which in turn hints on seasonal and trend effect of the data. Hence it would be better to consider seasonality and trend of the data before continuing this research.
+\item Change multiplestep prediction size also provide us with different results. Interestingly, it is not so uniform among all algorithms but varies. For example for \textbf{predictionMultiStepNNMultiStep3Window50} and \textbf{predictionMultiStepNNMultiStep1Window50}. First one performs bettern than the later one depicting that having higher multiplestep prediction step leads to better performance and less noise. But for LSTM based multiplestep models, this trend is reverse. For future work, it would be advised to use a different distance measure than $L2$ norm. In $L2$ norm each point has equal weight on the convergence loss and anomaly score but we would like to assign more weight to latest data point. Some kind of exponentially increasing weighted average should do.
+\end{enumerate}
 \newpage
 \section{Appendix A: Meta of NAB data sets}
 \label{appendixA}
@@ -818,45 +843,22 @@ length & max\_val & min\_val & data\_type & file\_name & Concept\_drift \\
 4730 & 8285420 & 42 & realAWSCloudwatch & ec2\_network\_in\_5abac7.csv & no \\
 4032 & 99.668 & 1.8 & realAWSCloudwatch & ec2\_cpu\_utilization\_fe7f93.csv & no
 \end{longtable}
-\section{Experiment Infrastructure}
-
-\subsection{Experiment Management using MLflow}
-
-\subsection{Parallel execution using Docker}
-
-\section{Best practices}
-Following steps were taken to maximize the efficiency and speed of research:
-\begin{enumerate}
-	\item Use version control to track the code and share between different devices.
-	\item Separate code from data. This will keep the code base small and easy to debug.
-	\item Separate input data,working data and output data.
-	\begin{itemize}
-		\item \textbf{Input Data:} Input data-set that never change. For my case it is NAB and other external datasets.
-		\item \textbf{Working Data:} nothing for now.
-		\item \textbf{Output Data:} Results and threshold profiles in my case. 
-	\end{itemize}
-	\item Separate options from parameter. This is important:
- 	\begin{itemize}
- 		\item Options specify how your algorithm should run. For example data path, working directory and result directory path, epochs, learning rate and so on.
- 		\item parameters are the result of training data. it includes the score and hyper-parameters. 
- 	\end{itemize}
-	
-\end{enumerate}
-
-\subsection{Moving from jupyterlab to pycharm}
-While working with jupyterlab notebook following routine was followed:
-1- Load data with sample function
-2- Write an algorithm
-3- Test the results
-4- Write general executeable .py file.
-5- Get results on server
-
-Since we needed to track change on two different places,
-it was becoming harder to track the bugs and improve on efficiency.
-That's why pycharm was selected to create executeable files and test
-algorithms at the same time.
-\section{Reference Usage}
-
+\newpage
+\section{Appendix B: Example of convergences}
+\label{appendixB}
+\begin{figure}[H]
+\center
+        \includegraphics[width=\textwidth]{images/results/predictionMultiStepNNMultiStep1Window50mseconvergenceLoss1271944.png}
+    \caption{An example of convergence of Fully connected multistep prediction algorithm with multiplestep size 1 and window size 50, being trained online.}
+    \label{fullyConnectedConvergenceProof}
+\end{figure}
+\begin{figure}[H]
+\center
+        \includegraphics[width=\textwidth]{images/results/predictionMultiStepNNMultiStep4Window50mseconvergenceLoss1271913.png}
+    \caption{An example of convergence of Fully connected multistep prediction algorithm with multiplestep size 4 and window size 50, being trained online.}
+    \label{fullyConnectedConvergenceProof}
+\end{figure}
+\newpage
 \section{References}
 \begingroup
 \nocite{*}
