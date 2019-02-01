@@ -17,8 +17,6 @@ nb_features = 1
 input_shape = (window_size, nb_features)
 model = autoencoderLstm(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models,model)
-with open('autoencoderLstm.obj','wb') as f:
-    pickle.dump(result_files,f)
 write_result(algorithm_name='autoencoderLstm',data_files=result_files,results_path=cwd+'/results')
 algo_name = "autoencoderLstmOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,now.minute)
 with open("dump/"+algo_name+".obj",'wb') as f:
