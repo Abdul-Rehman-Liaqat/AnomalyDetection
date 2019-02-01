@@ -1,4 +1,9 @@
 {
+    "autoencoderCnnOneEpoch21610": {
+        "reward_low_FN_rate": 26.508977094540235,
+        "reward_low_FP_rate": 21.215306416120686,
+        "standard": 24.2462242625431
+    },
     "contextOSE": {
         "reward_low_FN_rate": 73.18167250416667,
         "reward_low_FP_rate": 66.97713919047413,
