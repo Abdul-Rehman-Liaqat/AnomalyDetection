@@ -143,7 +143,7 @@ def autoencoderCnn(input_shape,loss='mse',optimizer='adam'):
     model.add(Reshape(target_shape=(-1, 1, 10)))
     model.add(Conv2DTranspose( filters=5, kernel_size=(2,1), data_format="channels_last"))
     model.add(Conv2DTranspose(filters=2,kernel_size=(2,1),data_format="channels_last"))
-    model.add(Reshape(target_shape=(10, 1)))
+    model.add(Reshape(target_shape=input_shape))
 #    model.add(Flatten())    
     print(model.output_shape)
     model.summary()
