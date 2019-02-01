@@ -20,20 +20,19 @@
 \BOOKMARK [2][-]{subsection.3.7}{Fully Connected Autoencoder}{section.3}% 20
 \BOOKMARK [2][-]{subsection.3.8}{Convolutional Autoencoder }{section.3}% 21
 \BOOKMARK [2][-]{subsection.3.9}{LSTM Autoencoder }{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.10}{Recency concept}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.11}{Post-processing}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.12}{Thresholding}{section.3}% 25
-\BOOKMARK [2][-]{subsection.3.13}{Parameterinzing the anomaly score}{section.3}% 26
-\BOOKMARK [2][-]{subsection.3.14}{Scoring}{section.3}% 27
-\BOOKMARK [1][-]{section.4}{Empirical Formulation and Experiments}{}% 28
-\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 29
-\BOOKMARK [1][-]{section.5}{Results}{}% 30
-\BOOKMARK [2][-]{subsection.5.1}{Comparing with others}{section.5}% 31
-\BOOKMARK [1][-]{section.6}{Conclusion and Discussion}{}% 32
-\BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 33
-\BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 34
-\BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 35
-\BOOKMARK [1][-]{section.8}{Best practices}{}% 36
-\BOOKMARK [2][-]{subsection.8.1}{Moving from jupyterlab to pycharm}{section.8}% 37
-\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 38
-\BOOKMARK [1][-]{section.10}{References}{}% 39
+\BOOKMARK [2][-]{subsection.3.10}{Post-processing}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.11}{Thresholding}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.12}{Parameterinzing the anomaly score}{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.13}{Scoring}{section.3}% 26
+\BOOKMARK [1][-]{section.4}{Empirical Formulation and Experiments}{}% 27
+\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 28
+\BOOKMARK [1][-]{section.5}{Results}{}% 29
+\BOOKMARK [2][-]{subsection.5.1}{Comparing with others}{section.5}% 30
+\BOOKMARK [1][-]{section.6}{Conclusion and Discussion}{}% 31
+\BOOKMARK [1][-]{section.7}{Experiment Infrastructure}{}% 32
+\BOOKMARK [2][-]{subsection.7.1}{Experiment Management using MLflow}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.2}{Parallel execution using Docker}{section.7}% 34
+\BOOKMARK [1][-]{section.8}{Best practices}{}% 35
+\BOOKMARK [2][-]{subsection.8.1}{Moving from jupyterlab to pycharm}{section.8}% 36
+\BOOKMARK [1][-]{section.9}{Reference Usage}{}% 37
+\BOOKMARK [1][-]{section.10}{References}{}% 38

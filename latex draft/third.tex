@@ -259,6 +259,7 @@ In convolutional mutlistep ahead prediction architecutre, input is fed to a conv
 \end{figure}
 
 LSTM based multistep ahead prediction architecture is rather simple. As usual input is a uni-variate vector of size  $W$ which is fed to $50$ concatenated LSTM cells with Relu activation. Lastly a fully connected layers with $L$ neurons and no activation is kept as an output layer.
+\newpage
 \subsection{Autoencoder based architecture}
 A second group of architecture is based upon autoencoder layout. As described in state-of-the-art, an autoencoder compresses the input into a compressed vector format which is then decoded to the original input shape.An autoencoder is a network which is trained to copy its input to its output, with the typical purpose of dimension reduction - the process of reducing the number of random variables under consideration. It features an encoder function to create a hidden layer (or multiple layers) which contains a code to describe the input. There is then a decoder which creates a reconstruction of the input from the hidden layer. An autoencoder can then become useful by having a hidden layer smaller than the input layer, forcing it to create a compressed representation of the data in the hidden layer by learning correlations in the data. This compressed representation is actually summarized version of input. This way for the anomaly input values, summarized version will not output very similar output and hence ending up creating big reconstruction loss.
 The backpropagation will try to  $h_{W,b}(x) \approx x$ , so as to minimise the mean square difference:
@@ -273,34 +274,35 @@ Thus the input and the output will have an identical size. The loss function of 
 \begin{equation}
 L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
 \end{equation}
-
+\newpage
 \subsection{Fully Connected Autoencoder}
+In fully connected autoencoder architecture as shown in figure \ref{nnAutoencoder}, we use a symmetric fully connected autoencoder. After input, first layer of encoder consist of $30$ neurons with Relu activation. Second layer contains $15$ and third layers is the last layer consisting of $7$ neurons. This layers also represents endoded representation of input. Next layers are decoder and to follow the symmetry. Fourth layer has $15$ nerons, fifth has $30$. All previous layers has Relu as an activation function. Last layer contains the same number of neurons as the length of input vector which is $w$. Last layer has no activation function and the output should be identical to the input.
+
 \begin{figure}[H]
 \centering
-        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
-    \caption{LSTM based Prediction Network}
-    \label{generalAnomalyDetectionFrameWork}
+        \includegraphics[width=0.6\textwidth]{images/architecture/NnAutoencoder.png}
+    \caption{Fully Connected Autoencoder}
+    \label{nnAutoencoder}
 \end{figure}
 
 \subsection{Convolutional Autoencoder } 
+In convolutional autoencoder architecutre, input is fed to a convolution layer with $5$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Next layer is the encoder layer wihch represents the input in compressed format. Last layer of encoder is a fully connected layer with $neurons$. Unlike fully connected autoencoder, convolutional autoencoder is not symmetric although we tried to make it as symmetrics as possible. First layer of decoder, which is the fourth layer of the architecture, consist of convolutional transpose layer having $5$ filters of size $2 \times 1$. Next layer has $2$ filters of the same dimension. Lastly the output of fifth layer is flattened and treated as output of the decoder. It has the same size and dimension as input layer.
 \begin{figure}[H]
 \centering
-        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
-    \caption{LSTM based Prediction Network}
-    \label{generalAnomalyDetectionFrameWork}
+        \includegraphics[width=\textwidth]{images/architecture/CnnAutoencoder.png}
+    \caption{Convolutional Autoencoder}
+    \label{cnnAutoencoder}
 \end{figure}
 
 \subsection{LSTM Autoencoder }
 \begin{figure}[H]
-\center ing
-        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
-    \caption{LSTM based Prediction Network}
-    \label{generalAnomalyDetectionFrameWork}
+\center
+        \includegraphics[width=0.6\textwidth]{images/architecture/LstmAutoencoder.png}
+    \caption{LSTM Autoencoder}
+    \label{lstmAutoencoder}
 \end{figure}
 
 We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared \emph{•}distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
-
-\subsection{Recency concept}
 \subsection{Post-processing}
 Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
 \break
