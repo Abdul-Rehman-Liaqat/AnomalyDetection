@@ -54,6 +54,30 @@ S.~Ranu, N.~Ganguly, R.~Ramakrishnan, S.~Sarawagi, and S.~Roy, Eds.,
   Available: \url{https://doi.org/10.1145/3152494}
 \BIBentrySTDinterwordspacing
 
+\bibitem{googleAnomalyDetection}
+\BIBentryALTinterwordspacing
+D.~T. Shipmon, J.~M. Gurevitch, P.~M. Piselli, and S.~T. Edwards, ``Time series
+  anomaly detection; detection of anomalous drops with limited features and
+  sparse examples in noisy highly periodic data,'' \emph{CoRR}, vol.
+  abs/1708.03665, 2017. [Online]. Available:
+  \url{http://arxiv.org/abs/1708.03665}
+\BIBentrySTDinterwordspacing
+
+\bibitem{GaussianQ}
+\BIBentryALTinterwordspacing
+G.~K. Karagiannidis and A.~S. Lioumpas, ``An improved approximation for the
+  gaussian q-function,'' \emph{{IEEE} Communications Letters}, vol.~11, no.~8,
+  pp. 644--646, 2007. [Online]. Available:
+  \url{https://doi.org/10.1109/LCOMM.2007.070470}
+\BIBentrySTDinterwordspacing
+
+\bibitem{DBLP:journals/corr/LavinA15}
+\BIBentryALTinterwordspacing
+A.~Lavin and S.~Ahmad, ``Evaluating real-time anomaly detection algorithms -
+  the numenta anomaly benchmark,'' \emph{CoRR}, vol. abs/1510.03336, 2015.
+  [Online]. Available: \url{http://arxiv.org/abs/1510.03336}
+\BIBentrySTDinterwordspacing
+
 \bibitem{KaiserGSVPJU17}
 \BIBentryALTinterwordspacing
 L.~Kaiser, A.~N. Gomez, N.~Shazeer, A.~Vaswani, N.~Parmar, L.~Jones, and
@@ -92,15 +116,6 @@ M.~Balcan and K.~Q. Weinberger, Eds., \emph{Proceedings of the 33nd
   USA, June 19-24, 2016}, ser. {JMLR} Workshop and Conference Proceedings,
   vol.~48.\hskip 1em plus 0.5em minus 0.4em\relax JMLR.org, 2016. [Online].
   Available: \url{http://jmlr.org/proceedings/papers/v48/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{DBLP:journals/corr/abs-1708-03665}
-\BIBentryALTinterwordspacing
-D.~T. Shipmon, J.~M. Gurevitch, P.~M. Piselli, and S.~T. Edwards, ``Time series
-  anomaly detection; detection of anomalous drops with limited features and
-  sparse examples in noisy highly periodic data,'' \emph{CoRR}, vol.
-  abs/1708.03665, 2017. [Online]. Available:
-  \url{http://arxiv.org/abs/1708.03665}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

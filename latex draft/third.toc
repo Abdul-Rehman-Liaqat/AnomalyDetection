@@ -20,19 +20,32 @@
 \contentsline {subsection}{\numberline {3.7}Fully Connected Autoencoder}{25}{subsection.3.7}
 \contentsline {subsection}{\numberline {3.8}Convolutional Autoencoder }{26}{subsection.3.8}
 \contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{27}{subsection.3.9}
-\contentsline {subsection}{\numberline {3.10}Post-processing}{27}{subsection.3.10}
-\contentsline {subsection}{\numberline {3.11}Thresholding}{28}{subsection.3.11}
-\contentsline {subsection}{\numberline {3.12}Parameterinzing the anomaly score}{28}{subsection.3.12}
-\contentsline {subsection}{\numberline {3.13}Scoring}{28}{subsection.3.13}
-\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{33}{section.4}
-\contentsline {subsection}{\numberline {4.1}Dataset}{33}{subsection.4.1}
-\contentsline {section}{\numberline {5}Results}{38}{section.5}
-\contentsline {subsection}{\numberline {5.1}Comparing with others}{38}{subsection.5.1}
-\contentsline {section}{\numberline {6}Conclusion and Discussion}{38}{section.6}
-\contentsline {section}{\numberline {7}Experiment Infrastructure}{38}{section.7}
-\contentsline {subsection}{\numberline {7.1}Experiment Management using MLflow}{38}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Parallel execution using Docker}{38}{subsection.7.2}
-\contentsline {section}{\numberline {8}Best practices}{38}{section.8}
-\contentsline {subsection}{\numberline {8.1}Moving from jupyterlab to pycharm}{39}{subsection.8.1}
-\contentsline {section}{\numberline {9}Reference Usage}{39}{section.9}
-\contentsline {section}{\numberline {10}References}{39}{section.10}
+\contentsline {subsection}{\numberline {3.10}Anomaly Score}{28}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}Post-processing}{28}{subsection.3.11}
+\contentsline {subsection}{\numberline {3.12}Thresholding}{30}{subsection.3.12}
+\contentsline {subsection}{\numberline {3.13}Scoring}{30}{subsection.3.13}
+\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{34}{section.4}
+\contentsline {subsection}{\numberline {4.1}Dataset}{34}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Experimental setup}{39}{subsection.4.2}
+\contentsline {section}{\numberline {5}Results}{40}{section.5}
+\contentsline {subsection}{\numberline {5.1}convegence}{41}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}post-processing type}{41}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}anomaly likelihood}{41}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}min-max normalization}{41}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}results tables}{41}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Difference of results in different algorithms}{41}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Change in window size in the same algorithm}{41}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Change in multiple-step in the same algorithm}{41}{subsubsection.5.3.3}
+\contentsline {section}{\numberline {6}Conclusion and Discussion}{42}{section.6}
+\contentsline {subsection}{\numberline {6.1}Conclusion}{42}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Problems faced during experiments}{42}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Insights}{42}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Future work}{42}{subsection.6.4}
+\contentsline {section}{\numberline {7}Appendix A: Meta of NAB data sets}{43}{section.7}
+\contentsline {section}{\numberline {8}Experiment Infrastructure}{44}{section.8}
+\contentsline {subsection}{\numberline {8.1}Experiment Management using MLflow}{44}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Parallel execution using Docker}{44}{subsection.8.2}
+\contentsline {section}{\numberline {9}Best practices}{44}{section.9}
+\contentsline {subsection}{\numberline {9.1}Moving from jupyterlab to pycharm}{45}{subsection.9.1}
+\contentsline {section}{\numberline {10}Reference Usage}{45}{section.10}
+\contentsline {section}{\numberline {11}References}{45}{section.11}

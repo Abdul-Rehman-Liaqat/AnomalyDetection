@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  1 FEB 2019 07:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  1 FEB 2019 10:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -77,9 +77,27 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@subfigure=\count89
 \c@subtable=\count90
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count91
+\LTcapwidth=\dimen112
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count92
+\LT@rows=\count93
+\c@LT@tables=\count94
+\c@LT@chunks=\count95
+\LT@p@ftn=\toks15
+)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks15
+\@emptytoks=\toks16
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -87,7 +105,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/03/03 v2.15a AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -95,62 +113,62 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen112
+\@emptytoks=\toks17
+\ex@=\dimen113
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen113
+\pmbraise@=\dimen114
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count91
+\inf@bad=\count96
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count92
-\leftroot@=\count93
+\uproot@=\count97
+\leftroot@=\count98
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count94
-\DOTSCASE@=\count95
+\classnum@=\count99
+\DOTSCASE@=\count100
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen114
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen115
 LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
 \dotsspace@=\muskip10
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
-\tag@help=\toks17
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
-\andhelp@=\toks18
-\eqnshift@=\dimen115
-\alignsep@=\dimen116
-\tagshift@=\dimen117
-\tagwidth@=\dimen118
-\totwidth@=\dimen119
-\lineht@=\dimen120
-\@envbody=\toks19
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks20
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
+\tag@help=\toks18
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
+\andhelp@=\toks19
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks20
+\multlinegap=\skip48
+\multlinetaggap=\skip49
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2735.
 LaTeX Info: Redefining \] on input line 2736.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
-\FP@margin=\skip46
+\FP@margin=\skip50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -161,10 +179,10 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count103
-\uc@combtoks=\toks23
-\uc@combtoksb=\toks24
-\uc@temptokena=\toks25
+\uc@secondtry=\count108
+\uc@combtoks=\toks24
+\uc@combtoksb=\toks25
+\uc@temptokena=\toks26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -173,11 +191,11 @@ Package: cite 2015/02/27  v 5.5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count104
-\float@exts=\toks26
-\float@box=\box28
-\@float@everytoks=\toks27
-\@floatcapt=\box29
+\c@float@type=\count109
+\float@exts=\toks27
+\float@box=\box32
+\@float@everytoks=\toks28
+\@floatcapt=\box33
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -236,14 +254,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen121
-\Hy@linkcounter=\count105
-\Hy@pagecounter=\count106
+\@linkdim=\dimen122
+\Hy@linkcounter=\count110
+\Hy@pagecounter=\count111
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count107
+\Hy@SavedSpaceFactor=\count112
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -255,17 +273,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count108
+\c@Hy@tempcnt=\count113
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen122
-\Fld@menulength=\count109
-\Field@Width=\dimen123
-\Fld@charsize=\dimen124
+\XeTeXLinkMargin=\dimen123
+\Fld@menulength=\count114
+\Field@Width=\dimen124
+\Fld@charsize=\dimen125
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -275,24 +293,24 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count110
-\c@Item=\count111
-\c@Hfootnote=\count112
+\Hy@abspage=\count115
+\c@Item=\count116
+\c@Hfootnote=\count117
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count113
-\c@bookmark@seq@number=\count114
+\Fld@listcount=\count118
+\c@bookmark@seq@number=\count119
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip47
+\Hy@SectionHShift=\skip51
 )
 (/usr/share/texmf/tex/latex/CJK/CJKutf8.sty
 Package: CJKutf8 2015/04/18 4.8.4
@@ -307,21 +325,21 @@ Package: MULEenc 2015/04/18 4.8.4
 File: CJK.enc 2015/04/18 4.8.4
 )
 LaTeX Info: Redefining \selectfont on input line 755.
-\CJK@indent=\box30
+\CJK@indent=\box34
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen125
+\bigstrutjot=\dimen126
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen126
-\extrarowheight=\dimen127
-\NC@list=\toks28
-\extratabsurround=\skip48
-\backup@length=\skip49
+\col@sep=\dimen127
+\extrarowheight=\dimen128
+\NC@list=\toks29
+\extratabsurround=\skip52
+\backup@length=\skip53
 ) (./third.aux
 
 LaTeX Warning: Label `generalAnomalyDetectionFrameWork' multiply defined.
@@ -335,97 +353,97 @@ LaTeX Warning: Label `AwsConceptDrift' multiply defined.
 )
 \openout1 = `third.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen128
-\scratchbox=\box31
-\nofMPsegments=\count116
-\nofMParguments=\count117
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen129
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count120
+\scratchdimen=\dimen129
+\scratchbox=\box35
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen130
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -444,13 +462,18 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 21.
+\AtBeginShipoutBox=\box36
+Package hyperref Info: Link coloring OFF on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -458,27 +481,27 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count121
+\c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 
 (./third.out) (./third.out)
 \@outlinefile=\write3
 \openout3 = `third.out'.
 
- <logoUHi.jpg, id=156, 406.38257pt x 406.20097pt>
+ <logoUHi.jpg, id=209, 406.38257pt x 406.20097pt>
 File: logoUHi.jpg Graphic file (type jpg)
 
 <use logoUHi.jpg>
-Package pdftex.def Info: logoUHi.jpg used on input line 42.
+Package pdftex.def Info: logoUHi.jpg used on input line 43.
 (pdftex.def)             Requested size: 71.13188pt x 71.09862pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -499,382 +522,422 @@ oc [2])
 \openout6 = `third.lot'.
 
  [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 58--63
+Underfull \hbox (badness 10000) in paragraph at lines 59--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--63
+Underfull \hbox (badness 10000) in paragraph at lines 59--64
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
 
  []
 
 
-<images/dataAnomalies/known/machine_temperature_system_failure.png, id=281, 433
+<images/dataAnomalies/known/machine_temperature_system_failure.png, id=335, 433
 .62pt x 289.08pt>
 File: images/dataAnomalies/known/machine_temperature_system_failure.png Graphic
  file (type png)
 
 <use images/dataAnomalies/known/machine_temperature_system_failure.png>
 Package pdftex.def Info: images/dataAnomalies/known/machine_temperature_system_
-failure.png used on input line 70.
+failure.png used on input line 71.
 (pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
 
 [8] [9 <./images/dataAnomalies/known/machine_temperature_system_failure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 87--94
+Underfull \hbox (badness 10000) in paragraph at lines 88--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--94
+Underfull \hbox (badness 10000) in paragraph at lines 88--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--94
+Underfull \hbox (badness 10000) in paragraph at lines 88--95
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
 
-<images/dataAnomalies/ad/exchange-3_cpm_results.png, id=309, 433.62pt x 289.08p
+<images/dataAnomalies/ad/exchange-3_cpm_results.png, id=366, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/ad/exchange-3_cpm_results.png Graphic file (type png
 )
  <use images/dataAnomalies/ad/exchange-3_cpm_results.png>
 Package pdftex.def Info: images/dataAnomalies/ad/exchange-3_cpm_results.png use
-d on input line 104.
+d on input line 105.
 (pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-<images/dataAnomalies/ad/exchange-2_cpc_results.png, id=311, 433.62pt x 289.08p
+<images/dataAnomalies/ad/exchange-2_cpc_results.png, id=368, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/ad/exchange-2_cpc_results.png Graphic file (type png
 )
  <use images/dataAnomalies/ad/exchange-2_cpc_results.png>
 Package pdftex.def Info: images/dataAnomalies/ad/exchange-2_cpc_results.png use
-d on input line 115.
+d on input line 116.
 (pdftex.def)             Requested size: 375.80544pt x 250.5492pt.
  [11 <./images/dataAnomalies/ad/exchange-3_cpm_results.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-<images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png, id=322, 433.62pt x 28
+<images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png, id=379, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png Graphic file (typ
 e png)
  <use images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>
 Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
-g used on input line 132.
+g used on input line 133.
 (pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
  [12 <./images/dataAnomalies/ad/exchange-2_cpc_results.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
+Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--157
+Underfull \hbox (badness 10000) in paragraph at lines 147--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--157
+Underfull \hbox (badness 10000) in paragraph at lines 147--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--157
+Underfull \hbox (badness 10000) in paragraph at lines 147--158
 
  []
 
 [13 <./images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>] [14]
-<images/generalAnomalyDetectionFrameWork.png, id=345, 917.4275pt x 294.09875pt>
+<images/generalAnomalyDetectionFrameWork.png, id=402, 917.4275pt x 294.09875pt>
 File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
 <use images/generalAnomalyDetectionFrameWork.png>
 Package pdftex.def Info: images/generalAnomalyDetectionFrameWork.png used on in
-put line 163.
+put line 164.
 (pdftex.def)             Requested size: 469.75502pt x 150.5897pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--176
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--176
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--176
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--176
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
 
  []
 
 [15 <./images/generalAnomalyDetectionFrameWork.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 177--185
+Underfull \hbox (badness 10000) in paragraph at lines 178--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--185
+Underfull \hbox (badness 10000) in paragraph at lines 178--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--185
+Underfull \hbox (badness 10000) in paragraph at lines 178--186
 
  []
 
 [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 189--192
+Underfull \hbox (badness 10000) in paragraph at lines 190--193
 
  []
 
 File: images/generalAnomalyDetectionFrameWork.png Graphic file (type png)
 <use images/generalAnomalyDetectionFrameWork.png>
 Package pdftex.def Info: images/generalAnomalyDetectionFrameWork.png used on in
-put line 200.
+put line 201.
 (pdftex.def)             Requested size: 469.75502pt x 150.5897pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--209
+Underfull \hbox (badness 10000) in paragraph at lines 206--210
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
 
  []
 
 [19]
-<images/architecture/NnMultistepAheadPrediction.png, id=380, 442.65375pt x 442.
+<images/architecture/NnMultistepAheadPrediction.png, id=437, 442.65375pt x 442.
 65375pt>
 File: images/architecture/NnMultistepAheadPrediction.png Graphic file (type png
 )
  <use images/architecture/NnMultistepAheadPrediction.png>
 Package pdftex.def Info: images/architecture/NnMultistepAheadPrediction.png use
-d on input line 238.
+d on input line 239.
 (pdftex.def)             Requested size: 234.8775pt x 234.88228pt.
  [20]
-<images/architecture/CnnMultistepPrediction.png, id=392, 675.52374pt x 692.5875
+<images/architecture/CnnMultistepPrediction.png, id=449, 675.52374pt x 692.5875
 pt>
 File: images/architecture/CnnMultistepPrediction.png Graphic file (type png)
  <use images/architecture/CnnMultistepPrediction.png>
 Package pdftex.def Info: images/architecture/CnnMultistepPrediction.png used on
- input line 247.
+ input line 248.
 (pdftex.def)             Requested size: 375.80544pt x 385.31003pt.
  [21 <./images/architecture/NnMultistepAheadPrediction.png>]
-<images/architecture/LstmAutoencoder.png, id=398, 454.69875pt x 462.72874pt>
+<images/architecture/LstmAutoencoder.png, id=456, 454.69875pt x 462.72874pt>
 File: images/architecture/LstmAutoencoder.png Graphic file (type png)
 
 <use images/architecture/LstmAutoencoder.png>
 Package pdftex.def Info: images/architecture/LstmAutoencoder.png used on input 
-line 256.
+line 257.
 (pdftex.def)             Requested size: 281.85587pt x 286.83943pt.
  [22 <./images/architecture/CnnMultistepPrediction.png>] [23 <./images/architec
 ture/LstmAutoencoder.png>]
-[24] <images/architecture/NnAutoencoder.png, id=417, 468.75125pt x 626.34pt>
+[24] <images/architecture/NnAutoencoder.png, id=475, 468.75125pt x 626.34pt>
 File: images/architecture/NnAutoencoder.png Graphic file (type png)
 
 <use images/architecture/NnAutoencoder.png>
 Package pdftex.def Info: images/architecture/NnAutoencoder.png used on input li
-ne 283.
+ne 284.
 (pdftex.def)             Requested size: 281.85587pt x 376.6097pt.
 
-<images/architecture/CnnAutoencoder.png, id=418, 963.6pt x 722.7pt>
+<images/architecture/CnnAutoencoder.png, id=476, 963.6pt x 722.7pt>
 File: images/architecture/CnnAutoencoder.png Graphic file (type png)
 
 <use images/architecture/CnnAutoencoder.png>
 Package pdftex.def Info: images/architecture/CnnAutoencoder.png used on input l
-ine 292.
+ine 293.
 (pdftex.def)             Requested size: 469.75502pt x 352.31758pt.
- [25 <./images/architecture/NnAutoencoder.png>]
+ [25 <./images/architecture/NnAutoencoder.png>] [26 <./images/architecture/CnnA
+utoencoder.png>]
 File: images/architecture/LstmAutoencoder.png Graphic file (type png)
- <use images/architecture/LstmAutoencoder.png>
+
+<use images/architecture/LstmAutoencoder.png>
 Package pdftex.def Info: images/architecture/LstmAutoencoder.png used on input 
-line 300.
+line 302.
 (pdftex.def)             Requested size: 281.85587pt x 286.83943pt.
- [26 <./images/architecture/CnnAutoencoder.png>]
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 305.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 305.
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--316
-
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 344--384
+ [27]
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--384
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 344--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 344--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 344--384
+Underfull \hbox (badness 10000) in paragraph at lines 330--334
 
  []
 
 [28]
+Underfull \hbox (badness 10000) in paragraph at lines 356--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--361
+
+ []
+
+[29] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--395
+
+ []
+
+[30]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 396.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 385.
- [29]
-Underfull \hbox (badness 10000) in paragraph at lines 389--393
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 396.
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--404
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--393
+Underfull \hbox (badness 10000) in paragraph at lines 400--404
 
  []
 
-<images/nabScoringExample.png, id=449, 875.27pt x 695.59875pt>
+
+Overfull \hbox (0.10538pt too wide) in paragraph at lines 405--406
+[]\OT1/cmr/m/n/12 With ap-pli-ca-tion pro-files de-fined above, each al-go-rith
+m is tested and bench-marked against
+ []
+
+<images/nabScoringExample.png, id=529, 875.27pt x 695.59875pt>
 File: images/nabScoringExample.png Graphic file (type png)
 
 <use images/nabScoringExample.png>
-Package pdftex.def Info: images/nabScoringExample.png used on input line 410.
+Package pdftex.def Info: images/nabScoringExample.png used on input line 418.
 (pdftex.def)             Requested size: 469.75502pt x 373.32512pt.
- [30]
-Underfull \hbox (badness 10000) in paragraph at lines 422--499
+ [31]
+Underfull \hbox (badness 10000) in paragraph at lines 423--442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--499
+Underfull \hbox (badness 10000) in paragraph at lines 423--442
 
  []
 
-[31 <./images/nabScoringExample.png>] [32]
-<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=471, 433.62pt x 2
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--442
+
+ []
+
+[32 <./images/nabScoringExample.png>] [33]
+
+LaTeX Warning: Reference `DBLP:journals/corr/LavinA15' on page 34 undefined on 
+input line 480.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--484
+
+ []
+
+
+<images/dataAnomalies/artificial/art_daily_flatmiddle.png, id=556, 433.62pt x 2
 89.08pt>
 File: images/dataAnomalies/artificial/art_daily_flatmiddle.png Graphic file (ty
 pe png)
  <use images/dataAnomalies/artificial/art_daily_flatmiddle.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_flatmiddle.p
-ng used on input line 541.
+ng used on input line 488.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=472, 433.62pt x 28
+<images/dataAnomalies/artificial/art_daily_jumpsdown.png, id=557, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/artificial/art_daily_jumpsdown.png Graphic file (typ
 e png)
  <use images/dataAnomalies/artificial/art_daily_jumpsdown.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsdown.pn
-g used on input line 547.
+g used on input line 494.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 539--550
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 486--497
 [][]  [] 
  []
 
 
-<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=473, 433.62pt x 289.
+<images/dataAnomalies/artificial/art_daily_jumpsup.png, id=558, 433.62pt x 289.
 08pt>
 File: images/dataAnomalies/artificial/art_daily_jumpsup.png Graphic file (type 
 png)
  <use images/dataAnomalies/artificial/art_daily_jumpsup.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_jumpsup.png 
-used on input line 555.
+used on input line 502.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/artificial/art_daily_nojump.png, id=474, 433.62pt x 289.0
+<images/dataAnomalies/artificial/art_daily_nojump.png, id=559, 433.62pt x 289.0
 8pt>
 File: images/dataAnomalies/artificial/art_daily_nojump.png Graphic file (type p
 ng)
  <use images/dataAnomalies/artificial/art_daily_nojump.png>
 Package pdftex.def Info: images/dataAnomalies/artificial/art_daily_nojump.png u
-sed on input line 561.
+sed on input line 508.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 553--564
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 500--511
 [][]  [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 537--566
-
- []
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 567--572
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 514--517
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--572
-
- []
-
-[34 <./images/dataAnomalies/artificial/art_daily_flatmiddle.png> <./images/data
-Anomalies/artificial/art_daily_jumpsdown.png> <./images/dataAnomalies/artificia
-l/art_daily_jumpsup.png> <./images/dataAnomalies/artificial/art_daily_nojump.pn
-g>]
-<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=492, 433.62pt x 28
+<images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png, id=566, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png Graphic file (typ
 e png)
  <use images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png>
 Package pdftex.def Info: images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.pn
-g used on input line 576.
+g used on input line 521.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/aws/grok_asg_anomaly.png, id=493, 433.62pt x 289.08pt>
+<images/dataAnomalies/aws/grok_asg_anomaly.png, id=567, 433.62pt x 289.08pt>
 File: images/dataAnomalies/aws/grok_asg_anomaly.png Graphic file (type png)
 
 <use images/dataAnomalies/aws/grok_asg_anomaly.png>
 Package pdftex.def Info: images/dataAnomalies/aws/grok_asg_anomaly.png used on 
-input line 582.
+input line 527.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 574--585
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 519--530
 [][]  [] 
  []
 
@@ -882,111 +945,145 @@ File: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png Graphic file (typ
 e png)
 <use images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.png>
 Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_cc0c53.pn
-g used on input line 590.
+g used on input line 535.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=494, 433.62pt x 28
+<images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png, id=568, 433.62pt x 28
 9.08pt>
 File: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png Graphic file (typ
 e png)
  <use images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.png>
 Package pdftex.def Info: images/dataAnomalies/aws/rds_cpu_utilization_e47b3b.pn
-g used on input line 596.
+g used on input line 541.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 588--599
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 533--544
 [][]  [] 
  []
 
-
-<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=495, 433.62pt x 289.08p
+[35 <./images/dataAnomalies/artificial/art_daily_flatmiddle.png> <./images/data
+Anomalies/artificial/art_daily_jumpsdown.png> <./images/dataAnomalies/artificia
+l/art_daily_jumpsup.png> <./images/dataAnomalies/artificial/art_daily_nojump.pn
+g>]
+<images/dataAnomalies/twitter/Twitter_volume_FB.png, id=578, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/twitter/Twitter_volume_FB.png Graphic file (type png
 )
  <use images/dataAnomalies/twitter/Twitter_volume_FB.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_FB.png use
-d on input line 608.
+d on input line 553.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=496, 433.62pt x 289.08p
+<images/dataAnomalies/twitter/Twitter_volume_KO.png, id=579, 433.62pt x 289.08p
 t>
 File: images/dataAnomalies/twitter/Twitter_volume_KO.png Graphic file (type png
 )
  <use images/dataAnomalies/twitter/Twitter_volume_KO.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_KO.png use
-d on input line 613.
+d on input line 558.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 606--615
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 551--560
 [][]  [] 
  []
 
 
-<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=497, 433.62pt x 289.08
+<images/dataAnomalies/twitter/Twitter_volume_PFE.png, id=580, 433.62pt x 289.08
 pt>
 File: images/dataAnomalies/twitter/Twitter_volume_PFE.png Graphic file (type pn
 g)
  <use images/dataAnomalies/twitter/Twitter_volume_PFE.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_PFE.png us
-ed on input line 620.
+ed on input line 565.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=498, 433.62pt x 289.08
+<images/dataAnomalies/twitter/Twitter_volume_CRM.png, id=581, 433.62pt x 289.08
 pt>
 File: images/dataAnomalies/twitter/Twitter_volume_CRM.png Graphic file (type pn
 g)
  <use images/dataAnomalies/twitter/Twitter_volume_CRM.png>
 Package pdftex.def Info: images/dataAnomalies/twitter/Twitter_volume_CRM.png us
-ed on input line 625.
+ed on input line 570.
 (pdftex.def)             Requested size: 234.8775pt x 156.58607pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 618--627
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 563--572
 [][]  [] 
  []
 
-[35 <./images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png> <./images/dataA
+[36 <./images/dataAnomalies/aws/ec2_cpu_utilization_5f5533.png> <./images/dataA
 nomalies/aws/grok_asg_anomaly.png> <./images/dataAnomalies/aws/rds_cpu_utilizat
 ion_e47b3b.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 631--634
+Underfull \hbox (badness 10000) in paragraph at lines 576--579
 
  []
 
-[36 <./images/dataAnomalies/twitter/Twitter_volume_FB.png> <./images/dataAnomal
+[37 <./images/dataAnomalies/twitter/Twitter_volume_FB.png> <./images/dataAnomal
 ies/twitter/Twitter_volume_KO.png> <./images/dataAnomalies/twitter/Twitter_volu
-me_PFE.png> <./images/dataAnomalies/twitter/Twitter_volume_CRM.png>]
-Overfull \hbox (1.21152pt too wide) in paragraph at lines 700--748
+me_PFE.png> <./images/dataAnomalies/twitter/Twitter_volume_CRM.png>] [38]
+Overfull \hbox (35.12837pt too wide) detected at line 653
+[]\OML/cmm/m/it/12 global[]inimum \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 min\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 global[]inimum; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12
+ global[]aximum \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 max\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 global[]aximum; a[]\OT1/cmr/m/n/12 )
+ []
+
+[39]
+Overfull \hbox (1.21152pt too wide) in paragraph at lines 693--741
  [][] 
  []
 
-[37] [38] (./third.bbl [39]
-Underfull \hbox (badness 10000) in paragraph at lines 73--79
+[40] [41] [42]
+Overfull \hbox (176.49242pt too wide) in alignment at lines 752--754
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (176.49242pt too wide) in alignment at lines 754--775
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (176.49242pt too wide) in alignment at lines 775--795
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (176.49242pt too wide) in alignment at lines 795--813
+ [] [] [] [] [] [] 
+ []
+
+[43] [44] (./third.bbl [45]
+Underfull \hbox (badness 10000) in paragraph at lines 97--103
 \OT1/cmr/m/n/12 3rd[]IFAC[]International[]Conference[]on[]Intelligent[]Control[
 ]and[]Automation[]Science[][]
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 799.
- [40]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 799.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 861.
+ [46]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 861.
  (./third.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 799.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 799.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 861.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 861.
 Package rerunfilecheck Info: File `third.out' has not changed.
-(rerunfilecheck)             Checksum: E8DBA988BBB8382E19EBEB7D674C3D32;2781.
+(rerunfilecheck)             Checksum: 10F7F9A8030336E622DD9DCA685D4222;3756.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 799.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 861.
  ) 
 Here is how much of TeX's memory you used:
- 8988 strings out of 493029
- 133025 string characters out of 6136234
- 238208 words of memory out of 5000000
- 12210 multiletter control sequences out of 15000+600000
+ 9173 strings out of 493029
+ 135481 string characters out of 6136234
+ 246844 words of memory out of 5000000
+ 12344 multiletter control sequences out of 15000+600000
  13358 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,8n,40p,1813b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,40p,1813b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -999,10 +1096,10 @@ amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on third.pdf (40 pages, 1770340 bytes).
+Output written on third.pdf (46 pages, 1781192 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 537 compressed objects within 6 object streams
- 157 named destinations out of 1000 (max. 500000)
- 420 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 781 PDF objects out of 1000 (max. 8388607)
+ 669 compressed objects within 7 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 524 words of extra memory for PDF output out of 10000 (max. 10000000)
 

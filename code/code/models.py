@@ -156,8 +156,9 @@ def autoencoderCnn(input_shape,loss='mse',optimizer='adam'):
 def autoencoderLstm(input_shape,loss='mse',optimizer='adam'):
     model = Sequential()
     model.add(LSTM(25, input_shape=input_shape))
-    model.add(RepeatVector(input_shape[0]))
-    model.add(LSTM(1, return_sequences=True))
+    model.add(Dense(10, activation='relu'))
+    model.add(LSTM(25))
+    model.add(Dense(input_shape[0], activation='relu'))
     print(model.summary())
     model.compile(loss=loss, optimizer=optimizer)
     return model

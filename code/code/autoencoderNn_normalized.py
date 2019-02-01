@@ -4,7 +4,7 @@ import os
 from models import autoencoderNnAdaptive
 
 cwd = os.getcwd()
-window_size = 35
+window_size = 50
 nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,)
@@ -16,8 +16,7 @@ result_files = use_whole_data(data_files,
                               train_autoencoder_based_models_new,
                               model,
                               nb_epoch=nb_epoch,
-                              anomaly_score = "error_prediction",
-                              config_path=data_config)
+                              anomaly_score = "error_prediction")
 algo_type = "autoencoderNn"
 algo_name = algo_type + add_to_name
 print(algo_name)

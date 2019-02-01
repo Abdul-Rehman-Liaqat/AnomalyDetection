@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{longtable}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{fullpage}
@@ -286,78 +287,88 @@ In fully connected autoencoder architecture as shown in figure \ref{nnAutoencode
 \end{figure}
 
 \subsection{Convolutional Autoencoder } 
-In convolutional autoencoder architecutre, input is fed to a convolution layer with $5$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Next layer is the encoder layer wihch represents the input in compressed format. Last layer of encoder is a fully connected layer with $neurons$. Unlike fully connected autoencoder, convolutional autoencoder is not symmetric although we tried to make it as symmetrics as possible. First layer of decoder, which is the fourth layer of the architecture, consist of convolutional transpose layer having $5$ filters of size $2 \times 1$. Next layer has $2$ filters of the same dimension. Lastly the output of fifth layer is flattened and treated as output of the decoder. It has the same size and dimension as input layer.
+In convolutional autoencoder architecutre, input is fed to a convolution layer with $5$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Next layer is the encoder layer wihch represents the input in compressed format. Last layer of encoder is a fully connected layer with $neurons$. Unlike fully connected autoencoder, convolutional autoencoder is not symmetric although we tried to make it as symmetrics as possible. First layer of decoder, which is the fourth layer of the architecture, consist of convolutional transpose layer having $5$ filters of size $2 \times 1$. Next layer has $2$ filters of the same dimension. Lastly the output of fifth layer is flattened and treated as output of the decoder. It has the same size and dimension as input layer. Convolution transpose layer tries to reverse the effect of convolution. 
 \begin{figure}[H]
 \centering
         \includegraphics[width=\textwidth]{images/architecture/CnnAutoencoder.png}
     \caption{Convolutional Autoencoder}
     \label{cnnAutoencoder}
 \end{figure}
-
+\newpage
 \subsection{LSTM Autoencoder }
+LSTM based autoencoder has the intrinsic characteristics of understanding temporal relationships. The architecture of LSTM autoencoder is also simple. Uni-variate input vector of size $w$ is fed to stacked LSTM layers whose number is equal to $w/2$. Since we have set the value of $w$ to $50$ hence the amount of LSTM cells used in encoder is $25$. Final layer of encoder consist of a fully connected layer with $10$ neurons. Decoder layer takes input from the fully connected layer and consist of $w/2$ number of LSTM cells. Last layer of the architecture again consists of a fully connected layer with $W$ number of neurons as $W$ is the length of the input data.
 \begin{figure}[H]
 \center
         \includegraphics[width=0.6\textwidth]{images/architecture/LstmAutoencoder.png}
     \caption{LSTM Autoencoder}
     \label{lstmAutoencoder}
 \end{figure}
-
-We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared \emph{•}distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
-\subsection{Post-processing}
-Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
+\newpage
+\subsection{Anomaly Score}
+Next step in the \ref{generalAnomalyDetectionFrameWork2}, is the calculation of anomaly score. We take the simple mean squared distance as anomaly score for all architectures. This is also the same as loss of all proposed algorithms. Anomaly score at time $t$ can be formally defined as:
+\begin{equation}
+	e_{t} = ||x_{a} - y_{a}||_2, where \: a =  
+	    \begin{cases}
+      t-l+1,...t, & \text{if multistep prediction algorithm}\\
+      t-w,....t, & \text{if autoencoder algorithm }
+    \end{cases}
+    \label{errorCal}
+\end{equation}
+here $||.||_2$ means $L_2$ norm
+\begin{equation}
+a_{t} = \frac{1}{l} \sum_{i = a}^{t} e_{i}^{2}
+	\label{anomalyScore}
+\end{equation}
+The definition of $a$ in \ref{anomalyScore} is the same as in equation \ref{errorCal} . Such anomaly score has both merits and demerits. Since one algorithm's loss has the same definition as \ref{anomalyScore}, anomaly score ends up performing one additional role. That role is the rate of netwrok upgradation. We are using a form of stochastic gradient descent for which the network weights are updated as following:
+\begin{equation}
+W_t = W_{t-1} - \eta \nabla a_t (W_{t-1})
+\end{equation}
+Since the anomlay score is computed as a mean, which is why a point anomaly will not have a huge impact on the network learning behavior. On the other side, a higher anomaly score consistently is a way to recognize concept drift thus the network will update itself swiftly as the step size is huge consistently. This was a nice logical intuition of using convergence loss as anomaly score and was originally reported by \cite{stackedLstmSecond}.\\
 \break
-Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
-First technique is the usage of anomaly likelihood as described equation.
-The anomaly likelihood is a probabilistic metric defining how anomalous the current state is based on the prediction history.To compute the anomaly likeli-
-hood we maintain a window of the last W error values. We model
-the distribution as a rolling normal distribution where the sample
-mean $\mu_t$ and variance $\sigma^2_t$, are continuously updated from previ-
-ous error values as follows:
-s\begin{equation}
+
+\subsection{Post-processing}
+Post-processing is a very important part of anomlay detection. Previously calculated anomlay score is passed through another layer of processing which performs few important tasks. First and the most important task is to restrict the anomaly score value of all data to a specific range. For us this range is $0$ to $1$. This helps in generalization of the algorithm as it will only output values from $0$ to $1$, no matter what kind of input is fed. Also a common universal thresholding mechanism can be setup for all kind of data as we know that after post processing, anomaly score will always be between $0$ to $1$. Second task is the removal of noise and initial useless information. In the beginning, an algorithm specially when training online, takes some data to attain reasonable convergence. Obviously, in the beginning the both anomaly score and convergence loss will be high and volatile. Thus post-processing helps in filtering out these initial anomay score values. Thirdly, post-processing an help reduce the noise in anomaly score which will ultimately, help in reducing the false positive rate. Additionally, it is a stage where another model can be trained to rank anomalies.\\
+\break
+Mainly motivated by \cite{googleAnomalyDetection} and \cite{ahmad2017unsupervised}, we tried two different kind of post-processing techniques. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
+In anomaly likelihood estimation, instead of considering every single anomaly score individually, mean of a small set of anomaly scores is considered. This helps in reducing the noise as one single anomaly score can vary alot but mean of a small set has less variance. More specifically this mean and standard deviation is defined by:
+\begin{equation}
+\tilde{\mu_t} = \frac{\sum_{i=0}^{i=w-1}S_{t-i}}{w}
+\label{localMean}
+\end{equation}
+here $w$ has the value of $10$. Equation \ref{localMean} is the mean of ten latest anomaly score values.
+Next step in anomaly likelihood estimation is to normalize the local mean with global mean and standard deviation. Gloabl mean and standard deviation are calculated on rolling basis and updated with the arrival of each new anomaly score. Global mean and variance are calculated using equation \ref{globalMean} and equation \ref{globalStd}. 
+\begin{equation}
 \mu_t = \frac{\sum_{i=0}^{i=W-1} S_{t-i}}{W}
+\label{globalMean}
 \end{equation}
 \begin{equation}
 \sigma^2_t=\frac{\sum_{i=0}^{i=W-1} (S_{t-i}-\mu_t)^2}{W-1}
+\label{globalStd}
 \end{equation}
-
-We then compute a recent short term average of prediction
-errors, and apply a threshold to the Gaussian tail probability
-to decide whether or not to declare an anomaly. 3
-We define the anomaly likelihood as the complement of the tail
-probability:
+In both equations above, $W$ is defined by a large window size and has the value of $8000$.
+As the anomaly likelihood is a probabilistic metric defining how anomalous the current state is based on the prediction history. Next step is the normalization of local mean with global mean and standard deviation. This normalization is performed as following:
 \begin{equation}
-L_t = 1-Q (\frac{\tilde{\mu_t}-\mu_t}{\sigma_t})
+\mu_{normal} = \frac{\tilde{\mu_t} - \mu_t}{\sigma_t}
 \end{equation}
-and here $\tilde{\mu_t}$ is defined as:
+now only thing left is to convert this mean normalized anomaly score to anomaly liklihood. We compute the tail probability of occurance of mean normalized anomaly score $\mu_{normal}$ which is then substracted from by 1 giving us probability of a mean normalized anomaly score not occuring.
 \begin{equation}
-\tilde{\mu_t} = \frac{\sum_{i=0}^{i=w-1}S_{t-i}}{w}
+L_t = 1-Q (\mu_{normal})
 \end{equation}
-Here $w \ll W$. We use $w$ for short term moving average and $W$ for long term moving average. This will give us a probability likelihood of a data point being an anomaly. Next step is to threshold the anomlay by setting up a threshold which is defined by user and is a hyperparameter. The threshold is set to $1-\epsilon^{-5	}$
+Here Q is the gaussian Q-function as defined in \cite{GaussianQ}\\
+\break
 Second method is moving mix-max normalization, which is rather simple but quite effective. We take the maximum and minimum value of the past and current data at a given point in time $T$ and use it to normalize the incoming anomaly score value. If the new anomaly score value is greater than the past maximum value then the maximum value is updated. Similarly if the new anomaly score value is less than the past minimum value then the minimum value is updated. In the beginning of training, ususally convergence loss is higher and it does not make sense to compare it with the values calculated later on that is why first $N$ value of the anomaly score are skipped before we start considering the maximum and minimum value. The value $N$ is usually set around $100$.
 \break
- series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
 
 \subsection{Thresholding}
-
-\subsection{Parameterinzing the anomaly score}
+Now that a post-processed anomaly score is achieved, it is time to apply some ranking or thresholding function on top of anomlay score. For both all datasets a common threshold is used which is selected by NAB includes a simple hill-climbing routine for finding the optimal threshold value given the scoring rules. This algorithm is provided alongside \cite{DBLP:journals/corr/LavinA15}.
 \subsection{Scoring}
-Another benefit of using NAB is that it comes with a customized scoring and evaluation mechanism which is quite suitable for the online anomaly detection algorithms. Each algorithm is tested against three different profiles. Each profile provides a specific weight to true positive (TP), false positive (FP) and false negative (FN). This way an algorithm can be tested according to the requirement of the system.\\
+Based upon the characteristics of an ideal anomaly detection algorithm, a special scoring function is designed by \cite{DBLP:journals/corr/LavinA15} which evaluates each algorithm according to their closeness to the characteristics. We are using the same scoring function. Here we will quickly summarize the said scoring mechanism which can also be called as NAB scoring function. \\
 \break
-The value of the TP weight in the default application profile is 1.0. If a
-user wants to emphasize the importance of correct anomaly detection during the
-benchmark run, then the TP weight metric can be increased. This will increase
-the amount that the score is incremented every time an anomaly is detected
-correctly. Accordingly, if the user wants to deemphasize the importance of
-correct anomaly detection during the benchmark run, then lowering the value of
-the TP weight will decrease the amount added to the score every time an
-anomaly is detected correctly.\\
+Each algorithm is tested against three different profiles. Each profile provides a specific weight to true positive (TP), false positive (FP) and false negative (FN). This way an algorithm can be tested according to the requirement of the system. Similarly, according to the system's requriement an algorithm can be optimized. Better yet one can create custom profiles and train the algorithm for it. These three profiles are named as \textbf{standard}, \textbf{low FN rate} and \textbf{low FP rate}.\\
 \break
-The value of the FP weight in the default application profile is 1.0. If a user
-doesn’t care as much about false positives being detected, then decreasing this
-value will decrement the score by a lesser amount every time an anomaly is
-incorrectly identified. Accordingly, if the user wants to emphasize a low FP rate,
-then increasing the value of FP will decrement the score by a greater amount
-every time an anomaly is incorrectly identified.\\
+The value of the ture positive (TP) weight in the default standard application profile is 1.0. If a user wants to emphasize the importance of correct anomaly detection during the evaluation against benchmark, then the TP weight metric can be increased. This will increase the amount that the score is incremented every time an anomaly is detected correctly. Accordingly, if the user wants to reduce the importance of correct anomaly detection during the evaluation, then lowering the value of the TP weight will decrease the amount added to the score every time an anomaly is detected correctly.\\
+\break
+The value of the FP weight in the standard application profile is 1.0. If a user doesn’t care as much about false positives being detected, then decreasing this value will decrement the score by a lesser amount every time an anomaly is incorrectly identified. Accordingly, if the user wants to emphasize a low FP rate, then increasing the value of FP will decrement the score by a greater amount every time an anomaly is incorrectly identified.\\
 \break
 In case of FN weight, the score is reduced by this amount once for each anomaly
 which is not detected at all. The value of the FN weight in the default application
@@ -391,17 +402,14 @@ miss any true anomalies; they would rather trade off a few false positives than
 miss any true anomalies. The scoring weights are set as true positive weight is set to 1. false positive weight is sset to 0.055. False negative weight is set to 2.\\
 \break
 
-NAB then uses above profiles to come with a scoring function. The given scoring function is built around the ideal real-world anomaly detector. The characteristics of an ideal real-world anomaly detector should be:
+With application profiles defined above, each algorithm is tested and benchmarked against each profile. As described earlier, the given scoring function is built around the ideal real-world anomaly detector. Summarizing the characteristics of an ideal real-world anomaly detector:
 \begin{enumerate}
 \item detects all anomalies present in the streaming data
-\item detects anomalies as soon as possible, ideally before
-the anomaly becomes visible to a human
-\item triggers no false alarms (no false positives)
-\item works with real time data (no look ahead)
-\item is fully automated across all datasets (any data
-specific parameter tuning must be done online without human
-intervention)
-To promote early detection NAB defines anomaly
+\item detects anomalies as soon as possible
+\item triggers no false alarms 
+\item works with real time data
+\item is fully automated across all datasets 
+To satisify the characteristics of early detection an anomaly
 windows. Each window represents a range of data points that is
 centered around a ground truth anomaly label.
 \end{enumerate} 
@@ -409,87 +417,22 @@ centered around a ground truth anomaly label.
 \centering
         \includegraphics[width=\textwidth]{images/nabScoringExample.png}
     \caption{Scoring example for a sample anomaly window, where the values
-represent the scaled sigmoid function. he first
-point is an FP preceding the anomaly window (red dashed lines) and
-contributes -1.0 to the score. Within the window we see two detections, and
-only count the earliest TP for the score. There are two FPs after the window.
-The first is less detrimental because it is close to the window, and the second
-yields -1.0 because it’s too far after the window to be associated with the true
-anomaly. TNs make no score contributions. The scaled sigmoid values are
-multiplied by the relevant application profile weight. The NAB score for this example would calculate as: $-1.0A_{FP} + 0.9999A_{TP} - 0.8093A_{FP} - 1.0A_{FP} $}
+represent the scaled sigmoid function. }
     \label{nabSigmoidScoringFunction}
 \end{figure}
-To promote early detection NAB defines anomaly
-windows. Each window represents a range of data points that is
-centered around a ground truth anomaly label. Fig. 2 shows an
-example using the data from Fig 1. A scoring function
-(described in more detail below) uses these windows to
-identify and weight true positives, false positives, and false
-negatives. If there are multiple detections within a window, the
-earliest detection is given credit and counted as a true positive.
-Additional positive detections within the window are ignored.
-The sigmoidal scoring function gives higher positive scores to
-true positive detections earlier in a window and negative scores
-to detections outside the window (i.e. the false positives).
-These properties are illustrated in Fig. 3 with an example.
-How large should the windows be? The earlier a detector
-can reliably identify anomalies the better, implying these
-windows should be as large as possible. The tradeoff with
-extremely large windows is that random or unreliable
-detections would be regularly reinforced. Using the underlying
-assumption that true anomalies are rare, we define anomaly
-window length to be 10\% the length of a data file, divided by
-the number of anomalies in the given file. This technique
-allows us to provide a generous window for early detections
-and also allow the detector to get partial credit if detections are
-soon after the ground truth anomaly. 10\% is a convenient
-number but note the exact number is not critical. We tested a
-range of window sizes (between 5\% and 20\%) and found that,
-partly due to the scaled scoring function, the end score was not
+Figure \ref{nabSigmoidScoringFunction} depicts a nice example of such scoring around an anomlay window. The first point in the figure is an FP preceding the anomaly window (red dashed lines) and contributes -1.0 to the score. Within the window we see two detections, and
+only count the earliest TP for the score. There are two FPs after the window. The first is less detrimental because it is close to the window, and the second yields -1.0 because it’s too far after the window to be associated with the true anomaly. TNs make no score contributions. The scaled sigmoid values are multiplied by the relevant application profile weight. The NAB score for this example would calculate as: $-1.0A_{FP} + 0.9999A_{TP} - 0.8093A_{FP} - 1.0A_{FP} $ \\
+\break
+To promote early detection NAB defines anomaly windows. Each window represents a range of data points that is centered around a ground truth anomaly label. A scoring function uses these windows to identify and weight true positives, false positives, and false negatives. If there are multiple detections within a window, the earliest detection is given credit and counted as a true positive. Additional positive detections within the window are ignored. \\
+\break
+The sigmoidal scoring function gives higher positive scores to true positive detections earlier in a window and negative scores to detections outside the window (i.e. the false positives). How large should the windows be? The earlier a detector can reliably identify anomalies the better, implying these windows should be as large as possible. The tradeoff with extremely large windows is that random or unreliable detections would be regularly reinforced. Using the underlying assumption that true anomalies are rare, we define anomaly
+window length to be 10\% the length of a data file, divided by the number of anomalies in the given file. This technique allows us to provide a generous window for early detections and also allow the detector to get partial credit if detections are soon after the ground truth anomaly. 10\% is a convenient number but note the exact number is not critical. NAB \cite{DBLP:journals/corr/LavinA15} tested a range of window sizes (between 5\% and 20\%) and found that, partly due to the scaled scoring function, the end score was not
 sensitive to this percentage. Different applications may place different emphases as to
 the relative importance of true positives vs. false negatives and
-false positives. For example, the graph in Fig. 2 represents an
-expensive industrial machine that one may find in a
-manufacturing plant. A false negative leading to machine
-failure in a factory can lead to production outages and be
-extremely expensive. A false positive on the other hand might
-require a technician to inspect the data more closely. As such
-the cost of a false negative is far higher than the cost of a false
-positive. Alternatively, an application monitoring the statuses
-of individual servers in a datacenter might be sensitive to the
-number of false positives and be fine with the occasional
-missed anomaly since most server clusters are relatively fault
-tolerant.To gauge how algorithms operate within these different
-application scenarios, NAB introduces the notion of
-application profiles. For TPs, FPs, FNs, and TNs, NAB applies
-different relative weights associated with each profile to obtain
-a separate score per profile. \\
-\break
-NAB includes three different application profiles: standard,
-reward low FPs, and reward low FNs. The standard profile
-assigns TPs, FPs, and FNs with relative weights (tied to the
-window size) such that random detections made 10\% of the
-time would get a zero final score on average. The latter two
-profiles accredit greater penalties for FPs and FNs,
-respectively. These two profiles are somewhat arbitrary but
-designed to be illustrative of algorithm behavior. The NAB
-codebase itself is designed such that the user can easily tweak
-the relative weights and re-score all algorithms. The
-application profiles thus help evaluate the sensitivity of
-detectors to specific applications criteria.The combination of anomaly windows, a smooth temporal
-scoring function (details in the next section), and the
-introduction of application profiles allows researchers to
-evaluate online anomaly detector implementations against the
-requirements of the ideal detector. Specifically the overall
-NAB scoring system evaluates real-time performance, prefers
-earlier detection of anomalies, penalizes “spam” (i.e. FPs), and
-provides realistic costs for the standard classification
-evaluation metrics TP, FP, TN, and FN.\\
+false positives. \\
 \break
 Now to compute NAB score for an algorithm and a given application profile we use following procedure. Let $A$ be the application profile under consideration, with $A_{TP}$, $A_{FP}$	, $A_{FN}$ and $A_{TN}$ the corresponding weights for true positives, false positives, false negatives and true negatives.These weights are bounded $A_{TP} \geq 0$, $A_{TN} \leq 1$ and 
-$A_{FP} \leq -1$, $A_{FN} \leq 0$. Let $D$ be the set
-of data files and let $Y_d$ be the set of data instances detected as
-anomalies for datafile d. (As discussed earlier, we remove
+$A_{FP} \leq -1$, $A_{FN} \leq 0$. Let $D$ be the set of data files and let $Y_d$ be the set of data instances detected as anomalies for datafile d. (As discussed earlier, we remove
 redundant detections: if an algorithm produces multiple
 detections within the anomaly window, we retain only the
 earliest one.) The number of windows with zero detections in
@@ -534,7 +477,11 @@ detections). It follows from equation (\ref{scoreNormalization}) that the maximu
 
 \section{Empirical Formulation and Experiments}
 \subsection{Dataset}
-To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) was used. Numenta is a benchmark specifically designed for online time series anomaly detection. It is first of its kind as NAB tries to cover all type of anomalies. Also they have come up with a custom scoring function to map the characteristics of an ideal online anomaly detector.\\
+To experiment with proposed method and campare them with state-of-the-art results Numenta Anomaly Benchmark (NAB) \ref{DBLP:journals/corr/LavinA15} was used. Numenta is a benchmark specifically designed for online time series anomaly detection. It is first of its kind as NAB tries to cover all type of anomalies. Also they have come up with a custom scoring function to map the characteristics of an ideal online anomaly detector as defined in the previous section.\\
+\break
+Using NAB provides us with many benefits. First benefit is that it is a benchmark dataset which $58$ various univariate time series, each with timestamp as index and value. Length of each time series ranges from $1000$ to $22000$ data points. This provides us with enough variability in data. These $58$ time series are from six different categories. These categories include artificially generated time series, times series gathered from advertisement industry related data such as click through rate (CTR), AWS usage metrics, server traffic data, tweets volume time series and known cause anomaly which has the a solid reason for the labeled anomaly.\\
+\break
+
 \begin{figure}[H]
   \begin{subfigure}[t]{0.5\textwidth}
     \centering
@@ -564,8 +511,6 @@ To experiment with proposed method and campare them with state-of-the-art result
   \caption{Examples of artifical anomaly data set}
   \label{artificialDataPlots}
 \end{figure}
-Using NAB provides with many benefits. First benefit is that it is a benchmark dataset which $58$ various univariate time series, each with timestamp as index and value. Length of each time series ranges from $1000$ to $22000$ data points. This provides us with enough variability in data. These $58$ time series are from six different categories. These categories include artificially generated time series, times series gathered from advertisement industry related data such as click through rate (CTR), AWS usage metrics, server traffic data, tweets volume time series and known cause anomaly which has the a solid reason for the labeled anomaly.\\
-\break
 The diversity of these categories provide the second benefit. With the diversity almost all type of anomalies are covered hence each algorithm can be tested against each type. Artificial datasets further contains time series with anomalies and without anomalies. Datasets without anomalies contain only normal patterns and no anomaly thus any predicted anomaly will be a false positive here. This way one can test false positive prediction tendency of an algorithm. \\
 \break
 In NAB, concept drift is given a special importance that is why many datasets contains concept drift. These datasets are mostly real life ones. Example of these are following:
@@ -689,12 +634,60 @@ overlap, the anomalies are combined into one large window. The
 rationale being if multiple anomalies fall within the same window
 length, we assume they identify the same anomalous data.
 \end{enumerate}
-Thus ground labels of anomalies are obtained. 
+Thus ground labels of anomalies are obtained. A detailed meta information about these datasets is given in appendix \ref{appendixA}. 
+\subsection{Experimental setup}
+With the scoring and evaluation mechanism setup, we will now share the experimental setup and how the online training and prediction was performed on the datasets. We used following steps to simulate a near real-time streaming data we developed a streaming function which will load each data file individually and then feed only one data point at a time. Thus for each algorithm, only single data point will be fed at a time. Next autoencoder based algorithms training and prediction is done in following steps:
+\begin{enumerate}
+	\item Define the window size $w$ of the input data which will be the actual input size to the algorithm.
+	\item Define algorithm for the specific input window size. 
+	\item Load $x_{0:w-1}$ data points from the dataset, meaning load first $w$ data points of the data and feed it to algorithm.
+	\item Algorithm parameters will be randomly initialized in the first step. It will then predict for the given input.
+	\item Algorithm will go through \textbf{one} back-propagation step. The reconstruction loss will considered as anomaly score since reconstruction loss is also mean squared error.
+	\item The reconstruction loss will be fed to post-processing function. Depending upon the type of post-processing one of the following step will be taken:
+	\begin{itemize}
+		\item In case of anomaly likelihood estimation, local mean, gloabl mean and global variance will be calculatd as stated in equation \ref{localMean},\ref{globalMean} and \ref{globalStd} respectively. After performing normalization, a gaussian tail probability is calculated and anomaly likelihood is estimated.
+		\item In case of min-max normalization, global minimum and maximum values are initiated by zero. Then current anomaly score is compared with global minimum and maximum values and global values are updated accordingly such as:
+		\begin{equation}
+			global_minimum = min(global_minimum, a_t)
+			global_maximum = max(global_maximum, a_t)
+		\end{equation}
+		where $a_t$ is the anomaly score at time t. Next step is to perform simple min-max normalization although with a small practical change. Update equation of min-max normalization is:
+		\begin{equation}
+	    z = \frac{x - min(x)+1}{max(x) - min(x)+1}
+    	\label{updatedMinMaxNormalization}
+		\end{equation}
+	\end{itemize}
+	\item output of sixth step, will providea post-processed anomaly score which will be stored in a vector of anomaly scores.
+	\item Now $x_t$ is already processed and we are ready to take on $x_{t+1}$. In the next step data of $x_{1:w}$ will be loaded and steps from $4th$ till $8th$ will be repeated till all of the dataset is processed.
+\end{enumerate}
+For an autoencoder algorithm, all datasets are processed through the steps described above. The output of post-processed anomaly score is stored for thresholding and scoring later on.
+On the other hand for multiple step prediction algorithms, following steps are taken:
+\begin{enumerate}
+	\item Define the window size $w$ of the input data which will be the actual input size to the algorithm. Also define the size of multiplestep ahead prediction $L$.
+	\item Define algorithm for the specific input window size. 
+	\item Load $x_{0:w-L-1}$ data points from the dataset, meaning load first $w-L$ data points of the data and feed it to algorithm.
+	\item Similarly load $x_{L:t}$ datapoints.
+	\item Algorithm parameters will be randomly initialized in the first step. It will then predict for the given input which can be compared againt the input $x_{L:t}$.
+	\item Algorithm will go through \textbf{one} back-propagation step. The prediction  loss will be considered as anomaly score since prediction loss is also mean squared error.
+	\item The anomaly score $a_t$ will be fed to post-processing function. Depending upon the type of post-processing one of the steps will be taken as defined in the $6th$ step of above routine.
+	\item Output of sixth step, will providea post-processed anomaly score which will be stored in a vector of anomaly scores.
+	\item Now $x_t$ is already processed and we are ready to take on $x_{t+1}$. In the next step data of $x_{1:w-L}$ will be loaded and steps from $4th$ till $8th$ will be repeated till all of the dataset is processed.
+\end{enumerate}
 
-
+As an output we will have post-processed anomlay score for each dataset against each algorithm. These anomaly scores are passed through \cite{DBLP:journals/corr/LavinA15} thresholding function which will output a threshold for all data files. Then again \cite{DBLP:journals/corr/LavinA15} scoring function will use the threshold and anomaly scores provided to calculate the final evaluation score for the algorithm as described in the scoring section above. This evaluation can be used as benchmark against other algorithms.
+\newpage
 \section{Results}
+Before sharing and discussing results, we can prove that the algorithms converges when trained online using just one iteration.
+\subsection{convegence}
+\subsection{post-processing type}
+\subsubsection{anomaly likelihood}
+\subsubsection{min-max normalization}
+\subsection{results tables}
+\subsubsection{Difference of results in different algorithms}
+\subsubsection{Change in window size in the same algorithm}
+\subsubsection{Change in multiple-step in the same algorithm}
 
-\subsection{Comparing with others}
+First step was to 
 \begin{table}[H]
 \centering
 \begin{tabular}{llll}
@@ -749,7 +742,75 @@ expose & 26.9209 & 3.19093 & 16.4367\\
 
 
 \section{Conclusion and Discussion}
-
+\subsection{Conclusion}
+\subsection{Problems faced during experiments}
+\subsection{Insights}
+\subsection{Future work}
+\newpage
+\section{Appendix A: Meta of NAB data sets}
+\label{appendixA}
+\begin{longtable}[c]{llllll}
+length & max\_val & min\_val & data\_type & file\_name & Concept\_drift \\
+\endhead
+15833 & 1258 & 0 & realTweets & Twitter\_volume\_FB.csv & no \\
+15858 & 36 & 0 & realTweets & Twitter\_volume\_PFE.csv & no \\
+15902 & 13479 & 0 & realTweets & Twitter\_volume\_AAPL.csv & no \\
+15851 & 2241 & 0 & realTweets & Twitter\_volume\_KO.csv & no \\
+15831 & 1673 & 0 & realTweets & Twitter\_volume\_AMZN.csv & no \\
+15893 & 139 & 0 & realTweets & Twitter\_volume\_IBM.csv & no \\
+15866 & 231 & 0 & realTweets & Twitter\_volume\_UPS.csv & no \\
+15853 & 50 & 0 & realTweets & Twitter\_volume\_CVS.csv & no \\
+15902 & 209 & 0 & realTweets & Twitter\_volume\_CRM.csv & no \\
+15842 & 465 & 0 & realTweets & Twitter\_volume\_GOOG.csv & no \\
+10320 & 39197 & 8 & realKnownCause & nyc\_taxi.csv & no \\
+7267 & 86.22321261 & 57.45840559 & realKnownCause & ambient\_temperature\_system\_failure.csv & no \\
+18050 & 100 & 11.529 & realKnownCause & cpu\_utilization\_asg\_misconfiguration.csv & no \\
+22695 & 108.5105428 & 2.084721206 & realKnownCause & machine\_temperature\_system\_failure.csv & no \\
+1882 & 0.895012153 & 0 & realKnownCause & rogue\_agent\_key\_hold.csv & no \\
+5315 & 288.207531 & 0 & realKnownCause & rogue\_agent\_key\_updown.csv & no \\
+4032 & 99.248 & 22.864 & realKnownCause & ec2\_request\_latency\_system\_failure.csv & no \\
+4032 & 20 & 0 & artificialWithAnomaly & art\_increase\_spike\_density.csv & no \\
+4032 & 87.99838184 & 18.00203996 & artificialWithAnomaly & art\_daily\_jumpsdown.csv & no \\
+4032 & 87.95834813 & -21.99878884 & artificialWithAnomaly & art\_daily\_flatmiddle.csv & no \\
+4032 & 164.9474805 & 18.00100982 & artificialWithAnomaly & art\_daily\_jumpsup.csv & no \\
+4032 & 3.224814931 & 0 & artificialWithAnomaly & art\_load\_balancer\_spikes.csv & no \\
+4032 & 87.97331353 & 18.00050056 & artificialWithAnomaly & art\_daily\_nojump.csv & no \\
+2500 & 5059 & 9 & realTraffic & TravelTime\_387.csv & no \\
+1127 & 90 & 1 & realTraffic & speed\_7578.csv & no \\
+2380 & 22.28 & 0 & realTraffic & occupancy\_6005.csv & no \\
+2500 & 109 & 20 & realTraffic & speed\_6005.csv & no \\
+2495 & 77 & 11 & realTraffic & speed\_t4013.csv & no \\
+2500 & 43.06 & 0 & realTraffic & occupancy\_t4013.csv & no \\
+2162 & 5578 & 22 & realTraffic & TravelTime\_451.csv & no \\
+4032 & 79.99996928 & 20 & artificialNoAnomaly & art\_daily\_no\_noise.csv & no \\
+4032 & 45 & 45 & artificialNoAnomaly & art\_flatline.csv & no \\
+4032 & 87.97612833 & 18.00096402 & artificialNoAnomaly & art\_daily\_small\_noise.csv & no \\
+4032 & 80 & 20 & artificialNoAnomaly & art\_daily\_perfect\_square\_wave.csv & no \\
+4032 & 18.99640526 & 8.000581096 & artificialNoAnomaly & art\_noisy.csv & no \\
+1624 & 0.2265979381 & 0.02684303351 & realAdExchange & exchange-2\_cpc\_results.csv & no \\
+1643 & 16.43819968 & 0.1215201222 & realAdExchange & exchange-4\_cpm\_results.csv & no \\
+1643 & 3.126851852 & 0.02388370424 & realAdExchange & exchange-4\_cpc\_results.csv & no \\
+1538 & 5.497540003 & 0.320650021 & realAdExchange & exchange-3\_cpm\_results.csv & no \\
+1624 & 1.051442475 & 0.0003850049458 & realAdExchange & exchange-2\_cpm\_results.csv & no \\
+1538 & 1.034 & 0.03889884763 & realAdExchange & exchange-3\_cpc\_results.csv & no \\
+1243 & 61519397 & 789781 & realAWSCloudwatch & iio\_us-east-1\_i-a2eb1cd9\_NetworkIn.csv & no \\
+4032 & 99.898 & 0.064 & realAWSCloudwatch & ec2\_cpu\_utilization\_77c1ca.csv & no \\
+4032 & 863964000 & 0 & realAWSCloudwatch & ec2\_disk\_write\_bytes\_c0d644.csv & no \\
+4032 & 2.344 & 0.066 & realAWSCloudwatch & ec2\_cpu\_utilization\_24ae8d.csv & no \\
+4032 & 1.602 & 0.062 & realAWSCloudwatch & ec2\_cpu\_utilization\_c6585a.csv & no \\
+4032 & 25.1033 & 5.19 & realAWSCloudwatch & rds\_cpu\_utilization\_cc0c53.csv & yes \\
+4032 & 656 & 1 & realAWSCloudwatch & elb\_request\_count\_8c0756.csv & no \\
+4032 & 68.092 & 34.766 & realAWSCloudwatch & ec2\_cpu\_utilization\_5f5533.csv & yes \\
+4032 & 99.742 & 2.464 & realAWSCloudwatch & ec2\_cpu\_utilization\_ac20cd.csv & yes \\
+4032 & 76.23 & 12.628 & realAWSCloudwatch & rds\_cpu\_utilization\_e47b3b.csv & yes \\
+4032 & 2.656 & 1.604 & realAWSCloudwatch & ec2\_cpu\_utilization\_53ea38.csv & no \\
+4730 & 547457000 & 0 & realAWSCloudwatch & ec2\_disk\_write\_bytes\_1ef3de.csv & no \\
+4621 & 45.6229 & 0 & realAWSCloudwatch & grok\_asg\_anomaly.csv & yes \\
+4032 & 99.118 & 18.7225 & realAWSCloudwatch & ec2\_cpu\_utilization\_825cc2.csv & no \\
+4032 & 245126000 & 38516.6 & realAWSCloudwatch & ec2\_network\_in\_257a54.csv & no \\
+4730 & 8285420 & 42 & realAWSCloudwatch & ec2\_network\_in\_5abac7.csv & no \\
+4032 & 99.668 & 1.8 & realAWSCloudwatch & ec2\_cpu\_utilization\_fe7f93.csv & no
+\end{longtable}
 \section{Experiment Infrastructure}
 
 \subsection{Experiment Management using MLflow}
@@ -795,5 +856,6 @@ algorithms at the same time.
 \renewcommand{\section}[2]{}
 \bibliographystyle{IEEEtran}
 \bibliography{third}
+
 \endgroup
 \end{document}
