@@ -41,13 +41,18 @@ Unsupervised Real-Time Time-Series Anomaly Detection\\
 \maketitle
 
 \newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
 
 \begin{abstract}
 Anomaly detection is a crucial task for machine learning due to wide-spread usage and type. In particular, it is worth noting that most data arising in industrial setups are of a streaming nature, thus restricting the range of standard anomaly detection tools. This thesis will identify the potential approaches to learn the identification of abnormal behavior from large-scale streaming data. An empirical comparison of state-of-the-art methods will to be extended by a novel technical contribution. In this thesis, the focus is particularly on streaming time-series Anomaly Detection which changes in nature with time and novel contribution will especially try to target this dynamic nature of time-series.
 \end{abstract}
 \newpage
-\tableofcontents
-\newpage
+
 \section{Introduction}
 \subsection{Usage of streaming data}
 With the increase in networking of objects, amount of data being generated is increasing. A big chunk of this data involves streaming data. Streaming data can be defined as data being generated continuously or with a continuous time interval. Such data is produced incrementally without having access to all of the data. Streaming data term is ususally used in context with big data. These streams of data is dumped into a large amount of unstructured databases called data lakes, which will be later treated in a batchwise fashion for the extraction of useful information. Streaming data is the most fresh form of data and is closest to being real-time, this is why any action or analysis done on top of data stream translates to near real-time action or analysis. Few examples of such real-time actions are e-commerce, network monitoring, fraud detection, pricing and bidding and so on.\\
@@ -171,220 +176,54 @@ After post-processing, we can use the score to actually rank each incoming data 
 \subsubsection{Our Contribution}
 We contributed in different areas of general anomaly detection framework.\ref{generalAnomalyDetectionFrameWork}. First contribution was the implementation of Numenta Anomaly Detection Benchmark (NAB) \cite{NAB}. NAB is an anomlay detection benchmark which comes with labelled dataset, customized scoring mechanism and benchmark algorithms to test against. This benchmark is an open source project implemented in Python2.7. So, in the first step NAB was implemented and results of benchmark algorithms were reproduced. Additionally, system was setup to test proposed methodologies using same dataset and scoring function.\\
 \break
-Second contribution is the implementation and testing of multi-step prediction algorithms. Three different types (fully connected, convolutional and LSTM) based multi-step prediction architecture were designed. Multi-step prediction algorithm, in short, refers to predicting multiple time step values at once. \\
+Second contribution is the implementation and testing of multi-step prediction algorithms. Three different types (fully connected, convolutional and LSTM) based multi-step prediction architecture were designed. Multi-step prediction algorithm, in short, refers to predicting multiple time step values at once. Changing the length of these steps from $1$ to $5$ provided interesting insights and helped break few benchmarks.\\
 \break 
-Third contribution is the implementation and testing of autoencoder based algorithms. These are also based upon three different types, just like previous one. Next contribution is in the form of autoregressive input of the loss from previous algorithms. This contribution serves two purposes. One is to improve the prediction accuracy of the algorithm especially because we are not using all previous data instead a small moving window as $x_{t-w}$ where $w$ is window size and it is tested for different values. Second is to have the ability to control the algorithm's response to concept drift.
+Third contribution is the implementation and testing of autoencoder based algorithms. These are also based upon three different types, just like previous one. Next contribution is in the form of autoregressive input of the loss from previous algorithms. This contribution serves two purposes. One is to improve the prediction accuracy of the algorithm especially because we are not using all previous data instead a small moving window as $x_{t-w}$ where $w$ is window size and it is tested for different values. Second is to have the ability to control the algorithm's response to concept drift. This method also proved to be useful as we passed few benchmarks along with few interesting insights.
 \\
 \break
 Next contribution is the implementation of anomaly liklihood calculation of anomlay score as a post-processing step. This is the same implementation as described in \cite{ahmad2017unsupervised}. Similarly, a second type of post-processing step is inspired by simple min-max normalization. We tried rolling min-max normalization which proves to provide better results than anomaly liklihood method on the same dataset.
-
-
 \subsubsection{Details of sections coming up-next}
+In the next sections we will first define the state of the art methods and related work needed as foundation for the understanding of proposed methodology. Next in the proposed methodology, we will describe each contribution and architecture in details. Then experimental setup and data set used will be explained in the next section. Afterwards results of these experiments and their comparison to other benchmarks will be done. Lastly, we will conclude with discussion on the experiments done providing useful insights, failed tries and future research direction.
 \newpage
-\section{Related Work and State of the art}
-Here we will slowly build up to the techniques which are used in sate-of-the-
-art anomaly detection methods. Anomaly detection in time-series has been heavily studied since a long time. Many anomaly detection approaches exist as supervised, semi-supervised and unsupervised approach. Although most of them rarely process data online. For example the robust principle component analysis (RPCA) developed by Netflix requires complete dataset to to find out anomaly. Similarly EGADS developed by yahoo need access to whole data. A simpler techniques used is symbolic aggregate approximation or SAX which requires the decomposition of time series into symbols before treating them. \\
+\section{Related Work and State-of-the-art}
+For the understanding of unsupervised anomaly detection in streaming data, it is important to have a summarized review of time series and it's features, general anomaly detection methods and general anomaly detection methods applied on streaming data. We will start with a quick review of time series.\\
 \break
+Time series is usually defined as a series of data points indexed in time. A single variable where the value of variable is time series and the only other information available for each data point is the time of occurence, is called uni-variate time series while if there are multiple variables for each time index such as: $X = \{ x^{1},x^{2},x^{3},x^{4},..,x^{m}\}$ where each point $x^{t} \in R^m$ in the time series is an m-dimensional vector $\{x_{1}^{t},x_{2}^{t},x_{3}^{t},....,x_{m}^{t}\}$. This is called multi-variate time series as defined in \cite{stackedLstmFirst}. 
 
-Anomaly detection in time-series is a heavily studied area
-of data science and machine learning, dating back to [5] . Many
-anomaly detection approaches exist, both supervised (e.g. support
-vector machines and decision trees [6] ) and unsupervised (e.g.
-clustering), yet the vast majority of anomaly detection methods
-are for processing data in batches, and unsuitable for real-time
-streaming applications. Examples from industry include Netflix’s
-robust principle component analysis (RPCA) method [7] and Ya-
-hoo’s EGADS [8] both of which require analyzing the full dataset.
-Likewise, Symbolic Aggregate Approximation (SAX) [9] involves
-decomposing the full time series to generate symbols prior to
-anomaly detection. Other recent techniques include [10,11] . Al-
-though these techniques may work well in certain situations, they
-are traditional batch methods, and the focus of this paper is on
-methods for online anomaly detection. For reviews of anomaly de-
-tection in general we recommend [1,6,12,13] . For prior work on
-data stream mining and concept drift in general see [3,14–17] .
-Some anomaly detection algorithms are partially online. They
-either have an initial phase of offline learning, or rely on look-
-ahead to flag previously-seen anomalous data. Most clustering-
-based approaches fall under the umbrella of such algorithms.
-Some examples include Distributed Matching-based Grouping Al-
-gorithm (DMGA) [18] , Online Novelty and Drift Detection Algo-
-rithm (OLINDDA) [19] , and MultI-class learNing Algorithm for data
-Streams (MINAS) [20] . Another example is self-adaptive and dy-
-namic k-means [21] that uses training data to learn weights prior
-to anomaly detection. Kernel-based recursive least squares (KRLS)
-proposed in [22] also violates the principle of no look-ahead as it. Some anomaly detection algorithms are partially online. They
-either have an initial phase of offline learning, or rely on look-
-ahead to flag previously-seen anomalous data. Most clustering-
-based approaches fall under the umbrella of such algorithms.
-Some examples include Distributed Matching-based Grouping Al-
-gorithm (DMGA) [18] , Online Novelty and Drift Detection Algo-
-rithm (OLINDDA) [19] , and MultI-class learNing Algorithm for data
-Streams (MINAS) [20] . Another example is self-adaptive and dy-
-namic k-means [21] that uses training data to learn weights prior
-to anomaly detection. Kernel-based recursive least squares (KRLS)
-proposed in [22] also violates the principle of no look-ahead as it resolves temporarily flagged data instances a few time steps later
-to decide if they were anomalous. However, some kernel methods,
-such as EXPoSE [23] , adhere to our criteria of real-time anomaly
-detection (see evaluation section below).
-For streaming anomaly detection, the majority of methods
-used in practice are statistical techniques that are computation-
-ally lightweight. These techniques include sliding thresholds, out-
-lier tests such as extreme studentized deviate (ESD, also known
-as Grubbs’) and k-sigma (e.g., [24,25] ), changepoint detection [26] ,
-statistical hypotheses testing, and exponential smoothing such as
-Holt–Winters [27] . Typicality and eccentricity analysis [28,29] is an
-efficient technique that requires no user-defined parameters. Most
-of these techniques focus on spatial anomalies, limiting their use-
-fulness in applications with temporal dependencies.
-More advanced time-series modeling and forecasting models
-are capable of detecting temporal anomalies in complex scenar-
-ios. ARIMA is a general purpose technique for modeling temporal
-data with seasonality [30] . It is effective at detecting anomalies in
-data with regular daily or weekly patterns. Extensions of ARIMA
-enable the automatic determination of seasonality [31] for certain
-applications. A more recent example capable of handling temporal
-anomalies is the technique in [32] based on relative entropy.
-Model-based approaches have been developed for specific use
-cases, but require explicit domain knowledge and are not gener-
-alizable. Domain-specific examples include anomaly detection in
-aircraft engine measurements [33] , cloud datacenter temperatures
-[34] , and ATM fraud detection [35] . Kalman filtering is a com-
-mon technique, but the parameter tuning often requires domain
-knowledge and choosing specific residual error models [12,36–38] .
-Model-based approaches are often computationally efficient but
-their lack of generalizability limits their applicability to general
-streaming applications. There are a number of other restrictions that can make meth-
-ods unsuitable for real-time streaming anomaly detection, such as
-computational constraints that impede scalability. An example is
-Lytics Anomalyzer [39] , which runs in O ( n 2 ), limiting its useful-
-ness in practice where streams are arbitrarily long. Dimensionality
-is another factor that can make some methods restrictive. For in-
-stance online variants of principle component analysis (PCA) such
-as osPCA [40] or window-based PCA [41] can only work with high-
-dimensional, multivariate data streams that can be projected onto
-a low dimensional space. Techniques that require data labels, such
-as supervised classification-based methods [42] , are typically un-
-suitable for real-time anomaly detection and continuous learning.
-Additional techniques for general purpose anomaly detection
-on streaming data include [9,43,44] . Twitter has an open-source
-method based on Seasonal Hybrid ESD [45] . Skyline is another
-popular open-source project, which uses an ensemble of statisti-
-cal techniques for detecting anomalies in streaming data [24] . We
-include comparisons to both of these methods in our Results sec-
-tion.
-\subsection{Unsupervised Anomaly Detection}
-In unsupervised anomaly detection, there are five differet type of algorithms used. First type is nearest-neighbor based. These methods 
-\subsection{Time series Introduction}
-\subsubsection{Time series trend, seasonality and stationary vs non-stationary or concept drift}
-\subsection{Time series based deep learning methods}
-\subsubsection{fully connected methods}
-\subsubsection{CNN based methods}
-\subsubsection{LSTM based methods}
-\subsection{Anomaly detection in time series}
-\subsection{Unsupervised time series Anomaly detection}
-\begin{enumerate}
-	\item Time series intro. Prediction and classification.
-	\item Unsupervised methods on time series 
-	\item Anomaly detection
-	\item Time series Anomaly detection
-	\item Unsupervised Time series Anomaly detection
-	\item General components latest anomaly detection methods and explanation of each
-	\item HTM based anomaly detection paper review. Problems or way it does it
-	\item paper 2
-	\item paper 3
-	\item general review, problems, bottlenecks and trend
-\end{enumerate}
 \section{Proposed method}
+Here we will again use figure \ref{generalAnomalyDetectionFrameWork2}, as generic framework for anomaly detection system and start with describing each individual component design for the proposed methodology. 
 \subsection{General anomaly score based architecture and detailed explanation}
+\subsubsection{preprocessing}
+
 \begin{figure}[H]
 \centering
         \includegraphics[width=\textwidth]{images/generalAnomalyDetectionFrameWork.png}
     \caption{General Anomaly Detection Framework}
-    \label{generalAnomalyDetectionFrameWork}
+    \label{generalAnomalyDetectionFrameWork2}
 \end{figure}
-Considering figure ~\ref{generalAnomalyDetectionFrameWork}, each algorithm will be using  
-all parts with few variations and a cusotmized algorithm part.\\
-\break
-Pre-processing is playing crucial role in the generalization of the algorithms. There are two different kind of normalization techniques tested. First kind is global normalization
-Proposed method can be divided in multiple parts. First part would be the implementation of baselines using latest deep learning architectural components. The main components of our anomaly detection framework are as following:
-\begin{itemize}
 
-\item In the pre-processing part, each time-series is normalized using equation \ref{minMaxNormalization}. Here we assume that we already know the possible minimum and maximum values of the data which is generally true in most cases. All the data sets are normalized before feeding into the algorithm.
-We use min-max normalization to make sure that all input values are limited between $0$ and $1$. Normalization can have a big impact on the the learning process and generalizaiton of the model. By including normalization of input as first step makes it possible to be able to use the same anomaly detection model framework for all kind of input data range. Min-max normalization can be defined as
+As a first step, raw input of uni-variate time series is fed. Since the data is in the form of streaming format, hence we don't have any information about data beyond $t$. Instead of just using the value at time $x_t$, we actually process a window of size $x_{t-w}$. The value of $w$ is used as a hyperparameter. Although it is dependent upon different data sets and types of algorithms but after testing a few different values, $w$ is set to $50$. Hence as a first pre-processing step, $x_t$ is fed to buffer which will pop the last value in the queue and push $x_t$ in. Using such window based input comes with few benefits and drawbacks. Since window size is small it is easier and quicker to process. Although in return, it turns simple time series prediction into a sequence to sequence prediction problem which might not able to take a time series features and properties into account. This was one of the problem faced with our proposed methodologies which we tried to cover using auto-regressive component. Using window made us ignroe the value of trend, seasonality, autocorrelation and similar imporant concept related to time series.\\
+\break
+Another important pre-processing step is normalized using equation \ref{minMaxNormalization}. Normalization helps the algorithm learn faster and since all type of datasets have same input range, it helps in better generalization. One assumption made for the normalization is that we already know the possible minimum and maximum values of the data which is generally true in most real life cases. Thus all of the data sets are normalized before feeding into the algorithm.
+We use min-max normalization to make sure that all input values are limited between $0$ and $1$. By including normalization of input as first step makes it possible to be able to use the same anomaly detection model framework for all kind of input data range. Min-max normalization can be defined as
 \begin{equation}
     z = \frac{x - min(x)}{max(x) - min(x)}
     \label{minMaxNormalization}
 \end{equation}
-\item In the algorithm part, we use different kind of algorihtms with few things in common. For all kind of algorithms the input values are sequence of length $W$ and output values are also a sequence whose size is tested from $1$ to $5$. Another important thing to remember is that the output is different for autoencodre based architectures and multistep prediction architectures. More details are given below.
-\item We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
-\item Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
-First technique is the usage of anomaly likelihood as described equation.
-The anomaly likelihood is a probabilistic metric defining how anomalous the current state is based on the prediction history.To compute the anomaly likeli-
-hood we maintain a window of the last W error values. We model
-the distribution as a rolling normal distribution where the sample
-mean $\mu_t$ and variance $\sigma^2_t$, are continuously updated from previ-
-ous error values as follows:
-\begin{equation}
-\mu_t = \frac{\sum_{i=0}^{i=W-1} S_{t-i}}{W}
-\end{equation}
-\begin{equation}
-\sigma^2_t=\frac{\sum_{i=0}^{i=W-1} (S_{t-i}-\mu_t)^2}{W-1}
-\end{equation}
-
-We then compute a recent short term average of prediction
-errors, and apply a threshold to the Gaussian tail probability
-to decide whether or not to declare an anomaly. 3
-We define the anomaly likelihood as the complement of the tail
-probability:
-\begin{equation}
-L_t = 1-Q (\frac{\tilde{\mu_t}-\mu_t}{\sigma_t})
-\end{equation}
-and here $\tilde{\mu_t}$ is defined as:
-\begin{equation}
-\tilde{\mu_t} = \frac{\sum_{i=0}^{i=w-1}S_{t-i}}{w}
-\end{equation}
-Here $w \ll W$. We use $w$ for short term moving average and $W$ for long term moving average. This will give us a probability likelihood of a data point being an anomaly. Next step is to threshold the anomlay by setting up a threshold which is defined by user and is a hyperparameter. The threshold is set to $1-\epsilon^{-5	}$
-\item Second method is moving mix-max normalization, which is rather simple but quite effective. We take the maximum and minimum value of the past and current data at a given point in time $T$ and use it to normalize the incoming anomaly score value. If the new anomaly score value is greater than the past maximum value then the maximum value is updated. Similarly if the new anomaly score value is less than the past minimum value then the minimum value is updated. In the beginning of training, ususally convergence loss is higher and it does not make sense to compare it with the values calculated later on that is why first $N$ value of the anomaly score are skipped before we start considering the maximum and minimum value. The value $N$ is usually set around $100$.
-\end{itemize}
-We use these components to develop two different kind of detectors.\\
+\subsubsection{algorithm}
+Now that we have availibility to the preprocessed input, it is time to describe the design of proposed algorithms. All of the proposed algorithms are designed to consider the characteristics of an ideal anomaly detection algorithm. Since we cannot store the whole data and have access to future data, as it is one of the characteristics, that is why we are keeping a small batch of input data which can be easily stored in memory of the system. Other two characteristics, which are related to online training and prediction, enforce the algorithm to have less number of computations.\\
 \break
-One detector is based upon prediction of a next data point. Let $T_{(t-L-1):(t-1)}$ is the small window taken from time series. The starting point is $t-L-1$ where $L$ is the window size and last data point is taken from $t-1$ which is the data point at previous time step. This data window is used to predict the time series value at time $t$. To predict at time $t$ various different kind of functions as baselines using latest architectural components are designed. Generally the output of such a function would be
-\begin{equation}
-f(T_{(t-L-1):(t-1)}) = \hat{f}(t)
-\end{equation} 
-Thus the function $f$ in prediction based models map data points as: $f: L \mapsto 1$ where $L$ is the window size and output is the prediction of value at current time. For optimization of function $f$, the difference between time series value at current time step and predicted value at current time is taken. More specifically the objective function will be
-\begin{equation}
-min |\hat{f}(t) - f(t)|
-\end{equation}
-That is to minimize the difference between time series value at time $t$ and predicted time series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
-\subsection{Autoencoder based architecture}
-An autoencoder is a network which is trained to copy its input to its output, with the typical purpose of dimension reduction - the process of reducing the number of random variables under consideration. It features an encoder function to create a hidden layer (or multiple layers) which contains a code to describe the input. There is then a decoder which creates a reconstruction of the input from the hidden layer. An autoencoder can then become useful by having a hidden layer smaller than the input layer, forcing it to create a compressed representation of the data in the hidden layer by learning correlations in the data. This compressed representation is actually summarized version of input. This way for the anomaly input values, summarized version will not output very similar output and hence ending up creating big reconstruction loss.
-The backpropagation will try to  $h_{W,b}(x) \approx x$ , so as to minimise the mean square difference:
-\begin{equation}
-L(x,y) = \sum(x-h_{W,b}(x))^2
-\end{equation}
-Similarly for time series let $X_t$ be the input value of the streaming data at time $t$ then the input of autoencoder based architecture will be $X_{t-w:t}$ and output will be $Y_{t-w:t}$ as $Y$ is the predicted reconstruction of the input. 
-\begin{equation}
-Y_{t-w:t} = h(X_{t-w:t})
-\end{equation}
-The reconstruction loss is defined as:
-\begin{equation}
-L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
-\end{equation}
-$\gg \ll$ picture of an autoencoder
-\subsection{Multistep-Ahead prediction based architecture}
-$\gg \ll$ picture of an multi-step based architecture
-Second type of architecture used is multi-step prediction architecture. In this type of architecutre sequence to sequence prediction task is trained. Input sequence for datapoint $X_t$ at time $t$ will be $X_{t-w-l:t-l}$. Here $w$ is the window size of input and $l$ is the length of output sequence. Thus the output will be $Y_{t-l:t}$.  
+\subsection{Multistep prediction architecture}
+First type of architecture used is multistep prediction architecture. In this type of architecutre sequence to sequence prediction task is trained. Input sequence for datapoint $X_t$ at time $t$ will be $X_{t-w-l:t-l}$. Here $w$ is the window size of input and $l$ is the length of output sequence. Thus the output will be $Y_{t-l:t}$. Intuitively, it means to take a sequence in the past and predict in the past starting from the end of the input sequence.
 More specifically the output prediction when the input sequence $X_{t-w-l:t-l}$ is fed to the trained function $h$ will be:
 \begin{equation}
 Y_{t-l:t} = h(X_{t-w-l:t-l})
 \end{equation}
-and the prediction loss will be defined as:
+The input will be a uni-variate vector of size $w$ and the output will be another uni-variate vector of size $l$. The final loss for which these multistep prediction architecture algorithms are trained against is mean squared error or MSE defined as:
 \begin{equation}
 L(x,y) = \frac{1}{l}\sum(Y_{t-l:t}-h(X_{t-w-l:t-l}))^2
 \end{equation}
-
+Here $h$ is the 
 Now we use different architecture to train the function $h$. Other then that, the window size $w$ and output sequence length $l$ is also a hyperparameter. Main three types of architecture designed and tested through Multistep-Ahead prediction based architecture are:
 \begin{enumerate}
 	\item Fully connected architecture
@@ -412,6 +251,63 @@ In convolutional mutlistep ahead prediction architecutre, input is fed to a conv
 \end{figure}
 \subsection{LSTM multistep ahead prediction architecture}
 LSTM based multistep ahead prediction architecture is rather simple. As usual input is a uni-variate vector of size  $W$ which is fed to $50$ concatenated LSTM cells with Relu activation. Lastly a fully connected layers with $L$ neurons and no activation is kept as an output layer.
+First type of algorithms used are multistep prediction algorithms. Here the algorithm is trained for sequence to sequence prediction. Multistep prediction method for unsupervised anomaly detection is motivated from \cite{stackedLstmSecond}. More specifically let $T_{(t-L-1):(t-1)}$ be the input data is the form of  small window taken from time series. The starting point is $t-L-1$ where $L$ is the window size and last data point is taken from $t-1$ which is the data point at previous time step. This data window is used to predict the time series value at time $t$. To predict at time $t$ various different kind of functions as baselines using latest architectural components are designed. Generally the output of such a function would be
+\begin{equation}
+f(T_{(t-L-1):(t-1)}) = \hat{f}(t)
+\end{equation} 
+Thus the function $f$ in prediction based models map data points as: $f: L \mapsto 1$ where $L$ is the window size and output is the prediction of value at current time. For optimization of function $f$, the difference between time series value at current time step and predicted value at current time is taken. More specifically the objective function will be
+\begin{equation}
+min |\hat{f}(t) - f(t)|
+\end{equation}
+That is to minimize the difference between time series value at time $t$ and predicted time  
+In the algorithm part, we use different kind of algorihtms with few things in common. For all kind of algorithms the input values are sequence of length $W$ and output values are also a sequence whose size is tested from $1$ to $5$. Another important thing to remember is that the output is different for autoencodre based architectures and multistep prediction architectures. More details are given below.
+We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
+Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
+First technique is the usage of anomaly likelihood as described equation.
+The anomaly likelihood is a probabilistic metric defining how anomalous the current state is based on the prediction history.To compute the anomaly likeli-
+hood we maintain a window of the last W error values. We model
+the distribution as a rolling normal distribution where the sample
+mean $\mu_t$ and variance $\sigma^2_t$, are continuously updated from previ-
+ous error values as follows:
+s\begin{equation}
+\mu_t = \frac{\sum_{i=0}^{i=W-1} S_{t-i}}{W}
+\end{equation}
+\begin{equation}
+\sigma^2_t=\frac{\sum_{i=0}^{i=W-1} (S_{t-i}-\mu_t)^2}{W-1}
+\end{equation}
+
+We then compute a recent short term average of prediction
+errors, and apply a threshold to the Gaussian tail probability
+to decide whether or not to declare an anomaly. 3
+We define the anomaly likelihood as the complement of the tail
+probability:
+\begin{equation}
+L_t = 1-Q (\frac{\tilde{\mu_t}-\mu_t}{\sigma_t})
+\end{equation}
+and here $\tilde{\mu_t}$ is defined as:
+\begin{equation}
+\tilde{\mu_t} = \frac{\sum_{i=0}^{i=w-1}S_{t-i}}{w}
+\end{equation}
+Here $w \ll W$. We use $w$ for short term moving average and $W$ for long term moving average. This will give us a probability likelihood of a data point being an anomaly. Next step is to threshold the anomlay by setting up a threshold which is defined by user and is a hyperparameter. The threshold is set to $1-\epsilon^{-5	}$
+Second method is moving mix-max normalization, which is rather simple but quite effective. We take the maximum and minimum value of the past and current data at a given point in time $T$ and use it to normalize the incoming anomaly score value. If the new anomaly score value is greater than the past maximum value then the maximum value is updated. Similarly if the new anomaly score value is less than the past minimum value then the minimum value is updated. In the beginning of training, ususally convergence loss is higher and it does not make sense to compare it with the values calculated later on that is why first $N$ value of the anomaly score are skipped before we start considering the maximum and minimum value. The value $N$ is usually set around $100$.
+\break
+ series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
+\subsection{Autoencoder based architecture}
+An autoencoder is a network which is trained to copy its input to its output, with the typical purpose of dimension reduction - the process of reducing the number of random variables under consideration. It features an encoder function to create a hidden layer (or multiple layers) which contains a code to describe the input. There is then a decoder which creates a reconstruction of the input from the hidden layer. An autoencoder can then become useful by having a hidden layer smaller than the input layer, forcing it to create a compressed representation of the data in the hidden layer by learning correlations in the data. This compressed representation is actually summarized version of input. This way for the anomaly input values, summarized version will not output very similar output and hence ending up creating big reconstruction loss.
+The backpropagation will try to  $h_{W,b}(x) \approx x$ , so as to minimise the mean square difference:
+\begin{equation}
+L(x,y) = \sum(x-h_{W,b}(x))^2
+\end{equation}
+Similarly for time series let $X_t$ be the input value of the streaming data at time $t$ then the input of autoencoder based architecture will be $X_{t-w:t}$ and output will be $Y_{t-w:t}$ as $Y$ is the predicted reconstruction of the input. 
+\begin{equation}
+Y_{t-w:t} = h(X_{t-w:t})
+\end{equation}
+The reconstruction loss is defined as:
+\begin{equation}
+L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
+\end{equation}
+$\gg \ll$ picture of an autoencoder
+
 \begin{figure}[H]
 \centering
         \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}

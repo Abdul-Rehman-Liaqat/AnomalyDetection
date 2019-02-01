@@ -17,45 +17,45 @@ Warning--empty title in MLpatterns
 Warning--empty title in MLpatterns
 
 Done.
-You've used 5 entries,
+You've used 11 entries,
             4087 wiz_defined-function locations,
-            850 strings with 8420 characters,
-and the built_in function-call counts, 2984 in all, are:
-= -- 217
-> -- 76
-< -- 17
-+ -- 40
-- -- 15
-* -- 151
-:= -- 472
-add.period$ -- 8
-call.type$ -- 5
-change.case$ -- 5
+            889 strings with 10219 characters,
+and the built_in function-call counts, 5685 in all, are:
+= -- 420
+> -- 141
+< -- 19
++ -- 69
+- -- 29
+* -- 283
+:= -- 952
+add.period$ -- 19
+call.type$ -- 11
+change.case$ -- 14
 chr.to.int$ -- 39
-cite$ -- 9
-duplicate$ -- 221
-empty$ -- 234
-format.name$ -- 18
-if$ -- 661
+cite$ -- 15
+duplicate$ -- 423
+empty$ -- 509
+format.name$ -- 36
+if$ -- 1274
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 48
-newline$ -- 40
-num.names$ -- 5
-pop$ -- 118
+int.to.str$ -- 11
+missing$ -- 93
+newline$ -- 70
+num.names$ -- 14
+pop$ -- 241
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 217
+skip$ -- 434
 stack$ -- 0
-substring$ -- 98
-swap$ -- 161
-text.length$ -- 4
+substring$ -- 99
+swap$ -- 283
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 5
+type$ -- 11
 warning$ -- 4
-while$ -- 12
-width$ -- 6
-write$ -- 65
+while$ -- 17
+width$ -- 13
+write$ -- 128
 (There were 4 warnings)
