@@ -1,4 +1,4 @@
-from utility import read_data,train_prediction_based_models,use_whole_data, write_result, common_code, store_param
+from utility import read_data,train_prediction_based_models,use_whole_data, write_result, common_code, store_param, common_code_normalized
 from models import predictionCnn
 import os
 
@@ -8,7 +8,8 @@ nb_epoch = 1
 nb_features = 1
 input_shape = (window_size,nb_features)
 model = predictionCnn(input_shape)
-data_files,add_to_name, data_config = common_code()
+data_files,add_to_name, data_config = common_code_normalized()
+result_files = data_files 
 result_files = use_whole_data(data_files,input_shape,train_prediction_based_models,model,nb_epoch=nb_epoch)
 algo_type = "predictionCnnOneEpoch"
 algo_name = algo_type + add_to_name

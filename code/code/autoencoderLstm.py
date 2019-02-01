@@ -1,6 +1,6 @@
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense
-from utility import read_data,train_autoencoder_based_models,use_whole_data, write_result
+from utility import read_data,train_autoencoder_based_models,use_whole_data, write_result,common_code_normalized
 from models import autoencoderLstm
 import os
 import pickle
@@ -16,6 +16,8 @@ nb_epoch = 20
 nb_features = 1
 input_shape = (window_size, nb_features)
 model = autoencoderLstm(input_shape)
+data_files,add_to_name, data_config = common_code_normalized()
+result_files = data_files 
 result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models,model)
 write_result(algorithm_name='autoencoderLstm',data_files=result_files,results_path=cwd+'/results')
 algo_name = "autoencoderLstmOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,now.minute)

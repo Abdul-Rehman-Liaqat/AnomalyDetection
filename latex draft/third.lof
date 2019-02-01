@@ -14,3 +14,4 @@
 \contentsline {figure}{\numberline {14}{\ignorespaces Examples of artifical anomaly data set\relax }}{35}{figure.caption.17}
 \contentsline {figure}{\numberline {15}{\ignorespaces Examples of Concept drift in AWS data sets\relax }}{36}{figure.caption.18}
 \contentsline {figure}{\numberline {16}{\ignorespaces Examples of point anomalies from twitter volume dataset\relax }}{37}{figure.caption.19}
+\contentsline {figure}{\numberline {17}{\ignorespaces An example of convergence of LSTM multistep prediction algorithm with multiplestep size 1 and window size 50, being trained online.\relax }}{41}{figure.caption.20}

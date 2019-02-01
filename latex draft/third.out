@@ -28,24 +28,23 @@
 \BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 28
 \BOOKMARK [2][-]{subsection.4.2}{Experimental setup}{section.4}% 29
 \BOOKMARK [1][-]{section.5}{Results}{}% 30
-\BOOKMARK [2][-]{subsection.5.1}{convegence}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.2}{post-processing type}{section.5}% 32
-\BOOKMARK [3][-]{subsubsection.5.2.1}{anomaly likelihood}{subsection.5.2}% 33
-\BOOKMARK [3][-]{subsubsection.5.2.2}{min-max normalization}{subsection.5.2}% 34
-\BOOKMARK [2][-]{subsection.5.3}{results tables}{section.5}% 35
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Difference of results in different algorithms}{subsection.5.3}% 36
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Change in window size in the same algorithm}{subsection.5.3}% 37
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Change in multiple-step in the same algorithm}{subsection.5.3}% 38
-\BOOKMARK [1][-]{section.6}{Conclusion and Discussion}{}% 39
-\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 40
-\BOOKMARK [2][-]{subsection.6.2}{Problems faced during experiments}{section.6}% 41
-\BOOKMARK [2][-]{subsection.6.3}{Insights}{section.6}% 42
-\BOOKMARK [2][-]{subsection.6.4}{Future work}{section.6}% 43
-\BOOKMARK [1][-]{section.7}{Appendix A: Meta of NAB data sets}{}% 44
-\BOOKMARK [1][-]{section.8}{Experiment Infrastructure}{}% 45
-\BOOKMARK [2][-]{subsection.8.1}{Experiment Management using MLflow}{section.8}% 46
-\BOOKMARK [2][-]{subsection.8.2}{Parallel execution using Docker}{section.8}% 47
-\BOOKMARK [1][-]{section.9}{Best practices}{}% 48
-\BOOKMARK [2][-]{subsection.9.1}{Moving from jupyterlab to pycharm}{section.9}% 49
-\BOOKMARK [1][-]{section.10}{Reference Usage}{}% 50
-\BOOKMARK [1][-]{section.11}{References}{}% 51
+\BOOKMARK [2][-]{subsection.5.1}{post-processing type}{section.5}% 31
+\BOOKMARK [3][-]{subsubsection.5.1.1}{anomaly likelihood}{subsection.5.1}% 32
+\BOOKMARK [3][-]{subsubsection.5.1.2}{min-max normalization}{subsection.5.1}% 33
+\BOOKMARK [2][-]{subsection.5.2}{results tables}{section.5}% 34
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Difference of results in different algorithms}{subsection.5.2}% 35
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Change in window size in the same algorithm}{subsection.5.2}% 36
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Change in multiple-step in the same algorithm}{subsection.5.2}% 37
+\BOOKMARK [1][-]{section.6}{Conclusion and Discussion}{}% 38
+\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.2}{Problems faced during experiments}{section.6}% 40
+\BOOKMARK [2][-]{subsection.6.3}{Insights}{section.6}% 41
+\BOOKMARK [2][-]{subsection.6.4}{Future work}{section.6}% 42
+\BOOKMARK [1][-]{section.7}{Appendix A: Meta of NAB data sets}{}% 43
+\BOOKMARK [1][-]{section.8}{Experiment Infrastructure}{}% 44
+\BOOKMARK [2][-]{subsection.8.1}{Experiment Management using MLflow}{section.8}% 45
+\BOOKMARK [2][-]{subsection.8.2}{Parallel execution using Docker}{section.8}% 46
+\BOOKMARK [1][-]{section.9}{Best practices}{}% 47
+\BOOKMARK [2][-]{subsection.9.1}{Moving from jupyterlab to pycharm}{section.9}% 48
+\BOOKMARK [1][-]{section.10}{Reference Usage}{}% 49
+\BOOKMARK [1][-]{section.11}{References}{}% 50

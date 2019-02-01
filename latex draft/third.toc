@@ -27,25 +27,24 @@
 \contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{34}{section.4}
 \contentsline {subsection}{\numberline {4.1}Dataset}{34}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Experimental setup}{39}{subsection.4.2}
-\contentsline {section}{\numberline {5}Results}{40}{section.5}
-\contentsline {subsection}{\numberline {5.1}convegence}{41}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}post-processing type}{41}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}anomaly likelihood}{41}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}min-max normalization}{41}{subsubsection.5.2.2}
-\contentsline {subsection}{\numberline {5.3}results tables}{41}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Difference of results in different algorithms}{41}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Change in window size in the same algorithm}{41}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Change in multiple-step in the same algorithm}{41}{subsubsection.5.3.3}
-\contentsline {section}{\numberline {6}Conclusion and Discussion}{42}{section.6}
-\contentsline {subsection}{\numberline {6.1}Conclusion}{42}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Problems faced during experiments}{42}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Insights}{42}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Future work}{42}{subsection.6.4}
-\contentsline {section}{\numberline {7}Appendix A: Meta of NAB data sets}{43}{section.7}
-\contentsline {section}{\numberline {8}Experiment Infrastructure}{44}{section.8}
-\contentsline {subsection}{\numberline {8.1}Experiment Management using MLflow}{44}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Parallel execution using Docker}{44}{subsection.8.2}
-\contentsline {section}{\numberline {9}Best practices}{44}{section.9}
-\contentsline {subsection}{\numberline {9.1}Moving from jupyterlab to pycharm}{45}{subsection.9.1}
-\contentsline {section}{\numberline {10}Reference Usage}{45}{section.10}
-\contentsline {section}{\numberline {11}References}{45}{section.11}
+\contentsline {section}{\numberline {5}Results}{41}{section.5}
+\contentsline {subsection}{\numberline {5.1}post-processing type}{42}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}anomaly likelihood}{42}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}min-max normalization}{42}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}results tables}{42}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Difference of results in different algorithms}{42}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Change in window size in the same algorithm}{42}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Change in multiple-step in the same algorithm}{42}{subsubsection.5.2.3}
+\contentsline {section}{\numberline {6}Conclusion and Discussion}{43}{section.6}
+\contentsline {subsection}{\numberline {6.1}Conclusion}{43}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Problems faced during experiments}{43}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Insights}{43}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Future work}{43}{subsection.6.4}
+\contentsline {section}{\numberline {7}Appendix A: Meta of NAB data sets}{44}{section.7}
+\contentsline {section}{\numberline {8}Experiment Infrastructure}{45}{section.8}
+\contentsline {subsection}{\numberline {8.1}Experiment Management using MLflow}{45}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Parallel execution using Docker}{45}{subsection.8.2}
+\contentsline {section}{\numberline {9}Best practices}{45}{section.9}
+\contentsline {subsection}{\numberline {9.1}Moving from jupyterlab to pycharm}{46}{subsection.9.1}
+\contentsline {section}{\numberline {10}Reference Usage}{46}{section.10}
+\contentsline {section}{\numberline {11}References}{46}{section.11}

@@ -743,11 +743,12 @@ def plotMultipleGraph(df,start,end,name="temp"):
     s2 = df.convergenceLoss[t]
     s3 = df['Normalized Anomaly Score'][t]
     s4 = df['Actual Anomaly'][t]  
-    fig = plt.figure()
+    fig = plt.figure(figsize=(20, 16), dpi=80, facecolor='w', edgecolor='k')
     ax1 = plt.subplot(411)
+    ax1.tick_params(axis='y',labelsize = 15)
     plt.plot(t, s1)
-    plt.legend()
-    plt.setp(ax1.get_xticklabels(), fontsize=6)
+    plt.legend(prop={'size': 20})
+    plt.setp(ax1.get_xticklabels(), fontsize=15)
     plt.tick_params(
         axis='x',          # changes apply to the x-axis
         which='both',      # both major and minor ticks are affected
@@ -756,8 +757,9 @@ def plotMultipleGraph(df,start,end,name="temp"):
         labelbottom=False) # labels along the bottom edge are off
     # share x only
     ax2 = plt.subplot(412, sharex=ax1)
+    ax2.tick_params(axis='y',labelsize = 15)
     plt.plot(t, s2)
-    plt.legend()
+    plt.legend(prop={'size': 20})
     # make these tick labels invisible
     plt.setp(ax2.get_xticklabels(), visible=False)
     plt.tick_params(
@@ -769,8 +771,9 @@ def plotMultipleGraph(df,start,end,name="temp"):
     
     # share x and y
     ax3 = plt.subplot(413, sharex=ax1, sharey=ax1)
+    ax3.tick_params(axis='y',labelsize = 15)
     plt.plot(t, s3)
-    plt.legend()
+    plt.legend(prop={'size': 20})
     plt.setp(ax2.get_xticklabels(), visible=False)
     plt.tick_params(
         axis='x',          # changes apply to the x-axis
@@ -781,9 +784,13 @@ def plotMultipleGraph(df,start,end,name="temp"):
    
     #plt.xlim(0.01, 5.0)
     ax4 = plt.subplot(414, sharex=ax1, sharey=ax1)
+    ax4.tick_params(axis='y',labelsize = 15)
+    ax4.tick_params(axis='x',labelsize = 15)
     plt.plot(t, s4)    
-    plt.legend()
-    fig.savefig(name+".png")
+    plt.legend(prop={'size': 20})
+    plt.xlabel("Index as Time-stamp",fontsize = 20)
+    
+    fig.savefig("/home/abdulliaqat/Desktop/thesis/AnomalyDetection/latex draft/images/results/"+name+".png")
     plt.show()
 #def display_algo_confusion_matrix(results_path):
 
