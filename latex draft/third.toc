@@ -13,19 +13,18 @@
 \contentsline {subsubsection}{\numberline {3.1.1}preprocessing}{18}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}algorithm}{19}{subsubsection.3.1.2}
 \contentsline {subsection}{\numberline {3.2}Multistep prediction architecture}{19}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Fully connected multistep ahead prediction architecture}{20}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Convolutional multistep ahead prediction architecture}{21}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}LSTM multistep ahead prediction architecture}{22}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Autoencoder based architecture}{24}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Autoencoder architecture}{25}{subsection.3.7}
-\contentsline {subsection}{\numberline {3.8}Fully Connected Autoencoder architecture}{25}{subsection.3.8}
-\contentsline {subsection}{\numberline {3.9}Convolutional Autoencoder architecture}{25}{subsection.3.9}
-\contentsline {subsection}{\numberline {3.10}LSTM Autoencoder architecture}{25}{subsection.3.10}
-\contentsline {subsection}{\numberline {3.11}Recency concept}{25}{subsection.3.11}
-\contentsline {subsection}{\numberline {3.12}Post-processing}{25}{subsection.3.12}
-\contentsline {subsection}{\numberline {3.13}Thresholding}{25}{subsection.3.13}
-\contentsline {subsection}{\numberline {3.14}Parameterinzing the anomaly score}{25}{subsection.3.14}
-\contentsline {subsection}{\numberline {3.15}Scoring}{25}{subsection.3.15}
+\contentsline {subsection}{\numberline {3.3}Fully connected multistep ahead prediction architecture}{21}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Convolutional multistep ahead prediction architecture}{22}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}LSTM multistep ahead prediction architecture}{23}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Autoencoder based architecture}{23}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Fully Connected Autoencoder}{24}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Convolutional Autoencoder }{24}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{24}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}Recency concept}{25}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}Post-processing}{25}{subsection.3.11}
+\contentsline {subsection}{\numberline {3.12}Thresholding}{25}{subsection.3.12}
+\contentsline {subsection}{\numberline {3.13}Parameterinzing the anomaly score}{25}{subsection.3.13}
+\contentsline {subsection}{\numberline {3.14}Scoring}{25}{subsection.3.14}
 \contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{30}{section.4}
 \contentsline {subsection}{\numberline {4.1}Dataset}{30}{subsection.4.1}
 \contentsline {section}{\numberline {5}Results}{35}{section.5}

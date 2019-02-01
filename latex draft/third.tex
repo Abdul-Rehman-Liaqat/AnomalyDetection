@@ -215,52 +215,89 @@ Now that we have availibility to the preprocessed input, it is time to describe 
 \break
 \subsection{Multistep prediction architecture}
 First type of architecture used is multistep prediction architecture. In this type of architecutre sequence to sequence prediction task is trained. Input sequence for datapoint $X_t$ at time $t$ will be $X_{t-w-l:t-l}$. Here $w$ is the window size of input and $l$ is the length of output sequence. Thus the output will be $Y_{t-l:t}$. Intuitively, it means to take a sequence in the past and predict in the past starting from the end of the input sequence.
-More specifically the output prediction when the input sequence $X_{t-w-l:t-l}$ is fed to the trained function $h$ will be:
+More specifically the output prediction, when the input sequence $X_{t-w-l:t-l}$ is fed, the trained function $h$ will be:
 \begin{equation}
 Y_{t-l:t} = h(X_{t-w-l:t-l})
 \end{equation}
 The input will be a uni-variate vector of size $w$ and the output will be another uni-variate vector of size $l$. The final loss for which these multistep prediction architecture algorithms are trained against is mean squared error or MSE defined as:
 \begin{equation}
 L(x,y) = \frac{1}{l}\sum(Y_{t-l:t}-h(X_{t-w-l:t-l}))^2
+\label{multiStepLossFunction}
 \end{equation}
-Here $h$ is the 
-Now we use different architecture to train the function $h$. Other then that, the window size $w$ and output sequence length $l$ is also a hyperparameter. Main three types of architecture designed and tested through Multistep-Ahead prediction based architecture are:
+Multistep prediction architecture is motivated from \cite{stackedLstmSecond}. The idea is to have feedback from more than one data points. This helps in reducing the senstivity of the model on only one data point. This also helps in reducing the noise in anomaly score. 
+At the end, the parameters of the function $h$ will be trained to minimze the loss function \ref{multiStepLossFunction}. Using the input, output and loss function defined above, we designed three different types of algorithms train the function $h$. The algorithms are based upon famous deep learning components. We designed three types of architecture based upon multistep predictions and tested them through experiments. These three types are:
 \begin{enumerate}
-	\item Fully connected architecture
-	\item CNN based architecture
-	\item LSTM based architecture
+	\item Fully connected architecture based multistep prediction or NnMultiStep
+	\item CNN based architecture based multistep prediction or CnnMultiStep
+	\item LSTM based architecture or LstmMultiStep
 \end{enumerate}
-Here size of architecture is usually kept smaller and compact. The reason is to have the ability to train and predict online and having smaller faster architecture is important.
-
+Here size of architecture is usually kept smaller and compact. The reason is the same to have the ability to train and predict online and having smaller faster architecture is important. These algorithms are also modified later on to incorporate auto-regressive component. Moving on we will describe each of these architectures in detail.
 \subsection{Fully connected multistep ahead prediction architecture}
-In fully connected multistep ahead prediction architecture, we use three fully-connected layers. Input is a one dimensional vector of window size $w$ which is passed to a fully connected layer of $50$ cells. Next two fully connected layers with $25$ and $10$ number of neurons are set up. Lastly there is another fully connected layer with the number of neurons equal to $l$. Here $l$ is multistep ahead prediction length or output sequence size. We test the architecture for different lenghts of $w$ and $l$.
 \begin{figure}[H]
 \centering	
         \includegraphics[width=0.5\textwidth]{images/architecture/NnMultistepAheadPrediction.png}
     \caption{Fully connected Multistep Ahead Prediction with input length W and output length L}
-    \label{generalAnomalyDetectionFrameWork}
+    \label{NnMultiStep}
 \end{figure}
+In fully connected multistep ahead prediction architecture as shown in figure \ref{NnMultiStep}, we use three fully-connected layers. Input is a one dimensional vector of window size $w$ and can be represented as $X_{t-w-l:t-l}$. Input is passed to a fully connected layer of $50$ cells. Next two fully connected layers with $25$ and $10$ number of neurons are set up. Lastly there is another fully connected layer with the number of neurons equal to $l$. Here $l$ is multistep ahead prediction length or output sequence size. This architecture is rather rigid against different input size or different window size $w$. We test the architecture for different lenghts of $w$ and $l$.
 
 \subsection{Convolutional multistep ahead prediction architecture}
-In convolutional mutlistep ahead prediction architecutre, input is fed to a convolution layer with $8$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Then we have two layers of $10$ different kernels of $1 \times 3$ with stride $2$. The last convolution layer consists of $12$ kernels of dimension $1 \times 2$ with no stride. Activation function for all the neurons of convolution layers is relu. Next a fully connected layer with $10$ neurons is set up whose activation function is relu. Lastly the output layer is a fully connected layers consisting of $L$ neurons where $L$ describes the size of output sequence.
 \begin{figure}[H]
 \centering
         \includegraphics[width=0.8\textwidth]{images/architecture/CnnMultistepPrediction.png}
     \caption{Convolutional Network based Prediction Network}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
+
+In convolutional mutlistep ahead prediction architecutre, input is fed to a convolution layer with $8$ different kernels of $1 \times 4$ with stride $2$. Following is another layer of the same dimensions. Then we have two layers of $10$ different kernels of $1 \times 3$ with stride $2$. The last convolution layer consists of $12$ kernels of dimension $1 \times 2$ with no stride. Activation function for all the neurons of convolution layers is relu. Next a fully connected layer with $10$ neurons is set up whose activation function is relu. Lastly the output layer is a fully connected layers consisting of $L$ neurons where $L$ describes the size of output sequence.
 \subsection{LSTM multistep ahead prediction architecture}
+\begin{figure}[H]
+\centering
+        \includegraphics[width=0.6\textwidth]{images/architecture/LstmAutoencoder.png}
+    \caption{Convolutional Network based Prediction Network}
+    \label{generalAnomalyDetectionFrameWork}
+\end{figure}
+
 LSTM based multistep ahead prediction architecture is rather simple. As usual input is a uni-variate vector of size  $W$ which is fed to $50$ concatenated LSTM cells with Relu activation. Lastly a fully connected layers with $L$ neurons and no activation is kept as an output layer.
-First type of algorithms used are multistep prediction algorithms. Here the algorithm is trained for sequence to sequence prediction. Multistep prediction method for unsupervised anomaly detection is motivated from \cite{stackedLstmSecond}. More specifically let $T_{(t-L-1):(t-1)}$ be the input data is the form of  small window taken from time series. The starting point is $t-L-1$ where $L$ is the window size and last data point is taken from $t-1$ which is the data point at previous time step. This data window is used to predict the time series value at time $t$. To predict at time $t$ various different kind of functions as baselines using latest architectural components are designed. Generally the output of such a function would be
+\subsection{Autoencoder based architecture}
+A second group of architecture is based upon autoencoder layout. As described in state-of-the-art, an autoencoder compresses the input into a compressed vector format which is then decoded to the original input shape.An autoencoder is a network which is trained to copy its input to its output, with the typical purpose of dimension reduction - the process of reducing the number of random variables under consideration. It features an encoder function to create a hidden layer (or multiple layers) which contains a code to describe the input. There is then a decoder which creates a reconstruction of the input from the hidden layer. An autoencoder can then become useful by having a hidden layer smaller than the input layer, forcing it to create a compressed representation of the data in the hidden layer by learning correlations in the data. This compressed representation is actually summarized version of input. This way for the anomaly input values, summarized version will not output very similar output and hence ending up creating big reconstruction loss.
+The backpropagation will try to  $h_{W,b}(x) \approx x$ , so as to minimise the mean square difference:
 \begin{equation}
-f(T_{(t-L-1):(t-1)}) = \hat{f}(t)
-\end{equation} 
-Thus the function $f$ in prediction based models map data points as: $f: L \mapsto 1$ where $L$ is the window size and output is the prediction of value at current time. For optimization of function $f$, the difference between time series value at current time step and predicted value at current time is taken. More specifically the objective function will be
-\begin{equation}
-min |\hat{f}(t) - f(t)|
+L(x,y) = \sum(x-h_{W,b}(x))^2
 \end{equation}
-That is to minimize the difference between time series value at time $t$ and predicted time  
-In the algorithm part, we use different kind of algorihtms with few things in common. For all kind of algorithms the input values are sequence of length $W$ and output values are also a sequence whose size is tested from $1$ to $5$. Another important thing to remember is that the output is different for autoencodre based architectures and multistep prediction architectures. More details are given below.
+Similarly for time series let $X_t$ be the input value of the streaming data at time $t$ then the input of autoencoder based architecture will be $X_{t-w:t}$ and output will be $Y_{t-w:t}$ as $Y$ is the predicted reconstruction of the input. 
+\begin{equation}
+Y_{t-w:t} = h(X_{t-w:t})
+\end{equation}
+Thus the input and the output will have an identical size. The loss function of an autoencoder is also called reconstruction loss as it is the difference between the actual input and the reconstruction of the input. Reconstruction loss is then defined as:
+\begin{equation}
+L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
+\end{equation}
+
+\subsection{Fully Connected Autoencoder}
+\begin{figure}[H]
+\centering
+        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
+    \caption{LSTM based Prediction Network}
+    \label{generalAnomalyDetectionFrameWork}
+\end{figure}
+
+\subsection{Convolutional Autoencoder } 
+\begin{figure}[H]
+\centering
+        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
+    \caption{LSTM based Prediction Network}
+    \label{generalAnomalyDetectionFrameWork}
+\end{figure}
+
+\subsection{LSTM Autoencoder }
+\begin{figure}[H]
+\centering
+        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
+    \caption{LSTM based Prediction Network}
+    \label{generalAnomalyDetectionFrameWork}
+\end{figure}
+
 We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
 Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
 First technique is the usage of anomaly likelihood as described equation.
@@ -292,32 +329,7 @@ Here $w \ll W$. We use $w$ for short term moving average and $W$ for long term m
 Second method is moving mix-max normalization, which is rather simple but quite effective. We take the maximum and minimum value of the past and current data at a given point in time $T$ and use it to normalize the incoming anomaly score value. If the new anomaly score value is greater than the past maximum value then the maximum value is updated. Similarly if the new anomaly score value is less than the past minimum value then the minimum value is updated. In the beginning of training, ususally convergence loss is higher and it does not make sense to compare it with the values calculated later on that is why first $N$ value of the anomaly score are skipped before we start considering the maximum and minimum value. The value $N$ is usually set around $100$.
 \break
  series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
-\subsection{Autoencoder based architecture}
-An autoencoder is a network which is trained to copy its input to its output, with the typical purpose of dimension reduction - the process of reducing the number of random variables under consideration. It features an encoder function to create a hidden layer (or multiple layers) which contains a code to describe the input. There is then a decoder which creates a reconstruction of the input from the hidden layer. An autoencoder can then become useful by having a hidden layer smaller than the input layer, forcing it to create a compressed representation of the data in the hidden layer by learning correlations in the data. This compressed representation is actually summarized version of input. This way for the anomaly input values, summarized version will not output very similar output and hence ending up creating big reconstruction loss.
-The backpropagation will try to  $h_{W,b}(x) \approx x$ , so as to minimise the mean square difference:
-\begin{equation}
-L(x,y) = \sum(x-h_{W,b}(x))^2
-\end{equation}
-Similarly for time series let $X_t$ be the input value of the streaming data at time $t$ then the input of autoencoder based architecture will be $X_{t-w:t}$ and output will be $Y_{t-w:t}$ as $Y$ is the predicted reconstruction of the input. 
-\begin{equation}
-Y_{t-w:t} = h(X_{t-w:t})
-\end{equation}
-The reconstruction loss is defined as:
-\begin{equation}
-L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
-\end{equation}
-$\gg \ll$ picture of an autoencoder
 
-\begin{figure}[H]
-\centering
-        \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
-    \caption{LSTM based Prediction Network}
-    \label{generalAnomalyDetectionFrameWork}
-\end{figure}
-\subsection{Autoencoder architecture}
-\subsection{Fully Connected Autoencoder architecture}
-\subsection{Convolutional Autoencoder architecture}
-\subsection{LSTM Autoencoder architecture}
 \subsection{Recency concept}
 \subsection{Post-processing}
 Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\

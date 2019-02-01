@@ -1,6 +1,6 @@
 from keras.models import Sequential, Model
 from keras.layers import Conv1D, Flatten, Dropout, Dense
-from utility import read_data,train_autoencoder_based_models,use_whole_data, write_result
+from utility import read_data,train_autoencoder_based_models_new,use_whole_data, write_result
 from models import autoencoderCnn
 import os
 import pickle
@@ -16,7 +16,10 @@ nb_epoch = 20
 nb_features = 1
 input_shape = (window_size, nb_features)
 model = autoencoderCnn(input_shape)
-result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models,model)
+result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models_new,model,nStepAhead=1,
+                   anomaly_score='convergence_loss',nb_epoch = 1
+                   )
+
 algo_name = "autoencoderCnnOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,now.minute)
 with open("dump/"+algo_name+".obj",'wb') as f:
     pickle.dump(result_files,f)
