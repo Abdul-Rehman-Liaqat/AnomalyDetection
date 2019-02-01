@@ -1,4 +1,18 @@
 {
+    "autoencoderCnnOneEpoch21610": {
+        "reward_low_FN_rate": {
+            "score": -139.7487597109263,
+            "threshold": 0.9656248092651372
+        },
+        "reward_low_FP_rate": {
+            "score": -66.78048911456831,
+            "threshold": 0.9656311035156256
+        },
+        "standard": {
+            "score": -59.74875971092626,
+            "threshold": 0.9656248092651372
+        }
+    },
     "autoencoderNnnormalized10WindowConverenceLoss11301035": {
         "reward_low_FN_rate": {
             "score": -216.6613385283878,
