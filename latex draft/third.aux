@@ -63,39 +63,43 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Convolutional Network based Prediction Network\relax }}{23}{figure.caption.12}}
 \newlabel{generalAnomalyDetectionFrameWork}{{9}{23}{Convolutional Network based Prediction Network\relax }{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Autoencoder based architecture}{23}{subsection.3.6}}
-\citation{ahmad2017unsupervised}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Fully Connected Autoencoder}{24}{subsection.3.7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces LSTM based Prediction Network\relax }}{24}{figure.caption.13}}
 \newlabel{generalAnomalyDetectionFrameWork}{{10}{24}{LSTM based Prediction Network\relax }{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Fully Connected Autoencoder}{24}{subsection.3.7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Convolutional Autoencoder }{24}{subsection.3.8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{24}{subsection.3.9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LSTM based Prediction Network\relax }}{24}{figure.caption.14}}
+\newlabel{generalAnomalyDetectionFrameWork}{{11}{24}{LSTM based Prediction Network\relax }{figure.caption.14}{}}
 \citation{ahmad2017unsupervised}
+\citation{ahmad2017unsupervised}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{25}{subsection.3.9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces LSTM based Prediction Network\relax }}{25}{figure.caption.15}}
+\newlabel{generalAnomalyDetectionFrameWork}{{12}{25}{LSTM based Prediction Network\relax }{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.10}Recency concept}{25}{subsection.3.10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.11}Post-processing}{25}{subsection.3.11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.12}Thresholding}{25}{subsection.3.12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.13}Parameterinzing the anomaly score}{25}{subsection.3.13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.14}Scoring}{25}{subsection.3.14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Scoring example for a sample anomaly window, where the values represent the scaled sigmoid function. he first point is an FP preceding the anomaly window (red dashed lines) and contributes -1.0 to the score. Within the window we see two detections, and only count the earliest TP for the score. There are two FPs after the window. The first is less detrimental because it is close to the window, and the second yields -1.0 because it\IeC {\textquoteright }s too far after the window to be associated with the true anomaly. TNs make no score contributions. The scaled sigmoid values are multiplied by the relevant application profile weight. The NAB score for this example would calculate as: $-1.0A_{FP} + 0.9999A_{TP} - 0.8093A_{FP} - 1.0A_{FP} $\relax }}{28}{figure.caption.14}}
-\newlabel{nabSigmoidScoringFunction}{{11}{28}{Scoring example for a sample anomaly window, where the values represent the scaled sigmoid function. he first point is an FP preceding the anomaly window (red dashed lines) and contributes -1.0 to the score. Within the window we see two detections, and only count the earliest TP for the score. There are two FPs after the window. The first is less detrimental because it is close to the window, and the second yields -1.0 because it’s too far after the window to be associated with the true anomaly. TNs make no score contributions. The scaled sigmoid values are multiplied by the relevant application profile weight. The NAB score for this example would calculate as: $-1.0A_{FP} + 0.9999A_{TP} - 0.8093A_{FP} - 1.0A_{FP} $\relax }{figure.caption.14}{}}
-\newlabel{sigmoidEquation}{{17}{30}{Scoring}{equation.3.17}{}}
-\newlabel{weightsAccumulation}{{18}{30}{Scoring}{equation.3.18}{}}
-\newlabel{allScore}{{19}{30}{Scoring}{equation.3.19}{}}
-\newlabel{scoreNormalization}{{20}{30}{Scoring}{equation.3.20}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{30}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{30}{subsection.4.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Examples of artifical anomaly data set\relax }}{31}{figure.caption.15}}
-\newlabel{artificialDataPlots}{{12}{31}{Examples of artifical anomaly data set\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Examples of Concept drift in AWS data sets\relax }}{32}{figure.caption.16}}
-\newlabel{AwsConceptDrift}{{13}{32}{Examples of Concept drift in AWS data sets\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Examples of point anomalies from twitter volume dataset\relax }}{33}{figure.caption.17}}
-\newlabel{AwsConceptDrift}{{14}{33}{Examples of point anomalies from twitter volume dataset\relax }{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{35}{section.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Comparing with others}{35}{subsection.5.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion and Discussion}{35}{section.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Experiment Infrastructure}{35}{section.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Experiment Management using MLflow}{35}{subsection.7.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Parallel execution using Docker}{35}{subsection.7.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Best practices}{35}{section.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.12}Thresholding}{26}{subsection.3.12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.13}Parameterinzing the anomaly score}{26}{subsection.3.13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.14}Scoring}{26}{subsection.3.14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Scoring example for a sample anomaly window, where the values represent the scaled sigmoid function. he first point is an FP preceding the anomaly window (red dashed lines) and contributes -1.0 to the score. Within the window we see two detections, and only count the earliest TP for the score. There are two FPs after the window. The first is less detrimental because it is close to the window, and the second yields -1.0 because it\IeC {\textquoteright }s too far after the window to be associated with the true anomaly. TNs make no score contributions. The scaled sigmoid values are multiplied by the relevant application profile weight. The NAB score for this example would calculate as: $-1.0A_{FP} + 0.9999A_{TP} - 0.8093A_{FP} - 1.0A_{FP} $\relax }}{29}{figure.caption.16}}
+\newlabel{nabSigmoidScoringFunction}{{13}{29}{Scoring example for a sample anomaly window, where the values represent the scaled sigmoid function. he first point is an FP preceding the anomaly window (red dashed lines) and contributes -1.0 to the score. Within the window we see two detections, and only count the earliest TP for the score. There are two FPs after the window. The first is less detrimental because it is close to the window, and the second yields -1.0 because it’s too far after the window to be associated with the true anomaly. TNs make no score contributions. The scaled sigmoid values are multiplied by the relevant application profile weight. The NAB score for this example would calculate as: $-1.0A_{FP} + 0.9999A_{TP} - 0.8093A_{FP} - 1.0A_{FP} $\relax }{figure.caption.16}{}}
+\newlabel{sigmoidEquation}{{17}{31}{Scoring}{equation.3.17}{}}
+\newlabel{weightsAccumulation}{{18}{31}{Scoring}{equation.3.18}{}}
+\newlabel{allScore}{{19}{31}{Scoring}{equation.3.19}{}}
+\newlabel{scoreNormalization}{{20}{31}{Scoring}{equation.3.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{31}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{31}{subsection.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Examples of artifical anomaly data set\relax }}{32}{figure.caption.17}}
+\newlabel{artificialDataPlots}{{14}{32}{Examples of artifical anomaly data set\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Examples of Concept drift in AWS data sets\relax }}{33}{figure.caption.18}}
+\newlabel{AwsConceptDrift}{{15}{33}{Examples of Concept drift in AWS data sets\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Examples of point anomalies from twitter volume dataset\relax }}{34}{figure.caption.19}}
+\newlabel{AwsConceptDrift}{{16}{34}{Examples of point anomalies from twitter volume dataset\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{36}{section.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Comparing with others}{36}{subsection.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion and Discussion}{36}{section.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Experiment Infrastructure}{36}{section.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Experiment Management using MLflow}{36}{subsection.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Parallel execution using Docker}{36}{subsection.7.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Best practices}{36}{section.8}}
 \citation{*}
 \bibstyle{IEEEtran}
 \bibdata{third}
@@ -104,9 +108,9 @@
 \bibcite{NAB}{3}
 \bibcite{stackedLstmFirst}{4}
 \bibcite{stackedLstmSecond}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Moving from jupyterlab to pycharm}{36}{subsection.8.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Reference Usage}{36}{section.9}}
-\@writefile{toc}{\contentsline {section}{\numberline {10}References}{36}{section.10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Moving from jupyterlab to pycharm}{37}{subsection.8.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Reference Usage}{37}{section.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}References}{37}{section.10}}
 \bibcite{KaiserGSVPJU17}{6}
 \bibcite{MLpatterns}{7}
 \bibcite{DBLP:conf/iconas/2013}{8}

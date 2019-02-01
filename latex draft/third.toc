@@ -19,21 +19,21 @@
 \contentsline {subsection}{\numberline {3.6}Autoencoder based architecture}{23}{subsection.3.6}
 \contentsline {subsection}{\numberline {3.7}Fully Connected Autoencoder}{24}{subsection.3.7}
 \contentsline {subsection}{\numberline {3.8}Convolutional Autoencoder }{24}{subsection.3.8}
-\contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{24}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.9}LSTM Autoencoder }{25}{subsection.3.9}
 \contentsline {subsection}{\numberline {3.10}Recency concept}{25}{subsection.3.10}
 \contentsline {subsection}{\numberline {3.11}Post-processing}{25}{subsection.3.11}
-\contentsline {subsection}{\numberline {3.12}Thresholding}{25}{subsection.3.12}
-\contentsline {subsection}{\numberline {3.13}Parameterinzing the anomaly score}{25}{subsection.3.13}
-\contentsline {subsection}{\numberline {3.14}Scoring}{25}{subsection.3.14}
-\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{30}{section.4}
-\contentsline {subsection}{\numberline {4.1}Dataset}{30}{subsection.4.1}
-\contentsline {section}{\numberline {5}Results}{35}{section.5}
-\contentsline {subsection}{\numberline {5.1}Comparing with others}{35}{subsection.5.1}
-\contentsline {section}{\numberline {6}Conclusion and Discussion}{35}{section.6}
-\contentsline {section}{\numberline {7}Experiment Infrastructure}{35}{section.7}
-\contentsline {subsection}{\numberline {7.1}Experiment Management using MLflow}{35}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Parallel execution using Docker}{35}{subsection.7.2}
-\contentsline {section}{\numberline {8}Best practices}{35}{section.8}
-\contentsline {subsection}{\numberline {8.1}Moving from jupyterlab to pycharm}{36}{subsection.8.1}
-\contentsline {section}{\numberline {9}Reference Usage}{36}{section.9}
-\contentsline {section}{\numberline {10}References}{36}{section.10}
+\contentsline {subsection}{\numberline {3.12}Thresholding}{26}{subsection.3.12}
+\contentsline {subsection}{\numberline {3.13}Parameterinzing the anomaly score}{26}{subsection.3.13}
+\contentsline {subsection}{\numberline {3.14}Scoring}{26}{subsection.3.14}
+\contentsline {section}{\numberline {4}Empirical Formulation and Experiments}{31}{section.4}
+\contentsline {subsection}{\numberline {4.1}Dataset}{31}{subsection.4.1}
+\contentsline {section}{\numberline {5}Results}{36}{section.5}
+\contentsline {subsection}{\numberline {5.1}Comparing with others}{36}{subsection.5.1}
+\contentsline {section}{\numberline {6}Conclusion and Discussion}{36}{section.6}
+\contentsline {section}{\numberline {7}Experiment Infrastructure}{36}{section.7}
+\contentsline {subsection}{\numberline {7.1}Experiment Management using MLflow}{36}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Parallel execution using Docker}{36}{subsection.7.2}
+\contentsline {section}{\numberline {8}Best practices}{36}{section.8}
+\contentsline {subsection}{\numberline {8.1}Moving from jupyterlab to pycharm}{37}{subsection.8.1}
+\contentsline {section}{\numberline {9}Reference Usage}{37}{section.9}
+\contentsline {section}{\numberline {10}References}{37}{section.10}

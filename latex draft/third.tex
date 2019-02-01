@@ -292,13 +292,18 @@ L(x,y) = \frac{1}{w}\sum(Y_{t-w:t}-X_{t-w:t})^2
 
 \subsection{LSTM Autoencoder }
 \begin{figure}[H]
-\centering
+\center ing
         \includegraphics[width=0.4\textwidth]{images/architecture/LstmMultistepaheadPrediction.png}
     \caption{LSTM based Prediction Network}
     \label{generalAnomalyDetectionFrameWork}
 \end{figure}
 
-We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
+We take the simple mean squared distance as anomaly score. So at each time step, we take the difference between the output sequence and the actual real sequence using mean squared \emph{•}distance. The same is also used for training of each algorithm. After doing a forward pass prediction and calculating the anomaly score using mean squared distance, we use the anomaly score to back-propagate the error using one iteration.
+
+\subsection{Recency concept}
+\subsection{Post-processing}
+Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
+\break
 Next post-processing step is important as literature shows that this step makes a significant difference in the improving the score of an anomaly detector. There are two different kind of post-processing techniques used. First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization.
 First technique is the usage of anomaly likelihood as described equation.
 The anomaly likelihood is a probabilistic metric defining how anomalous the current state is based on the prediction history.To compute the anomaly likeli-
@@ -329,11 +334,6 @@ Here $w \ll W$. We use $w$ for short term moving average and $W$ for long term m
 Second method is moving mix-max normalization, which is rather simple but quite effective. We take the maximum and minimum value of the past and current data at a given point in time $T$ and use it to normalize the incoming anomaly score value. If the new anomaly score value is greater than the past maximum value then the maximum value is updated. Similarly if the new anomaly score value is less than the past minimum value then the minimum value is updated. In the beginning of training, ususally convergence loss is higher and it does not make sense to compare it with the values calculated later on that is why first $N$ value of the anomaly score are skipped before we start considering the maximum and minimum value. The value $N$ is usually set around $100$.
 \break
  series value at time $t$ using time series value from $T_{(t-L-1):(t-1)}$.
-
-\subsection{Recency concept}
-\subsection{Post-processing}
-Post-processing is a very important part of anomlay detection. This step is called anomaly scoring. Each We tested two different kind of post-processing techniques.First technique is suggested by \cite{ahmad2017unsupervised} and is called anomaly liklihood estimation. Second technique is a modification of simple min-max noarmalization. We perform a rolling min-max normalization. \\
-\break
 
 \subsection{Thresholding}
 

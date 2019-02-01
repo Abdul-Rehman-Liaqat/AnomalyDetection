@@ -17,7 +17,7 @@ nb_features = 1
 input_shape = (window_size, nb_features)
 model = autoencoderCnn(input_shape)
 result_files = use_whole_data(data_files,input_shape,train_autoencoder_based_models_new,model,nStepAhead=1,
-                   anomaly_score='convergence_loss',nb_epoch = 1
+                   anomaly_score='convergenceLoss',nb_epoch = 1
                    )
 
 algo_name = "autoencoderCnnOneEpoch{}{}{}{}".format(now.month,now.day,now.hour,now.minute)
